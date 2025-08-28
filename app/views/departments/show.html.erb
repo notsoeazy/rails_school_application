@@ -3,7 +3,6 @@
 <%= render @department %>
 
 <h3> List of Students </h3>
-
 <table>
   <thead>
     <tr>
@@ -13,15 +12,39 @@
     </tr>
   </thead>
   <tbody>
-    <% @department.students.each do |student| %>
-      <tr>
-        <td> <%= student.name %> </td>
-        <td> <%= student.program %> </td>
-        <td> <%= student.year_level %> </td>
-      </tr>
+  <% @department.students.each do |student| %>
+    <tr>
+      <td> <%= student.name %> </td>
+      <td> <%= student.program %> </td>
+      <td> <%= student.year_level %> </td>
+    </tr>
     <% end %>
   </tbody>
 </table>
+    
+<h3> List of Teachers </h3>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Specialization</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @department.teachers.each do |teacher| %>
+    <tr>
+      <td> <%= teacher.name %> </td>
+      <td> <%= teacher.email %> </td>
+      <td> <%= teacher.specialization %> </td>
+      <td> <%= teacher.status %> </td>
+    </tr>
+    <% end %>  
+  </tbody>
+</table>
+
+<hr>
 
 <div>
   <%= link_to "Edit this department", edit_department_path(@department) %> |
