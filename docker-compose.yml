@@ -10,17 +10,17 @@ services:
       MYSQL_USER: rails
       MYSQL_PASSWORD: secret
     ports:
-      - "3301:3301"
+      - "3311:3311"
     volumes:
       - db_data:/var/lib/mysql
 
   web:
     build: .
-    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -b 0.0.0.0 -p 3001"
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -b 0.0.0.0 -p 3011"
     volumes:
       - .:/app
     ports:
-      - "3001:3001"
+      - "3011:3011"
     depends_on:
       - db
     environment:

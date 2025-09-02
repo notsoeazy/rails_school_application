@@ -3591,3 +3591,957 @@ Processing by StudentsController#new as HTML
 Completed 200 OK in 23ms (Views: 8.2ms | ActiveRecord: 4.6ms (1 query, 0 cached) | GC: 0.2ms)
 
 
+Started POST "/students" for 172.20.0.1 at 2025-08-28 07:08:00 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StudentsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "student"=>{"name"=>"ken", "year_level"=>"3", "program"=>"CPE", "department_id"=>"1"}, "commit"=>"Create Student"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*action='create',application='Helloworldapplication',controller='students'*/[0m
+  ↳ app/controllers/students_controller.rb:27:in `block in create'
+  [1m[36mDepartment Load (0.4ms)[0m  [1m[34mSELECT `departments`.* FROM `departments` WHERE `departments`.`id` = 1 LIMIT 1 /*action='create',application='Helloworldapplication',controller='students'*/[0m
+  ↳ app/controllers/students_controller.rb:27:in `block in create'
+  [1m[36mStudent Create (0.3ms)[0m  [1m[32mINSERT INTO `students` (`name`, `year_level`, `program`, `department_id`, `created_at`, `updated_at`) VALUES ('ken', 3, 'CPE', 1, '2025-08-28 07:08:00.232701', '2025-08-28 07:08:00.232701') /*action='create',application='Helloworldapplication',controller='students'*/[0m
+  ↳ app/controllers/students_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT /*action='create',application='Helloworldapplication',controller='students'*/[0m
+  ↳ app/controllers/students_controller.rb:27:in `block in create'
+Redirected to http://localhost:3001/students/3
+Completed 302 Found in 24ms (ActiveRecord: 9.3ms (2 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/students/3" for 172.20.0.1 at 2025-08-28 07:08:00 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StudentsController#show as TURBO_STREAM
+  Parameters: {"id"=>"3"}
+  [1m[36mStudent Load (0.6ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`id` = 3 LIMIT 1 /*action='show',application='Helloworldapplication',controller='students'*/[0m
+  ↳ app/controllers/students_controller.rb:63:in `set_student'
+  Rendering layout layouts/application.html.erb
+  Rendering students/show.html.erb within layouts/application
+  Rendered students/_student.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered students/show.html.erb within layouts/application (Duration: 2.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | GC: 0.1ms)
+Completed 200 OK in 15ms (Views: 4.9ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/departments" for 172.20.0.1 at 2025-08-28 07:08:07 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DepartmentsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering departments/index.html.erb within layouts/application
+  [1m[36mDepartment Load (0.4ms)[0m  [1m[34mSELECT `departments`.* FROM `departments` /*action='index',application='Helloworldapplication',controller='departments'*/[0m
+  ↳ app/views/departments/index.html.erb:8
+  Rendered departments/_department.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered departments/index.html.erb within layouts/application (Duration: 2.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | GC: 0.1ms)
+Completed 200 OK in 16ms (Views: 3.3ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/departments/1" for 172.20.0.1 at 2025-08-28 07:08:08 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DepartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDepartment Load (0.5ms)[0m  [1m[34mSELECT `departments`.* FROM `departments` WHERE `departments`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='departments'*/[0m
+  ↳ app/controllers/departments_controller.rb:64:in `set_department'
+  [1m[36mCACHE Department Load (0.0ms)[0m  [1m[34mSELECT `departments`.* FROM `departments` WHERE `departments`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/departments_controller.rb:11:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering departments/show.html.erb within layouts/application
+  Rendered departments/_department.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`department_id` = 1 /*action='show',application='Helloworldapplication',controller='departments'*/[0m
+  ↳ app/views/departments/show.html.erb:15
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`department_id` = 1 /*action='show',application='Helloworldapplication',controller='departments'*/[0m
+  ↳ app/views/departments/show.html.erb:36
+  Rendered departments/show.html.erb within layouts/application (Duration: 8.3ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | GC: 0.2ms)
+Completed 200 OK in 21ms (Views: 6.9ms | ActiveRecord: 2.4ms (4 queries, 1 cached) | GC: 0.3ms)
+
+
+Started GET "/" for 172.20.0.1 at 2025-09-02 06:10:10 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (5.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC /*application='Helloworldapplication'*/[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20250902060853_create_subjects.rb
+
+
+):
+  
+activerecord (8.0.2) lib/active_record/migration.rb:743:in `check_pending_migrations'
+activerecord (8.0.2) lib/active_record/migration.rb:660:in `block (2 levels) in call'
+activesupport (8.0.2) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (8.0.2) lib/active_record/migration.rb:665:in `block in call'
+activerecord (8.0.2) lib/active_record/migration.rb:657:in `synchronize'
+activerecord (8.0.2) lib/active_record/migration.rb:657:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.0.2) lib/active_support/callbacks.rb:100:in `run_callbacks'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:19:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.0.2) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.0.2) lib/rails/rack/logger.rb:29:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.2.0) lib/rack/method_override.rb:28:in `call'
+rack (3.2.0) lib/rack/runtime.rb:24:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.2.0) lib/rack/sendfile.rb:114:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.0.2) lib/rails/engine.rb:535:in `call'
+puma (6.6.1) lib/puma/configuration.rb:279:in `call'
+puma (6.6.1) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.6.1) lib/puma/thread_pool.rb:390:in `with_force_shutdown'
+puma (6.6.1) lib/puma/request.rb:98:in `handle_request'
+puma (6.6.1) lib/puma/server.rb:472:in `process_client'
+puma (6.6.1) lib/puma/server.rb:254:in `block in run'
+puma (6.6.1) lib/puma/thread_pool.rb:167:in `block in spawn_thread'
+Started GET "/favicon.ico" for 172.20.0.1 at 2025-09-02 06:10:10 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC /*application='Helloworldapplication'*/[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20250902060853_create_subjects.rb
+
+
+):
+  
+activerecord (8.0.2) lib/active_record/migration.rb:743:in `check_pending_migrations'
+activerecord (8.0.2) lib/active_record/migration.rb:660:in `block (2 levels) in call'
+activesupport (8.0.2) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (8.0.2) lib/active_record/migration.rb:665:in `block in call'
+activerecord (8.0.2) lib/active_record/migration.rb:657:in `synchronize'
+activerecord (8.0.2) lib/active_record/migration.rb:657:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.0.2) lib/active_support/callbacks.rb:100:in `run_callbacks'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:19:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.0.2) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.0.2) lib/rails/rack/logger.rb:29:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.2.0) lib/rack/method_override.rb:28:in `call'
+rack (3.2.0) lib/rack/runtime.rb:24:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.2.0) lib/rack/sendfile.rb:114:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.0.2) lib/rails/engine.rb:535:in `call'
+puma (6.6.1) lib/puma/configuration.rb:279:in `call'
+puma (6.6.1) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.6.1) lib/puma/thread_pool.rb:390:in `with_force_shutdown'
+puma (6.6.1) lib/puma/request.rb:98:in `handle_request'
+puma (6.6.1) lib/puma/server.rb:472:in `process_client'
+puma (6.6.1) lib/puma/server.rb:254:in `block in run'
+puma (6.6.1) lib/puma/thread_pool.rb:167:in `block in spawn_thread'
+  [1m[35mSQL (0.2ms)[0m  [1m[34mSELECT GET_LOCK('8765636641833325800', 0) /*application='Helloworldapplication'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC /*application='Helloworldapplication'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.6ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1 /*application='Helloworldapplication'*/[0m
+Migrating to CreateSubjects (20250902060853)
+  [1m[35m (19.7ms)[0m  [1m[35mCREATE TABLE `subjects` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `teacher_id` bigint NOT NULL, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL, INDEX `index_subjects_on_teacher_id` (`teacher_id`), CONSTRAINT `fk_rails_cac7f2be05`
+FOREIGN KEY (`teacher_id`)
+  REFERENCES `teachers` (`id`)
+) /*application='Helloworldapplication'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (2.0ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20250902060853') /*application='Helloworldapplication'*/[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('8765636641833325800') /*application='Helloworldapplication'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC /*application='Helloworldapplication'*/[0m
+Started GET "/" for 172.20.0.1 at 2025-09-02 06:10:25 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC /*application='Helloworldapplication'*/[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-8.0.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-8.0.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.0ms | GC: 0.0ms)
+Completed 200 OK in 14ms (Views: 1.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/subjects" for 172.20.0.1 at 2025-09-02 06:11:24 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SubjectsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subjects/index.html.erb within layouts/application
+  [1m[36mSubject Load (1.3ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` /*action='index',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/index.html.erb:8
+  Rendered subjects/index.html.erb within layouts/application (Duration: 7.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.0ms | GC: 0.0ms)
+Completed 200 OK in 39ms (Views: 11.4ms | ActiveRecord: 1.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/assets/application-8b441ae0.css" for 172.20.0.1 at 2025-09-02 06:11:24 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/assets/application-bfcdf840.js" for 172.20.0.1 at 2025-09-02 06:11:24 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/assets/turbo.min-3a2e143f.js" for 172.20.0.1 at 2025-09-02 06:11:24 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/assets/controllers/hello_controller-708796bd.js" for 172.20.0.1 at 2025-09-02 06:11:24 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/assets/controllers/index-ee64e1f1.js" for 172.20.0.1 at 2025-09-02 06:11:24 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/assets/controllers/application-3affb389.js" for 172.20.0.1 at 2025-09-02 06:11:24 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/assets/stimulus-loading-1fc53fe7.js" for 172.20.0.1 at 2025-09-02 06:11:24 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/assets/stimulus.min-4b1e420e.js" for 172.20.0.1 at 2025-09-02 06:11:24 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/subjects/new" for 172.20.0.1 at 2025-09-02 06:11:50 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SubjectsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subjects/new.html.erb within layouts/application
+  Rendered subjects/_form.html.erb (Duration: 3.2ms | GC: 0.1ms)
+  Rendered subjects/new.html.erb within layouts/application (Duration: 3.9ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | GC: 0.1ms)
+Completed 200 OK in 26ms (Views: 4.6ms | ActiveRecord: 3.2ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/subjects/new" for 172.20.0.1 at 2025-09-02 06:12:05 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SubjectsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subjects/new.html.erb within layouts/application
+  Rendered subjects/_form.html.erb (Duration: 1.4ms | GC: 0.0ms)
+  Rendered subjects/new.html.erb within layouts/application (Duration: 1.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | GC: 0.4ms)
+Completed 200 OK in 13ms (Views: 3.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/departments" for 172.20.0.1 at 2025-09-02 06:12:21 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DepartmentsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering departments/index.html.erb within layouts/application
+  [1m[36mDepartment Load (1.0ms)[0m  [1m[34mSELECT `departments`.* FROM `departments` /*action='index',application='Helloworldapplication',controller='departments'*/[0m
+  ↳ app/views/departments/index.html.erb:8
+  Rendered departments/_department.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered departments/index.html.erb within layouts/application (Duration: 8.0ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | GC: 0.2ms)
+Completed 200 OK in 18ms (Views: 6.6ms | ActiveRecord: 2.6ms (1 query, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/departments/1" for 172.20.0.1 at 2025-09-02 06:12:22 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DepartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDepartment Load (0.4ms)[0m  [1m[34mSELECT `departments`.* FROM `departments` WHERE `departments`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='departments'*/[0m
+  ↳ app/controllers/departments_controller.rb:64:in `set_department'
+  [1m[36mCACHE Department Load (0.0ms)[0m  [1m[34mSELECT `departments`.* FROM `departments` WHERE `departments`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/departments_controller.rb:11:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering departments/show.html.erb within layouts/application
+  Rendered departments/_department.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  [1m[36mStudent Load (0.9ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`department_id` = 1 /*action='show',application='Helloworldapplication',controller='departments'*/[0m
+  ↳ app/views/departments/show.html.erb:15
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`department_id` = 1 /*action='show',application='Helloworldapplication',controller='departments'*/[0m
+  ↳ app/views/departments/show.html.erb:36
+  Rendered departments/show.html.erb within layouts/application (Duration: 24.6ms | GC: 3.5ms)
+  Rendered layout layouts/application.html.erb (Duration: 25.0ms | GC: 3.5ms)
+Completed 200 OK in 33ms (Views: 20.9ms | ActiveRecord: 4.6ms (4 queries, 1 cached) | GC: 3.6ms)
+
+
+Started GET "/departments" for 172.20.0.1 at 2025-09-02 06:12:25 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DepartmentsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering departments/index.html.erb within layouts/application
+  [1m[36mDepartment Load (0.3ms)[0m  [1m[34mSELECT `departments`.* FROM `departments` /*action='index',application='Helloworldapplication',controller='departments'*/[0m
+  ↳ app/views/departments/index.html.erb:8
+  Rendered departments/_department.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered departments/index.html.erb within layouts/application (Duration: 2.0ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | GC: 0.2ms)
+Completed 200 OK in 13ms (Views: 2.5ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/departments" for 172.20.0.1 at 2025-09-02 06:12:25 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DepartmentsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering departments/index.html.erb within layouts/application
+  [1m[36mDepartment Load (0.3ms)[0m  [1m[34mSELECT `departments`.* FROM `departments` /*action='index',application='Helloworldapplication',controller='departments'*/[0m
+  ↳ app/views/departments/index.html.erb:8
+  Rendered departments/_department.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered departments/index.html.erb within layouts/application (Duration: 1.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | GC: 0.0ms)
+Completed 200 OK in 14ms (Views: 2.2ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/subjects" for 172.20.0.1 at 2025-09-02 06:12:33 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SubjectsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subjects/index.html.erb within layouts/application
+  [1m[36mSubject Load (0.4ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` /*action='index',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/index.html.erb:8
+  Rendered subjects/index.html.erb within layouts/application (Duration: 1.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | GC: 0.0ms)
+Completed 200 OK in 12ms (Views: 2.3ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/subjects/new" for 172.20.0.1 at 2025-09-02 06:12:33 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SubjectsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subjects/new.html.erb within layouts/application
+  Rendered subjects/_form.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered subjects/new.html.erb within layouts/application (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.5ms | GC: 0.0ms)
+Completed 200 OK in 12ms (Views: 1.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/subjects/new" for 172.20.0.1 at 2025-09-02 06:14:42 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SubjectsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subjects/new.html.erb within layouts/application
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` /*action='new',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/_form.html.erb:21
+  Rendered subjects/_form.html.erb (Duration: 8.3ms | GC: 0.1ms)
+  Rendered subjects/new.html.erb within layouts/application (Duration: 9.1ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | GC: 0.2ms)
+Completed 200 OK in 20ms (Views: 9.1ms | ActiveRecord: 3.7ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/subjects" for 172.20.0.1 at 2025-09-02 06:14:47 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SubjectsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subjects/index.html.erb within layouts/application
+  [1m[36mSubject Load (0.4ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` /*action='index',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/index.html.erb:8
+  Rendered subjects/index.html.erb within layouts/application (Duration: 1.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | GC: 0.0ms)
+Completed 200 OK in 8ms (Views: 2.1ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/subjects/new" for 172.20.0.1 at 2025-09-02 06:16:10 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SubjectsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subjects/new.html.erb within layouts/application
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` /*action='new',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/_form.html.erb:21
+  Rendered subjects/_form.html.erb (Duration: 8.9ms | GC: 2.9ms)
+  Rendered subjects/new.html.erb within layouts/application (Duration: 9.3ms | GC: 2.9ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | GC: 3.2ms)
+Completed 200 OK in 21ms (Views: 10.1ms | ActiveRecord: 3.2ms (1 query, 0 cached) | GC: 3.2ms)
+
+
+Started GET "/subjects" for 172.20.0.1 at 2025-09-02 06:16:20 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SubjectsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subjects/index.html.erb within layouts/application
+  [1m[36mSubject Load (0.3ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` /*action='index',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/index.html.erb:8
+  Rendered subjects/index.html.erb within layouts/application (Duration: 1.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | GC: 0.0ms)
+Completed 200 OK in 8ms (Views: 2.2ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/subjects" for 172.20.0.1 at 2025-09-02 06:16:24 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SubjectsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "subject"=>{"name"=>"cookiing", "teacher_id"=>"2"}, "commit"=>"Create Subject"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*action='create',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/controllers/subjects_controller.rb:27:in `block in create'
+  [1m[36mTeacher Load (1.2ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 2 LIMIT 1 /*action='create',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/controllers/subjects_controller.rb:27:in `block in create'
+  [1m[36mSubject Create (0.3ms)[0m  [1m[32mINSERT INTO `subjects` (`name`, `teacher_id`, `created_at`, `updated_at`) VALUES ('cookiing', 2, '2025-09-02 06:16:24.199591', '2025-09-02 06:16:24.199591') /*action='create',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/controllers/subjects_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT /*action='create',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/controllers/subjects_controller.rb:27:in `block in create'
+Redirected to http://0.0.0.0:3011/subjects/1
+Completed 302 Found in 14ms (ActiveRecord: 3.5ms (2 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/subjects/1" for 172.20.0.1 at 2025-09-02 06:16:24 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SubjectsController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mSubject Load (0.6ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` WHERE `subjects`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/controllers/subjects_controller.rb:63:in `set_subject'
+  Rendering layout layouts/application.html.erb
+  Rendering subjects/show.html.erb within layouts/application
+  Rendered subjects/_subject.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered subjects/show.html.erb within layouts/application (Duration: 2.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | GC: 0.0ms)
+Completed 200 OK in 12ms (Views: 3.1ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/subjects" for 172.20.0.1 at 2025-09-02 06:16:26 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SubjectsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subjects/index.html.erb within layouts/application
+  [1m[36mSubject Load (0.4ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` /*action='index',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/index.html.erb:8
+  Rendered subjects/_subject.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered subjects/index.html.erb within layouts/application (Duration: 2.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | GC: 0.0ms)
+Completed 200 OK in 14ms (Views: 2.4ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/subjects/1" for 172.20.0.1 at 2025-09-02 06:16:27 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SubjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSubject Load (0.4ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` WHERE `subjects`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/controllers/subjects_controller.rb:63:in `set_subject'
+  Rendering layout layouts/application.html.erb
+  Rendering subjects/show.html.erb within layouts/application
+  Rendered subjects/_subject.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered subjects/show.html.erb within layouts/application (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.1ms | GC: 0.0ms)
+Completed 200 OK in 12ms (Views: 1.3ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/subjects/1" for 172.20.0.1 at 2025-09-02 06:17:28 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SubjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSubject Load (0.2ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` WHERE `subjects`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/controllers/subjects_controller.rb:63:in `set_subject'
+  Rendering layout layouts/application.html.erb
+  Rendering subjects/show.html.erb within layouts/application
+  Rendered subjects/_subject.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered subjects/show.html.erb within layouts/application (Duration: 1.3ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | GC: 0.1ms)
+Completed 200 OK in 14ms (Views: 3.2ms | ActiveRecord: 2.1ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/subjects/1" for 172.20.0.1 at 2025-09-02 06:18:36 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SubjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSubject Load (0.2ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` WHERE `subjects`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/controllers/subjects_controller.rb:63:in `set_subject'
+  Rendering layout layouts/application.html.erb
+  Rendering subjects/show.html.erb within layouts/application
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 2 LIMIT 1 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/_subject.html.erb:9
+  Rendered subjects/_subject.html.erb (Duration: 6.1ms | GC: 0.5ms)
+  Rendered subjects/show.html.erb within layouts/application (Duration: 7.1ms | GC: 0.5ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | GC: 0.6ms)
+Completed 200 OK in 22ms (Views: 7.7ms | ActiveRecord: 3.7ms (2 queries, 0 cached) | GC: 3.6ms)
+
+
+Started GET "/subjects" for 172.20.0.1 at 2025-09-02 06:18:38 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SubjectsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subjects/index.html.erb within layouts/application
+  [1m[36mSubject Load (0.4ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` /*action='index',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/index.html.erb:8
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 2 LIMIT 1 /*action='index',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/_subject.html.erb:9
+  Rendered subjects/_subject.html.erb (Duration: 1.3ms | GC: 0.0ms)
+  Rendered subjects/index.html.erb within layouts/application (Duration: 3.8ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | GC: 0.2ms)
+Completed 200 OK in 15ms (Views: 4.0ms | ActiveRecord: 0.7ms (2 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/subjects/new" for 172.20.0.1 at 2025-09-02 06:18:42 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SubjectsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subjects/new.html.erb within layouts/application
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` /*action='new',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/_form.html.erb:21
+  Rendered subjects/_form.html.erb (Duration: 2.4ms | GC: 0.2ms)
+  Rendered subjects/new.html.erb within layouts/application (Duration: 2.8ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | GC: 0.2ms)
+Completed 200 OK in 9ms (Views: 3.0ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/subjects" for 172.20.0.1 at 2025-09-02 06:18:42 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SubjectsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subjects/index.html.erb within layouts/application
+  [1m[36mSubject Load (0.4ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` /*action='index',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/index.html.erb:8
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 2 LIMIT 1 /*action='index',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/_subject.html.erb:9
+  Rendered subjects/_subject.html.erb (Duration: 1.2ms | GC: 0.0ms)
+  Rendered subjects/index.html.erb within layouts/application (Duration: 2.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | GC: 0.0ms)
+Completed 200 OK in 8ms (Views: 2.9ms | ActiveRecord: 0.7ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/subjects" for 172.20.0.1 at 2025-09-02 06:18:50 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SubjectsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "subject"=>{"name"=>"Database", "teacher_id"=>"1"}, "commit"=>"Create Subject"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*action='create',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/controllers/subjects_controller.rb:27:in `block in create'
+  [1m[36mTeacher Load (1.7ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 1 LIMIT 1 /*action='create',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/controllers/subjects_controller.rb:27:in `block in create'
+  [1m[36mSubject Create (0.3ms)[0m  [1m[32mINSERT INTO `subjects` (`name`, `teacher_id`, `created_at`, `updated_at`) VALUES ('Database', 1, '2025-09-02 06:18:50.169935', '2025-09-02 06:18:50.169935') /*action='create',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/controllers/subjects_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mCOMMIT /*action='create',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/controllers/subjects_controller.rb:27:in `block in create'
+Redirected to http://0.0.0.0:3011/subjects/2
+Completed 302 Found in 18ms (ActiveRecord: 4.3ms (2 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/subjects/2" for 172.20.0.1 at 2025-09-02 06:18:50 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SubjectsController#show as TURBO_STREAM
+  Parameters: {"id"=>"2"}
+  [1m[36mSubject Load (0.4ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` WHERE `subjects`.`id` = 2 LIMIT 1 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/controllers/subjects_controller.rb:63:in `set_subject'
+  Rendering layout layouts/application.html.erb
+  Rendering subjects/show.html.erb within layouts/application
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/_subject.html.erb:9
+  Rendered subjects/_subject.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  Rendered subjects/show.html.erb within layouts/application (Duration: 1.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | GC: 0.2ms)
+Completed 200 OK in 12ms (Views: 2.6ms | ActiveRecord: 0.6ms (2 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/subjects" for 172.20.0.1 at 2025-09-02 06:18:51 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SubjectsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subjects/index.html.erb within layouts/application
+  [1m[36mSubject Load (0.3ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` /*action='index',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/index.html.erb:8
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 2 LIMIT 1 /*action='index',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/_subject.html.erb:9
+  Rendered subjects/_subject.html.erb (Duration: 1.1ms | GC: 0.1ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 1 LIMIT 1 /*action='index',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/_subject.html.erb:9
+  Rendered subjects/_subject.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered subjects/index.html.erb within layouts/application (Duration: 3.7ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | GC: 0.1ms)
+Completed 200 OK in 11ms (Views: 3.7ms | ActiveRecord: 0.7ms (3 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/subjects" for 172.20.0.1 at 2025-09-02 06:21:53 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC /*application='Helloworldapplication'*/[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20250902062023_create_sections.rb
+
+
+):
+  
+activerecord (8.0.2) lib/active_record/migration.rb:743:in `check_pending_migrations'
+activerecord (8.0.2) lib/active_record/migration.rb:660:in `block (2 levels) in call'
+activesupport (8.0.2) lib/active_support/file_update_checker.rb:85:in `execute'
+activesupport (8.0.2) lib/active_support/file_update_checker.rb:95:in `execute_if_updated'
+activerecord (8.0.2) lib/active_record/migration.rb:667:in `block in call'
+activerecord (8.0.2) lib/active_record/migration.rb:657:in `synchronize'
+activerecord (8.0.2) lib/active_record/migration.rb:657:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.0.2) lib/active_support/callbacks.rb:100:in `run_callbacks'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:19:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.0.2) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.0.2) lib/rails/rack/logger.rb:29:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.2.0) lib/rack/method_override.rb:28:in `call'
+rack (3.2.0) lib/rack/runtime.rb:24:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.2.0) lib/rack/sendfile.rb:114:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.0.2) lib/rails/engine.rb:535:in `call'
+puma (6.6.1) lib/puma/configuration.rb:279:in `call'
+puma (6.6.1) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.6.1) lib/puma/thread_pool.rb:390:in `with_force_shutdown'
+puma (6.6.1) lib/puma/request.rb:98:in `handle_request'
+puma (6.6.1) lib/puma/server.rb:472:in `process_client'
+puma (6.6.1) lib/puma/server.rb:254:in `block in run'
+puma (6.6.1) lib/puma/thread_pool.rb:167:in `block in spawn_thread'
+Started GET "/favicon.ico" for 172.20.0.1 at 2025-09-02 06:21:53 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC /*application='Helloworldapplication'*/[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20250902062023_create_sections.rb
+
+
+):
+  
+activerecord (8.0.2) lib/active_record/migration.rb:743:in `check_pending_migrations'
+activerecord (8.0.2) lib/active_record/migration.rb:660:in `block (2 levels) in call'
+activesupport (8.0.2) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (8.0.2) lib/active_record/migration.rb:665:in `block in call'
+activerecord (8.0.2) lib/active_record/migration.rb:657:in `synchronize'
+activerecord (8.0.2) lib/active_record/migration.rb:657:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.0.2) lib/active_support/callbacks.rb:100:in `run_callbacks'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:19:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.0.2) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.0.2) lib/rails/rack/logger.rb:29:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.2.0) lib/rack/method_override.rb:28:in `call'
+rack (3.2.0) lib/rack/runtime.rb:24:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.2.0) lib/rack/sendfile.rb:114:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.0.2) lib/rails/engine.rb:535:in `call'
+puma (6.6.1) lib/puma/configuration.rb:279:in `call'
+puma (6.6.1) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.6.1) lib/puma/thread_pool.rb:390:in `with_force_shutdown'
+puma (6.6.1) lib/puma/request.rb:98:in `handle_request'
+puma (6.6.1) lib/puma/server.rb:472:in `process_client'
+puma (6.6.1) lib/puma/server.rb:254:in `block in run'
+puma (6.6.1) lib/puma/thread_pool.rb:167:in `block in spawn_thread'
+  [1m[35mSQL (0.1ms)[0m  [1m[34mSELECT GET_LOCK('8765636641833325800', 0) /*application='Helloworldapplication'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC /*application='Helloworldapplication'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1 /*application='Helloworldapplication'*/[0m
+Migrating to CreateSections (20250902062023)
+  [1m[35m (17.6ms)[0m  [1m[35mCREATE TABLE `sections` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `room` varchar(255), `time_slot` varchar(255), `subject_id` bigint NOT NULL, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL, INDEX `index_sections_on_subject_id` (`subject_id`), CONSTRAINT `fk_rails_dec2fb466b`
+FOREIGN KEY (`subject_id`)
+  REFERENCES `subjects` (`id`)
+) /*application='Helloworldapplication'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.9ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20250902062023') /*application='Helloworldapplication'*/[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[34mSELECT RELEASE_LOCK('8765636641833325800') /*application='Helloworldapplication'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC /*application='Helloworldapplication'*/[0m
+Started GET "/subjects" for 172.20.0.1 at 2025-09-02 06:21:59 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC /*application='Helloworldapplication'*/[0m
+Processing by SubjectsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subjects/index.html.erb within layouts/application
+  [1m[36mSubject Load (0.4ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` /*action='index',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/index.html.erb:8
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 2 LIMIT 1 /*action='index',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/_subject.html.erb:9
+  Rendered subjects/_subject.html.erb (Duration: 8.2ms | GC: 2.3ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 1 LIMIT 1 /*action='index',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/_subject.html.erb:9
+  Rendered subjects/_subject.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered subjects/index.html.erb within layouts/application (Duration: 14.4ms | GC: 2.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 16.1ms | GC: 2.6ms)
+Completed 200 OK in 23ms (Views: 13.3ms | ActiveRecord: 3.5ms (3 queries, 0 cached) | GC: 2.6ms)
+
+
+Started GET "/sections" for 172.20.0.1 at 2025-09-02 06:22:06 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SectionsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sections/index.html.erb within layouts/application
+  [1m[36mSection Load (0.7ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` /*action='index',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/views/sections/index.html.erb:8
+  Rendered sections/index.html.erb within layouts/application (Duration: 2.6ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | GC: 0.3ms)
+Completed 200 OK in 12ms (Views: 2.9ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/sections/new" for 172.20.0.1 at 2025-09-02 06:22:07 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SectionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sections/new.html.erb within layouts/application
+  [1m[36mSubject Load (0.4ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` /*action='new',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/views/sections/_form.html.erb:31
+  Rendered sections/_form.html.erb (Duration: 3.2ms | GC: 0.2ms)
+  Rendered sections/new.html.erb within layouts/application (Duration: 3.7ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | GC: 0.2ms)
+Completed 200 OK in 16ms (Views: 4.1ms | ActiveRecord: 2.3ms (1 query, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/sections/new" for 172.20.0.1 at 2025-09-02 06:22:22 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SectionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sections/new.html.erb within layouts/application
+  [1m[36mSubject Load (0.3ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` /*action='new',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/views/sections/_form.html.erb:31
+  Rendered sections/_form.html.erb (Duration: 6.3ms | GC: 0.2ms)
+  Rendered sections/new.html.erb within layouts/application (Duration: 6.7ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | GC: 0.3ms)
+Completed 200 OK in 20ms (Views: 7.2ms | ActiveRecord: 4.5ms (1 query, 0 cached) | GC: 0.5ms)
+
+
+Started POST "/sections" for 172.20.0.1 at 2025-09-02 06:22:53 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SectionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "section"=>{"name"=>"AMR69", "room"=>"D319", "time_slot"=>"evrydoay", "subject_id"=>"1"}, "commit"=>"Create Section"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*action='create',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/controllers/sections_controller.rb:27:in `block in create'
+  [1m[36mSubject Load (3.5ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` WHERE `subjects`.`id` = 1 LIMIT 1 /*action='create',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/controllers/sections_controller.rb:27:in `block in create'
+  [1m[36mSection Create (0.3ms)[0m  [1m[32mINSERT INTO `sections` (`name`, `room`, `time_slot`, `subject_id`, `created_at`, `updated_at`) VALUES ('AMR69', 'D319', 'evrydoay', 1, '2025-09-02 06:22:53.720905', '2025-09-02 06:22:53.720905') /*action='create',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/controllers/sections_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[35mCOMMIT /*action='create',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/controllers/sections_controller.rb:27:in `block in create'
+Redirected to http://0.0.0.0:3011/sections/1
+Completed 302 Found in 43ms (ActiveRecord: 6.0ms (2 queries, 0 cached) | GC: 22.5ms)
+
+
+Started GET "/sections/1" for 172.20.0.1 at 2025-09-02 06:22:53 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SectionsController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mSection Load (0.4ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` WHERE `sections`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/controllers/sections_controller.rb:63:in `set_section'
+  Rendering layout layouts/application.html.erb
+  Rendering sections/show.html.erb within layouts/application
+  Rendered sections/_section.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered sections/show.html.erb within layouts/application (Duration: 2.2ms | GC: 0.9ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | GC: 0.9ms)
+Completed 200 OK in 14ms (Views: 2.8ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 3.5ms)
+
+
+Started GET "/sections/1" for 172.20.0.1 at 2025-09-02 06:23:12 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SectionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSection Load (0.3ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` WHERE `sections`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/controllers/sections_controller.rb:63:in `set_section'
+  Rendering layout layouts/application.html.erb
+  Rendering sections/show.html.erb within layouts/application
+  [1m[36mSubject Load (0.2ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` WHERE `subjects`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/views/sections/_section.html.erb:19
+  Rendered sections/_section.html.erb (Duration: 8.6ms | GC: 0.4ms)
+  Rendered sections/show.html.erb within layouts/application (Duration: 9.9ms | GC: 0.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.0ms | GC: 0.4ms)
+Completed 200 OK in 28ms (Views: 11.6ms | ActiveRecord: 4.7ms (2 queries, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/sections/1" for 172.20.0.1 at 2025-09-02 06:23:53 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SectionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSection Load (0.1ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` WHERE `sections`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/controllers/sections_controller.rb:63:in `set_section'
+  Rendering layout layouts/application.html.erb
+  Rendering sections/show.html.erb within layouts/application
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` WHERE `subjects`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/views/sections/_section.html.erb:19
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 2 LIMIT 1 /*action='show',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/views/sections/_section.html.erb:24
+  Rendered sections/_section.html.erb (Duration: 11.8ms | GC: 0.0ms)
+  Rendered sections/show.html.erb within layouts/application (Duration: 13.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 14.5ms | GC: 0.0ms)
+Completed 200 OK in 26ms (Views: 12.2ms | ActiveRecord: 5.4ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/sections" for 172.20.0.1 at 2025-09-02 06:24:04 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SectionsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sections/index.html.erb within layouts/application
+  [1m[36mSection Load (0.4ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` /*action='index',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/views/sections/index.html.erb:8
+  [1m[36mSubject Load (0.3ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` WHERE `subjects`.`id` = 1 LIMIT 1 /*action='index',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/views/sections/_section.html.erb:19
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 2 LIMIT 1 /*action='index',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/views/sections/_section.html.erb:24
+  Rendered sections/_section.html.erb (Duration: 2.1ms | GC: 0.0ms)
+  Rendered sections/index.html.erb within layouts/application (Duration: 4.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | GC: 0.0ms)
+Completed 200 OK in 15ms (Views: 4.1ms | ActiveRecord: 0.9ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/sections/new" for 172.20.0.1 at 2025-09-02 06:24:06 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SectionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sections/new.html.erb within layouts/application
+  [1m[36mSubject Load (0.3ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` /*action='new',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/views/sections/_form.html.erb:31
+  Rendered sections/_form.html.erb (Duration: 5.2ms | GC: 2.7ms)
+  Rendered sections/new.html.erb within layouts/application (Duration: 5.6ms | GC: 2.7ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | GC: 2.7ms)
+Completed 200 OK in 12ms (Views: 6.0ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 2.7ms)
+
+
+Started GET "/sections" for 172.20.0.1 at 2025-09-02 06:24:25 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SectionsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sections/index.html.erb within layouts/application
+  [1m[36mSection Load (0.5ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` /*action='index',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/views/sections/index.html.erb:8
+  [1m[36mSubject Load (0.4ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` WHERE `subjects`.`id` = 1 LIMIT 1 /*action='index',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/views/sections/_section.html.erb:19
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 2 LIMIT 1 /*action='index',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/views/sections/_section.html.erb:24
+  Rendered sections/_section.html.erb (Duration: 2.3ms | GC: 0.0ms)
+  Rendered sections/index.html.erb within layouts/application (Duration: 4.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | GC: 0.0ms)
+Completed 200 OK in 16ms (Views: 3.9ms | ActiveRecord: 1.1ms (3 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/sections/1" for 172.20.0.1 at 2025-09-02 06:24:28 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SectionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSection Load (0.6ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` WHERE `sections`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/controllers/sections_controller.rb:63:in `set_section'
+  Rendering layout layouts/application.html.erb
+  Rendering sections/show.html.erb within layouts/application
+  [1m[36mSubject Load (0.3ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` WHERE `subjects`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/views/sections/_section.html.erb:19
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 2 LIMIT 1 /*action='show',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/views/sections/_section.html.erb:24
+  Rendered sections/_section.html.erb (Duration: 2.4ms | GC: 0.3ms)
+  Rendered sections/show.html.erb within layouts/application (Duration: 3.1ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | GC: 0.3ms)
+Completed 200 OK in 14ms (Views: 3.1ms | ActiveRecord: 1.1ms (3 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/sections/new" for 172.20.0.1 at 2025-09-02 06:24:29 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SectionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sections/new.html.erb within layouts/application
+  [1m[36mSubject Load (0.5ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` /*action='new',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/views/sections/_form.html.erb:31
+  Rendered sections/_form.html.erb (Duration: 3.0ms | GC: 0.0ms)
+  Rendered sections/new.html.erb within layouts/application (Duration: 3.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | GC: 0.2ms)
+Completed 200 OK in 15ms (Views: 3.7ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Started POST "/sections" for 172.20.0.1 at 2025-09-02 06:25:00 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SectionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "section"=>{"name"=>"QCEP110", "room"=>"D317", "time_slot"=>"1:30-4:30", "subject_id"=>"2"}, "commit"=>"Create Section"}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN /*action='create',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/controllers/sections_controller.rb:27:in `block in create'
+  [1m[36mSubject Load (1.7ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` WHERE `subjects`.`id` = 2 LIMIT 1 /*action='create',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/controllers/sections_controller.rb:27:in `block in create'
+  [1m[36mSection Create (0.4ms)[0m  [1m[32mINSERT INTO `sections` (`name`, `room`, `time_slot`, `subject_id`, `created_at`, `updated_at`) VALUES ('QCEP110', 'D317', '1:30-4:30', 2, '2025-09-02 06:25:00.626680', '2025-09-02 06:25:00.626680') /*action='create',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/controllers/sections_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (7.2ms)[0m  [1m[35mCOMMIT /*action='create',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/controllers/sections_controller.rb:27:in `block in create'
+Redirected to http://0.0.0.0:3011/sections/2
+Completed 302 Found in 24ms (ActiveRecord: 9.6ms (2 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/sections/2" for 172.20.0.1 at 2025-09-02 06:25:00 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SectionsController#show as TURBO_STREAM
+  Parameters: {"id"=>"2"}
+  [1m[36mSection Load (0.5ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` WHERE `sections`.`id` = 2 LIMIT 1 /*action='show',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/controllers/sections_controller.rb:63:in `set_section'
+  Rendering layout layouts/application.html.erb
+  Rendering sections/show.html.erb within layouts/application
+  [1m[36mSubject Load (0.3ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` WHERE `subjects`.`id` = 2 LIMIT 1 /*action='show',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/views/sections/_section.html.erb:19
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/views/sections/_section.html.erb:24
+  Rendered sections/_section.html.erb (Duration: 3.5ms | GC: 0.2ms)
+  Rendered sections/show.html.erb within layouts/application (Duration: 4.7ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | GC: 0.2ms)
+Completed 200 OK in 12ms (Views: 5.1ms | ActiveRecord: 1.0ms (3 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/sections" for 172.20.0.1 at 2025-09-02 06:25:02 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SectionsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sections/index.html.erb within layouts/application
+  [1m[36mSection Load (0.3ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` /*action='index',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/views/sections/index.html.erb:8
+  [1m[36mSubject Load (0.2ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` WHERE `subjects`.`id` = 1 LIMIT 1 /*action='index',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/views/sections/_section.html.erb:19
+  [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 2 LIMIT 1 /*action='index',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/views/sections/_section.html.erb:24
+  Rendered sections/_section.html.erb (Duration: 1.5ms | GC: 0.0ms)
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` WHERE `subjects`.`id` = 2 LIMIT 1 /*action='index',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/views/sections/_section.html.erb:19
+  [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 1 LIMIT 1 /*action='index',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/views/sections/_section.html.erb:24
+  Rendered sections/_section.html.erb (Duration: 1.3ms | GC: 0.1ms)
+  Rendered sections/index.html.erb within layouts/application (Duration: 4.5ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | GC: 0.1ms)
+Completed 200 OK in 10ms (Views: 4.4ms | ActiveRecord: 0.8ms (5 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/sections" for 172.20.0.1 at 2025-09-02 06:25:04 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SectionsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sections/index.html.erb within layouts/application
+  [1m[36mSection Load (0.4ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` /*action='index',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/views/sections/index.html.erb:8
+  [1m[36mSubject Load (0.3ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` WHERE `subjects`.`id` = 1 LIMIT 1 /*action='index',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/views/sections/_section.html.erb:19
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 2 LIMIT 1 /*action='index',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/views/sections/_section.html.erb:24
+  Rendered sections/_section.html.erb (Duration: 2.4ms | GC: 0.0ms)
+  [1m[36mSubject Load (0.2ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` WHERE `subjects`.`id` = 2 LIMIT 1 /*action='index',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/views/sections/_section.html.erb:19
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 1 LIMIT 1 /*action='index',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/views/sections/_section.html.erb:24
+  Rendered sections/_section.html.erb (Duration: 2.1ms | GC: 0.1ms)
+  Rendered sections/index.html.erb within layouts/application (Duration: 6.3ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | GC: 0.3ms)
+Completed 200 OK in 13ms (Views: 5.5ms | ActiveRecord: 1.5ms (5 queries, 0 cached) | GC: 0.3ms)
+
+

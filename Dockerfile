@@ -10,6 +10,6 @@ RUN gem install bundler && bundle install
 
 COPY . .
 
-EXPOSE 3001
+EXPOSE 3011
 
-CMD ["bash", "-c", "rm -f tmp/pids/server.pid && bundle exec rails s -b 0.0.0.0 -p 3001"]
+CMD ["bash", "-c", "rm -f tmp/pids/server.pid && bundle exec rails s -b 0.0.0.0 -p 3011"]
