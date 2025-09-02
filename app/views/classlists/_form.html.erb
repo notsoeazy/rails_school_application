@@ -1,0 +1,27 @@
+<%= form_with(model: classlist) do |form| %>
+  <% if classlist.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(classlist.errors.count, "error") %> prohibited this classlist from being saved:</h2>
+
+      <ul>
+        <% classlist.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :student_id, "Student", style: "display: block" %>
+    <%= form.collection_select :student_id, Student.all, :id, :name, prompt: "Select a student" %>
+  </div>
+
+  <div>
+    <%= form.label :section_id, "Section", style: "display: block" %>
+    <%= form.collection_select :section_id, Section.all, :id, :name, prompt: "Select a section" %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

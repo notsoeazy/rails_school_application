@@ -4576,3 +4576,1830 @@ Processing by SectionsController#new as HTML
 Completed 200 OK in 14ms (Views: 3.6ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.2ms)
 
 
+  [1m[35mSQL (0.1ms)[0m  [1m[34mSELECT GET_LOCK('8765636641833325800', 0) /*application='Helloworldapplication'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC /*application='Helloworldapplication'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1 /*application='Helloworldapplication'*/[0m
+Migrating to CreateClasslists (20250902063329)
+  [1m[35m (19.9ms)[0m  [1m[35mCREATE TABLE `classlists` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `student_id` bigint NOT NULL, `section_id` bigint NOT NULL, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL, INDEX `index_classlists_on_student_id` (`student_id`), INDEX `index_classlists_on_section_id` (`section_id`), CONSTRAINT `fk_rails_1d1f97a528`
+FOREIGN KEY (`student_id`)
+  REFERENCES `students` (`id`)
+, CONSTRAINT `fk_rails_f4a8fa2f20`
+FOREIGN KEY (`section_id`)
+  REFERENCES `sections` (`id`)
+) /*application='Helloworldapplication'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (2.0ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20250902063329') /*application='Helloworldapplication'*/[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('8765636641833325800') /*application='Helloworldapplication'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC /*application='Helloworldapplication'*/[0m
+Started GET "/sections/new" for 172.20.0.1 at 2025-09-02 06:36:07 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC /*application='Helloworldapplication'*/[0m
+Processing by SectionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sections/new.html.erb within layouts/application
+  [1m[36mSubject Load (1.1ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` /*action='new',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/views/sections/_form.html.erb:31
+  Rendered sections/_form.html.erb (Duration: 5.0ms | GC: 0.0ms)
+  Rendered sections/new.html.erb within layouts/application (Duration: 5.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | GC: 0.0ms)
+Completed 200 OK in 18ms (Views: 5.9ms | ActiveRecord: 1.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/sections" for 172.20.0.1 at 2025-09-02 06:36:08 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SectionsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sections/index.html.erb within layouts/application
+  [1m[36mSection Load (0.5ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` /*action='index',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/views/sections/index.html.erb:8
+  [1m[36mSubject Load (0.3ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` WHERE `subjects`.`id` = 1 LIMIT 1 /*action='index',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/views/sections/_section.html.erb:19
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 2 LIMIT 1 /*action='index',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/views/sections/_section.html.erb:24
+  Rendered sections/_section.html.erb (Duration: 6.4ms | GC: 0.9ms)
+  [1m[36mSubject Load (0.3ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` WHERE `subjects`.`id` = 2 LIMIT 1 /*action='index',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/views/sections/_section.html.erb:19
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 1 LIMIT 1 /*action='index',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/views/sections/_section.html.erb:24
+  Rendered sections/_section.html.erb (Duration: 1.7ms | GC: 0.0ms)
+  Rendered sections/index.html.erb within layouts/application (Duration: 10.5ms | GC: 0.9ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.9ms | GC: 0.9ms)
+Completed 200 OK in 21ms (Views: 9.6ms | ActiveRecord: 1.5ms (5 queries, 0 cached) | GC: 0.9ms)
+
+
+Started GET "/classlist" for 172.20.0.1 at 2025-09-02 06:37:59 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/classlist"):
+  
+Started GET "/favicon.ico" for 172.20.0.1 at 2025-09-02 06:37:59 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/classlist" for 172.20.0.1 at 2025-09-02 06:38:06 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/classlist"):
+  
+Started GET "/classlist" for 172.20.0.1 at 2025-09-02 06:38:09 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/classlist"):
+  
+Started GET "/classlists" for 172.20.0.1 at 2025-09-02 06:38:12 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ClasslistsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering classlists/index.html.erb within layouts/application
+  [1m[36mClasslist Load (0.6ms)[0m  [1m[34mSELECT `classlists`.* FROM `classlists` /*action='index',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/views/classlists/index.html.erb:8
+  Rendered classlists/index.html.erb within layouts/application (Duration: 2.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | GC: 0.0ms)
+Completed 200 OK in 18ms (Views: 3.0ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/classlists/new" for 172.20.0.1 at 2025-09-02 06:44:11 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ClasslistsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering classlists/new.html.erb within layouts/application
+  Rendered classlists/_form.html.erb (Duration: 3.6ms | GC: 2.3ms)
+  Rendered classlists/new.html.erb within layouts/application (Duration: 4.0ms | GC: 2.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | GC: 2.5ms)
+Completed 200 OK in 18ms (Views: 6.1ms | ActiveRecord: 4.1ms (0 queries, 0 cached) | GC: 2.5ms)
+
+
+Started GET "/classlists" for 172.20.0.1 at 2025-09-02 06:44:12 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ClasslistsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering classlists/index.html.erb within layouts/application
+  [1m[36mClasslist Load (0.6ms)[0m  [1m[34mSELECT `classlists`.* FROM `classlists` /*action='index',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/views/classlists/index.html.erb:8
+  Rendered classlists/index.html.erb within layouts/application (Duration: 2.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | GC: 0.0ms)
+Completed 200 OK in 16ms (Views: 2.9ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/classlists/new" for 172.20.0.1 at 2025-09-02 06:44:13 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ClasslistsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering classlists/new.html.erb within layouts/application
+  Rendered classlists/_form.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  Rendered classlists/new.html.erb within layouts/application (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | GC: 0.0ms)
+Completed 200 OK in 12ms (Views: 2.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/classlists/new" for 172.20.0.1 at 2025-09-02 06:45:46 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ClasslistsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering classlists/new.html.erb within layouts/application
+  [1m[36mSection Load (0.3ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` /*action='new',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/views/classlists/_form.html.erb:21
+  Rendered classlists/_form.html.erb (Duration: 6.2ms | GC: 0.2ms)
+  Rendered classlists/new.html.erb within layouts/application (Duration: 6.5ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | GC: 0.3ms)
+Completed 200 OK in 19ms (Views: 7.2ms | ActiveRecord: 3.9ms (1 query, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/classlists/new" for 172.20.0.1 at 2025-09-02 06:46:27 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ClasslistsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering classlists/new.html.erb within layouts/application
+  Rendered classlists/_form.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered classlists/new.html.erb within layouts/application (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.0ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 2.7ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <%= form_with(model: classlist) do |form| %>
+  <% if classlist.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(classlist.errors.count, "error") %> prohibited this classlist from being saved:</h2>
+
+      <ul>
+        <% classlist.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :student_id, "Student" style: "display: block" %>
+    <%= form.collection_select :student_id, Student.all, :id, :name, prompt: "Select a student" %>
+  </div>
+
+  <div>
+    <%= form.label :section_id, "Section", style: "display: block" %>
+    <%= form.collection_select :section_id, Section.all, :id, :name, prompt: "Select a section" %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+
+)
+Caused by: ActiveSupport::SyntaxErrorProxy (/app/app/views/classlists/_form.html.erb:15: syntax error, unexpected local variable or method, expecting ')'
+...el :student_id, "Student" style: "display: block" ); @output...
+...                          ^~~~~
+)
+
+Information for: ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <%= form_with(model: classlist) do |form| %>
+  <% if classlist.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(classlist.errors.count, "error") %> prohibited this classlist from being saved:</h2>
+
+      <ul>
+        <% classlist.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :student_id, "Student" style: "display: block" %>
+    <%= form.collection_select :student_id, Student.all, :id, :name, prompt: "Select a student" %>
+  </div>
+
+  <div>
+    <%= form.label :section_id, "Section", style: "display: block" %>
+    <%= form.collection_select :section_id, Section.all, :id, :name, prompt: "Select a section" %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+
+):
+1:    <%= form_with(model: classlist) do |form| %>
+2:      <% if classlist.errors.any? %>
+3:        <div style="color: red">
+4:          <h2><%= pluralize(classlist.errors.count, "error") %> prohibited this classlist from being saved:</h2>
+5:    
+6:          <ul>
+7:            <% classlist.errors.each do |error| %>
+8:              <li><%= error.full_message %></li>
+9:            <% end %>
+10:          </ul>
+11:        </div>
+12:      <% end %>
+13:    
+14:      <div>
+15:        <%= form.label :student_id, "Student" style: "display: block" %>
+16:        <%= form.collection_select :student_id, Student.all, :id, :name, prompt: "Select a student" %>
+17:      </div>
+18:    
+19:      <div>
+20:        <%= form.label :section_id, "Section", style: "display: block" %>
+21:        <%= form.collection_select :section_id, Section.all, :id, :name, prompt: "Select a section" %>
+22:      </div>
+23:    
+24:      <div>
+25:        <%= form.submit %>
+26:      </div>
+27:    <% end %>
+  
+app/views/classlists/_form.html.erb:15: syntax error, unexpected local variable or method, expecting ')'
+app/views/classlists/new.html.erb:5
+
+Information for cause: ActiveSupport::SyntaxErrorProxy (/app/app/views/classlists/_form.html.erb:15: syntax error, unexpected local variable or method, expecting ')'
+...el :student_id, "Student" style: "display: block" ); @output...
+...                          ^~~~~
+):
+  
+app/views/classlists/_form.html.erb:15: syntax error, unexpected local variable or method, expecting ')'
+app/views/classlists/new.html.erb:5
+Started GET "/classlists/new" for 172.20.0.1 at 2025-09-02 06:46:44 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ClasslistsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering classlists/new.html.erb within layouts/application
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT `students`.* FROM `students` /*action='new',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/views/classlists/_form.html.erb:16
+  [1m[36mSection Load (0.3ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` /*action='new',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/views/classlists/_form.html.erb:21
+  Rendered classlists/_form.html.erb (Duration: 13.4ms | GC: 0.8ms)
+  Rendered classlists/new.html.erb within layouts/application (Duration: 13.8ms | GC: 0.8ms)
+  Rendered layout layouts/application.html.erb (Duration: 15.2ms | GC: 1.0ms)
+Completed 200 OK in 28ms (Views: 12.5ms | ActiveRecord: 5.6ms (2 queries, 0 cached) | GC: 3.1ms)
+
+
+Started POST "/classlists" for 172.20.0.1 at 2025-09-02 06:46:58 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ClasslistsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "classlist"=>{"student_id"=>"1", "section_id"=>"1"}, "commit"=>"Create Classlist"}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN /*action='create',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/controllers/classlists_controller.rb:27:in `block in create'
+  [1m[36mStudent Load (1.4ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`id` = 1 LIMIT 1 /*action='create',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/controllers/classlists_controller.rb:27:in `block in create'
+  [1m[36mSection Load (0.1ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` WHERE `sections`.`id` = 1 LIMIT 1 /*action='create',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/controllers/classlists_controller.rb:27:in `block in create'
+  [1m[36mClasslist Create (0.2ms)[0m  [1m[32mINSERT INTO `classlists` (`student_id`, `section_id`, `created_at`, `updated_at`) VALUES (1, 1, '2025-09-02 06:46:58.269589', '2025-09-02 06:46:58.269589') /*action='create',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/controllers/classlists_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT /*action='create',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/controllers/classlists_controller.rb:27:in `block in create'
+Redirected to http://0.0.0.0:3011/classlists/1
+Completed 302 Found in 20ms (ActiveRecord: 3.8ms (3 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/classlists/1" for 172.20.0.1 at 2025-09-02 06:46:58 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ClasslistsController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mClasslist Load (0.4ms)[0m  [1m[34mSELECT `classlists`.* FROM `classlists` WHERE `classlists`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/controllers/classlists_controller.rb:63:in `set_classlist'
+  Rendering layout layouts/application.html.erb
+  Rendering classlists/show.html.erb within layouts/application
+  Rendered classlists/_classlist.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered classlists/show.html.erb within layouts/application (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | GC: 0.0ms)
+Completed 200 OK in 8ms (Views: 1.9ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/classlists" for 172.20.0.1 at 2025-09-02 06:46:59 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ClasslistsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering classlists/index.html.erb within layouts/application
+  [1m[36mClasslist Load (0.4ms)[0m  [1m[34mSELECT `classlists`.* FROM `classlists` /*action='index',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/views/classlists/index.html.erb:8
+  Rendered classlists/_classlist.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered classlists/index.html.erb within layouts/application (Duration: 1.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | GC: 0.0ms)
+Completed 200 OK in 13ms (Views: 2.2ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/classlists/1" for 172.20.0.1 at 2025-09-02 06:47:21 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ClasslistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mClasslist Load (0.2ms)[0m  [1m[34mSELECT `classlists`.* FROM `classlists` WHERE `classlists`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/controllers/classlists_controller.rb:63:in `set_classlist'
+  Rendering layout layouts/application.html.erb
+  Rendering classlists/show.html.erb within layouts/application
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/views/classlists/_classlist.html.erb:4
+  [1m[36mSection Load (0.3ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` WHERE `sections`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/views/classlists/_classlist.html.erb:9
+  Rendered classlists/_classlist.html.erb (Duration: 10.9ms | GC: 0.0ms)
+  Rendered classlists/show.html.erb within layouts/application (Duration: 11.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 13.0ms | GC: 0.0ms)
+Completed 200 OK in 25ms (Views: 10.4ms | ActiveRecord: 5.9ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/students" for 172.20.0.1 at 2025-09-02 06:50:16 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StudentsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT `students`.* FROM `students` /*action='index',application='Helloworldapplication',controller='students'*/[0m
+  ↳ app/views/students/index.html.erb:8
+  Rendered students/_student.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered students/_student.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered students/_student.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered students/index.html.erb within layouts/application (Duration: 3.6ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | GC: 0.3ms)
+Completed 200 OK in 10ms (Views: 4.2ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/students/1" for 172.20.0.1 at 2025-09-02 06:50:18 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='students'*/[0m
+  ↳ app/controllers/students_controller.rb:63:in `set_student'
+  Rendering layout layouts/application.html.erb
+  Rendering students/show.html.erb within layouts/application
+  Rendered students/_student.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered students/show.html.erb within layouts/application (Duration: 1.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | GC: 0.0ms)
+Completed 200 OK in 16ms (Views: 2.7ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/students/1" for 172.20.0.1 at 2025-09-02 06:51:45 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='students'*/[0m
+  ↳ app/controllers/students_controller.rb:63:in `set_student'
+  Rendering layout layouts/application.html.erb
+  Rendering students/show.html.erb within layouts/application
+  [1m[36mDepartment Load (0.4ms)[0m  [1m[34mSELECT `departments`.* FROM `departments` WHERE `departments`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='students'*/[0m
+  ↳ app/views/students/_student.html.erb:19
+  Rendered students/_student.html.erb (Duration: 7.7ms | GC: 0.3ms)
+  Rendered students/show.html.erb within layouts/application (Duration: 9.2ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 15.1ms | GC: 4.5ms)
+Completed 200 OK in 28ms (Views: 14.1ms | ActiveRecord: 4.2ms (2 queries, 0 cached) | GC: 4.6ms)
+
+
+Started GET "/students/1" for 172.20.0.1 at 2025-09-02 06:52:18 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='students'*/[0m
+  ↳ app/controllers/students_controller.rb:63:in `set_student'
+  Rendering layout layouts/application.html.erb
+  Rendering students/show.html.erb within layouts/application
+  [1m[36mDepartment Load (0.2ms)[0m  [1m[34mSELECT `departments`.* FROM `departments` WHERE `departments`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='students'*/[0m
+  ↳ app/views/students/_student.html.erb:19
+  Rendered students/_student.html.erb (Duration: 6.0ms | GC: 0.4ms)
+  Rendered students/show.html.erb within layouts/application (Duration: 7.7ms | GC: 0.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | GC: 0.4ms)
+Completed 200 OK in 21ms (Views: 7.9ms | ActiveRecord: 4.3ms (2 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/students/1" for 172.20.0.1 at 2025-09-02 06:54:23 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='students'*/[0m
+  ↳ app/controllers/students_controller.rb:63:in `set_student'
+  Rendering layout layouts/application.html.erb
+  Rendering students/show.html.erb within layouts/application
+  [1m[36mDepartment Load (0.3ms)[0m  [1m[34mSELECT `departments`.* FROM `departments` WHERE `departments`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='students'*/[0m
+  ↳ app/views/students/_student.html.erb:19
+  Rendered students/_student.html.erb (Duration: 5.3ms | GC: 0.0ms)
+  Rendered students/show.html.erb within layouts/application (Duration: 6.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | GC: 0.0ms)
+Completed 200 OK in 21ms (Views: 6.5ms | ActiveRecord: 5.2ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/students/1" for 172.20.0.1 at 2025-09-02 06:56:43 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='students'*/[0m
+  ↳ app/controllers/students_controller.rb:63:in `set_student'
+  Rendering layout layouts/application.html.erb
+  Rendering students/show.html.erb within layouts/application
+  [1m[36mDepartment Load (0.3ms)[0m  [1m[34mSELECT `departments`.* FROM `departments` WHERE `departments`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='students'*/[0m
+  ↳ app/views/students/_student.html.erb:19
+  [1m[36mClasslist Load (0.5ms)[0m  [1m[34mSELECT `classlists`.* FROM `classlists` WHERE `classlists`.`student_id` = 1 /*action='show',application='Helloworldapplication',controller='students'*/[0m
+  ↳ app/views/students/_student.html.erb:32
+  [1m[36mSection Load (0.4ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` WHERE `sections`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='students'*/[0m
+  ↳ app/views/students/_student.html.erb:34
+  [1m[36mSubject Load (0.4ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` WHERE `subjects`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='students'*/[0m
+  ↳ app/views/students/_student.html.erb:35
+  [1m[36mTeacher Load (0.4ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 2 LIMIT 1 /*action='show',application='Helloworldapplication',controller='students'*/[0m
+  ↳ app/views/students/_student.html.erb:36
+  Rendered students/_student.html.erb (Duration: 52.1ms | GC: 1.7ms)
+  Rendered students/show.html.erb within layouts/application (Duration: 53.7ms | GC: 1.7ms)
+  Rendered layout layouts/application.html.erb (Duration: 56.0ms | GC: 1.7ms)
+Completed 200 OK in 77ms (Views: 43.1ms | ActiveRecord: 17.2ms (6 queries, 0 cached) | GC: 2.3ms)
+
+
+Started GET "/students/1" for 172.20.0.1 at 2025-09-02 06:58:21 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='students'*/[0m
+  ↳ app/controllers/students_controller.rb:63:in `set_student'
+  Rendering layout layouts/application.html.erb
+  Rendering students/show.html.erb within layouts/application
+  [1m[36mDepartment Load (0.2ms)[0m  [1m[34mSELECT `departments`.* FROM `departments` WHERE `departments`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='students'*/[0m
+  ↳ app/views/students/_student.html.erb:19
+  [1m[36mClasslist Load (0.2ms)[0m  [1m[34mSELECT `classlists`.* FROM `classlists` WHERE `classlists`.`student_id` = 1 /*action='show',application='Helloworldapplication',controller='students'*/[0m
+  ↳ app/views/students/_student.html.erb:32
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` WHERE `sections`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='students'*/[0m
+  ↳ app/views/students/_student.html.erb:34
+  [1m[36mSubject Load (0.2ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` WHERE `subjects`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='students'*/[0m
+  ↳ app/views/students/_student.html.erb:34
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 2 LIMIT 1 /*action='show',application='Helloworldapplication',controller='students'*/[0m
+  ↳ app/views/students/_student.html.erb:36
+  Rendered students/_student.html.erb (Duration: 30.9ms | GC: 1.3ms)
+  Rendered students/show.html.erb within layouts/application (Duration: 32.1ms | GC: 1.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 34.0ms | GC: 1.3ms)
+Completed 200 OK in 46ms (Views: 26.4ms | ActiveRecord: 11.1ms (6 queries, 0 cached) | GC: 1.5ms)
+
+
+Started GET "/students/1" for 172.20.0.1 at 2025-09-02 06:58:43 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='students'*/[0m
+  ↳ app/controllers/students_controller.rb:63:in `set_student'
+  Rendering layout layouts/application.html.erb
+  Rendering students/show.html.erb within layouts/application
+  [1m[36mDepartment Load (0.2ms)[0m  [1m[34mSELECT `departments`.* FROM `departments` WHERE `departments`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='students'*/[0m
+  ↳ app/views/students/_student.html.erb:19
+  [1m[36mClasslist Load (0.2ms)[0m  [1m[34mSELECT `classlists`.* FROM `classlists` WHERE `classlists`.`student_id` = 1 /*action='show',application='Helloworldapplication',controller='students'*/[0m
+  ↳ app/views/students/_student.html.erb:32
+  [1m[36mSection Load (0.3ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` WHERE `sections`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='students'*/[0m
+  ↳ app/views/students/_student.html.erb:34
+  [1m[36mSubject Load (0.3ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` WHERE `subjects`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='students'*/[0m
+  ↳ app/views/students/_student.html.erb:34
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 2 LIMIT 1 /*action='show',application='Helloworldapplication',controller='students'*/[0m
+  ↳ app/views/students/_student.html.erb:36
+  Rendered students/_student.html.erb (Duration: 40.0ms | GC: 4.3ms)
+  Rendered students/show.html.erb within layouts/application (Duration: 41.5ms | GC: 4.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 43.5ms | GC: 4.4ms)
+Completed 200 OK in 56ms (Views: 34.2ms | ActiveRecord: 12.1ms (6 queries, 0 cached) | GC: 4.4ms)
+
+
+Started GET "/students/1" for 172.20.0.1 at 2025-09-02 06:59:17 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='students'*/[0m
+  ↳ app/controllers/students_controller.rb:63:in `set_student'
+  Rendering layout layouts/application.html.erb
+  Rendering students/show.html.erb within layouts/application
+  [1m[36mDepartment Load (0.1ms)[0m  [1m[34mSELECT `departments`.* FROM `departments` WHERE `departments`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='students'*/[0m
+  ↳ app/views/students/_student.html.erb:19
+  [1m[36mClasslist Load (0.4ms)[0m  [1m[34mSELECT `classlists`.* FROM `classlists` WHERE `classlists`.`student_id` = 1 /*action='show',application='Helloworldapplication',controller='students'*/[0m
+  ↳ app/views/students/_student.html.erb:32
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` WHERE `sections`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='students'*/[0m
+  ↳ app/views/students/_student.html.erb:34
+  [1m[36mSubject Load (0.2ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` WHERE `subjects`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='students'*/[0m
+  ↳ app/views/students/_student.html.erb:35
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 2 LIMIT 1 /*action='show',application='Helloworldapplication',controller='students'*/[0m
+  ↳ app/views/students/_student.html.erb:36
+  Rendered students/_student.html.erb (Duration: 71.1ms | GC: 38.3ms)
+  Rendered students/show.html.erb within layouts/application (Duration: 72.3ms | GC: 38.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 73.8ms | GC: 38.4ms)
+Completed 200 OK in 87ms (Views: 66.1ms | ActiveRecord: 10.8ms (6 queries, 0 cached) | GC: 38.6ms)
+
+
+Started GET "/students/1" for 172.20.0.1 at 2025-09-02 07:01:12 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='students'*/[0m
+  ↳ app/controllers/students_controller.rb:63:in `set_student'
+  Rendering layout layouts/application.html.erb
+  Rendering students/show.html.erb within layouts/application
+  [1m[36mDepartment Load (0.2ms)[0m  [1m[34mSELECT `departments`.* FROM `departments` WHERE `departments`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='students'*/[0m
+  ↳ app/views/students/_student.html.erb:19
+  Rendered students/_student.html.erb (Duration: 5.3ms | GC: 0.2ms)
+  [1m[36mClasslist Load (0.2ms)[0m  [1m[34mSELECT `classlists`.* FROM `classlists` WHERE `classlists`.`student_id` = 1 /*action='show',application='Helloworldapplication',controller='students'*/[0m
+  ↳ app/views/students/show.html.erb:16
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` WHERE `sections`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='students'*/[0m
+  ↳ app/views/students/show.html.erb:18
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` WHERE `subjects`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='students'*/[0m
+  ↳ app/views/students/show.html.erb:19
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 2 LIMIT 1 /*action='show',application='Helloworldapplication',controller='students'*/[0m
+  ↳ app/views/students/show.html.erb:20
+  Rendered students/show.html.erb within layouts/application (Duration: 30.4ms | GC: 0.9ms)
+  Rendered layout layouts/application.html.erb (Duration: 31.6ms | GC: 0.9ms)
+Completed 200 OK in 44ms (Views: 24.4ms | ActiveRecord: 10.0ms (6 queries, 0 cached) | GC: 1.1ms)
+
+
+Started GET "/subjects" for 172.20.0.1 at 2025-09-02 07:04:05 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SubjectsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subjects/index.html.erb within layouts/application
+  [1m[36mSubject Load (0.6ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` /*action='index',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/index.html.erb:8
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 2 LIMIT 1 /*action='index',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/_subject.html.erb:9
+  Rendered subjects/_subject.html.erb (Duration: 1.4ms | GC: 0.0ms)
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 1 LIMIT 1 /*action='index',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/_subject.html.erb:9
+  Rendered subjects/_subject.html.erb (Duration: 1.4ms | GC: 0.3ms)
+  Rendered subjects/index.html.erb within layouts/application (Duration: 5.6ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | GC: 0.3ms)
+Completed 200 OK in 18ms (Views: 5.6ms | ActiveRecord: 1.1ms (3 queries, 0 cached) | GC: 5.1ms)
+
+
+Started GET "/subjects" for 172.20.0.1 at 2025-09-02 07:05:06 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SubjectsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subjects/index.html.erb within layouts/application
+  [1m[36mSubject Load (0.6ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` /*action='index',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/index.html.erb:8
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 2 LIMIT 1 /*action='index',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/_subject.html.erb:9
+  Rendered subjects/_subject.html.erb (Duration: 5.8ms | GC: 0.1ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 1 LIMIT 1 /*action='index',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/_subject.html.erb:9
+  Rendered subjects/_subject.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered subjects/index.html.erb within layouts/application (Duration: 13.2ms | GC: 0.5ms)
+  Rendered layout layouts/application.html.erb (Duration: 14.4ms | GC: 0.6ms)
+Completed 200 OK in 21ms (Views: 10.7ms | ActiveRecord: 4.5ms (3 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/subjects" for 172.20.0.1 at 2025-09-02 07:05:08 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SubjectsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subjects/index.html.erb within layouts/application
+  [1m[36mSubject Load (0.4ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` /*action='index',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/index.html.erb:8
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 2 LIMIT 1 /*action='index',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/_subject.html.erb:9
+  Rendered subjects/_subject.html.erb (Duration: 1.5ms | GC: 0.3ms)
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 1 LIMIT 1 /*action='index',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/_subject.html.erb:9
+  Rendered subjects/_subject.html.erb (Duration: 1.9ms | GC: 0.0ms)
+  Rendered subjects/index.html.erb within layouts/application (Duration: 5.3ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | GC: 0.3ms)
+Completed 200 OK in 13ms (Views: 5.5ms | ActiveRecord: 0.9ms (3 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/subjects" for 172.20.0.1 at 2025-09-02 07:05:29 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SubjectsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subjects/index.html.erb within layouts/application
+  [1m[36mSubject Load (0.3ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` /*action='index',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/index.html.erb:8
+  [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 2 LIMIT 1 /*action='index',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/_subject.html.erb:9
+  Rendered subjects/_subject.html.erb (Duration: 6.2ms | GC: 0.0ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 1 LIMIT 1 /*action='index',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/_subject.html.erb:9
+  Rendered subjects/_subject.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered subjects/index.html.erb within layouts/application (Duration: 12.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 13.6ms | GC: 0.0ms)
+Completed 200 OK in 21ms (Views: 10.8ms | ActiveRecord: 3.6ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/subjects" for 172.20.0.1 at 2025-09-02 07:05:43 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SubjectsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subjects/index.html.erb within layouts/application
+  [1m[36mSubject Load (0.3ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` /*action='index',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/index.html.erb:8
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 2 LIMIT 1 /*action='index',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/_subject.html.erb:9
+  Rendered subjects/_subject.html.erb (Duration: 8.0ms | GC: 0.2ms)
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 1 LIMIT 1 /*action='index',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/_subject.html.erb:9
+  Rendered subjects/_subject.html.erb (Duration: 1.5ms | GC: 0.0ms)
+  Rendered subjects/index.html.erb within layouts/application (Duration: 14.8ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 17.6ms | GC: 0.5ms)
+Completed 200 OK in 25ms (Views: 14.0ms | ActiveRecord: 4.7ms (3 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/subjects" for 172.20.0.1 at 2025-09-02 07:05:44 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SubjectsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subjects/index.html.erb within layouts/application
+  [1m[36mSubject Load (0.3ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` /*action='index',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/index.html.erb:8
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 2 LIMIT 1 /*action='index',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/_subject.html.erb:9
+  Rendered subjects/_subject.html.erb (Duration: 1.7ms | GC: 0.1ms)
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 1 LIMIT 1 /*action='index',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/_subject.html.erb:9
+  Rendered subjects/_subject.html.erb (Duration: 1.4ms | GC: 0.0ms)
+  Rendered subjects/index.html.erb within layouts/application (Duration: 4.8ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | GC: 0.1ms)
+Completed 200 OK in 13ms (Views: 4.5ms | ActiveRecord: 0.9ms (3 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/subjects" for 172.20.0.1 at 2025-09-02 07:07:40 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SubjectsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subjects/index.html.erb within layouts/application
+  [1m[36mSubject Load (0.4ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` /*action='index',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/index.html.erb:8
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 2 LIMIT 1 /*action='index',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/_subject.html.erb:9
+  Rendered subjects/_subject.html.erb (Duration: 5.6ms | GC: 0.0ms)
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 1 LIMIT 1 /*action='index',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/_subject.html.erb:9
+  Rendered subjects/_subject.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered subjects/index.html.erb within layouts/application (Duration: 12.2ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 13.5ms | GC: 0.2ms)
+Completed 200 OK in 21ms (Views: 10.5ms | ActiveRecord: 4.0ms (3 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/subjects/1" for 172.20.0.1 at 2025-09-02 07:07:46 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SubjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSubject Load (0.9ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` WHERE `subjects`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/controllers/subjects_controller.rb:63:in `set_subject'
+  Rendering layout layouts/application.html.erb
+  Rendering subjects/show.html.erb within layouts/application
+  [1m[36mTeacher Load (0.4ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 2 LIMIT 1 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/_subject.html.erb:9
+  Rendered subjects/_subject.html.erb (Duration: 1.7ms | GC: 0.0ms)
+  [1m[36mSection Load (0.3ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` WHERE `sections`.`subject_id` = 1 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/show.html.erb:5
+  Rendered subjects/show.html.erb within layouts/application (Duration: 12.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 3.5ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `classlists' for #<ActiveRecord::Associations::CollectionProxy [#<Section id: 1, name: "AMR69", room: "D319", time_slot: "evrydoay", subject_id: 1, created_at: "2025-09-02 06:22:53.720905000 +0000", updated_at: "2025-09-02 06:22:53.720905000 +0000">]>)
+Caused by: NoMethodError (undefined method `classlists' for #<ActiveRecord::Associations::CollectionProxy [#<Section id: 1, name: "AMR69", room: "D319", time_slot: "evrydoay", subject_id: 1, created_at: "2025-09-02 06:22:53.720905000 +0000", updated_at: "2025-09-02 06:22:53.720905000 +0000">]>)
+
+Information for: ActionView::Template::Error (undefined method `classlists' for #<ActiveRecord::Associations::CollectionProxy [#<Section id: 1, name: "AMR69", room: "D319", time_slot: "evrydoay", subject_id: 1, created_at: "2025-09-02 06:22:53.720905000 +0000", updated_at: "2025-09-02 06:22:53.720905000 +0000">]>):
+    12:       </tr>
+    13:     </thead>
+    14:     <tbody>
+    15:       <% @subject.sections.classlists.each do |classlist| %>
+    16:         <tr>
+    17:           <td><%= section..name %></td>
+    18:           <td><%= section.student.name %></td>
+  
+app/views/subjects/show.html.erb:15
+app/views/subjects/show.html.erb:5
+
+Information for cause: NoMethodError (undefined method `classlists' for #<ActiveRecord::Associations::CollectionProxy [#<Section id: 1, name: "AMR69", room: "D319", time_slot: "evrydoay", subject_id: 1, created_at: "2025-09-02 06:22:53.720905000 +0000", updated_at: "2025-09-02 06:22:53.720905000 +0000">]>):
+  
+app/views/subjects/show.html.erb:15
+app/views/subjects/show.html.erb:5
+Started GET "/subjects" for 172.20.0.1 at 2025-09-02 07:07:50 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SubjectsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subjects/index.html.erb within layouts/application
+  [1m[36mSubject Load (0.3ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` /*action='index',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/index.html.erb:8
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 2 LIMIT 1 /*action='index',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/_subject.html.erb:9
+  Rendered subjects/_subject.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 1 LIMIT 1 /*action='index',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/_subject.html.erb:9
+  Rendered subjects/_subject.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered subjects/index.html.erb within layouts/application (Duration: 3.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | GC: 0.1ms)
+Completed 200 OK in 9ms (Views: 3.4ms | ActiveRecord: 0.7ms (3 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/subjects/1" for 172.20.0.1 at 2025-09-02 07:07:57 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SubjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSubject Load (0.6ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` WHERE `subjects`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/controllers/subjects_controller.rb:63:in `set_subject'
+  Rendering layout layouts/application.html.erb
+  Rendering subjects/show.html.erb within layouts/application
+  [1m[36mTeacher Load (0.4ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 2 LIMIT 1 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/_subject.html.erb:9
+  Rendered subjects/_subject.html.erb (Duration: 1.9ms | GC: 0.2ms)
+  [1m[36mSection Load (0.3ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` WHERE `sections`.`subject_id` = 1 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/show.html.erb:5
+  Rendered subjects/show.html.erb within layouts/application (Duration: 4.7ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | GC: 0.2ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 1.3ms (3 queries, 0 cached) | GC: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `classlists' for #<ActiveRecord::Associations::CollectionProxy [#<Section id: 1, name: "AMR69", room: "D319", time_slot: "evrydoay", subject_id: 1, created_at: "2025-09-02 06:22:53.720905000 +0000", updated_at: "2025-09-02 06:22:53.720905000 +0000">]>)
+Caused by: NoMethodError (undefined method `classlists' for #<ActiveRecord::Associations::CollectionProxy [#<Section id: 1, name: "AMR69", room: "D319", time_slot: "evrydoay", subject_id: 1, created_at: "2025-09-02 06:22:53.720905000 +0000", updated_at: "2025-09-02 06:22:53.720905000 +0000">]>)
+
+Information for: ActionView::Template::Error (undefined method `classlists' for #<ActiveRecord::Associations::CollectionProxy [#<Section id: 1, name: "AMR69", room: "D319", time_slot: "evrydoay", subject_id: 1, created_at: "2025-09-02 06:22:53.720905000 +0000", updated_at: "2025-09-02 06:22:53.720905000 +0000">]>):
+    12:       </tr>
+    13:     </thead>
+    14:     <tbody>
+    15:       <% @subject.sections.classlists.each do |classlist| %>
+    16:         <tr>
+    17:           <td><%= section..name %></td>
+    18:           <td><%= section.student.name %></td>
+  
+app/views/subjects/show.html.erb:15
+app/views/subjects/show.html.erb:5
+
+Information for cause: NoMethodError (undefined method `classlists' for #<ActiveRecord::Associations::CollectionProxy [#<Section id: 1, name: "AMR69", room: "D319", time_slot: "evrydoay", subject_id: 1, created_at: "2025-09-02 06:22:53.720905000 +0000", updated_at: "2025-09-02 06:22:53.720905000 +0000">]>):
+  
+app/views/subjects/show.html.erb:15
+app/views/subjects/show.html.erb:5
+Started GET "/subjects" for 172.20.0.1 at 2025-09-02 07:08:02 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SubjectsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subjects/index.html.erb within layouts/application
+  [1m[36mSubject Load (0.3ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` /*action='index',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/index.html.erb:8
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 2 LIMIT 1 /*action='index',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/_subject.html.erb:9
+  Rendered subjects/_subject.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 1 LIMIT 1 /*action='index',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/_subject.html.erb:9
+  Rendered subjects/_subject.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  Rendered subjects/index.html.erb within layouts/application (Duration: 4.2ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | GC: 0.1ms)
+Completed 200 OK in 12ms (Views: 4.3ms | ActiveRecord: 0.7ms (3 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/sections" for 172.20.0.1 at 2025-09-02 07:08:05 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SectionsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sections/index.html.erb within layouts/application
+  [1m[36mSection Load (0.5ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` /*action='index',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/views/sections/index.html.erb:8
+  [1m[36mSubject Load (0.3ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` WHERE `subjects`.`id` = 1 LIMIT 1 /*action='index',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/views/sections/_section.html.erb:19
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 2 LIMIT 1 /*action='index',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/views/sections/_section.html.erb:24
+  Rendered sections/_section.html.erb (Duration: 3.8ms | GC: 0.2ms)
+  [1m[36mSubject Load (0.3ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` WHERE `subjects`.`id` = 2 LIMIT 1 /*action='index',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/views/sections/_section.html.erb:19
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 1 LIMIT 1 /*action='index',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/views/sections/_section.html.erb:24
+  Rendered sections/_section.html.erb (Duration: 2.3ms | GC: 0.2ms)
+  Rendered sections/index.html.erb within layouts/application (Duration: 9.1ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | GC: 0.3ms)
+Completed 200 OK in 19ms (Views: 8.7ms | ActiveRecord: 1.7ms (5 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/sections/new" for 172.20.0.1 at 2025-09-02 07:08:08 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SectionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sections/new.html.erb within layouts/application
+  [1m[36mSubject Load (0.4ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` /*action='new',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/views/sections/_form.html.erb:31
+  Rendered sections/_form.html.erb (Duration: 2.6ms | GC: 0.0ms)
+  Rendered sections/new.html.erb within layouts/application (Duration: 3.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | GC: 0.1ms)
+Completed 200 OK in 15ms (Views: 3.3ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/subjects" for 172.20.0.1 at 2025-09-02 07:08:34 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SubjectsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subjects/index.html.erb within layouts/application
+  [1m[36mSubject Load (0.8ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` /*action='index',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/index.html.erb:8
+  [1m[36mTeacher Load (0.5ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 2 LIMIT 1 /*action='index',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/_subject.html.erb:9
+  Rendered subjects/_subject.html.erb (Duration: 2.0ms | GC: 0.0ms)
+  [1m[36mTeacher Load (0.5ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 1 LIMIT 1 /*action='index',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/_subject.html.erb:9
+  Rendered subjects/_subject.html.erb (Duration: 2.4ms | GC: 0.0ms)
+  Rendered subjects/index.html.erb within layouts/application (Duration: 7.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.1ms | GC: 0.0ms)
+Completed 200 OK in 23ms (Views: 8.0ms | ActiveRecord: 1.7ms (3 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/subjects/new" for 172.20.0.1 at 2025-09-02 07:08:35 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SubjectsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subjects/new.html.erb within layouts/application
+  [1m[36mTeacher Load (0.6ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` /*action='new',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/_form.html.erb:21
+  Rendered subjects/_form.html.erb (Duration: 4.5ms | GC: 0.2ms)
+  Rendered subjects/new.html.erb within layouts/application (Duration: 5.3ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | GC: 0.2ms)
+Completed 200 OK in 18ms (Views: 5.9ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/subjects/new" for 172.20.0.1 at 2025-09-02 07:08:36 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SubjectsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subjects/new.html.erb within layouts/application
+  [1m[36mTeacher Load (0.4ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` /*action='new',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/_form.html.erb:21
+  Rendered subjects/_form.html.erb (Duration: 2.5ms | GC: 0.0ms)
+  Rendered subjects/new.html.erb within layouts/application (Duration: 2.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | GC: 0.2ms)
+Completed 200 OK in 9ms (Views: 3.2ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/subjects" for 172.20.0.1 at 2025-09-02 07:08:48 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SubjectsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subjects/index.html.erb within layouts/application
+  [1m[36mSubject Load (0.4ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` /*action='index',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/index.html.erb:8
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 2 LIMIT 1 /*action='index',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/_subject.html.erb:9
+  Rendered subjects/_subject.html.erb (Duration: 1.3ms | GC: 0.0ms)
+  [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 1 LIMIT 1 /*action='index',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/_subject.html.erb:9
+  Rendered subjects/_subject.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered subjects/index.html.erb within layouts/application (Duration: 4.2ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | GC: 0.1ms)
+Completed 200 OK in 15ms (Views: 4.1ms | ActiveRecord: 0.8ms (3 queries, 0 cached) | GC: 0.1ms)
+
+
+Started POST "/subjects" for 172.20.0.1 at 2025-09-02 07:08:48 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SubjectsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "subject"=>{"name"=>"acrobatics", "teacher_id"=>"2"}, "commit"=>"Create Subject"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*action='create',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/controllers/subjects_controller.rb:27:in `block in create'
+  [1m[36mTeacher Load (1.0ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 2 LIMIT 1 /*action='create',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/controllers/subjects_controller.rb:27:in `block in create'
+  [1m[36mSubject Create (0.2ms)[0m  [1m[32mINSERT INTO `subjects` (`name`, `teacher_id`, `created_at`, `updated_at`) VALUES ('acrobatics', 2, '2025-09-02 07:08:48.965874', '2025-09-02 07:08:48.965874') /*action='create',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/controllers/subjects_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT /*action='create',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/controllers/subjects_controller.rb:27:in `block in create'
+Redirected to http://0.0.0.0:3011/subjects/3
+Completed 302 Found in 12ms (ActiveRecord: 3.3ms (2 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/subjects/3" for 172.20.0.1 at 2025-09-02 07:08:48 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SubjectsController#show as TURBO_STREAM
+  Parameters: {"id"=>"3"}
+  [1m[36mSubject Load (0.6ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` WHERE `subjects`.`id` = 3 LIMIT 1 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/controllers/subjects_controller.rb:63:in `set_subject'
+  Rendering layout layouts/application.html.erb
+  Rendering subjects/show.html.erb within layouts/application
+  [1m[36mTeacher Load (0.5ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 2 LIMIT 1 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/_subject.html.erb:9
+  Rendered subjects/_subject.html.erb (Duration: 2.8ms | GC: 0.7ms)
+  [1m[36mSection Load (0.3ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` WHERE `sections`.`subject_id` = 3 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/show.html.erb:5
+  Rendered subjects/show.html.erb within layouts/application (Duration: 5.5ms | GC: 0.7ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | GC: 0.7ms)
+Completed 200 OK in 20ms (Views: 5.6ms | ActiveRecord: 1.4ms (3 queries, 0 cached) | GC: 0.9ms)
+
+
+Started GET "/subjects" for 172.20.0.1 at 2025-09-02 07:08:51 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SubjectsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subjects/index.html.erb within layouts/application
+  [1m[36mSubject Load (0.4ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` /*action='index',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/index.html.erb:8
+  [1m[36mTeacher Load (0.4ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 2 LIMIT 1 /*action='index',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/_subject.html.erb:9
+  Rendered subjects/_subject.html.erb (Duration: 1.3ms | GC: 0.0ms)
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 1 LIMIT 1 /*action='index',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/_subject.html.erb:9
+  Rendered subjects/_subject.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  [1m[36mCACHE Teacher Load (0.0ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 2 LIMIT 1[0m
+  ↳ app/views/subjects/_subject.html.erb:9
+  Rendered subjects/_subject.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered subjects/index.html.erb within layouts/application (Duration: 6.8ms | GC: 1.7ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | GC: 1.7ms)
+Completed 200 OK in 12ms (Views: 6.5ms | ActiveRecord: 1.1ms (4 queries, 1 cached) | GC: 1.7ms)
+
+
+Started GET "/classlists" for 172.20.0.1 at 2025-09-02 07:08:54 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ClasslistsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering classlists/index.html.erb within layouts/application
+  [1m[36mClasslist Load (0.4ms)[0m  [1m[34mSELECT `classlists`.* FROM `classlists` /*action='index',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/views/classlists/index.html.erb:8
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`id` = 1 LIMIT 1 /*action='index',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/views/classlists/_classlist.html.erb:4
+  [1m[36mSection Load (0.3ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` WHERE `sections`.`id` = 1 LIMIT 1 /*action='index',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/views/classlists/_classlist.html.erb:9
+  Rendered classlists/_classlist.html.erb (Duration: 10.2ms | GC: 0.4ms)
+  Rendered classlists/index.html.erb within layouts/application (Duration: 16.4ms | GC: 0.7ms)
+  Rendered layout layouts/application.html.erb (Duration: 17.5ms | GC: 0.9ms)
+Completed 200 OK in 29ms (Views: 13.8ms | ActiveRecord: 4.2ms (3 queries, 0 cached) | GC: 1.4ms)
+
+
+Started GET "/classlists/new" for 172.20.0.1 at 2025-09-02 07:08:55 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ClasslistsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering classlists/new.html.erb within layouts/application
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT `students`.* FROM `students` /*action='new',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/views/classlists/_form.html.erb:16
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` /*action='new',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/views/classlists/_form.html.erb:21
+  Rendered classlists/_form.html.erb (Duration: 3.8ms | GC: 0.1ms)
+  Rendered classlists/new.html.erb within layouts/application (Duration: 4.4ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | GC: 0.1ms)
+Completed 200 OK in 15ms (Views: 4.4ms | ActiveRecord: 0.7ms (2 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/classlists/new" for 172.20.0.1 at 2025-09-02 07:08:56 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ClasslistsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering classlists/new.html.erb within layouts/application
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT `students`.* FROM `students` /*action='new',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/views/classlists/_form.html.erb:16
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` /*action='new',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/views/classlists/_form.html.erb:21
+  Rendered classlists/_form.html.erb (Duration: 2.8ms | GC: 0.2ms)
+  Rendered classlists/new.html.erb within layouts/application (Duration: 3.0ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | GC: 0.2ms)
+Completed 200 OK in 14ms (Views: 3.2ms | ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/classlists" for 172.20.0.1 at 2025-09-02 07:08:56 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ClasslistsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering classlists/index.html.erb within layouts/application
+  [1m[36mClasslist Load (0.5ms)[0m  [1m[34mSELECT `classlists`.* FROM `classlists` /*action='index',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/views/classlists/index.html.erb:8
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`id` = 1 LIMIT 1 /*action='index',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/views/classlists/_classlist.html.erb:4
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` WHERE `sections`.`id` = 1 LIMIT 1 /*action='index',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/views/classlists/_classlist.html.erb:9
+  Rendered classlists/_classlist.html.erb (Duration: 2.2ms | GC: 0.0ms)
+  Rendered classlists/index.html.erb within layouts/application (Duration: 4.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | GC: 0.0ms)
+Completed 200 OK in 15ms (Views: 3.9ms | ActiveRecord: 1.0ms (3 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/sections/new" for 172.20.0.1 at 2025-09-02 07:09:05 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SectionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sections/new.html.erb within layouts/application
+  [1m[36mSubject Load (0.6ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` /*action='new',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/views/sections/_form.html.erb:31
+  Rendered sections/_form.html.erb (Duration: 4.2ms | GC: 0.2ms)
+  Rendered sections/new.html.erb within layouts/application (Duration: 4.5ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | GC: 0.2ms)
+Completed 200 OK in 18ms (Views: 4.9ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Started POST "/sections" for 172.20.0.1 at 2025-09-02 07:09:18 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SectionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "section"=>{"name"=>"lipad01", "room"=>"cc", "time_slot"=>"1 to 5", "subject_id"=>"3"}, "commit"=>"Create Section"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*action='create',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/controllers/sections_controller.rb:27:in `block in create'
+  [1m[36mSubject Load (1.8ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` WHERE `subjects`.`id` = 3 LIMIT 1 /*action='create',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/controllers/sections_controller.rb:27:in `block in create'
+  [1m[36mSection Create (0.3ms)[0m  [1m[32mINSERT INTO `sections` (`name`, `room`, `time_slot`, `subject_id`, `created_at`, `updated_at`) VALUES ('lipad01', 'cc', '1 to 5', 3, '2025-09-02 07:09:18.086226', '2025-09-02 07:09:18.086226') /*action='create',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/controllers/sections_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT /*action='create',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/controllers/sections_controller.rb:27:in `block in create'
+Redirected to http://0.0.0.0:3011/sections/3
+Completed 302 Found in 24ms (ActiveRecord: 4.3ms (2 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/sections/3" for 172.20.0.1 at 2025-09-02 07:09:18 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SectionsController#show as TURBO_STREAM
+  Parameters: {"id"=>"3"}
+  [1m[36mSection Load (1.3ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` WHERE `sections`.`id` = 3 LIMIT 1 /*action='show',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/controllers/sections_controller.rb:63:in `set_section'
+  Rendering layout layouts/application.html.erb
+  Rendering sections/show.html.erb within layouts/application
+  [1m[36mSubject Load (1.5ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` WHERE `subjects`.`id` = 3 LIMIT 1 /*action='show',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/views/sections/_section.html.erb:19
+  [1m[36mTeacher Load (1.4ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 2 LIMIT 1 /*action='show',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/views/sections/_section.html.erb:24
+  Rendered sections/_section.html.erb (Duration: 12.2ms | GC: 0.0ms)
+  Rendered sections/show.html.erb within layouts/application (Duration: 16.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 19.6ms | GC: 0.5ms)
+Completed 200 OK in 47ms (Views: 18.0ms | ActiveRecord: 4.0ms (3 queries, 0 cached) | GC: 1.1ms)
+
+
+Started GET "/sections/3/edit" for 172.20.0.1 at 2025-09-02 07:09:18 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SectionsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mSection Load (0.5ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` WHERE `sections`.`id` = 3 LIMIT 1 /*action='edit',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/controllers/sections_controller.rb:63:in `set_section'
+  Rendering layout layouts/application.html.erb
+  Rendering sections/edit.html.erb within layouts/application
+  [1m[36mSubject Load (0.3ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` /*action='edit',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/views/sections/_form.html.erb:31
+  Rendered sections/_form.html.erb (Duration: 2.6ms | GC: 0.0ms)
+  Rendered sections/edit.html.erb within layouts/application (Duration: 3.4ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | GC: 0.2ms)
+Completed 200 OK in 15ms (Views: 3.9ms | ActiveRecord: 0.8ms (2 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/classlists/new" for 172.20.0.1 at 2025-09-02 07:09:20 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ClasslistsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering classlists/new.html.erb within layouts/application
+  [1m[36mStudent Load (0.8ms)[0m  [1m[34mSELECT `students`.* FROM `students` /*action='new',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/views/classlists/_form.html.erb:16
+  [1m[36mSection Load (0.7ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` /*action='new',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/views/classlists/_form.html.erb:21
+  Rendered classlists/_form.html.erb (Duration: 8.7ms | GC: 0.6ms)
+  Rendered classlists/new.html.erb within layouts/application (Duration: 9.0ms | GC: 0.6ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | GC: 0.6ms)
+Completed 200 OK in 20ms (Views: 9.0ms | ActiveRecord: 1.4ms (2 queries, 0 cached) | GC: 0.6ms)
+
+
+Started POST "/classlists" for 172.20.0.1 at 2025-09-02 07:09:26 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ClasslistsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "classlist"=>{"student_id"=>"2", "section_id"=>"3"}, "commit"=>"Create Classlist"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*action='create',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/controllers/classlists_controller.rb:27:in `block in create'
+  [1m[36mStudent Load (1.1ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`id` = 2 LIMIT 1 /*action='create',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/controllers/classlists_controller.rb:27:in `block in create'
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` WHERE `sections`.`id` = 3 LIMIT 1 /*action='create',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/controllers/classlists_controller.rb:27:in `block in create'
+  [1m[36mClasslist Create (0.3ms)[0m  [1m[32mINSERT INTO `classlists` (`student_id`, `section_id`, `created_at`, `updated_at`) VALUES (2, 3, '2025-09-02 07:09:26.338265', '2025-09-02 07:09:26.338265') /*action='create',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/controllers/classlists_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT /*action='create',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/controllers/classlists_controller.rb:27:in `block in create'
+Redirected to http://0.0.0.0:3011/classlists/2
+Completed 302 Found in 14ms (ActiveRecord: 3.4ms (3 queries, 0 cached) | GC: 2.3ms)
+
+
+Started GET "/classlists/2" for 172.20.0.1 at 2025-09-02 07:09:26 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ClasslistsController#show as TURBO_STREAM
+  Parameters: {"id"=>"2"}
+  [1m[36mClasslist Load (0.4ms)[0m  [1m[34mSELECT `classlists`.* FROM `classlists` WHERE `classlists`.`id` = 2 LIMIT 1 /*action='show',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/controllers/classlists_controller.rb:63:in `set_classlist'
+  Rendering layout layouts/application.html.erb
+  Rendering classlists/show.html.erb within layouts/application
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`id` = 2 LIMIT 1 /*action='show',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/views/classlists/_classlist.html.erb:4
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` WHERE `sections`.`id` = 3 LIMIT 1 /*action='show',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/views/classlists/_classlist.html.erb:9
+  Rendered classlists/_classlist.html.erb (Duration: 2.1ms | GC: 0.0ms)
+  Rendered classlists/show.html.erb within layouts/application (Duration: 3.6ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | GC: 0.3ms)
+Completed 200 OK in 13ms (Views: 3.7ms | ActiveRecord: 0.9ms (3 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/subjects" for 172.20.0.1 at 2025-09-02 07:09:33 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SubjectsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering subjects/index.html.erb within layouts/application
+  [1m[36mSubject Load (0.6ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` /*action='index',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/index.html.erb:8
+  [1m[36mTeacher Load (0.4ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 2 LIMIT 1 /*action='index',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/_subject.html.erb:9
+  Rendered subjects/_subject.html.erb (Duration: 1.6ms | GC: 0.0ms)
+  [1m[36mTeacher Load (0.4ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 1 LIMIT 1 /*action='index',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/_subject.html.erb:9
+  Rendered subjects/_subject.html.erb (Duration: 1.6ms | GC: 0.3ms)
+  [1m[36mCACHE Teacher Load (0.0ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 2 LIMIT 1[0m
+  ↳ app/views/subjects/_subject.html.erb:9
+  Rendered subjects/_subject.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered subjects/index.html.erb within layouts/application (Duration: 6.9ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | GC: 0.3ms)
+Completed 200 OK in 18ms (Views: 6.9ms | ActiveRecord: 1.4ms (4 queries, 1 cached) | GC: 0.3ms)
+
+
+Started GET "/subjects/1" for 172.20.0.1 at 2025-09-02 07:09:35 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SubjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSubject Load (0.7ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` WHERE `subjects`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/controllers/subjects_controller.rb:63:in `set_subject'
+  Rendering layout layouts/application.html.erb
+  Rendering subjects/show.html.erb within layouts/application
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 2 LIMIT 1 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/_subject.html.erb:9
+  Rendered subjects/_subject.html.erb (Duration: 1.3ms | GC: 0.0ms)
+  [1m[36mSection Load (0.3ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` WHERE `sections`.`subject_id` = 1 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/show.html.erb:5
+  Rendered subjects/show.html.erb within layouts/application (Duration: 3.5ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | GC: 0.1ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 1.2ms (3 queries, 0 cached) | GC: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `classlists' for #<ActiveRecord::Associations::CollectionProxy [#<Section id: 1, name: "AMR69", room: "D319", time_slot: "evrydoay", subject_id: 1, created_at: "2025-09-02 06:22:53.720905000 +0000", updated_at: "2025-09-02 06:22:53.720905000 +0000">]>)
+Caused by: NoMethodError (undefined method `classlists' for #<ActiveRecord::Associations::CollectionProxy [#<Section id: 1, name: "AMR69", room: "D319", time_slot: "evrydoay", subject_id: 1, created_at: "2025-09-02 06:22:53.720905000 +0000", updated_at: "2025-09-02 06:22:53.720905000 +0000">]>)
+
+Information for: ActionView::Template::Error (undefined method `classlists' for #<ActiveRecord::Associations::CollectionProxy [#<Section id: 1, name: "AMR69", room: "D319", time_slot: "evrydoay", subject_id: 1, created_at: "2025-09-02 06:22:53.720905000 +0000", updated_at: "2025-09-02 06:22:53.720905000 +0000">]>):
+    12:       </tr>
+    13:     </thead>
+    14:     <tbody>
+    15:       <% @subject.sections.classlists.each do |classlist| %>
+    16:         <tr>
+    17:           <td><%= section..name %></td>
+    18:           <td><%= section.student.name %></td>
+  
+app/views/subjects/show.html.erb:15
+app/views/subjects/show.html.erb:5
+
+Information for cause: NoMethodError (undefined method `classlists' for #<ActiveRecord::Associations::CollectionProxy [#<Section id: 1, name: "AMR69", room: "D319", time_slot: "evrydoay", subject_id: 1, created_at: "2025-09-02 06:22:53.720905000 +0000", updated_at: "2025-09-02 06:22:53.720905000 +0000">]>):
+  
+app/views/subjects/show.html.erb:15
+app/views/subjects/show.html.erb:5
+Started GET "/subjects/1" for 172.20.0.1 at 2025-09-02 07:09:36 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SubjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSubject Load (0.3ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` WHERE `subjects`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/controllers/subjects_controller.rb:63:in `set_subject'
+  Rendering layout layouts/application.html.erb
+  Rendering subjects/show.html.erb within layouts/application
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 2 LIMIT 1 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/_subject.html.erb:9
+  Rendered subjects/_subject.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` WHERE `sections`.`subject_id` = 1 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/show.html.erb:5
+  Rendered subjects/show.html.erb within layouts/application (Duration: 2.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.8ms (3 queries, 0 cached) | GC: 1.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `classlists' for #<ActiveRecord::Associations::CollectionProxy [#<Section id: 1, name: "AMR69", room: "D319", time_slot: "evrydoay", subject_id: 1, created_at: "2025-09-02 06:22:53.720905000 +0000", updated_at: "2025-09-02 06:22:53.720905000 +0000">]>)
+Caused by: NoMethodError (undefined method `classlists' for #<ActiveRecord::Associations::CollectionProxy [#<Section id: 1, name: "AMR69", room: "D319", time_slot: "evrydoay", subject_id: 1, created_at: "2025-09-02 06:22:53.720905000 +0000", updated_at: "2025-09-02 06:22:53.720905000 +0000">]>)
+
+Information for: ActionView::Template::Error (undefined method `classlists' for #<ActiveRecord::Associations::CollectionProxy [#<Section id: 1, name: "AMR69", room: "D319", time_slot: "evrydoay", subject_id: 1, created_at: "2025-09-02 06:22:53.720905000 +0000", updated_at: "2025-09-02 06:22:53.720905000 +0000">]>):
+    12:       </tr>
+    13:     </thead>
+    14:     <tbody>
+    15:       <% @subject.sections.classlists.each do |classlist| %>
+    16:         <tr>
+    17:           <td><%= section..name %></td>
+    18:           <td><%= section.student.name %></td>
+  
+app/views/subjects/show.html.erb:15
+app/views/subjects/show.html.erb:5
+
+Information for cause: NoMethodError (undefined method `classlists' for #<ActiveRecord::Associations::CollectionProxy [#<Section id: 1, name: "AMR69", room: "D319", time_slot: "evrydoay", subject_id: 1, created_at: "2025-09-02 06:22:53.720905000 +0000", updated_at: "2025-09-02 06:22:53.720905000 +0000">]>):
+  
+app/views/subjects/show.html.erb:15
+app/views/subjects/show.html.erb:5
+Started GET "/subjects/1" for 172.20.0.1 at 2025-09-02 07:09:57 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SubjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` WHERE `subjects`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/controllers/subjects_controller.rb:63:in `set_subject'
+  Rendering layout layouts/application.html.erb
+  Rendering subjects/show.html.erb within layouts/application
+  [1m[36mTeacher Load (0.4ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 2 LIMIT 1 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/_subject.html.erb:9
+  Rendered subjects/_subject.html.erb (Duration: 5.6ms | GC: 0.0ms)
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` WHERE `sections`.`subject_id` = 1 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/show.html.erb:5
+  Rendered subjects/show.html.erb within layouts/application (Duration: 14.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 14.3ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 5.3ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `sections' for #<ActionView::Base:0x000000000b4780>)
+Caused by: NameError (undefined local variable or method `sections' for #<ActionView::Base:0x000000000b4780>)
+
+Information for: ActionView::Template::Error (undefined local variable or method `sections' for #<ActionView::Base:0x000000000b4780>):
+    12:       </tr>
+    13:     </thead>
+    14:     <tbody>
+    15:       <% sections.classlists.each do |classlist| %>
+    16:         <tr>
+    17:           <td><%= section..name %></td>
+    18:           <td><%= section.student.name %></td>
+  
+app/views/subjects/show.html.erb:15
+app/views/subjects/show.html.erb:5
+
+Information for cause: NameError (undefined local variable or method `sections' for #<ActionView::Base:0x000000000b4780>):
+  
+app/views/subjects/show.html.erb:15
+app/views/subjects/show.html.erb:5
+Started GET "/subjects/1" for 172.20.0.1 at 2025-09-02 07:10:10 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SubjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSubject Load (0.3ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` WHERE `subjects`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/controllers/subjects_controller.rb:63:in `set_subject'
+  Rendering layout layouts/application.html.erb
+  Rendering subjects/show.html.erb within layouts/application
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 2 LIMIT 1 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/_subject.html.erb:9
+  Rendered subjects/_subject.html.erb (Duration: 7.7ms | GC: 0.2ms)
+  [1m[36mSection Load (0.4ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` WHERE `sections`.`subject_id` = 1 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/show.html.erb:5
+  [1m[36mClasslist Load (0.3ms)[0m  [1m[34mSELECT `classlists`.* FROM `classlists` WHERE `classlists`.`section_id` = 1 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/show.html.erb:15
+  Rendered subjects/show.html.erb within layouts/application (Duration: 29.6ms | GC: 0.9ms)
+  Rendered layout layouts/application.html.erb (Duration: 29.8ms | GC: 0.9ms)
+Completed 500 Internal Server Error in 47ms (ActiveRecord: 11.3ms (4 queries, 0 cached) | GC: 1.1ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `name' for #<ActionView::Base:0x000000000bac98>)
+Caused by: NameError (undefined local variable or method `name' for #<ActionView::Base:0x000000000bac98>)
+
+Information for: ActionView::Template::Error (undefined local variable or method `name' for #<ActionView::Base:0x000000000bac98>):
+    14:     <tbody>
+    15:       <% section.classlists.each do |classlist| %>
+    16:         <tr>
+    17:           <td><%= section..name %></td>
+    18:           <td><%= section.student.name %></td>
+    19:         </tr>
+    20:       <% end %>
+  
+app/views/subjects/show.html.erb:17
+app/views/subjects/show.html.erb:15
+app/views/subjects/show.html.erb:5
+
+Information for cause: NameError (undefined local variable or method `name' for #<ActionView::Base:0x000000000bac98>):
+  
+app/views/subjects/show.html.erb:17
+app/views/subjects/show.html.erb:15
+app/views/subjects/show.html.erb:5
+Started GET "/subjects/1" for 172.20.0.1 at 2025-09-02 07:10:20 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SubjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSubject Load (0.2ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` WHERE `subjects`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/controllers/subjects_controller.rb:63:in `set_subject'
+  Rendering layout layouts/application.html.erb
+  Rendering subjects/show.html.erb within layouts/application
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 2 LIMIT 1 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/_subject.html.erb:9
+  Rendered subjects/_subject.html.erb (Duration: 5.6ms | GC: 0.0ms)
+  [1m[36mSection Load (0.3ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` WHERE `sections`.`subject_id` = 1 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/show.html.erb:5
+  [1m[36mClasslist Load (0.2ms)[0m  [1m[34mSELECT `classlists`.* FROM `classlists` WHERE `classlists`.`section_id` = 1 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/show.html.erb:15
+  Rendered subjects/show.html.erb within layouts/application (Duration: 19.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 19.2ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 7.0ms (4 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `student' for #<Section id: 1, name: "AMR69", room: "D319", time_slot: "evrydoay", subject_id: 1, created_at: "2025-09-02 06:22:53.720905000 +0000", updated_at: "2025-09-02 06:22:53.720905000 +0000">)
+Caused by: NoMethodError (undefined method `student' for #<Section id: 1, name: "AMR69", room: "D319", time_slot: "evrydoay", subject_id: 1, created_at: "2025-09-02 06:22:53.720905000 +0000", updated_at: "2025-09-02 06:22:53.720905000 +0000">)
+
+Information for: ActionView::Template::Error (undefined method `student' for #<Section id: 1, name: "AMR69", room: "D319", time_slot: "evrydoay", subject_id: 1, created_at: "2025-09-02 06:22:53.720905000 +0000", updated_at: "2025-09-02 06:22:53.720905000 +0000">):
+    15:       <% section.classlists.each do |classlist| %>
+    16:         <tr>
+    17:           <td><%= section.name %></td>
+    18:           <td><%= section.student.name %></td>
+    19:         </tr>
+    20:       <% end %>
+    21:     </tbody>
+  
+app/views/subjects/show.html.erb:18
+app/views/subjects/show.html.erb:15
+app/views/subjects/show.html.erb:5
+
+Information for cause: NoMethodError (undefined method `student' for #<Section id: 1, name: "AMR69", room: "D319", time_slot: "evrydoay", subject_id: 1, created_at: "2025-09-02 06:22:53.720905000 +0000", updated_at: "2025-09-02 06:22:53.720905000 +0000">):
+  
+app/views/subjects/show.html.erb:18
+app/views/subjects/show.html.erb:15
+app/views/subjects/show.html.erb:5
+Started GET "/subjects/1" for 172.20.0.1 at 2025-09-02 07:11:01 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SubjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSubject Load (0.3ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` WHERE `subjects`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/controllers/subjects_controller.rb:63:in `set_subject'
+  Rendering layout layouts/application.html.erb
+  Rendering subjects/show.html.erb within layouts/application
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 2 LIMIT 1 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/_subject.html.erb:9
+  Rendered subjects/_subject.html.erb (Duration: 6.5ms | GC: 0.3ms)
+  [1m[36mSection Load (0.3ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` WHERE `sections`.`subject_id` = 1 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/show.html.erb:5
+  [1m[36mClasslist Load (0.2ms)[0m  [1m[34mSELECT `classlists`.* FROM `classlists` WHERE `classlists`.`section_id` = 1 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/show.html.erb:15
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/show.html.erb:18
+  Rendered subjects/show.html.erb within layouts/application (Duration: 26.1ms | GC: 0.9ms)
+  Rendered layout layouts/application.html.erb (Duration: 27.3ms | GC: 0.9ms)
+Completed 200 OK in 40ms (Views: 20.7ms | ActiveRecord: 9.9ms (5 queries, 0 cached) | GC: 1.2ms)
+
+
+Started GET "/subjects/1" for 172.20.0.1 at 2025-09-02 07:12:03 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SubjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSubject Load (0.2ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` WHERE `subjects`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/controllers/subjects_controller.rb:63:in `set_subject'
+  Rendering layout layouts/application.html.erb
+  Rendering subjects/show.html.erb within layouts/application
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 2 LIMIT 1 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/_subject.html.erb:9
+  Rendered subjects/_subject.html.erb (Duration: 6.3ms | GC: 0.2ms)
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` WHERE `sections`.`subject_id` = 1 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/show.html.erb:5
+  [1m[36mClasslist Load (0.2ms)[0m  [1m[34mSELECT `classlists`.* FROM `classlists` WHERE `classlists`.`section_id` = 1 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/show.html.erb:17
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/show.html.erb:19
+  Rendered subjects/show.html.erb within layouts/application (Duration: 23.8ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 25.0ms | GC: 0.3ms)
+Completed 200 OK in 37ms (Views: 19.7ms | ActiveRecord: 8.1ms (5 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/classlists" for 172.20.0.1 at 2025-09-02 07:13:18 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ClasslistsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering classlists/index.html.erb within layouts/application
+  [1m[36mClasslist Load (0.3ms)[0m  [1m[34mSELECT `classlists`.* FROM `classlists` /*action='index',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/views/classlists/index.html.erb:8
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`id` = 1 LIMIT 1 /*action='index',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/views/classlists/_classlist.html.erb:4
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` WHERE `sections`.`id` = 1 LIMIT 1 /*action='index',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/views/classlists/_classlist.html.erb:9
+  Rendered classlists/_classlist.html.erb (Duration: 11.9ms | GC: 0.5ms)
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`id` = 2 LIMIT 1 /*action='index',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/views/classlists/_classlist.html.erb:4
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` WHERE `sections`.`id` = 3 LIMIT 1 /*action='index',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/views/classlists/_classlist.html.erb:9
+  Rendered classlists/_classlist.html.erb (Duration: 1.8ms | GC: 0.0ms)
+  Rendered classlists/index.html.erb within layouts/application (Duration: 19.4ms | GC: 0.8ms)
+  Rendered layout layouts/application.html.erb (Duration: 20.8ms | GC: 0.9ms)
+Completed 200 OK in 27ms (Views: 15.5ms | ActiveRecord: 5.9ms (5 queries, 0 cached) | GC: 0.9ms)
+
+
+Started GET "/classlists/2" for 172.20.0.1 at 2025-09-02 07:13:19 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ClasslistsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mClasslist Load (0.4ms)[0m  [1m[34mSELECT `classlists`.* FROM `classlists` WHERE `classlists`.`id` = 2 LIMIT 1 /*action='show',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/controllers/classlists_controller.rb:63:in `set_classlist'
+  Rendering layout layouts/application.html.erb
+  Rendering classlists/show.html.erb within layouts/application
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`id` = 2 LIMIT 1 /*action='show',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/views/classlists/_classlist.html.erb:4
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` WHERE `sections`.`id` = 3 LIMIT 1 /*action='show',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/views/classlists/_classlist.html.erb:9
+  Rendered classlists/_classlist.html.erb (Duration: 1.8ms | GC: 0.0ms)
+  Rendered classlists/show.html.erb within layouts/application (Duration: 2.8ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | GC: 0.1ms)
+Completed 200 OK in 10ms (Views: 3.0ms | ActiveRecord: 0.8ms (3 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/classlists/new" for 172.20.0.1 at 2025-09-02 07:13:19 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ClasslistsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering classlists/new.html.erb within layouts/application
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT `students`.* FROM `students` /*action='new',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/views/classlists/_form.html.erb:16
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` /*action='new',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/views/classlists/_form.html.erb:21
+  Rendered classlists/_form.html.erb (Duration: 3.7ms | GC: 0.0ms)
+  Rendered classlists/new.html.erb within layouts/application (Duration: 4.5ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | GC: 0.2ms)
+Completed 200 OK in 17ms (Views: 4.9ms | ActiveRecord: 0.6ms (2 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/classlists/new" for 172.20.0.1 at 2025-09-02 07:13:19 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ClasslistsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering classlists/new.html.erb within layouts/application
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT `students`.* FROM `students` /*action='new',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/views/classlists/_form.html.erb:16
+  [1m[36mSection Load (0.3ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` /*action='new',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/views/classlists/_form.html.erb:21
+  Rendered classlists/_form.html.erb (Duration: 3.4ms | GC: 0.0ms)
+  Rendered classlists/new.html.erb within layouts/application (Duration: 3.7ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | GC: 0.1ms)
+Completed 200 OK in 14ms (Views: 3.7ms | ActiveRecord: 0.7ms (2 queries, 0 cached) | GC: 0.1ms)
+
+
+Started POST "/classlists" for 172.20.0.1 at 2025-09-02 07:13:26 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ClasslistsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "classlist"=>{"student_id"=>"2", "section_id"=>"1"}, "commit"=>"Create Classlist"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*action='create',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/controllers/classlists_controller.rb:27:in `block in create'
+  [1m[36mStudent Load (1.5ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`id` = 2 LIMIT 1 /*action='create',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/controllers/classlists_controller.rb:27:in `block in create'
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` WHERE `sections`.`id` = 1 LIMIT 1 /*action='create',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/controllers/classlists_controller.rb:27:in `block in create'
+  [1m[36mClasslist Create (0.2ms)[0m  [1m[32mINSERT INTO `classlists` (`student_id`, `section_id`, `created_at`, `updated_at`) VALUES (2, 1, '2025-09-02 07:13:26.213246', '2025-09-02 07:13:26.213246') /*action='create',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/controllers/classlists_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mCOMMIT /*action='create',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/controllers/classlists_controller.rb:27:in `block in create'
+Redirected to http://0.0.0.0:3011/classlists/3
+Completed 302 Found in 20ms (ActiveRecord: 4.3ms (3 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/classlists/3" for 172.20.0.1 at 2025-09-02 07:13:26 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ClasslistsController#show as TURBO_STREAM
+  Parameters: {"id"=>"3"}
+  [1m[36mClasslist Load (0.6ms)[0m  [1m[34mSELECT `classlists`.* FROM `classlists` WHERE `classlists`.`id` = 3 LIMIT 1 /*action='show',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/controllers/classlists_controller.rb:63:in `set_classlist'
+  Rendering layout layouts/application.html.erb
+  Rendering classlists/show.html.erb within layouts/application
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`id` = 2 LIMIT 1 /*action='show',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/views/classlists/_classlist.html.erb:4
+  [1m[36mSection Load (0.3ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` WHERE `sections`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/views/classlists/_classlist.html.erb:9
+  Rendered classlists/_classlist.html.erb (Duration: 2.7ms | GC: 0.2ms)
+  Rendered classlists/show.html.erb within layouts/application (Duration: 3.6ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | GC: 0.2ms)
+Completed 200 OK in 16ms (Views: 3.6ms | ActiveRecord: 1.2ms (3 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/classlists" for 172.20.0.1 at 2025-09-02 07:13:27 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ClasslistsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering classlists/index.html.erb within layouts/application
+  [1m[36mClasslist Load (0.4ms)[0m  [1m[34mSELECT `classlists`.* FROM `classlists` /*action='index',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/views/classlists/index.html.erb:8
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`id` = 1 LIMIT 1 /*action='index',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/views/classlists/_classlist.html.erb:4
+  [1m[36mSection Load (0.3ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` WHERE `sections`.`id` = 1 LIMIT 1 /*action='index',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/views/classlists/_classlist.html.erb:9
+  Rendered classlists/_classlist.html.erb (Duration: 4.5ms | GC: 0.3ms)
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`id` = 2 LIMIT 1 /*action='index',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/views/classlists/_classlist.html.erb:4
+  [1m[36mSection Load (0.4ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` WHERE `sections`.`id` = 3 LIMIT 1 /*action='index',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/views/classlists/_classlist.html.erb:9
+  Rendered classlists/_classlist.html.erb (Duration: 4.6ms | GC: 0.0ms)
+  [1m[36mCACHE Student Load (0.0ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`id` = 2 LIMIT 1[0m
+  ↳ app/views/classlists/_classlist.html.erb:4
+  [1m[36mCACHE Section Load (0.0ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` WHERE `sections`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/classlists/_classlist.html.erb:9
+  Rendered classlists/_classlist.html.erb (Duration: 3.7ms | GC: 0.4ms)
+  Rendered classlists/index.html.erb within layouts/application (Duration: 16.2ms | GC: 0.7ms)
+  Rendered layout layouts/application.html.erb (Duration: 17.4ms | GC: 0.7ms)
+Completed 200 OK in 29ms (Views: 15.9ms | ActiveRecord: 1.9ms (7 queries, 2 cached) | GC: 0.8ms)
+
+
+Started GET "/classlists/3" for 172.20.0.1 at 2025-09-02 07:13:28 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ClasslistsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mClasslist Load (0.7ms)[0m  [1m[34mSELECT `classlists`.* FROM `classlists` WHERE `classlists`.`id` = 3 LIMIT 1 /*action='show',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/controllers/classlists_controller.rb:63:in `set_classlist'
+  Rendering layout layouts/application.html.erb
+  Rendering classlists/show.html.erb within layouts/application
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`id` = 2 LIMIT 1 /*action='show',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/views/classlists/_classlist.html.erb:4
+  [1m[36mSection Load (0.3ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` WHERE `sections`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/views/classlists/_classlist.html.erb:9
+  Rendered classlists/_classlist.html.erb (Duration: 3.6ms | GC: 0.0ms)
+  Rendered classlists/show.html.erb within layouts/application (Duration: 5.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | GC: 0.0ms)
+Completed 200 OK in 19ms (Views: 6.3ms | ActiveRecord: 1.5ms (3 queries, 0 cached) | GC: 0.9ms)
+
+
+Started GET "/classlists/new" for 172.20.0.1 at 2025-09-02 07:13:28 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ClasslistsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering classlists/new.html.erb within layouts/application
+  [1m[36mStudent Load (0.6ms)[0m  [1m[34mSELECT `students`.* FROM `students` /*action='new',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/views/classlists/_form.html.erb:16
+  [1m[36mSection Load (0.4ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` /*action='new',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/views/classlists/_form.html.erb:21
+  Rendered classlists/_form.html.erb (Duration: 7.1ms | GC: 0.6ms)
+  Rendered classlists/new.html.erb within layouts/application (Duration: 7.5ms | GC: 0.6ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | GC: 0.6ms)
+Completed 200 OK in 20ms (Views: 8.1ms | ActiveRecord: 1.0ms (2 queries, 0 cached) | GC: 0.6ms)
+
+
+Started POST "/classlists" for 172.20.0.1 at 2025-09-02 07:13:34 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ClasslistsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "classlist"=>{"student_id"=>"3", "section_id"=>"1"}, "commit"=>"Create Classlist"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*action='create',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/controllers/classlists_controller.rb:27:in `block in create'
+  [1m[36mStudent Load (1.1ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`id` = 3 LIMIT 1 /*action='create',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/controllers/classlists_controller.rb:27:in `block in create'
+  [1m[36mSection Load (0.1ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` WHERE `sections`.`id` = 1 LIMIT 1 /*action='create',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/controllers/classlists_controller.rb:27:in `block in create'
+  [1m[36mClasslist Create (0.2ms)[0m  [1m[32mINSERT INTO `classlists` (`student_id`, `section_id`, `created_at`, `updated_at`) VALUES (3, 1, '2025-09-02 07:13:34.488802', '2025-09-02 07:13:34.488802') /*action='create',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/controllers/classlists_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mCOMMIT /*action='create',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/controllers/classlists_controller.rb:27:in `block in create'
+Redirected to http://0.0.0.0:3011/classlists/4
+Completed 302 Found in 22ms (ActiveRecord: 3.6ms (3 queries, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/classlists/4" for 172.20.0.1 at 2025-09-02 07:13:34 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ClasslistsController#show as TURBO_STREAM
+  Parameters: {"id"=>"4"}
+  [1m[36mClasslist Load (0.5ms)[0m  [1m[34mSELECT `classlists`.* FROM `classlists` WHERE `classlists`.`id` = 4 LIMIT 1 /*action='show',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/controllers/classlists_controller.rb:63:in `set_classlist'
+  Rendering layout layouts/application.html.erb
+  Rendering classlists/show.html.erb within layouts/application
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`id` = 3 LIMIT 1 /*action='show',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/views/classlists/_classlist.html.erb:4
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` WHERE `sections`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/views/classlists/_classlist.html.erb:9
+  Rendered classlists/_classlist.html.erb (Duration: 2.4ms | GC: 0.0ms)
+  Rendered classlists/show.html.erb within layouts/application (Duration: 3.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | GC: 0.0ms)
+Completed 200 OK in 16ms (Views: 3.5ms | ActiveRecord: 1.0ms (3 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/subjects/1" for 172.20.0.1 at 2025-09-02 07:13:38 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SubjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSubject Load (0.3ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` WHERE `subjects`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/controllers/subjects_controller.rb:63:in `set_subject'
+  Rendering layout layouts/application.html.erb
+  Rendering subjects/show.html.erb within layouts/application
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 2 LIMIT 1 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/_subject.html.erb:9
+  Rendered subjects/_subject.html.erb (Duration: 9.0ms | GC: 0.3ms)
+  [1m[36mSection Load (0.3ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` WHERE `sections`.`subject_id` = 1 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/show.html.erb:5
+  [1m[36mClasslist Load (0.2ms)[0m  [1m[34mSELECT `classlists`.* FROM `classlists` WHERE `classlists`.`section_id` = 1 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/show.html.erb:17
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/show.html.erb:19
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`id` = 2 LIMIT 1 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/show.html.erb:19
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`id` = 3 LIMIT 1 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/show.html.erb:19
+  Rendered subjects/show.html.erb within layouts/application (Duration: 16.4ms | GC: 0.5ms)
+  Rendered layout layouts/application.html.erb (Duration: 16.9ms | GC: 0.5ms)
+Completed 200 OK in 32ms (Views: 13.9ms | ActiveRecord: 6.0ms (7 queries, 0 cached) | GC: 0.9ms)
+
+
+Started GET "/subjects/1" for 172.20.0.1 at 2025-09-02 07:15:39 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SubjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSubject Load (0.2ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` WHERE `subjects`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/controllers/subjects_controller.rb:63:in `set_subject'
+  Rendering layout layouts/application.html.erb
+  Rendering subjects/show.html.erb within layouts/application
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 2 LIMIT 1 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/_subject.html.erb:9
+  Rendered subjects/_subject.html.erb (Duration: 5.6ms | GC: 0.0ms)
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` WHERE `sections`.`subject_id` = 1 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/show.html.erb:5
+  [1m[36mClasslist Load (0.2ms)[0m  [1m[34mSELECT `classlists`.* FROM `classlists` WHERE `classlists`.`section_id` = 1 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/show.html.erb:16
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/show.html.erb:18
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`id` = 2 LIMIT 1 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/show.html.erb:18
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`id` = 3 LIMIT 1 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/show.html.erb:18
+  Rendered subjects/show.html.erb within layouts/application (Duration: 27.8ms | GC: 3.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 29.8ms | GC: 3.2ms)
+Completed 200 OK in 42ms (Views: 24.4ms | ActiveRecord: 9.0ms (7 queries, 0 cached) | GC: 3.7ms)
+
+
+Started GET "/students" for 172.20.0.1 at 2025-09-02 07:15:54 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StudentsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT `students`.* FROM `students` /*action='index',application='Helloworldapplication',controller='students'*/[0m
+  ↳ app/views/students/index.html.erb:8
+  [1m[36mDepartment Load (0.3ms)[0m  [1m[34mSELECT `departments`.* FROM `departments` WHERE `departments`.`id` = 1 LIMIT 1 /*action='index',application='Helloworldapplication',controller='students'*/[0m
+  ↳ app/views/students/_student.html.erb:19
+  Rendered students/_student.html.erb (Duration: 8.6ms | GC: 0.8ms)
+  [1m[36mCACHE Department Load (0.0ms)[0m  [1m[34mSELECT `departments`.* FROM `departments` WHERE `departments`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/students/_student.html.erb:19
+  Rendered students/_student.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  [1m[36mCACHE Department Load (0.0ms)[0m  [1m[34mSELECT `departments`.* FROM `departments` WHERE `departments`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/students/_student.html.erb:19
+  Rendered students/_student.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered students/index.html.erb within layouts/application (Duration: 13.9ms | GC: 0.8ms)
+  Rendered layout layouts/application.html.erb (Duration: 15.3ms | GC: 1.1ms)
+Completed 200 OK in 27ms (Views: 13.2ms | ActiveRecord: 2.7ms (4 queries, 2 cached) | GC: 1.1ms)
+
+
+Started GET "/students/new" for 172.20.0.1 at 2025-09-02 07:15:56 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StudentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  [1m[36mDepartment Load (0.3ms)[0m  [1m[34mSELECT `departments`.* FROM `departments` /*action='new',application='Helloworldapplication',controller='students'*/[0m
+  ↳ app/views/students/_form.html.erb:31
+  Rendered students/_form.html.erb (Duration: 3.0ms | GC: 0.0ms)
+  Rendered students/new.html.erb within layouts/application (Duration: 3.9ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | GC: 0.3ms)
+Completed 200 OK in 16ms (Views: 4.6ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.5ms)
+
+
+Started POST "/students" for 172.20.0.1 at 2025-09-02 07:16:12 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StudentsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "student"=>{"name"=>"RIck", "year_level"=>"1", "program"=>"programming", "department_id"=>"1"}, "commit"=>"Create Student"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*action='create',application='Helloworldapplication',controller='students'*/[0m
+  ↳ app/controllers/students_controller.rb:27:in `block in create'
+  [1m[36mDepartment Load (1.5ms)[0m  [1m[34mSELECT `departments`.* FROM `departments` WHERE `departments`.`id` = 1 LIMIT 1 /*action='create',application='Helloworldapplication',controller='students'*/[0m
+  ↳ app/controllers/students_controller.rb:27:in `block in create'
+  [1m[36mStudent Create (0.3ms)[0m  [1m[32mINSERT INTO `students` (`name`, `year_level`, `program`, `department_id`, `created_at`, `updated_at`) VALUES ('RIck', 1, 'programming', 1, '2025-09-02 07:16:12.332284', '2025-09-02 07:16:12.332284') /*action='create',application='Helloworldapplication',controller='students'*/[0m
+  ↳ app/controllers/students_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT /*action='create',application='Helloworldapplication',controller='students'*/[0m
+  ↳ app/controllers/students_controller.rb:27:in `block in create'
+Redirected to http://0.0.0.0:3011/students/4
+Completed 302 Found in 20ms (ActiveRecord: 3.9ms (2 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/students/4" for 172.20.0.1 at 2025-09-02 07:16:12 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StudentsController#show as TURBO_STREAM
+  Parameters: {"id"=>"4"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`id` = 4 LIMIT 1 /*action='show',application='Helloworldapplication',controller='students'*/[0m
+  ↳ app/controllers/students_controller.rb:63:in `set_student'
+  Rendering layout layouts/application.html.erb
+  Rendering students/show.html.erb within layouts/application
+  [1m[36mDepartment Load (0.2ms)[0m  [1m[34mSELECT `departments`.* FROM `departments` WHERE `departments`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='students'*/[0m
+  ↳ app/views/students/_student.html.erb:19
+  Rendered students/_student.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  [1m[36mClasslist Load (0.2ms)[0m  [1m[34mSELECT `classlists`.* FROM `classlists` WHERE `classlists`.`student_id` = 4 /*action='show',application='Helloworldapplication',controller='students'*/[0m
+  ↳ app/views/students/show.html.erb:16
+  Rendered students/show.html.erb within layouts/application (Duration: 3.6ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | GC: 0.2ms)
+Completed 200 OK in 11ms (Views: 3.8ms | ActiveRecord: 0.8ms (3 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/students/4" for 172.20.0.1 at 2025-09-02 07:16:20 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mStudent Load (0.8ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`id` = 4 LIMIT 1 /*action='show',application='Helloworldapplication',controller='students'*/[0m
+  ↳ app/controllers/students_controller.rb:63:in `set_student'
+  Rendering layout layouts/application.html.erb
+  Rendering students/show.html.erb within layouts/application
+  [1m[36mDepartment Load (0.5ms)[0m  [1m[34mSELECT `departments`.* FROM `departments` WHERE `departments`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='students'*/[0m
+  ↳ app/views/students/_student.html.erb:19
+  Rendered students/_student.html.erb (Duration: 2.0ms | GC: 0.0ms)
+  [1m[36mClasslist Load (0.3ms)[0m  [1m[34mSELECT `classlists`.* FROM `classlists` WHERE `classlists`.`student_id` = 4 /*action='show',application='Helloworldapplication',controller='students'*/[0m
+  ↳ app/views/students/show.html.erb:16
+  Rendered students/show.html.erb within layouts/application (Duration: 4.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | GC: 0.0ms)
+Completed 200 OK in 25ms (Views: 5.1ms | ActiveRecord: 1.6ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/classlists" for 172.20.0.1 at 2025-09-02 07:16:24 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ClasslistsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering classlists/index.html.erb within layouts/application
+  [1m[36mClasslist Load (0.5ms)[0m  [1m[34mSELECT `classlists`.* FROM `classlists` /*action='index',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/views/classlists/index.html.erb:8
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`id` = 1 LIMIT 1 /*action='index',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/views/classlists/_classlist.html.erb:4
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` WHERE `sections`.`id` = 1 LIMIT 1 /*action='index',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/views/classlists/_classlist.html.erb:9
+  Rendered classlists/_classlist.html.erb (Duration: 2.9ms | GC: 0.0ms)
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`id` = 2 LIMIT 1 /*action='index',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/views/classlists/_classlist.html.erb:4
+  [1m[36mSection Load (0.3ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` WHERE `sections`.`id` = 3 LIMIT 1 /*action='index',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/views/classlists/_classlist.html.erb:9
+  Rendered classlists/_classlist.html.erb (Duration: 2.0ms | GC: 0.2ms)
+  [1m[36mCACHE Student Load (0.0ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`id` = 2 LIMIT 1[0m
+  ↳ app/views/classlists/_classlist.html.erb:4
+  [1m[36mCACHE Section Load (0.0ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` WHERE `sections`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/classlists/_classlist.html.erb:9
+  Rendered classlists/_classlist.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`id` = 3 LIMIT 1 /*action='index',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/views/classlists/_classlist.html.erb:4
+  [1m[36mCACHE Section Load (0.0ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` WHERE `sections`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/classlists/_classlist.html.erb:9
+  Rendered classlists/_classlist.html.erb (Duration: 2.6ms | GC: 0.0ms)
+  Rendered classlists/index.html.erb within layouts/application (Duration: 12.0ms | GC: 0.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 13.3ms | GC: 0.6ms)
+Completed 200 OK in 23ms (Views: 11.9ms | ActiveRecord: 2.0ms (9 queries, 3 cached) | GC: 0.6ms)
+
+
+Started GET "/classlists/new" for 172.20.0.1 at 2025-09-02 07:16:26 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ClasslistsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering classlists/new.html.erb within layouts/application
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT `students`.* FROM `students` /*action='new',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/views/classlists/_form.html.erb:16
+  [1m[36mSection Load (0.1ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` /*action='new',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/views/classlists/_form.html.erb:21
+  Rendered classlists/_form.html.erb (Duration: 3.1ms | GC: 0.0ms)
+  Rendered classlists/new.html.erb within layouts/application (Duration: 4.1ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | GC: 0.2ms)
+Completed 200 OK in 15ms (Views: 4.4ms | ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 0.2ms)
+
+
+Started POST "/classlists" for 172.20.0.1 at 2025-09-02 07:16:33 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ClasslistsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "classlist"=>{"student_id"=>"4", "section_id"=>"1"}, "commit"=>"Create Classlist"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*action='create',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/controllers/classlists_controller.rb:27:in `block in create'
+  [1m[36mStudent Load (1.4ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`id` = 4 LIMIT 1 /*action='create',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/controllers/classlists_controller.rb:27:in `block in create'
+  [1m[36mSection Load (0.3ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` WHERE `sections`.`id` = 1 LIMIT 1 /*action='create',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/controllers/classlists_controller.rb:27:in `block in create'
+  [1m[36mClasslist Create (0.3ms)[0m  [1m[32mINSERT INTO `classlists` (`student_id`, `section_id`, `created_at`, `updated_at`) VALUES (4, 1, '2025-09-02 07:16:33.185814', '2025-09-02 07:16:33.185814') /*action='create',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/controllers/classlists_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT /*action='create',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/controllers/classlists_controller.rb:27:in `block in create'
+Redirected to http://0.0.0.0:3011/classlists/5
+Completed 302 Found in 19ms (ActiveRecord: 4.2ms (3 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/classlists/5" for 172.20.0.1 at 2025-09-02 07:16:33 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ClasslistsController#show as TURBO_STREAM
+  Parameters: {"id"=>"5"}
+  [1m[36mClasslist Load (0.5ms)[0m  [1m[34mSELECT `classlists`.* FROM `classlists` WHERE `classlists`.`id` = 5 LIMIT 1 /*action='show',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/controllers/classlists_controller.rb:63:in `set_classlist'
+  Rendering layout layouts/application.html.erb
+  Rendering classlists/show.html.erb within layouts/application
+  [1m[36mStudent Load (0.6ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`id` = 4 LIMIT 1 /*action='show',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/views/classlists/_classlist.html.erb:4
+  [1m[36mSection Load (0.5ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` WHERE `sections`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/views/classlists/_classlist.html.erb:9
+  Rendered classlists/_classlist.html.erb (Duration: 34.7ms | GC: 31.3ms)
+  Rendered classlists/show.html.erb within layouts/application (Duration: 39.1ms | GC: 34.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 39.5ms | GC: 34.3ms)
+Completed 200 OK in 59ms (Views: 38.7ms | ActiveRecord: 1.5ms (3 queries, 0 cached) | GC: 41.8ms)
+
+
+Started GET "/subjects/1" for 172.20.0.1 at 2025-09-02 07:16:35 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SubjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSubject Load (0.5ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` WHERE `subjects`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/controllers/subjects_controller.rb:63:in `set_subject'
+  Rendering layout layouts/application.html.erb
+  Rendering subjects/show.html.erb within layouts/application
+  [1m[36mTeacher Load (0.4ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 2 LIMIT 1 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/_subject.html.erb:9
+  Rendered subjects/_subject.html.erb (Duration: 1.6ms | GC: 0.0ms)
+  [1m[36mSection Load (0.3ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` WHERE `sections`.`subject_id` = 1 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/show.html.erb:5
+  [1m[36mClasslist Load (0.7ms)[0m  [1m[34mSELECT `classlists`.* FROM `classlists` WHERE `classlists`.`section_id` = 1 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/show.html.erb:16
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/show.html.erb:18
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`id` = 2 LIMIT 1 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/show.html.erb:18
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`id` = 3 LIMIT 1 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/show.html.erb:18
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`id` = 4 LIMIT 1 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/show.html.erb:18
+  Rendered subjects/show.html.erb within layouts/application (Duration: 13.0ms | GC: 1.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 15.3ms | GC: 2.7ms)
+Completed 200 OK in 24ms (Views: 13.2ms | ActiveRecord: 3.0ms (8 queries, 0 cached) | GC: 2.7ms)
+
+
+Started GET "/subjects/1" for 172.20.0.1 at 2025-09-02 07:17:04 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SubjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSubject Load (0.2ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` WHERE `subjects`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/controllers/subjects_controller.rb:63:in `set_subject'
+  Rendering layout layouts/application.html.erb
+  Rendering subjects/show.html.erb within layouts/application
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 2 LIMIT 1 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/_subject.html.erb:9
+  Rendered subjects/_subject.html.erb (Duration: 6.2ms | GC: 0.2ms)
+  [1m[36mSection Load (0.3ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` WHERE `sections`.`subject_id` = 1 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/show.html.erb:5
+  [1m[36mClasslist Load (0.4ms)[0m  [1m[34mSELECT `classlists`.* FROM `classlists` WHERE `classlists`.`section_id` = 1 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/show.html.erb:16
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/show.html.erb:18
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`id` = 2 LIMIT 1 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/show.html.erb:18
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`id` = 3 LIMIT 1 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/show.html.erb:18
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`id` = 4 LIMIT 1 /*action='show',application='Helloworldapplication',controller='subjects'*/[0m
+  ↳ app/views/subjects/show.html.erb:18
+  Rendered subjects/show.html.erb within layouts/application (Duration: 35.9ms | GC: 1.7ms)
+  Rendered layout layouts/application.html.erb (Duration: 40.1ms | GC: 2.1ms)
+Completed 200 OK in 52ms (Views: 32.2ms | ActiveRecord: 11.1ms (8 queries, 0 cached) | GC: 2.4ms)
+
+

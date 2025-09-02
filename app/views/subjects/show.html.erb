@@ -2,6 +2,28 @@
 
 <%= render @subject %>
 
+<% @subject.sections.each do |section| %>
+  <h3> Section: <%= section.name %> Room: <%= section.room %> Time Slot: <%= section.time_slot %></h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Program</th>
+        <th>Year Level</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% section.classlists.each do |classlist| %>
+        <tr>
+          <td><%= classlist.student.name %></td>
+          <td><%= classlist.student.program %></td>
+          <td><%= classlist.student.year_level %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  <table>
+<% end %>
+
 <div>
   <%= link_to "Edit this subject", edit_subject_path(@subject) %> |
   <%= link_to "Back to subjects", subjects_path %>
