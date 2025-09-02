@@ -8288,3 +8288,267 @@ Processing by TeachersController#index as HTML
 Completed 200 OK in 13ms (Views: 2.7ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.2ms)
 
 
+Started GET "/teachers/2" for 172.20.0.1 at 2025-09-02 07:46:00 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TeachersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTeacher Load (0.4ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 2 LIMIT 1 /*action='show',application='Helloworldapplication',controller='teachers'*/[0m
+  ↳ app/controllers/teachers_controller.rb:63:in `set_teacher'
+  Rendering layout layouts/application.html.erb
+  Rendering teachers/show.html.erb within layouts/application
+  Rendered teachers/_teacher.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  [1m[36mSubject Load (0.2ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` WHERE `subjects`.`teacher_id` = 2 /*action='show',application='Helloworldapplication',controller='teachers'*/[0m
+  ↳ app/views/teachers/show.html.erb:15
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` WHERE `sections`.`subject_id` = 1 /*action='show',application='Helloworldapplication',controller='teachers'*/[0m
+  ↳ app/views/teachers/show.html.erb:16
+  [1m[36mSection Load (0.1ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` WHERE `sections`.`subject_id` = 3 /*action='show',application='Helloworldapplication',controller='teachers'*/[0m
+  ↳ app/views/teachers/show.html.erb:16
+  Rendered teachers/show.html.erb within layouts/application (Duration: 4.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | GC: 0.2ms)
+Completed 200 OK in 11ms (Views: 4.4ms | ActiveRecord: 0.9ms (4 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/departments/1" for 172.20.0.1 at 2025-09-02 07:46:06 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DepartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDepartment Load (0.4ms)[0m  [1m[34mSELECT `departments`.* FROM `departments` WHERE `departments`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='departments'*/[0m
+  ↳ app/controllers/departments_controller.rb:64:in `set_department'
+  [1m[36mCACHE Department Load (0.0ms)[0m  [1m[34mSELECT `departments`.* FROM `departments` WHERE `departments`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/departments_controller.rb:11:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering departments/show.html.erb within layouts/application
+  Rendered departments/_department.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`department_id` = 1 /*action='show',application='Helloworldapplication',controller='departments'*/[0m
+  ↳ app/views/departments/show.html.erb:15
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`department_id` = 1 /*action='show',application='Helloworldapplication',controller='departments'*/[0m
+  ↳ app/views/departments/show.html.erb:36
+  Rendered departments/show.html.erb within layouts/application (Duration: 3.4ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | GC: 0.1ms)
+Completed 200 OK in 14ms (Views: 3.6ms | ActiveRecord: 0.9ms (4 queries, 1 cached) | GC: 0.3ms)
+
+
+Started GET "/teachers/2" for 172.20.0.1 at 2025-09-02 07:46:11 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TeachersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTeacher Load (0.6ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 2 LIMIT 1 /*action='show',application='Helloworldapplication',controller='teachers'*/[0m
+  ↳ app/controllers/teachers_controller.rb:63:in `set_teacher'
+  Rendering layout layouts/application.html.erb
+  Rendering teachers/show.html.erb within layouts/application
+  Rendered teachers/_teacher.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  [1m[36mSubject Load (0.3ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` WHERE `subjects`.`teacher_id` = 2 /*action='show',application='Helloworldapplication',controller='teachers'*/[0m
+  ↳ app/views/teachers/show.html.erb:15
+  [1m[36mSection Load (0.3ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` WHERE `sections`.`subject_id` = 1 /*action='show',application='Helloworldapplication',controller='teachers'*/[0m
+  ↳ app/views/teachers/show.html.erb:16
+  [1m[36mSection Load (0.3ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` WHERE `sections`.`subject_id` = 3 /*action='show',application='Helloworldapplication',controller='teachers'*/[0m
+  ↳ app/views/teachers/show.html.erb:16
+  Rendered teachers/show.html.erb within layouts/application (Duration: 4.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | GC: 0.0ms)
+Completed 200 OK in 11ms (Views: 4.3ms | ActiveRecord: 1.5ms (4 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/teachers" for 172.20.0.1 at 2025-09-02 07:51:25 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TeachersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering teachers/index.html.erb within layouts/application
+  [1m[36mTeacher Load (0.6ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` /*action='index',application='Helloworldapplication',controller='teachers'*/[0m
+  ↳ app/views/teachers/index.html.erb:8
+  Rendered teachers/_teacher.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered teachers/_teacher.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered teachers/index.html.erb within layouts/application (Duration: 2.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | GC: 0.0ms)
+Completed 200 OK in 15ms (Views: 3.3ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/teachers" for 172.20.0.1 at 2025-09-02 07:55:07 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TeachersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering teachers/index.html.erb within layouts/application
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` /*action='index',application='Helloworldapplication',controller='teachers'*/[0m
+  ↳ app/views/teachers/index.html.erb:8
+  Rendered teachers/_teacher.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered teachers/_teacher.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered teachers/index.html.erb within layouts/application (Duration: 6.7ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | GC: 0.3ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 2.3ms (1 query, 0 cached) | GC: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `specialication' for #<Teacher id: 1, name: "Karla", email: [FILTERED], specialization: "rails", status: "active", department_id: 1, created_at: "2025-08-28 06:39:17.926006000 +0000", updated_at: "2025-08-28 06:39:17.926006000 +0000">)
+Caused by: NoMethodError (undefined method `specialication' for #<Teacher id: 1, name: "Karla", email: [FILTERED], specialization: "rails", status: "active", department_id: 1, created_at: "2025-08-28 06:39:17.926006000 +0000", updated_at: "2025-08-28 06:39:17.926006000 +0000">)
+
+Information for: ActionView::Template::Error (undefined method `specialication' for #<Teacher id: 1, name: "Karla", email: [FILTERED], specialization: "rails", status: "active", department_id: 1, created_at: "2025-08-28 06:39:17.926006000 +0000", updated_at: "2025-08-28 06:39:17.926006000 +0000">):
+    28:         <tr>
+    29:         <td><%= teacher.name %></td>
+    30:         <td><%= teacher.email %></td>
+    31:         <td><%= teacher.specialication %></td>
+    32:         <td><%= teacher.status %></td>
+    33:         <%= link_to "Show this teacher", teacher %>
+    34:       </tr>
+  
+app/views/teachers/index.html.erb:31
+app/views/teachers/index.html.erb:27
+
+Information for cause: NoMethodError (undefined method `specialication' for #<Teacher id: 1, name: "Karla", email: [FILTERED], specialization: "rails", status: "active", department_id: 1, created_at: "2025-08-28 06:39:17.926006000 +0000", updated_at: "2025-08-28 06:39:17.926006000 +0000">):
+  
+app/views/teachers/index.html.erb:31
+app/views/teachers/index.html.erb:27
+Started GET "/teachers" for 172.20.0.1 at 2025-09-02 07:55:18 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TeachersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering teachers/index.html.erb within layouts/application
+  [1m[36mTeacher Load (0.4ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` /*action='index',application='Helloworldapplication',controller='teachers'*/[0m
+  ↳ app/views/teachers/index.html.erb:8
+  Rendered teachers/_teacher.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered teachers/_teacher.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered teachers/index.html.erb within layouts/application (Duration: 7.3ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | GC: 0.2ms)
+Completed 200 OK in 15ms (Views: 6.6ms | ActiveRecord: 2.7ms (1 query, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/teachers" for 172.20.0.1 at 2025-09-02 07:55:56 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TeachersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering teachers/index.html.erb within layouts/application
+  [1m[36mTeacher Load (0.4ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` /*action='index',application='Helloworldapplication',controller='teachers'*/[0m
+  ↳ app/views/teachers/index.html.erb:8
+  Rendered teachers/_teacher.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered teachers/_teacher.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered teachers/index.html.erb within layouts/application (Duration: 7.1ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | GC: 0.3ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 2.3ms (1 query, 0 cached) | GC: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `specialication' for #<Teacher id: 1, name: "Karla", email: [FILTERED], specialization: "rails", status: "active", department_id: 1, created_at: "2025-08-28 06:39:17.926006000 +0000", updated_at: "2025-08-28 06:39:17.926006000 +0000">)
+Caused by: NoMethodError (undefined method `specialication' for #<Teacher id: 1, name: "Karla", email: [FILTERED], specialization: "rails", status: "active", department_id: 1, created_at: "2025-08-28 06:39:17.926006000 +0000", updated_at: "2025-08-28 06:39:17.926006000 +0000">)
+
+Information for: ActionView::Template::Error (undefined method `specialication' for #<Teacher id: 1, name: "Karla", email: [FILTERED], specialization: "rails", status: "active", department_id: 1, created_at: "2025-08-28 06:39:17.926006000 +0000", updated_at: "2025-08-28 06:39:17.926006000 +0000">):
+    28:       <tr>
+    29:         <td><%= teacher.name %></td>
+    30:         <td><%= teacher.email %></td>
+    31:         <td><%= teacher.specialication %></td>
+    32:         <td><%= teacher.status %></td>
+    33:         <%= link_to "Show this teacher", teacher %>
+    34:       </tr>
+  
+app/views/teachers/index.html.erb:31
+app/views/teachers/index.html.erb:27
+
+Information for cause: NoMethodError (undefined method `specialication' for #<Teacher id: 1, name: "Karla", email: [FILTERED], specialization: "rails", status: "active", department_id: 1, created_at: "2025-08-28 06:39:17.926006000 +0000", updated_at: "2025-08-28 06:39:17.926006000 +0000">):
+  
+app/views/teachers/index.html.erb:31
+app/views/teachers/index.html.erb:27
+Started GET "/teachers" for 172.20.0.1 at 2025-09-02 07:56:06 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TeachersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering teachers/index.html.erb within layouts/application
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` /*action='index',application='Helloworldapplication',controller='teachers'*/[0m
+  ↳ app/views/teachers/index.html.erb:8
+  Rendered teachers/_teacher.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered teachers/_teacher.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered teachers/index.html.erb within layouts/application (Duration: 6.5ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | GC: 0.3ms)
+Completed 200 OK in 14ms (Views: 6.2ms | ActiveRecord: 2.2ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/teachers" for 172.20.0.1 at 2025-09-02 07:56:29 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TeachersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering teachers/index.html.erb within layouts/application
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` /*action='index',application='Helloworldapplication',controller='teachers'*/[0m
+  ↳ app/views/teachers/index.html.erb:8
+  Rendered teachers/_teacher.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered teachers/_teacher.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered teachers/index.html.erb within layouts/application (Duration: 5.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | GC: 0.0ms)
+Completed 200 OK in 13ms (Views: 5.6ms | ActiveRecord: 1.9ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/teachers" for 172.20.0.1 at 2025-09-02 07:56:42 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TeachersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering teachers/index.html.erb within layouts/application
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` /*action='index',application='Helloworldapplication',controller='teachers'*/[0m
+  ↳ app/views/teachers/index.html.erb:17
+  Rendered teachers/index.html.erb within layouts/application (Duration: 5.9ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | GC: 0.2ms)
+Completed 200 OK in 14ms (Views: 6.3ms | ActiveRecord: 2.3ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/teachers/1" for 172.20.0.1 at 2025-09-02 07:56:53 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TeachersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTeacher Load (0.5ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='teachers'*/[0m
+  ↳ app/controllers/teachers_controller.rb:63:in `set_teacher'
+  Rendering layout layouts/application.html.erb
+  Rendering teachers/show.html.erb within layouts/application
+  Rendered teachers/_teacher.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  [1m[36mSubject Load (0.3ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` WHERE `subjects`.`teacher_id` = 1 /*action='show',application='Helloworldapplication',controller='teachers'*/[0m
+  ↳ app/views/teachers/show.html.erb:15
+  [1m[36mSection Load (0.3ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` WHERE `sections`.`subject_id` = 2 /*action='show',application='Helloworldapplication',controller='teachers'*/[0m
+  ↳ app/views/teachers/show.html.erb:16
+  Rendered teachers/show.html.erb within layouts/application (Duration: 19.5ms | GC: 0.6ms)
+  Rendered layout layouts/application.html.erb (Duration: 20.2ms | GC: 0.6ms)
+Completed 200 OK in 36ms (Views: 16.2ms | ActiveRecord: 5.0ms (3 queries, 0 cached) | GC: 0.9ms)
+
+
+Started GET "/teachers/1" for 172.20.0.1 at 2025-09-02 07:56:53 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TeachersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTeacher Load (0.4ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='teachers'*/[0m
+  ↳ app/controllers/teachers_controller.rb:63:in `set_teacher'
+  Rendering layout layouts/application.html.erb
+  Rendering teachers/show.html.erb within layouts/application
+  Rendered teachers/_teacher.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  [1m[36mSubject Load (0.2ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` WHERE `subjects`.`teacher_id` = 1 /*action='show',application='Helloworldapplication',controller='teachers'*/[0m
+  ↳ app/views/teachers/show.html.erb:15
+  [1m[36mSection Load (0.1ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` WHERE `sections`.`subject_id` = 2 /*action='show',application='Helloworldapplication',controller='teachers'*/[0m
+  ↳ app/views/teachers/show.html.erb:16
+  Rendered teachers/show.html.erb within layouts/application (Duration: 2.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 2.6ms | ActiveRecord: 0.7ms (3 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/teachers/2" for 172.20.0.1 at 2025-09-02 07:56:54 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TeachersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTeacher Load (0.6ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 2 LIMIT 1 /*action='show',application='Helloworldapplication',controller='teachers'*/[0m
+  ↳ app/controllers/teachers_controller.rb:63:in `set_teacher'
+  Rendering layout layouts/application.html.erb
+  Rendering teachers/show.html.erb within layouts/application
+  Rendered teachers/_teacher.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  [1m[36mSubject Load (0.4ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` WHERE `subjects`.`teacher_id` = 2 /*action='show',application='Helloworldapplication',controller='teachers'*/[0m
+  ↳ app/views/teachers/show.html.erb:15
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` WHERE `sections`.`subject_id` = 1 /*action='show',application='Helloworldapplication',controller='teachers'*/[0m
+  ↳ app/views/teachers/show.html.erb:16
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` WHERE `sections`.`subject_id` = 3 /*action='show',application='Helloworldapplication',controller='teachers'*/[0m
+  ↳ app/views/teachers/show.html.erb:16
+  Rendered teachers/show.html.erb within layouts/application (Duration: 4.9ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | GC: 0.2ms)
+Completed 200 OK in 21ms (Views: 4.8ms | ActiveRecord: 1.5ms (4 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/teachers" for 172.20.0.1 at 2025-09-02 07:58:15 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TeachersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering teachers/index.html.erb within layouts/application
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` /*action='index',application='Helloworldapplication',controller='teachers'*/[0m
+  ↳ app/views/teachers/index.html.erb:17
+  Rendered teachers/index.html.erb within layouts/application (Duration: 5.4ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | GC: 0.2ms)
+Completed 200 OK in 14ms (Views: 5.3ms | ActiveRecord: 2.0ms (1 query, 0 cached) | GC: 0.4ms)
+
+

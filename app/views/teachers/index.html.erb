@@ -2,15 +2,28 @@
 
 <% content_for :title, "Teachers" %>
 
-<h1>Teachers</h1>
-
-<div id="teachers">
-  <% @teachers.each do |teacher| %>
-    <%= render teacher %>
-    <p>
-      <%= link_to "Show this teacher", teacher %>
-    </p>
-  <% end %>
-</div>
+<h3>List Teachers</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Specialication</th>
+      <th>Status</th>
+      <th>Show</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @teachers.each do |teacher| %>
+      <tr>
+        <td><%= teacher.name %></td>
+        <td><%= teacher.email %></td>
+        <td><%= teacher.specialization %></td>
+        <td><%= teacher.status %></td>
+        <td><%= link_to "Show this teacher", teacher %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
 <%= link_to "New teacher", new_teacher_path %>
