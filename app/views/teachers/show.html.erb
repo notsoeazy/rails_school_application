@@ -2,6 +2,29 @@
 
 <%= render @teacher %>
 
+  <table>
+    <thead>
+      <tr>
+        <th>Section</th>
+        <th>Subject</th>
+        <th>Room</th>
+        <th>Time Slot</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @teacher.subjects.each do |subject| %>
+        <% subject.sections.each do |section| %>
+          <tr>
+            <td><%= section.name %></td>
+            <td><%= section.subject.name %></td>
+            <td><%= section.room %></td>
+            <td><%= section.time_slot %></td>
+          </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  <table>
+
 <div>
   <%= link_to "Edit this teacher", edit_teacher_path(@teacher) %> |
   <%= link_to "Back to teachers", teachers_path %>
