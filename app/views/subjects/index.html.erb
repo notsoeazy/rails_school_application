@@ -2,15 +2,24 @@
 
 <% content_for :title, "Subjects" %>
 
-<h1>Subjects</h1>
-
-<div id="subjects">
-  <% @subjects.each do |subject| %>
-    <%= render subject %>
-    <p>
-      <%= link_to "Show this subject", subject %>
-    </p>
-  <% end %>
-</div>
+<h3>List Subjects</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Teacher</th>
+      <th>Show</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @subjects.each do |subject| %>
+      <tr>
+        <td><%= subject.name %></td>
+        <td><%= subject.teacher.name %></td>
+        <td><%= link_to "Show this subject", subject %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
 <%= link_to "New subject", new_subject_path %>
