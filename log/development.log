@@ -4545,3 +4545,34 @@ Processing by SectionsController#index as HTML
 Completed 200 OK in 13ms (Views: 5.5ms | ActiveRecord: 1.5ms (5 queries, 0 cached) | GC: 0.3ms)
 
 
+Started GET "/sections/2" for 172.20.0.1 at 2025-09-02 06:27:15 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SectionsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSection Load (0.5ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` WHERE `sections`.`id` = 2 LIMIT 1 /*action='show',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/controllers/sections_controller.rb:63:in `set_section'
+  Rendering layout layouts/application.html.erb
+  Rendering sections/show.html.erb within layouts/application
+  [1m[36mSubject Load (0.3ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` WHERE `subjects`.`id` = 2 LIMIT 1 /*action='show',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/views/sections/_section.html.erb:19
+  [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 1 LIMIT 1 /*action='show',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/views/sections/_section.html.erb:24
+  Rendered sections/_section.html.erb (Duration: 1.9ms | GC: 0.0ms)
+  Rendered sections/show.html.erb within layouts/application (Duration: 2.8ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | GC: 0.2ms)
+Completed 200 OK in 15ms (Views: 3.0ms | ActiveRecord: 0.8ms (3 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/sections/new" for 172.20.0.1 at 2025-09-02 06:27:15 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SectionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sections/new.html.erb within layouts/application
+  [1m[36mSubject Load (0.6ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` /*action='new',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/views/sections/_form.html.erb:31
+  Rendered sections/_form.html.erb (Duration: 3.2ms | GC: 0.2ms)
+  Rendered sections/new.html.erb within layouts/application (Duration: 3.5ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | GC: 0.2ms)
+Completed 200 OK in 14ms (Views: 3.6ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.2ms)
+
+
