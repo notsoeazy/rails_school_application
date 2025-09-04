@@ -9368,3 +9368,130 @@ Processing by DepartmentsController#index as HTML
 Completed 200 OK in 13ms (Views: 5.3ms | ActiveRecord: 2.1ms (1 query, 0 cached) | GC: 0.7ms)
 
 
+Started GET "/departments" for 172.20.0.1 at 2025-09-04 03:02:07 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DepartmentsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering departments/index.html.erb within layouts/application
+  [1m[36mDepartment Load (0.4ms)[0m  [1m[34mSELECT `departments`.* FROM `departments` /*action='index',application='Helloworldapplication',controller='departments'*/[0m
+  ↳ app/views/departments/index.html.erb:15
+  Rendered departments/index.html.erb within layouts/application (Duration: 2.3ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | GC: 0.3ms)
+Completed 200 OK in 13ms (Views: 2.9ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/sections" for 172.20.0.1 at 2025-09-04 03:02:38 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SectionsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sections/index.html.erb within layouts/application
+  [1m[36mSection Load (0.6ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` /*action='index',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/views/sections/index.html.erb:18
+  [1m[36mSubject Load (0.3ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` WHERE `subjects`.`id` = 1 LIMIT 1 /*action='index',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/views/sections/index.html.erb:21
+  [1m[36mTeacher Load (0.4ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 2 LIMIT 1 /*action='index',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/views/sections/index.html.erb:22
+  [1m[36mSubject Load (0.2ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` WHERE `subjects`.`id` = 2 LIMIT 1 /*action='index',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/views/sections/index.html.erb:21
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 1 LIMIT 1 /*action='index',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/views/sections/index.html.erb:22
+  [1m[36mSubject Load (0.2ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` WHERE `subjects`.`id` = 3 LIMIT 1 /*action='index',application='Helloworldapplication',controller='sections'*/[0m
+  ↳ app/views/sections/index.html.erb:21
+  [1m[36mCACHE Teacher Load (0.0ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 2 LIMIT 1[0m
+  ↳ app/views/sections/index.html.erb:22
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT `subjects`.* FROM `subjects` WHERE `subjects`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/sections/index.html.erb:21
+  [1m[36mCACHE Teacher Load (0.0ms)[0m  [1m[34mSELECT `teachers`.* FROM `teachers` WHERE `teachers`.`id` = 2 LIMIT 1[0m
+  ↳ app/views/sections/index.html.erb:22
+  Rendered sections/index.html.erb within layouts/application (Duration: 27.9ms | GC: 1.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 28.9ms | GC: 1.4ms)
+Completed 200 OK in 37ms (Views: 22.7ms | ActiveRecord: 6.8ms (9 queries, 3 cached) | GC: 1.6ms)
+
+
+Started GET "/classlists" for 172.20.0.1 at 2025-09-04 03:02:59 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ClasslistsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering classlists/index.html.erb within layouts/application
+  [1m[36mClasslist Load (0.5ms)[0m  [1m[34mSELECT `classlists`.* FROM `classlists` /*action='index',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/views/classlists/index.html.erb:8
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`id` = 1 LIMIT 1 /*action='index',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/views/classlists/_classlist.html.erb:4
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` WHERE `sections`.`id` = 1 LIMIT 1 /*action='index',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/views/classlists/_classlist.html.erb:9
+  Rendered classlists/_classlist.html.erb (Duration: 7.9ms | GC: 0.6ms)
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`id` = 2 LIMIT 1 /*action='index',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/views/classlists/_classlist.html.erb:4
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` WHERE `sections`.`id` = 3 LIMIT 1 /*action='index',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/views/classlists/_classlist.html.erb:9
+  Rendered classlists/_classlist.html.erb (Duration: 1.6ms | GC: 0.0ms)
+  [1m[36mCACHE Student Load (0.0ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`id` = 2 LIMIT 1[0m
+  ↳ app/views/classlists/_classlist.html.erb:4
+  [1m[36mCACHE Section Load (0.0ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` WHERE `sections`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/classlists/_classlist.html.erb:9
+  Rendered classlists/_classlist.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`id` = 3 LIMIT 1 /*action='index',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/views/classlists/_classlist.html.erb:4
+  [1m[36mCACHE Section Load (0.0ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` WHERE `sections`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/classlists/_classlist.html.erb:9
+  Rendered classlists/_classlist.html.erb (Duration: 1.6ms | GC: 0.3ms)
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`id` = 4 LIMIT 1 /*action='index',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/views/classlists/_classlist.html.erb:4
+  [1m[36mCACHE Section Load (0.0ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` WHERE `sections`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/classlists/_classlist.html.erb:9
+  Rendered classlists/_classlist.html.erb (Duration: 2.1ms | GC: 0.0ms)
+  [1m[36mCACHE Student Load (0.0ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`id` = 4 LIMIT 1[0m
+  ↳ app/views/classlists/_classlist.html.erb:4
+  [1m[36mSection Load (0.4ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` WHERE `sections`.`id` = 2 LIMIT 1 /*action='index',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/views/classlists/_classlist.html.erb:9
+  Rendered classlists/_classlist.html.erb (Duration: 2.7ms | GC: 0.0ms)
+  [1m[36mCACHE Student Load (0.0ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`id` = 4 LIMIT 1[0m
+  ↳ app/views/classlists/_classlist.html.erb:4
+  [1m[36mCACHE Section Load (0.0ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` WHERE `sections`.`id` = 3 LIMIT 1[0m
+  ↳ app/views/classlists/_classlist.html.erb:9
+  Rendered classlists/_classlist.html.erb (Duration: 2.0ms | GC: 0.0ms)
+  Rendered classlists/index.html.erb within layouts/application (Duration: 25.9ms | GC: 1.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 27.0ms | GC: 1.5ms)
+Completed 200 OK in 39ms (Views: 22.3ms | ActiveRecord: 5.3ms (15 queries, 7 cached) | GC: 1.5ms)
+
+
+Started GET "/classlists" for 172.20.0.1 at 2025-09-04 03:07:13 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ClasslistsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering classlists/index.html.erb within layouts/application
+  [1m[36mClasslist Load (0.4ms)[0m  [1m[34mSELECT `classlists`.* FROM `classlists` /*action='index',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/views/classlists/index.html.erb:15
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`id` = 1 LIMIT 1 /*action='index',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/views/classlists/index.html.erb:17
+  [1m[36mSection Load (0.1ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` WHERE `sections`.`id` = 1 LIMIT 1 /*action='index',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/views/classlists/index.html.erb:18
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`id` = 2 LIMIT 1 /*action='index',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/views/classlists/index.html.erb:17
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` WHERE `sections`.`id` = 3 LIMIT 1 /*action='index',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/views/classlists/index.html.erb:18
+  [1m[36mCACHE Student Load (0.0ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`id` = 2 LIMIT 1[0m
+  ↳ app/views/classlists/index.html.erb:17
+  [1m[36mCACHE Section Load (0.0ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` WHERE `sections`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/classlists/index.html.erb:18
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`id` = 3 LIMIT 1 /*action='index',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/views/classlists/index.html.erb:17
+  [1m[36mCACHE Section Load (0.0ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` WHERE `sections`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/classlists/index.html.erb:18
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`id` = 4 LIMIT 1 /*action='index',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/views/classlists/index.html.erb:17
+  [1m[36mCACHE Section Load (0.0ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` WHERE `sections`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/classlists/index.html.erb:18
+  [1m[36mCACHE Student Load (0.0ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`id` = 4 LIMIT 1[0m
+  ↳ app/views/classlists/index.html.erb:17
+  [1m[36mSection Load (0.4ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` WHERE `sections`.`id` = 2 LIMIT 1 /*action='index',application='Helloworldapplication',controller='classlists'*/[0m
+  ↳ app/views/classlists/index.html.erb:18
+  [1m[36mCACHE Student Load (0.0ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`id` = 4 LIMIT 1[0m
+  ↳ app/views/classlists/index.html.erb:17
+  [1m[36mCACHE Section Load (0.0ms)[0m  [1m[34mSELECT `sections`.* FROM `sections` WHERE `sections`.`id` = 3 LIMIT 1[0m
+  ↳ app/views/classlists/index.html.erb:18
+  Rendered classlists/index.html.erb within layouts/application (Duration: 28.5ms | GC: 1.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 30.3ms | GC: 1.5ms)
+Completed 200 OK in 37ms (Views: 24.6ms | ActiveRecord: 6.4ms (15 queries, 7 cached) | GC: 1.6ms)
+
+

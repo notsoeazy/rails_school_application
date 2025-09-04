@@ -3,14 +3,24 @@
 <% content_for :title, "Classlists" %>
 
 <h1>Classlists</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Student</th>
+      <th>Section</th>
+      <th>Show</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @classlists.each do |classlist| %>
+    <tr>
+      <td><%= classlist.student.name %></td>
+      <td><%= classlist.section.name %></td>
+      <td><%= link_to "Show this classlist", classlist %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
 
-<div id="classlists">
-  <% @classlists.each do |classlist| %>
-    <%= render classlist %>
-    <p>
-      <%= link_to "Show this classlist", classlist %>
-    </p>
-  <% end %>
-</div>
 
 <%= link_to "New classlist", new_classlist_path %>
