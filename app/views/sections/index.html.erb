@@ -3,14 +3,31 @@
 <% content_for :title, "Sections" %>
 
 <h1>Sections</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Subject</th>
+      <th>Teacher</th>
+      <th>Room</th>
+      <th>Time Slot</th>
+      <th>Show</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @sections.each do |section| %>
+      <tr>
+        <td><%= section.name %></td>
+        <td><%= section.subject.name %></td>
+        <td><%= section.subject.teacher.name %></td>
+        <td><%= section.room %></td>
+        <td><%= section.time_slot %></td>
+        <td><%= link_to "Show this section", section %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
-<div id="sections">
-  <% @sections.each do |section| %>
-    <%= render section %>
-    <p>
-      <%= link_to "Show this section", section %>
-    </p>
-  <% end %>
-</div>
+
 
 <%= link_to "New section", new_section_path %>
