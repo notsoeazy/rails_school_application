@@ -9343,3 +9343,28 @@ Processing by SectionsController#new as HTML
 Completed 200 OK in 17ms (Views: 4.2ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.3ms)
 
 
+Started GET "/departments" for 172.20.0.1 at 2025-09-04 02:59:54 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DepartmentsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering departments/index.html.erb within layouts/application
+  [1m[36mDepartment Load (1.5ms)[0m  [1m[34mSELECT `departments`.* FROM `departments` /*action='index',application='Helloworldapplication',controller='departments'*/[0m
+  ↳ app/views/departments/index.html.erb:8
+  Rendered departments/_department.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered departments/index.html.erb within layouts/application (Duration: 8.2ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | GC: 0.2ms)
+Completed 200 OK in 20ms (Views: 5.8ms | ActiveRecord: 3.5ms (1 query, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/departments" for 172.20.0.1 at 2025-09-04 03:01:26 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DepartmentsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering departments/index.html.erb within layouts/application
+  [1m[36mDepartment Load (0.3ms)[0m  [1m[34mSELECT `departments`.* FROM `departments` /*action='index',application='Helloworldapplication',controller='departments'*/[0m
+  ↳ app/views/departments/index.html.erb:15
+  Rendered departments/index.html.erb within layouts/application (Duration: 5.1ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | GC: 0.2ms)
+Completed 200 OK in 13ms (Views: 5.3ms | ActiveRecord: 2.1ms (1 query, 0 cached) | GC: 0.7ms)
+
+
