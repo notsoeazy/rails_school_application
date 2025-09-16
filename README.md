@@ -1,9 +1,7 @@
 # helloworldapplication
 
-### Note
+## Note
 Make sure that ruby, rails, and docker are installed.
-
----
 
 ## To run
 ```
