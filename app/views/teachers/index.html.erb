@@ -10,6 +10,8 @@
       <th>Email</th>
       <th>Specialication</th>
       <th>Status</th>
+      <th>Units</th>
+      <th>Monthly Salary</th>
       <th>Show</th>
     </tr>
   </thead>
@@ -20,6 +22,8 @@
         <td><%= teacher.email %></td>
         <td><%= teacher.specialization %></td>
         <td><%= teacher.status %></td>
+        <td><%= teacher.number_of_units %></td>
+        <td><%= teacher.monthly_salary %></td>
         <td><%= link_to "Show this teacher", teacher %></td>
       </tr>
     <% end %>
