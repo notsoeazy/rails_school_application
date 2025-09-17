@@ -29,7 +29,8 @@ class SectionsController < ApplicationController
         format.json { render :show, status: :created, location: @section }
 
         @section.subject.teacher.increment!(:number_of_units, @section.subject.number_of_units)
-        @section.subject.teacher.update(monthly_salary: @section.subject.teacher.number_of_units * 2000)
+        monthlySalary = @section.subject.teacher.number_of_units * 2000
+        @section.subject.teacher.update(monthly_salary: monthlySalary)
 
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -56,8 +57,9 @@ class SectionsController < ApplicationController
     @section.destroy!
 
     @section.subject.teacher.decrement!(:number_of_units, @section.subject.number_of_units)
-    @section.subject.teacher.update(monthly_salary: @section.subject.teacher.number_of_units * 2000)
-
+    monthlySalary = @section.subject.teacher.number_of_units * 2000
+    @section.subject.teacher.update(monthly_salary: monthlySalary)
+    
     respond_to do |format|
       format.html { redirect_to sections_path, status: :see_other, notice: "Section was successfully destroyed." }
       format.json { head :no_content }
