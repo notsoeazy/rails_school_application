@@ -23,6 +23,8 @@ docker compose up
 - `specialization`
 - `status`
 - `department_id`
+- `number_of_units`
+- `monthly_salary`
 
 ### Students
 - `id`
@@ -30,11 +32,13 @@ docker compose up
 - `year_level`
 - `program`
 - `department_id`
+- `number_of_units`
 
 ### Subjects
 - `id`
 - `name`
 - `teacher_id`
+- `number_of_units`
 
 ### Sections
 - `id`
@@ -42,6 +46,7 @@ docker compose up
 - `room`
 - `time_slot`
 - `subject_id`
+- `number_of_students`
 
 ### Classlists
 - `id`
