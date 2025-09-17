@@ -62,7 +62,7 @@ class ClasslistsController < ApplicationController
     @classlist.student.decrement!(:number_of_units, @classlist.section.subject.number_of_units)
 
     totalAssessment = (@classlist.student.number_of_units * 2500) + 15000
-    @classlist.student.update(total_assessment: (@classlist.student.number_of_units * 2500) + 15000)
+    @classlist.student.update(total_assessment: totalAssessment)
 
     respond_to do |format|
       format.html { redirect_to classlists_path, status: :see_other, notice: "Classlist was successfully destroyed." }
