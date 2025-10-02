@@ -2,7 +2,10 @@
 
 <%= render @department %>
 
-<h3> List of Students </h3>
+<p> <strong> Number of Students: </strong> <%= @department.student_count %> </p>
+<p> <strong> Number of Employees: </strong> <%= @department.employee_count %> </p>
+
+<h3> List of Students</h3>
 <table>
   <thead>
     <tr>
@@ -22,7 +25,7 @@
   </tbody>
 </table>
     
-<h3> List of Teachers </h3>
+<h3> List of Teachers | Number of Emplo </h3>
 <table>
   <thead>
     <tr>
