@@ -8,6 +8,8 @@
     <tr>
       <th>Name</th>
       <th>Location</th>
+      <th>Number of Employees</th>
+      <th>Number of Students</th>
       <th>Show</th>
     </tr>
   </thead>
@@ -16,6 +18,8 @@
       <tr>
         <td><%= department.name %></td>
         <td><%= department.location %></td>
+        <td><%= department.employee_count %></td>
+        <td><%= department.student_count %></td>
         <td><%= link_to "Show this department", department %></td>
       </tr>
     <% end %>

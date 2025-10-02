@@ -12,7 +12,8 @@
       <th>Name</th>
       <th>Program</th>
       <th>Year Level</th>
-    </tr>
+      <th>Total Assessment</th>
+      </tr>
   </thead>
   <tbody>
   <% @department.students.each do |student| %>
@@ -20,12 +21,13 @@
       <td> <%= student.name %> </td>
       <td> <%= student.program %> </td>
       <td> <%= student.year_level %> </td>
+      <td> <%= student.total_assessment %> </td>
     </tr>
     <% end %>
   </tbody>
 </table>
     
-<h3> List of Teachers | Number of Emplo </h3>
+<h3> List of Teachers </h3>
 <table>
   <thead>
     <tr>
@@ -33,6 +35,7 @@
       <th>Email</th>
       <th>Specialization</th>
       <th>Status</th>
+      <th>Monthly Salary</th>
     </tr>
   </thead>
   <tbody>
@@ -42,6 +45,29 @@
       <td> <%= teacher.email %> </td>
       <td> <%= teacher.specialization %> </td>
       <td> <%= teacher.status %> </td>
+      <td> <%= teacher.monthly_salary %> </td>
+    </tr>
+    <% end %>  
+  </tbody>
+</table>
+
+<h3> List of Staff </h3>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Status</th>
+      <th>Monthly Salary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @department.staffs.each do |staff| %>
+    <tr>
+      <td> <%= staff.name %> </td>
+      <td> <%= staff.email %> </td>
+      <td> <%= staff.status %> </td>
+      <td> <%= staff.monthly_salary %> </td>
     </tr>
     <% end %>  
   </tbody>
