@@ -56,8 +56,12 @@ class StudentGuardiansController < ApplicationController
   # DELETE /student_guardians/1 or /student_guardians/1.json
   def destroy
     @student_guardian.destroy!
-    @student_guardian.guardian.decrement!(:number_of_students)
-    @student_guardian.student.decrement!(:number_of_guardians)
+    # If update
+    @student_guardian.guardian.update(number_of_students: @student_guardian.guardian.student_guardians.count)
+    @student_guardian.student.update(number_of_guardians: @student_guardian.student.student_guardians.count)
+    # If increment
+    # @student_guardian.guardian.decrement!(:number_of_students)
+    # @student_guardian.student.decrement!(:number_of_guardians)
     respond_to do |format|
       format.html { redirect_to student_guardians_path, status: :see_other, notice: "Student guardian was successfully destroyed." }
       format.json { head :no_content }

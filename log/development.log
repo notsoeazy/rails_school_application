@@ -28445,3 +28445,63 @@ Processing by StudentsController#index as HTML
 Completed 200 OK in 68ms (Views: 23.1ms | ActiveRecord: 3.2ms (6 queries, 4 cached) | GC: 1.4ms)
 
 
+Started GET "/student_guardians/3" for 192.168.65.1 at 2025-10-09 08:00:07 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StudentGuardiansController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mStudentGuardian Load (0.7ms)[0m  [1m[34mSELECT `student_guardians`.* FROM `student_guardians` WHERE `student_guardians`.`id` = 3 LIMIT 1 /*action='show',application='Helloworldapplication',controller='student_guardians'*/[0m
+  ↳ app/controllers/student_guardians_controller.rb:70:in `set_student_guardian'
+  Rendering layout layouts/application.html.erb
+  Rendering student_guardians/show.html.erb within layouts/application
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`id` = 2 LIMIT 1 /*action='show',application='Helloworldapplication',controller='student_guardians'*/[0m
+  ↳ app/views/student_guardians/_student_guardian.html.erb:9
+  [1m[36mGuardian Load (0.4ms)[0m  [1m[34mSELECT `guardians`.* FROM `guardians` WHERE `guardians`.`id` = 4 LIMIT 1 /*action='show',application='Helloworldapplication',controller='student_guardians'*/[0m
+  ↳ app/views/student_guardians/_student_guardian.html.erb:14
+  Rendered student_guardians/_student_guardian.html.erb (Duration: 4.7ms | GC: 0.0ms)
+  Rendered student_guardians/show.html.erb within layouts/application (Duration: 7.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | GC: 0.0ms)
+Completed 200 OK in 50ms (Views: 8.2ms | ActiveRecord: 1.5ms (3 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/student_guardians" for 192.168.65.1 at 2025-10-09 08:00:30 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StudentGuardiansController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering student_guardians/index.html.erb within layouts/application
+  [1m[36mStudentGuardian Load (0.4ms)[0m  [1m[34mSELECT `student_guardians`.* FROM `student_guardians` /*action='index',application='Helloworldapplication',controller='student_guardians'*/[0m
+  ↳ app/views/student_guardians/index.html.erb:17
+  [1m[36mGuardian Load (0.4ms)[0m  [1m[34mSELECT `guardians`.* FROM `guardians` WHERE `guardians`.`id` = 4 LIMIT 1 /*action='index',application='Helloworldapplication',controller='student_guardians'*/[0m
+  ↳ app/views/student_guardians/index.html.erb:19
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`id` = 2 LIMIT 1 /*action='index',application='Helloworldapplication',controller='student_guardians'*/[0m
+  ↳ app/views/student_guardians/index.html.erb:20
+  [1m[36mGuardian Load (0.3ms)[0m  [1m[34mSELECT `guardians`.* FROM `guardians` WHERE `guardians`.`id` = 5 LIMIT 1 /*action='index',application='Helloworldapplication',controller='student_guardians'*/[0m
+  ↳ app/views/student_guardians/index.html.erb:19
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`id` = 1 LIMIT 1 /*action='index',application='Helloworldapplication',controller='student_guardians'*/[0m
+  ↳ app/views/student_guardians/index.html.erb:20
+  [1m[36mCACHE Guardian Load (0.0ms)[0m  [1m[34mSELECT `guardians`.* FROM `guardians` WHERE `guardians`.`id` = 4 LIMIT 1[0m
+  ↳ app/views/student_guardians/index.html.erb:19
+  [1m[36mCACHE Student Load (0.0ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/student_guardians/index.html.erb:20
+  Rendered student_guardians/index.html.erb within layouts/application (Duration: 14.9ms | GC: 0.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 16.2ms | GC: 0.4ms)
+Completed 200 OK in 61ms (Views: 15.1ms | ActiveRecord: 1.7ms (7 queries, 2 cached) | GC: 0.4ms)
+
+
+Started GET "/student_guardians/3" for 192.168.65.1 at 2025-10-09 08:01:54 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StudentGuardiansController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mStudentGuardian Load (0.7ms)[0m  [1m[34mSELECT `student_guardians`.* FROM `student_guardians` WHERE `student_guardians`.`id` = 3 LIMIT 1 /*action='show',application='Helloworldapplication',controller='student_guardians'*/[0m
+  ↳ app/controllers/student_guardians_controller.rb:70:in `set_student_guardian'
+  Rendering layout layouts/application.html.erb
+  Rendering student_guardians/show.html.erb within layouts/application
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT `students`.* FROM `students` WHERE `students`.`id` = 2 LIMIT 1 /*action='show',application='Helloworldapplication',controller='student_guardians'*/[0m
+  ↳ app/views/student_guardians/_student_guardian.html.erb:9
+  [1m[36mGuardian Load (0.3ms)[0m  [1m[34mSELECT `guardians`.* FROM `guardians` WHERE `guardians`.`id` = 4 LIMIT 1 /*action='show',application='Helloworldapplication',controller='student_guardians'*/[0m
+  ↳ app/views/student_guardians/_student_guardian.html.erb:14
+  Rendered student_guardians/_student_guardian.html.erb (Duration: 4.5ms | GC: 0.0ms)
+  Rendered student_guardians/show.html.erb within layouts/application (Duration: 6.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | GC: 0.0ms)
+Completed 200 OK in 63ms (Views: 6.8ms | ActiveRecord: 1.4ms (3 queries, 0 cached) | GC: 0.2ms)
+
+
