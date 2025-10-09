@@ -1,0 +1,32 @@
+<%= form_with(model: student_guardian) do |form| %>
+  <% if student_guardian.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(student_guardian.errors.count, "error") %> prohibited this student_guardian from being saved:</h2>
+
+      <ul>
+        <% student_guardian.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :relationship, style: "display: block" %>
+    <%= form.text_field :relationship %>
+  </div>
+
+  <div>
+    <%= form.label :student_id, "Student", style: "display: block" %>
+    <%= form.collection_select :student_id, Student.all, :id, :name, prompt: "Select a student" %>
+  </div>
+
+  <div>
+    <%= form.label :guardian_id, "Guardian", style: "display: block" %>
+    <%= form.collection_select :guardian_id, Guardian.all, :id, :name, prompt: "Select a guardian" %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

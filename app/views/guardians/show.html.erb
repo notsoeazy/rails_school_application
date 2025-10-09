@@ -1,0 +1,28 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @guardian %>
+
+<h2>List of Students</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Relationship</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @guardian.student_guardians.each do |student_guardian|%>
+      <tr>
+        <td><%= student_guardian.student.name %></td>
+        <td><%= student_guardian.relationship %></td>
+      </tr>
+    <% end %>
+  </tbody>
+<table>
+
+<div>
+  <%= link_to "Edit this guardian", edit_guardian_path(@guardian) %> |
+  <%= link_to "Back to guardians", guardians_path %>
+
+  <%= button_to "Destroy this guardian", @guardian, method: :delete %>
+</div>

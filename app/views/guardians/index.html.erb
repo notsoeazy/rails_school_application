@@ -1,0 +1,29 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Guardians" %>
+
+<h1>List of Guardians</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email Address</th>
+      <th>Contact Number</th>
+      <th>Number of Students</th>
+      <th>Show</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @guardians.each do |guardian| %>
+      <tr>
+        <td><%= guardian.name %></td>
+        <td><%= guardian.email_address %></td>
+        <td><%= guardian.contact_number %></td>
+        <td><%= guardian.number_of_students %></td>
+        <td><%= link_to "Show this guardian", guardian %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to "New guardian", new_guardian_path %>
