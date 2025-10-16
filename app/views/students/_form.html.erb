@@ -1,9 +1,8 @@
-<div class="card">
-  <div class="card-header">
+  <div class="d-flex align-items-center mb-3">
     <h2 class="fw-bold m-0"><%= student.new_record? ? "New Student" : "Edit Student" %></h2>
   </div>
-  <div class="card-body">
-            
+
+  <div class="border rounded p-3 shadow-sm">          
     <%= form_with(model: student) do |form| %>
       <% if student.errors.any? %>
         <div style="color: red">
@@ -61,4 +60,3 @@
     
     <% end %>
   </div>
-</div>
