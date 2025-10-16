@@ -1,1 +1,6 @@
 change total assessment to float and all money attributes
+
+1. Index
+2. Show
+3. New
+4. Edit
