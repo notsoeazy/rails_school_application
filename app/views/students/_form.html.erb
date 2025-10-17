@@ -2,7 +2,7 @@
     <h2 class="fw-bold m-0"><%= student.new_record? ? "New Student" : "Edit Student" %></h2>
   </div>
 
-  <div class="border rounded p-3 shadow-sm">          
+  <div class="border rounded-4 p-4 shadow-sm">          
     <%= form_with(model: student) do |form| %>
       <% if student.errors.any? %>
         <div style="color: red">
