@@ -36,7 +36,7 @@
   <%= link_to "Back to students", students_path, class: "btn btn-secondary" %>
     </div>
   <div class="d-flex gap-3">
-    <%= button_to "Destroy this student", @student, method: :delete, class: "btn btn-outline-danger" %>
+    <%= button_to "Destroy this student", @student, method: :delete, data: { turbo_confirm: "Are you sure?" }, class: "btn btn-outline-danger" %>
     <%= link_to "Edit this student", edit_student_path(@student), class: "btn btn-success" %>
   </div>
 </div>
