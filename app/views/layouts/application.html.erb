@@ -27,22 +27,20 @@
     >
   </head>
 
-  <body>
+  <body style="background-color: #6252AC;">
     <div class="d-flex">
       <!-- Navbar -->
-      <nav class="d-flex flex-column ps-3 py-3 text-white" style="min-width: 250px; min-height: 100vh; background-color: #6252AC;">
+      <nav class="d-flex flex-column ps-3 py-3 text-white">
         <a class="d-flex flex-column justify-content-center align-items-center mt-3 text-white text-decoration-none" href="#">
-          <svg class="me-2" width="80px" height="80px" viewBox="-1.5 -1.5 18.00 18.00" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#FFFFFF" stroke-width="1">
+          <svg width="80px" height="80px" viewBox="-1.5 -1.5 18.00 18.00" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#FFFFFF" stroke-width="1">
             <path d="M7.5 4.5L11.5 6.5V14.5H3.5V6.5L7.5 4.5ZM7.5 4.5V0M0 14.5H15M1.5 14.5V8.5H3.5M13.5 14.5V8.5H11.5M6.5 14.5V11.5H8.5V14.5M7.5 0.5H10.5V2.5H7.5M7.5 9.5C6.94772 9.5 6.5 9.05228 6.5 8.5C6.5 7.94772 6.94772 7.5 7.5 7.5C8.05228 7.5 8.5 7.94772 8.5 8.5C8.5 9.05228 8.05228 9.5 7.5 9.5Z" stroke="#FFFFFF"></path> 
           </svg>
-          <strong class="m-0 fw-bold">
-            School Manager
-          </strong>
+          <strong class="m-0">School Manager</strong>
         </a>
 
         <hr class="text-white opacity-50">
 
-        <ul class="nav nav-pills flex-column mb-auto">
+        <ul class="nav nav-pills flex-column">
           <li class="nav-item">
             <%= link_to students_path, class: "d-flex align-items-center nav-link link-light #{'active' if controller_name == 'students'}" do %>
               <svg class="me-2" height="24px" width="24px" version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" fill="#FFFFFF"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <style type="text/css"> .st0{fill:#FFFFFF;} </style> <g> <path class="st0" d="M473.61,63.16L276.16,2.927C269.788,0.986,263.004,0,256.001,0c-7.005,0-13.789,0.986-20.161,2.927 L38.386,63.16c-3.457,1.064-5.689,3.509-5.689,6.25c0,2.74,2.232,5.186,5.691,6.25l91.401,27.88v77.228 c0.023,39.93,13.598,78.284,38.224,107.981c11.834,14.254,25.454,25.574,40.483,33.633c15.941,8.564,32.469,12.904,49.124,12.904 c16.646,0,33.176-4.34,49.126-12.904c22.597-12.143,42.04-31.646,56.226-56.39c14.699-25.683,22.471-55.155,22.478-85.224v-78.214 l45.244-13.804v64.192c-6.2,0.784-11.007,6.095-11.007,12.5c0,5.574,3.649,10.404,8.872,12.011l-9.596,63.315 c-0.235,1.576,0.223,3.168,1.262,4.386c1.042,1.204,2.554,1.902,4.148,1.902h36.273c1.592,0,3.104-0.699,4.148-1.91 c1.036-1.203,1.496-2.803,1.262-4.386l-9.596-63.307c5.223-1.607,8.872-6.436,8.872-12.011c0-6.405-4.81-11.716-11.011-12.5V81.544 l19.292-5.885c3.457-1.064,5.691-3.517,5.691-6.25C479.303,66.677,477.069,64.223,473.61,63.16z M257.62,297.871 c-10.413,0-20.994-2.842-31.448-8.455c-16.194-8.649-30.908-23.564-41.438-42.011c-4.854-8.478-8.796-17.702-11.729-27.445 c60.877-10.776,98.51-49.379,119.739-80.97c10.242,20.776,27.661,46.754,54.227,58.648c-3.121,24.984-13.228,48.812-28.532,67.212 c-8.616,10.404-18.773,18.898-29.375,24.573C278.606,295.029,268.025,297.871,257.62,297.871z"></path> <path class="st0" d="M373.786,314.23l-1.004-0.629l-110.533,97.274L151.714,313.6l-1.004,0.629 c-36.853,23.036-76.02,85.652-76.02,156.326v0.955l0.846,0.45C76.291,472.365,152.428,512,262.249,512 c109.819,0,185.958-39.635,186.712-40.038l0.846-0.45v-0.955C449.808,399.881,410.639,337.265,373.786,314.23z"></path> </g> </g>
@@ -71,7 +69,7 @@
       </nav>
 
       <!-- Main Content -->
-      <div class="flex-grow-1 d-flex flex-column vh-100 p-4" style="background-color: #6252AC; overflow: hidden;">
+      <div class="flex-grow-1 d-flex flex-column vh-100 p-4 overflow-hidden">
         <% flash.each do |key, message| %>
           <div class="alert alert-<%= key == "notice" ? "success" : "danger" %> alert-dismissible fade show" role="alert">
             <%= message %>
