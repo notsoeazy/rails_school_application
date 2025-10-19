@@ -8,12 +8,8 @@ change total assessment to float and all money attributes
 
 Notes: 
 make the navbar responsive
-make the content scrollable instead.
-add next page in table???
-
 
 Idea:
 use offcanvas for mobile sidebar
-
 
 Add modal for delete confirmation
