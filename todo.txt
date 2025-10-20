@@ -2,5 +2,10 @@ TODO:
 󰆢 collapsable navbar
     use offcanvas for mobile sidebar
 󰆢 Add modal for delete confirmation
+󰆢 Add nav for guardians, etc.
+
+󰆢 Add nav or form for classlist (enroll), student_guardian (assign guardians)
+
+
 
 󰆢 change total assessment to float and all money attributes
