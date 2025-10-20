@@ -1,15 +1,6 @@
-change total assessment to float and all money attributes
+TODO: 
+󰆢 collapsable navbar
+    use offcanvas for mobile sidebar
+󰆢 Add modal for delete confirmation
 
-1. Index
-2. Show
-3. New
-4. Edit
-
-
-Notes: 
-make the navbar responsive
-
-Idea:
-use offcanvas for mobile sidebar
-
-Add modal for delete confirmation
+󰆢 change total assessment to float and all money attributes
