@@ -5,7 +5,42 @@
     <h2 class="fw-bold m-0">Student Information</h2>
   </header>
 
-  <%= render @student %>
+  <div class="d-flex gap-3">
+    <%= render @student %>
+
+    <!-- Guardians -->
+    <div class="d-flex flex-column border shadow-sm rounded-4 p-4 overflow-hidden mb-3" style="max-height: 290px;">
+
+      <div class="d-flex gap-2 align-items-center mb-3">
+        <h3 class="m-0 fw-semibold">Guardians</h3>
+        <span class="badge bg-primary rounded-pill fs-6">
+          <%= @student.student_guardians.count %>
+        </span>
+      </div>
+      
+      <div class="table-responsive overflow-auto scrollbar-thin">
+        <table class="table table-striped table-hover">
+          <thead>
+            <tr>
+              <th class="text-secondary fw-normal">Name</th>
+              <th class="text-secondary fw-normal">Relationship</th>
+              <th class="text-secondary fw-normal"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @student.student_guardians.each do |student_guardian| %>
+              <tr class="fw-medium">
+                <td><%= student_guardian.guardian.name %></td>
+                <td><%= student_guardian.relationship %></td>
+                <td><%= link_to "Show", student_guardian.guardian, class: "btn btn-sm btn-outline-primary" %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+              
+  </div>
 </div>
 
 <!-- Table -->

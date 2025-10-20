@@ -1,4 +1,4 @@
-<div id="<%= dom_id student %>" class="d-flex flex-column border shadow-sm rounded-4 overflow-hidden mb-3">
+<div id="<%= dom_id student %>" class="d-flex flex-grow-1 flex-column border shadow-sm rounded-4 overflow-hidden mb-3">
   <!-- Student Name -->
   <div class="bg-primary text-white p-4 d-flex gap-3">
     <div class="d-flex align-items-center">
@@ -11,23 +11,19 @@
   </div>
 
   <!-- Student Information -->
-  <div class="p-4">
-    <div class="row text-center g-3">
-      <div class="col-12 col-md-3">
+  <div class="flex-grow-1 d-flex align-items-center p-4">
+    <div class="row w-100 text-center g-3">
+      <div class="col-12 col-md-4">
         <p class="text-secondary small mb-1">Year Level</p>
         <h5><%= student.year_level %></h5>
       </div>
-      <div class="col-12 col-md-3">
+      <div class="col-12 col-md-4">
         <p class="text-secondary small mb-1">Number of Units</p>
         <h5><%= student.number_of_units %></h5>
       </div>
-      <div class="col-12 col-md-3">
+      <div class="col-12 col-md-4">
         <p class="text-secondary small mb-1">Total Assessment</p>
         <h5>₱<%= number_with_delimiter(student.total_assessment) %></h5>
-      </div>
-      <div class="col-12 col-md-3">
-        <p class="text-secondary small mb-1">Number of Guardians</p>
-        <h5><%= student.number_of_guardians %></h5>
       </div>
     </div>
   </div>
