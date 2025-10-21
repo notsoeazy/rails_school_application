@@ -1,4 +1,9 @@
 TODO: 
+
+make the student show into a grid so that when on mobile or smaller screens it arranges to show all tables and info in vertical
+
+
+
 󰆢 collapsable navbar
     use offcanvas for mobile sidebar
 󰆢 Add modal for delete confirmation
