@@ -16,36 +16,38 @@
     <span>New Student</span>
   <% end %>
 </div>
-<div class="border shadow-sm p-4 rounded-4 table-responsive flex-grow-1 overflow-auto scrollbar-thin">
-  <table class="table table-striped table-hover">
-    <thead>
-      <tr>
-        <th class="text-secondary fw-normal text-center">Name</th>
-        <th class="text-secondary fw-normal text-center">Year Level</th>
-        <th class="text-secondary fw-normal text-center">Program</th>
-        <th class="text-secondary fw-normal text-center">Units</th>
-        <th class="text-secondary fw-normal text-center">Total Assessment</th>
-        <th class="text-secondary fw-normal text-center">Department</th>
-        <th class="text-secondary fw-normal text-center">Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @students.each do |student| %>
-        <tr class="fw-medium">
-          <td class="text-center"><%= student.name %></td>
-          <td class="text-center"><%= student.year_level %></td>
-          <td class="text-center"><%= student.program %></td>
-          <td class="text-center"><%= student.number_of_units %></td>
-          <td class="text-center">₱<%= number_with_delimiter(student.total_assessment) %></td>
-          <td class="text-center"><%= student.department.name %></td>
-          <td class="d-flex gap-2 justify-content-center">
-            <%= link_to "Show", student, class: "btn btn-sm btn-outline-primary" %>
-            <%= link_to "Edit", edit_student_path(student), class: "btn btn-sm btn-outline-secondary" %>
-            <%= button_to "Delete", student, method: :delete, data: { turbo_confirm: "Are you sure?" }, class: "btn btn-sm btn-outline-danger" %>
-          </td>
+<div class="border shadow-sm p-4 rounded-4 flex-grow-1 overflow-hidden">
+  <div class="table-responsive overflow-auto scrollbar-thin" style="max-height: 100%;">
+    <table class="table table-striped table-hover">
+      <thead class="sticky-top">
+        <tr>
+          <th class="text-secondary fw-normal text-center">Name</th>
+          <th class="text-secondary fw-normal text-center">Year Level</th>
+          <th class="text-secondary fw-normal text-center">Program</th>
+          <th class="text-secondary fw-normal text-center">Units</th>
+          <th class="text-secondary fw-normal text-center">Total Assessment</th>
+          <th class="text-secondary fw-normal text-center">Department</th>
+          <th class="text-secondary fw-normal text-center">Actions</th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
-  
+      </thead>
+      <tbody>
+        <% @students.each do |student| %>
+          <tr class="fw-medium">
+            <td class="text-center"><%= student.name %></td>
+            <td class="text-center"><%= student.year_level %></td>
+            <td class="text-center"><%= student.program %></td>
+            <td class="text-center"><%= student.number_of_units %></td>
+            <td class="text-center">₱<%= number_with_delimiter(student.total_assessment) %></td>
+            <td class="text-center"><%= student.department.name %></td>
+            <td class="d-flex gap-2 justify-content-center">
+              <%= link_to "Show", student, class: "btn btn-sm btn-outline-primary" %>
+              <%= link_to "Edit", edit_student_path(student), class: "btn btn-sm btn-outline-secondary" %>
+              <%= button_to "Delete", student, method: :delete, data: { turbo_confirm: "Are you sure?" }, class: "btn btn-sm btn-outline-danger" %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    
+  </div>
 </div>
