@@ -1,33 +1,51 @@
- 
+ <% content_for :title, "Sections" %>
 
-<% content_for :title, "Sections" %>
-
-<h1>Sections</h1>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Subject</th>
-      <th>Teacher</th>
-      <th>Room</th>
-      <th>Time Slot</th>
-      <th>Show</th>
-    </tr>
-  </thead>
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <div class="d-flex align-items-center gap-3">
+    <h2 class="fw-bold m-0">Section List</h1>
+    <span class="badge bg-primary rounded-pill fs-6">
+      <%= @sections.count %>
+    </span>
+  </div>
+  <%= link_to new_section_path, class: "btn btn-success rounded-pill" do %>
+    <svg width="26px" height="26px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#000000">
+      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+      <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+      <line fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="12" x2="12" y1="19" y2="5"></line> <line fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="5" x2="19" y1="12" y2="12"></line>
+    </svg>
+    <span>New Section</span>
+  <% end %>
+</div>
+<div class="border shadow-sm p-4 rounded-4 flex-grow-1 overflow-hidden">
+  <div class="table-responsive overflow-auto scrollbar-thin" style="max-height: 100%;">
+    <table class="table table-striped table-hover">
+      <thead class="sticky-top">
+        <tr>
+          <th class="text-secondary fw-normal text-center">Name</th>
+          <th class="text-secondary fw-normal text-center">Subject</th>
+          <th class="text-secondary fw-normal text-center">Teacher</th>
+          <th class="text-secondary fw-normal text-center">Room</th>
+          <th class="text-secondary fw-normal text-center">Time Slot</th>
+          <th class="text-secondary fw-normal text-center">Actions</th>
+        </tr>
+      </thead>
   <tbody>
     <% @sections.each do |section| %>
-      <tr>
-        <td><%= section.name %></td>
-        <td><%= section.subject.name %></td>
-        <td><%= section.subject.teacher.name %></td>
-        <td><%= section.room %></td>
-        <td><%= section.time_slot %></td>
-        <td><%= link_to "Show this section", section %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-
-
-<%= link_to "New section", new_section_path %>
+      <tr class="fw-medium">
+        <td class="text-center"><%= section.name %></td>
+            <td class="text-center"><%= section.subject.name %></td>
+            <td class="text-center"><%= section.subject.teacher.name %></td>
+            <td class="text-center"><%= section.room %></td>
+            <td class="text-center"><%= section.time_slot %></td>
+            <td class="d-flex gap-2 justify-content-center">
+              <%= link_to "Show", section, class: "btn btn-sm btn-outline-primary" %>
+              <%= link_to "Edit", edit_section_path(section), class: "btn btn-sm btn-outline-secondary" %>
+              <%= button_to "Delete", section, method: :delete, data: { turbo_confirm: "Are you sure?" }, class: "btn btn-sm btn-outline-danger" %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    
+  </div>
+</div>
