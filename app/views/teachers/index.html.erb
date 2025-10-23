@@ -1,33 +1,52 @@
- 
-
 <% content_for :title, "Teachers" %>
 
-<h1>List Teachers</h1>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Specialication</th>
-      <th>Status</th>
-      <th>Units</th>
-      <th>Monthly Salary</th>
-      <th>Show</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @teachers.each do |teacher| %>
-      <tr>
-        <td><%= teacher.name %></td>
-        <td><%= teacher.email %></td>
-        <td><%= teacher.specialization %></td>
-        <td><%= teacher.status %></td>
-        <td><%= teacher.number_of_units %></td>
-        <td><%= teacher.monthly_salary %></td>
-        <td><%= link_to "Show this teacher", teacher %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<%= link_to "New teacher", new_teacher_path %>
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <div class="d-flex align-items-center gap-3">
+    <h2 class="fw-bold m-0">Teacher List</h1>
+    <span class="badge bg-primary rounded-pill fs-6">
+      <%= @teachers.count %>
+    </span>
+  </div>
+  <%= link_to new_teacher_path_path, class: "btn btn-success rounded-pill" do %>
+    <svg width="26px" height="26px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#000000">
+      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+      <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+      <line fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="12" x2="12" y1="19" y2="5"></line> <line fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="5" x2="19" y1="12" y2="12"></line>
+    </svg>
+    <span>New Teacher</span>
+  <% end %>
+</div>
+<div class="border shadow-sm p-4 rounded-4 flex-grow-1 overflow-hidden">
+  <div class="table-responsive overflow-auto scrollbar-thin" style="max-height: 100%;">
+    <table class="table table-striped table-hover">
+      <thead class="sticky-top">
+        <tr>
+          <th class="text-secondary fw-normal text-center">Name</th>
+          <th class="text-secondary fw-normal text-center">Email</th>
+          <th class="text-secondary fw-normal text-center">Specialization</th>
+          <th class="text-secondary fw-normal text-center">Status</th>
+          <th class="text-secondary fw-normal text-center">Units</th>
+          <th class="text-secondary fw-normal text-center">Monthly Salary</th>
+          <th class="text-secondary fw-normal text-center">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @teachers.each do |teacher| %>
+          <tr class="fw-medium">
+            <td class="text-center"><%= teacher.name %></td>
+            <td class="text-center"><%= teacher.email %></td>
+            <td class="text-center"><%= teacher.specialization %></td>
+            <td class="text-center"><%= teacher.status %></td>
+            <td class="text-center"><%= teacher.number_of_units %></td>
+            <td class="text-center">₱<%= number_with_delimiter(teacher.total_assessment) %></td>
+            <td class="d-flex gap-2 justify-content-center">
+              <%= link_to "Show", teacher, class: "btn btn-sm btn-outline-primary" %>
+              <%= link_to "Edit", edit_teacher_path(teacher), class: "btn btn-sm btn-outline-secondary" %>
+              <%= button_to "Delete", teacher, method: :delete, data: { turbo_confirm: "Are you sure?" }, class: "btn btn-sm btn-outline-danger" %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
