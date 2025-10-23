@@ -57,10 +57,49 @@ A Ruby on Rails application designed to manage school operations such as student
 8. **Open a Pull Request (PR)**
 
    * Go to the repository on GitHub.
+
    * You should see a prompt to open a pull request for your branch.
-   * Submit your PR and wait for review.
- 
- ---
+
+   * Use the following format for the PR title:
+
+     ```
+     [ISSUE-<issue number>] <short description of changes>
+     ```
+
+   * In the PR description, provide:
+
+     * A brief summary of the changes made.
+     * **At least one screenshot** (if applicable) to show what was changed or added.
+
+   ---
+
+   #### 🧩 Example PR Template
+
+   **Title:**
+
+   ```
+   [ISSUE-12] Added student enrollment form
+   ```
+
+   **Description:**
+
+   * Implemented a new form for adding student enrollment.
+   * Updated controller and model validations.
+
+   **Screenshots:**
+   *(Attach before and after screenshots here)*
+
+   **Notes:**
+
+   * Make sure to run migrations before testing.
+   * Related Issue: #12
+
+   ---
+
+   *Submit your PR and wait for review.*
+
+---
 
 ## Contributors
+
 to be continued...
