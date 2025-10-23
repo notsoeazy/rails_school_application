@@ -21,25 +21,25 @@
     <table class="table table-striped table-hover">
       <thead class="sticky-top">
         <tr>
-          <th class="text-secondary fw-normal text-center">Name</th>
-          <th class="text-secondary fw-normal text-center">Email</th>
-          <th class="text-secondary fw-normal text-center">Specialization</th>
-          <th class="text-secondary fw-normal text-center">Status</th>
-          <th class="text-secondary fw-normal text-center">Units</th>
-          <th class="text-secondary fw-normal text-center">Monthly Salary</th>
-          <th class="text-secondary fw-normal text-center">Actions</th>
+          <th class="text-secondary fw-normal text-start">Name</th>
+          <th class="text-secondary fw-normal text-start">Email</th>
+          <th class="text-secondary fw-normal text-start">Specialization</th>
+          <th class="text-secondary fw-normal text-start">Status</th>
+          <th class="text-secondary fw-normal text-start">Units</th>
+          <th class="text-secondary fw-normal text-start">Monthly Salary</th>
+          <th class="text-secondary fw-normal text-start">Actions</th>
         </tr>
       </thead>
       <tbody>
         <% @teachers.each do |teacher| %>
           <tr class="fw-medium">
-            <td class="text-center"><%= teacher.name %></td>
-            <td class="text-center"><%= teacher.email %></td>
-            <td class="text-center"><%= teacher.specialization %></td>
-            <td class="text-center"><%= teacher.status %></td>
-            <td class="text-center"><%= teacher.number_of_units %></td>
-            <td class="text-center">₱<%= number_with_delimiter(teacher.monthly_salary) %></td>
-            <td class="d-flex gap-2 justify-content-center">
+            <td class="text-start"><%= teacher.name %></td>
+            <td class="text-start"><%= teacher.email %></td>
+            <td class="text-start"><%= teacher.specialization %></td>
+            <td class="text-start"><%= teacher.status %></td>
+            <td class="text-start"><%= teacher.number_of_units %></td>
+            <td class="text-start">₱<%= number_with_delimiter(teacher.monthly_salary) %></td>
+            <td class="d-flex gap-2">
               <%= link_to "Show", teacher, class: "btn btn-sm btn-outline-primary" %>
               <%= link_to "Edit", edit_teacher_path(teacher), class: "btn btn-sm btn-outline-secondary" %>
               <%= button_to "Delete", teacher, method: :delete, data: { turbo_confirm: "Are you sure?" }, class: "btn btn-sm btn-outline-danger" %>
