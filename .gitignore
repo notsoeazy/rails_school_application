@@ -1,0 +1,3 @@
+# Ignore Rails log and temp files
+/log/*
+/tmp/*
