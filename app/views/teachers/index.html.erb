@@ -7,7 +7,7 @@
       <%= @teachers.count %>
     </span>
   </div>
-  <%= link_to new_teacher_path_path, class: "btn btn-success rounded-pill" do %>
+  <%= link_to new_teacher_path, class: "btn btn-success rounded-pill" do %>
     <svg width="26px" height="26px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#000000">
       <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
       <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -38,7 +38,7 @@
             <td class="text-center"><%= teacher.specialization %></td>
             <td class="text-center"><%= teacher.status %></td>
             <td class="text-center"><%= teacher.number_of_units %></td>
-            <td class="text-center">₱<%= number_with_delimiter(teacher.total_assessment) %></td>
+            <td class="text-center">₱<%= number_with_delimiter(teacher.monthly_salary) %></td>
             <td class="d-flex gap-2 justify-content-center">
               <%= link_to "Show", teacher, class: "btn btn-sm btn-outline-primary" %>
               <%= link_to "Edit", edit_teacher_path(teacher), class: "btn btn-sm btn-outline-secondary" %>
