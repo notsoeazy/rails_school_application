@@ -1,83 +1,167 @@
- 
-
-<%= render @department %>
-
-<p> <strong> Number of Students: </strong> <%= @department.student_count %> </p>
-<p> <strong> Number of Employees: </strong> <%= @department.employee_count %> </p>
-
-<h3> List of Students</h3>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Program</th>
-      <th>Year Level</th>
-      <th>Total Assessment</th>
-      </tr>
-  </thead>
-  <tbody>
-  <% @department.students.each do |student| %>
-    <tr>
-      <td> <%= student.name %> </td>
-      <td> <%= student.program %> </td>
-      <td> <%= student.year_level %> </td>
-      <td> <%= student.total_assessment %> </td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
-    
-<h3> List of Teachers </h3>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Specialization</th>
-      <th>Status</th>
-      <th>Monthly Salary</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @department.teachers.each do |teacher| %>
-    <tr>
-      <td> <%= teacher.name %> </td>
-      <td> <%= teacher.email %> </td>
-      <td> <%= teacher.specialization %> </td>
-      <td> <%= teacher.status %> </td>
-      <td> <%= teacher.monthly_salary %> </td>
-    </tr>
-    <% end %>  
-  </tbody>
-</table>
-
-<h3> List of Staff </h3>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Status</th>
-      <th>Monthly Salary</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @department.staffs.each do |staff| %>
-    <tr>
-      <td> <%= staff.name %> </td>
-      <td> <%= staff.email %> </td>
-      <td> <%= staff.status %> </td>
-      <td> <%= staff.monthly_salary %> </td>
-    </tr>
-    <% end %>  
-  </tbody>
-</table>
-
-<hr>
-
+<!-- Header -->
 <div>
-  <%= link_to "Edit this department", edit_department_path(@department) %> |
-  <%= link_to "Back to departments", departments_path %>
+  <header class="d-flex align-items-center gap-2 mb-3">
+    <svg fill="#000000" width="50px" height="50px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M9,10h1a1,1,0,0,0,0-2H9a1,1,0,0,0,0,2Zm0,2a1,1,0,0,0,0,2h6a1,1,0,0,0,0-2ZM20,8.94a1.31,1.31,0,0,0-.06-.27l0-.09a1.07,1.07,0,0,0-.19-.28h0l-6-6h0a1.07,1.07,0,0,0-.28-.19.32.32,0,0,0-.09,0A.88.88,0,0,0,13.05,2H7A3,3,0,0,0,4,5V19a3,3,0,0,0,3,3H17a3,3,0,0,0,3-3V9S20,9,20,8.94ZM14,5.41,16.59,8H15a1,1,0,0,1-1-1ZM18,19a1,1,0,0,1-1,1H7a1,1,0,0,1-1-1V5A1,1,0,0,1,7,4h5V7a3,3,0,0,0,3,3h3Zm-3-3H9a1,1,0,0,0,0,2h6a1,1,0,0,0,0-2Z"></path></g></svg>
+    <h2 class="fw-bold m-0">Department Information</h2>
+  </header>
 
-  <%= button_to "Destroy this department", @department, method: :delete %>
+  <%= render @department %>
+</div>
+
+<div id="collapse-group" class="d-flex flex-column flex-grow-1 overflow-hidden">
+  <!-- Student -->
+  <div class="border rounded-4 p-4 shadow-sm mb-3 d-flex flex-column overflow-hidden">
+    <div class="d-flex gap-2 align-items-center mb-3" role="button" data-bs-toggle="collapse" data-bs-target="#student-table">
+      <h3 class="m-0 fw-semibold">Students List</h3>
+      <span class="badge bg-primary rounded-pill fs-6">
+        <%= @department.students.count %>
+      </span>
+      <svg fill="#000000" width="30px" height="30px" class="opacity-25"
+           viewBox="0 0 32 32" version="1.1"
+           xmlns="http://www.w3.org/2000/svg">
+        <title>down</title>
+        <path d="M11.125 16.313l7.688-7.688 3.594 3.719-11.094 11.063-11.313-11.313 3.5-3.531z"></path>
+      </svg>
+    </div>
+
+    <div id="student-table"
+         class="collapse show table-responsive overflow-auto scrollbar-thin"
+         data-bs-parent="#collapse-group" style="max-height: 100%;">
+      <table class="table table-striped table-hover">
+        <thead class="sticky-top">
+          <tr>
+            <th class="text-secondary fw-normal">Name</th>
+            <th class="text-secondary fw-normal">Program</th>
+            <th class="text-secondary fw-normal">Year Level</th>
+            <th class="text-secondary fw-normal">Total Assessment</th>
+            <th class="text-secondary fw-normal">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @department.students.each do |student| %>
+            <tr class="fw-medium">
+              <td><%= student.name %></td>
+              <td><%= student.program %></td>
+              <td><%= student.year_level %></td>
+              <td><%= student.total_assessment %></td>
+              <td class="d-flex gap-2">
+                <%= link_to "Show", student, class: "btn btn-sm btn-outline-primary" %>
+                <%= link_to "Edit", edit_student_path(student), class: "btn btn-sm btn-outline-secondary" %>
+                <%= button_to "Delete", student, method: :delete, data: { turbo_confirm: "Are you sure?" }, class: "btn btn-sm btn-outline-danger" %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Employees -->
+  <div class="border rounded-4 p-4 shadow-sm mb-3 d-flex flex-column overflow-hidden">
+    <div class="d-flex gap-2 align-items-center mb-3" role="button" data-bs-toggle="collapse" data-bs-target="#employees-table">
+      <h3 class="m-0 fw-semibold">Employees List</h3>
+      <span class="badge bg-primary rounded-pill fs-6">
+        <%= @department.teachers.count + @department.staffs.count %>
+      </span>
+      <svg fill="#000000" width="30px" height="30px" class="opacity-25"
+           viewBox="0 0 32 32" version="1.1"
+           xmlns="http://www.w3.org/2000/svg">
+        <title>down</title>
+        <path d="M11.125 16.313l7.688-7.688 3.594 3.719-11.094 11.063-11.313-11.313 3.5-3.531z"></path>
+      </svg>
+    </div>
+
+    <div id="employees-table" class="collapse overflow-auto" data-bs-parent="#collapse-group">
+      <div class="flex-grow-1 d-flex flex-row gap-2">
+        <!-- Teachers -->
+        <div class="flex-grow-1 flex-column border rounded-4 p-4 shadow-sm overflow-hidden">
+          <div class="d-flex gap-2 align-items-center mb-3">
+            <h4 class="m-0 fw-semibold">Teachers List</h4>
+            <span class="badge bg-secondary rounded-pill fs-6">
+              <%= @department.teachers.count %>
+            </span>
+          </div>
+          <div class="table-responsive overflow-auto scrollbar-thin">
+            <table class="table table-striped table-hover">
+              <thead class="sticky-top">
+                <tr>
+                  <th class="text-secondary fw-normal">Name</th>
+                  <th class="text-secondary fw-normal">Email</th>
+                  <th class="text-secondary fw-normal">Specialization</th>
+                  <th class="text-secondary fw-normal">Status</th>
+                  <th class="text-secondary fw-normal">Monthly Salary</th>
+                  <th class="text-secondary fw-normal">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @department.teachers.each do |teacher| %>
+                  <tr class="fw-medium">
+                    <td><%= teacher.name %></td>
+                    <td><%= teacher.email %></td>
+                    <td><%= teacher.specialization %></td>
+                    <td><%= teacher.status %></td>
+                    <td><%= teacher.monthly_salary %></td>
+                    <td class="d-flex gap-2">
+                      <%= link_to "Show", teacher, class: "btn btn-sm btn-outline-primary" %>
+                      <%= link_to "Edit", edit_teacher_path(teacher), class: "btn btn-sm btn-outline-secondary" %>
+                      <%= button_to "Delete", teacher, method: :delete, data: { turbo_confirm: "Are you sure?" }, class: "btn btn-sm btn-outline-danger" %>
+                    </td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Staffs -->
+        <div class="flex-grow-1 flex-column border rounded-4 p-4 shadow-sm overflow-hidden">
+          <div class="d-flex gap-2 align-items-center mb-3">
+            <h4 class="m-0 fw-semibold">Staffs List</h4>
+            <span class="badge bg-secondary rounded-pill fs-6">
+              <%= @department.staffs.count %>
+            </span>
+          </div>
+          <div class="table-responsive overflow-auto scrollbar-thin">
+            <table class="table table-striped table-hover">
+              <thead class="sticky-top">
+                <tr>
+                  <th class="text-secondary fw-normal">Name</th>
+                  <th class="text-secondary fw-normal">Email</th>
+                  <th class="text-secondary fw-normal">Status</th>
+                  <th class="text-secondary fw-normal">Monthly Salary</th>
+                  <th class="text-secondary fw-normal">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @department.staffs.each do |staff| %>
+                  <tr class="fw-medium">
+                    <td><%= staff.name %></td>
+                    <td><%= staff.email %></td>
+                    <td><%= staff.status %></td>
+                    <td><%= staff.monthly_salary %></td>
+                    <td class="d-flex gap-2">
+                      <%= link_to "Show", staff, class: "btn btn-sm btn-outline-primary" %>
+                      <%= link_to "Edit", edit_staff_path(staff), class: "btn btn-sm btn-outline-secondary" %>
+                      <%= button_to "Delete", staff, method: :delete, data: { turbo_confirm: "Are you sure?" }, class: "btn btn-sm btn-outline-danger" %>
+                    </td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Buttons -->
+<div class="d-flex justify-content-between">
+  <div>
+  <%= link_to "Back to departments", departments_path, class: "btn btn-secondary" %>
+    </div>
+  <div class="d-flex gap-3">
+    <%= button_to "Destroy this department", @department, method: :delete, data: { turbo_confirm: "Are you sure?" }, class: "btn btn-outline-danger" %>
+    <%= link_to "Edit this department", edit_department_path(@department), class: "btn btn-success" %>
+  </div>
 </div>
