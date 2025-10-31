@@ -1,27 +1,47 @@
- 
-
 <% content_for :title, "Guardians" %>
+ 
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <div class="d-flex align-items-center gap-3">
+    <h2 class="fw-bold m-0">Guardian List</h1>
+    <span class="badge bg-primary rounded-pill fs-6">
+      <%= @guardians.count %>
+    </span>
+  </div>
+  <%= link_to new_guardian_path, class: "btn btn-success rounded-pill" do %>
+    <svg width="26px" height="26px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#000000">
+      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+      <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+      <line fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="12" x2="12" y1="19" y2="5"></line> <line fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="5" x2="19" y1="12" y2="12"></line>
+    </svg>
+    <span>New Guardian</span>
+  <% end %>
+</div>
 
-<h1>List of Guardians</h1>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Email Address</th>
-      <th>Contact Number</th>
-      <th>Show</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @guardians.each do |guardian| %>
-      <tr>
-        <td><%= guardian.name %></td>
-        <td><%= guardian.email_address %></td>
-        <td><%= guardian.contact_number %></td>
-        <td><%= link_to "Show this guardian", guardian %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<%= link_to "New guardian", new_guardian_path %>
+<div class="border shadow-sm p-4 rounded-4 flex-grow-1 overflow-hidden">
+  <div class="table-responsive overflow-auto scrollbar-thin" style="max-height: 100%;">
+    <table class="table table-striped table-hover">
+      <thead class="sticky-top">
+        <tr>
+          <th class="text-secondary fw-normal">Name</th>
+          <th class="text-secondary fw-normal">Email Address</th>
+          <th class="text-secondary fw-normal">Contact Number</th>
+          <th class="text-secondary fw-normal">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @guardians.each do |guardian| %>
+          <tr class="fw-medium">
+            <td><%= guardian.name %></td>
+            <td><%= guardian.email_address %></td>
+            <td><%= guardian.contact_number %></td>
+            <td class="d-flex gap-2">
+              <%= link_to "Show", guardian, class: "btn btn-sm btn-outline-primary" %>
+              <%= link_to "Edit", edit_guardian_path(guardian), class: "btn btn-sm btn-outline-secondary" %>
+              <%= button_to "Delete", guardian, method: :delete, data: { turbo_confirm: "Are you sure?" }, class: "btn btn-sm btn-outline-danger" %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
