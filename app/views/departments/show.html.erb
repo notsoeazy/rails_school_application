@@ -43,7 +43,7 @@
               <td><%= student.name %></td>
               <td><%= student.program %></td>
               <td><%= student.year_level %></td>
-              <td><%= student.total_assessment %></td>
+              <td>₱<%= number_with_delimiter(student.total_assessment)%></td>
               <td class="d-flex gap-2">
                 <%= link_to "Show", student, class: "btn btn-sm btn-outline-primary" %>
                 <%= link_to "Edit", edit_student_path(student), class: "btn btn-sm btn-outline-secondary" %>
@@ -91,7 +91,7 @@
               <td><%= teacher.email %></td>
               <td><%= teacher.specialization %></td>
               <td><%= teacher.status %></td>
-              <td><%= teacher.monthly_salary %></td>
+              <td>₱<%= number_with_delimiter(teacher.monthly_salary) %></td>
               <td class="d-flex gap-2">
                 <%= link_to "Show", teacher, class: "btn btn-sm btn-outline-primary" %>
                 <%= link_to "Edit", edit_teacher_path(teacher), class: "btn btn-sm btn-outline-secondary" %>
@@ -137,7 +137,7 @@
               <td><%= staff.name %></td>
               <td><%= staff.email %></td>
               <td><%= staff.status %></td>
-              <td><%= staff.monthly_salary %></td>
+              <td>₱<%= number_with_delimiter(staff.monthly_salary) %></td>
               <td class="d-flex gap-2">
                 <%= link_to "Show", staff, class: "btn btn-sm btn-outline-primary" %>
                 <%= link_to "Edit", edit_staff_path(staff), class: "btn btn-sm btn-outline-secondary" %>
