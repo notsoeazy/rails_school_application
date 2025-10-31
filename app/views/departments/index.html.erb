@@ -21,21 +21,21 @@
     <table class="table table-striped table-hover">
       <thead class="sticky-top">
         <tr>
-          <th class="text-secondary fw-normal text-center">Name</th>
-          <th class="text-secondary fw-normal text-center">Location</th>
-          <th class="text-secondary fw-normal text-center">Total Employees</th>
-          <th class="text-secondary fw-normal text-center">Total Students</th>
-          <th class="text-secondary fw-normal text-center">Actions</th>
+          <th class="text-secondary fw-normal">Name</th>
+          <th class="text-secondary fw-normal">Location</th>
+          <th class="text-secondary fw-normal">Total Employees</th>
+          <th class="text-secondary fw-normal">Total Students</th>
+          <th class="text-secondary fw-normal">Actions</th>
         </tr>
       </thead>
       <tbody>
         <% @departments.each do |department| %>
           <tr class="fw-medium">
-            <td class="text-center"><%= department.name %></td>
-            <td class="text-center"><%= department.location %></td>
-            <td class="text-center"><%= department.employee_count %></td>
-            <td class="text-center"><%= department.student_count %></td>
-            <td class="d-flex gap-2 justify-content-center">
+            <td><%= department.name %></td>
+            <td><%= department.location %></td>
+            <td><%= department.employee_count %></td>
+            <td><%= department.student_count %></td>
+            <td class="d-flex gap-2">
               <%= link_to "Show", department, class: "btn btn-sm btn-outline-primary" %>
               <%= link_to "Edit", edit_department_path(department), class: "btn btn-sm btn-outline-secondary" %>
               <%= button_to "Delete", department, method: :delete, data: { turbo_confirm: "Are you sure?" }, class: "btn btn-sm btn-outline-danger" %>
