@@ -9,9 +9,11 @@
 </div>
 
 <div id="collapse-group" class="d-flex flex-column flex-grow-1 overflow-hidden">
+  
   <!-- Student -->
   <div class="border rounded-4 p-4 shadow-sm mb-3 d-flex flex-column overflow-hidden">
-    <div class="d-flex gap-2 align-items-center mb-3" role="button" data-bs-toggle="collapse" data-bs-target="#student-table">
+    <div class="d-flex gap-2 align-items-center mb-3" role="button" data-bs-toggle="collapse" data-bs-target="#student-table" aria-controls="student-table"
+    aria-expanded="true">
       <h3 class="m-0 fw-semibold">Students List</h3>
       <span class="badge bg-primary rounded-pill fs-6">
         <%= @department.students.count %>
@@ -24,9 +26,7 @@
       </svg>
     </div>
 
-    <div id="student-table"
-         class="collapse show table-responsive overflow-auto scrollbar-thin"
-         data-bs-parent="#collapse-group" style="max-height: 100%;">
+    <div id="student-table" class="collapse show table-responsive overflow-auto scrollbar-thin" data-bs-parent="#collapse-group">
       <table class="table table-striped table-hover">
         <thead class="sticky-top">
           <tr>
@@ -56,12 +56,61 @@
     </div>
   </div>
 
-  <!-- Employees -->
+  <!-- Teachers -->
   <div class="border rounded-4 p-4 shadow-sm mb-3 d-flex flex-column overflow-hidden">
-    <div class="d-flex gap-2 align-items-center mb-3" role="button" data-bs-toggle="collapse" data-bs-target="#employees-table">
-      <h3 class="m-0 fw-semibold">Employees List</h3>
+    <div class="d-flex gap-2 align-items-center mb-3" role="button" data-bs-toggle="collapse" data-bs-target="#teacher-table" aria-controls="student-table"
+    aria-expanded="false">
+      <h3 class="m-0 fw-semibold">Teachers List</h3>
       <span class="badge bg-primary rounded-pill fs-6">
-        <%= @department.teachers.count + @department.staffs.count %>
+        <%= @department.teachers.count %>
+      </span>
+      <svg fill="#000000" width="30px" height="30px" class="opacity-25"
+           viewBox="0 0 32 32" version="1.1"
+           xmlns="http://www.w3.org/2000/svg">
+        <title>down</title>
+        <path d="M11.125 16.313l7.688-7.688 3.594 3.719-11.094 11.063-11.313-11.313 3.5-3.531z"></path>
+      </svg>
+    </div>
+  
+    <div id="teacher-table" class="collapse table-responsive overflow-auto scrollbar-thin" data-bs-parent="#collapse-group">
+      <table class="table table-striped table-hover">
+        <thead class="sticky-top">
+          <tr>
+            <th class="text-secondary fw-normal">Name</th>
+            <th class="text-secondary fw-normal">Email</th>
+            <th class="text-secondary fw-normal">Specialization</th>
+            <th class="text-secondary fw-normal">Status</th>
+            <th class="text-secondary fw-normal">Monthly Salary</th>
+            <th class="text-secondary fw-normal">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @department.teachers.each do |teacher| %>
+            <tr class="fw-medium">
+              <td><%= teacher.name %></td>
+              <td><%= teacher.email %></td>
+              <td><%= teacher.specialization %></td>
+              <td><%= teacher.status %></td>
+              <td><%= teacher.monthly_salary %></td>
+              <td class="d-flex gap-2">
+                <%= link_to "Show", teacher, class: "btn btn-sm btn-outline-primary" %>
+                <%= link_to "Edit", edit_teacher_path(teacher), class: "btn btn-sm btn-outline-secondary" %>
+                <%= button_to "Delete", teacher, method: :delete, data: { turbo_confirm: "Are you sure?" }, class: "btn btn-sm btn-outline-danger" %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Staff -->
+  <div class="border rounded-4 p-4 shadow-sm mb-3 d-flex flex-column overflow-hidden">
+    <div class="d-flex gap-2 align-items-center mb-3" role="button" data-bs-toggle="collapse" data-bs-target="#staff-table" aria-controls="student-table"
+    aria-expanded="false">
+      <h3 class="m-0 fw-semibold">Staffs List</h3>
+      <span class="badge bg-primary rounded-pill fs-6">
+        <%= @department.staffs.count %>
       </span>
       <svg fill="#000000" width="30px" height="30px" class="opacity-25"
            viewBox="0 0 32 32" version="1.1"
@@ -71,88 +120,36 @@
       </svg>
     </div>
 
-    <div id="employees-table" class="collapse overflow-auto" data-bs-parent="#collapse-group">
-      <div class="flex-grow-1 d-flex flex-row gap-2">
-        <!-- Teachers -->
-        <div class="flex-grow-1 flex-column border rounded-4 p-4 shadow-sm overflow-hidden">
-          <div class="d-flex gap-2 align-items-center mb-3">
-            <h4 class="m-0 fw-semibold">Teachers List</h4>
-            <span class="badge bg-secondary rounded-pill fs-6">
-              <%= @department.teachers.count %>
-            </span>
-          </div>
-          <div class="table-responsive overflow-auto scrollbar-thin">
-            <table class="table table-striped table-hover">
-              <thead class="sticky-top">
-                <tr>
-                  <th class="text-secondary fw-normal">Name</th>
-                  <th class="text-secondary fw-normal">Email</th>
-                  <th class="text-secondary fw-normal">Specialization</th>
-                  <th class="text-secondary fw-normal">Status</th>
-                  <th class="text-secondary fw-normal">Monthly Salary</th>
-                  <th class="text-secondary fw-normal">Actions</th>
-                </tr>
-              </thead>
-              <tbody>
-                <% @department.teachers.each do |teacher| %>
-                  <tr class="fw-medium">
-                    <td><%= teacher.name %></td>
-                    <td><%= teacher.email %></td>
-                    <td><%= teacher.specialization %></td>
-                    <td><%= teacher.status %></td>
-                    <td><%= teacher.monthly_salary %></td>
-                    <td class="d-flex gap-2">
-                      <%= link_to "Show", teacher, class: "btn btn-sm btn-outline-primary" %>
-                      <%= link_to "Edit", edit_teacher_path(teacher), class: "btn btn-sm btn-outline-secondary" %>
-                      <%= button_to "Delete", teacher, method: :delete, data: { turbo_confirm: "Are you sure?" }, class: "btn btn-sm btn-outline-danger" %>
-                    </td>
-                  </tr>
-                <% end %>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <!-- Staffs -->
-        <div class="flex-grow-1 flex-column border rounded-4 p-4 shadow-sm overflow-hidden">
-          <div class="d-flex gap-2 align-items-center mb-3">
-            <h4 class="m-0 fw-semibold">Staffs List</h4>
-            <span class="badge bg-secondary rounded-pill fs-6">
-              <%= @department.staffs.count %>
-            </span>
-          </div>
-          <div class="table-responsive overflow-auto scrollbar-thin">
-            <table class="table table-striped table-hover">
-              <thead class="sticky-top">
-                <tr>
-                  <th class="text-secondary fw-normal">Name</th>
-                  <th class="text-secondary fw-normal">Email</th>
-                  <th class="text-secondary fw-normal">Status</th>
-                  <th class="text-secondary fw-normal">Monthly Salary</th>
-                  <th class="text-secondary fw-normal">Actions</th>
-                </tr>
-              </thead>
-              <tbody>
-                <% @department.staffs.each do |staff| %>
-                  <tr class="fw-medium">
-                    <td><%= staff.name %></td>
-                    <td><%= staff.email %></td>
-                    <td><%= staff.status %></td>
-                    <td><%= staff.monthly_salary %></td>
-                    <td class="d-flex gap-2">
-                      <%= link_to "Show", staff, class: "btn btn-sm btn-outline-primary" %>
-                      <%= link_to "Edit", edit_staff_path(staff), class: "btn btn-sm btn-outline-secondary" %>
-                      <%= button_to "Delete", staff, method: :delete, data: { turbo_confirm: "Are you sure?" }, class: "btn btn-sm btn-outline-danger" %>
-                    </td>
-                  </tr>
-                <% end %>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
+    <div id="staff-table" class="collapse table-responsive overflow-auto scrollbar-thin" data-bs-parent="#collapse-group">
+      <table class="table table-striped table-hover">
+        <thead class="sticky-top">
+          <tr>
+            <th class="text-secondary fw-normal">Name</th>
+            <th class="text-secondary fw-normal">Email</th>
+            <th class="text-secondary fw-normal">Status</th>
+            <th class="text-secondary fw-normal">Monthly Salary</th>
+            <th class="text-secondary fw-normal">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @department.staffs.each do |staff| %>
+            <tr class="fw-medium">
+              <td><%= staff.name %></td>
+              <td><%= staff.email %></td>
+              <td><%= staff.status %></td>
+              <td><%= staff.monthly_salary %></td>
+              <td class="d-flex gap-2">
+                <%= link_to "Show", staff, class: "btn btn-sm btn-outline-primary" %>
+                <%= link_to "Edit", edit_staff_path(staff), class: "btn btn-sm btn-outline-secondary" %>
+                <%= button_to "Delete", staff, method: :delete, data: { turbo_confirm: "Are you sure?" }, class: "btn btn-sm btn-outline-danger" %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
     </div>
   </div>
+  
 </div>
 
 <!-- Buttons -->
