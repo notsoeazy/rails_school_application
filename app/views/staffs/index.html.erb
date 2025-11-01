@@ -36,7 +36,7 @@
             <td><%= staff.email %></td>
             <td><%= staff.department.name %></td>
             <td><%= staff.status %></td>
-            <td>₱<%= number_with_delimiter(number_with_precision(staff.monthly_salary, precision: 2)) %></td>
+            <td><%= number_to_currency(staff.monthly_salary, precision: 2, unit: '₱', delimiter: ',') %></td>
             <td class="d-flex gap-2">
               <%= link_to "Show", staff, class: "btn btn-sm btn-outline-primary" %>
               <%= link_to "Edit", edit_staff_path(staff), class: "btn btn-sm btn-outline-secondary" %>
