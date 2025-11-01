@@ -37,7 +37,7 @@
             <td class="text-center"><%= student.year_level %></td>
             <td class="text-center"><%= student.program %></td>
             <td class="text-center"><%= student.number_of_units %></td>
-            <td class="text-center">₱<%= number_with_delimiter(student.total_assessment) %></td>
+            <td class="text-center"><%= number_to_currency(student.total_assessment, precision: 2, unit: '₱', delimiter: ',') %></td>
             <td class="text-center"><%= student.department.name %></td>
             <td class="d-flex gap-2 justify-content-center">
               <%= link_to "Show", student, class: "btn btn-sm btn-outline-primary" %>
