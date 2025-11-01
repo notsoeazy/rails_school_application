@@ -1,16 +1,50 @@
- 
-
 <% content_for :title, "Staffs" %>
 
-<h1>Staffs</h1>
-
-<div id="staffs">
-  <% @staffs.each do |staff| %>
-    <%= render staff %>
-    <p>
-      <%= link_to "Show this staff", staff %>
-    </p>
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <div class="d-flex align-items-center gap-3">
+    <h2 class="fw-bold m-0">Staff List</h2>
+    <span class="badge bg-primary rounded-pill fs-6">
+      <%= @staffs.count %>
+    </span>
+  </div>
+  <%= link_to new_staff_path, class: "btn btn-success rounded-pill" do %>
+    <svg width="26px" height="26px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#000000">
+      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+      <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+      <line fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="12" x2="12" y1="19" y2="5"></line> <line fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="5" x2="19" y1="12" y2="12"></line>
+    </svg>
+    <span>New Staff</span>
   <% end %>
 </div>
-
-<%= link_to "New staff", new_staff_path %>
+<div class="border shadow=sm p-4 rounded-4 flex-grow-1 overflow-hidden">
+  <div class="table-responsive overflow-auto scrollbar-thin" style="max-height: 100%">
+    <table class="table table-striped table-hover">
+      <thead class="sticky-top">
+        <tr>
+          <th class="text-secondary fw-normal">Name</th>
+          <th class="text-secondary fw-normal">Email</th>
+          <th class="text-secondary fw-normal">Department</th>
+          <th class="text-secondary fw-normal">Status</th>
+          <th class="text-secondary fw-normal">Monthly Salary</th>
+          <th class="text-secondary fw-normal">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @staffs.each do |staff| %>
+          <tr class="fw-medium">
+            <td><%= staff.name %></td>
+            <td><%= staff.email %></td>
+            <td><%= staff.department.name %></td>
+            <td><%= staff.status %></td>
+            <td>₱<%= number_with_delimiter(number_with_precision(staff.monthly_salary, precision: 2)) %></td>
+            <td class="d-flex gap-2">
+              <%= link_to "Show", staff, class: "btn btn-sm btn-outline-primary" %>
+              <%= link_to "Edit", edit_staff_path(staff), class: "btn btn-sm btn-outline-secondary" %>
+              <%= button_to "Delete", staff, method: :delete, data: { turbo_confirm: "Are you sure?" }, class: "btn btn-sm btn-outline-danger" %>  
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
