@@ -1,27 +1,56 @@
-<%= form_with(model: classlist) do |form| %>
-  <% if classlist.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(classlist.errors.count, "error") %> prohibited this classlist from being saved:</h2>
-
-      <ul>
-        <% classlist.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
+<div class="d-flex gap-2 align-items-center mb-3">
+  <% if @classlist.new_record? %>
+    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24"><path fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 17h7m5-1h3m0 0h3m-3 0v3m0-3v-3M3 12h11M3 7h11"/></svg>
+  <% else %>
+    <svg width="50px" height="50px" viewBox="-2.1 -2.1 25.20 25.20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>edit [#1479]</title> <desc>Created with Sketch.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Dribbble-Light-Preview" transform="translate(-99.000000, -400.000000)" fill="#000000"> <g id="icons" transform="translate(56.000000, 160.000000)"> <path d="M61.9,258.010643 L45.1,258.010643 L45.1,242.095788 L53.5,242.095788 L53.5,240.106431 L43,240.106431 L43,260 L64,260 L64,250.053215 L61.9,250.053215 L61.9,258.010643 Z M49.3,249.949769 L59.63095,240 L64,244.114985 L53.3341,254.031929 L49.3,254.031929 L49.3,249.949769 Z" id="edit-[#1479]"> </path> </g> </g> </g> </g></svg>
   <% end %>
+  <h2 class="fw-bold m-0"><%= classlist.new_record? ? "New Classlist" : "Edit Classlist" %></h2>
+</div>
 
-  <div>
-    <%= form.label :student_id, "Student", style: "display: block" %>
-    <%= form.collection_select :student_id, Student.all, :id, :name, prompt: "Select a student" %>
-  </div>
+<div class="border rounded-4 p-4 shadow-sm">
+  <%= form_with(model: classlist) do |form| %>
+    <% if classlist.errors.any? %>
+      <div style="color: red">
+        <h2><%= pluralize(classlist.errors.count, "error") %> prohibited this classlist from being saved:</h2>
 
-  <div>
-    <%= form.label :section_id, "Section", style: "display: block" %>
-    <%= form.collection_select :section_id, Section.all, :id, :name, prompt: "Select a section" %>
-  </div>
+        <ul>
+          <% classlist.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
 
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
+    <div class="mb-3">
+      <%= form.label :student_id, "Student", class: "form-label fw-bold" %>
+      <%= form.collection_select :student_id, Student.all, :id, :name, {prompt: "Select a student"}, {class: "form-select"} %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :section_id, "Section", class: "form-label fw-bold" %>
+      <%= form.collection_select :section_id, Section.all, :id, :name, {prompt: "Select a section"}, {class: "form-select"} %>
+    </div>
+
+    <!-- Buttons -->
+      <% if @classlist.new_record? %>
+        <div class="d-flex justify-content-between">
+          <div>
+            <%= link_to "Back to classlists", classlists_path, class: "btn btn-secondary" %>
+          </div>
+          <div>
+            <%= form.submit(classlist.new_record? ? "Create Classlist" : "Update Classlist", class: "btn btn-success") %>
+          </div>
+        </div>
+      <% else %>
+        <div class="d-flex justify-content-between">
+          <div>
+            <%= link_to "Back to classlists", classlists_path, class: "btn btn-secondary" %>
+          </div>
+          <div class="d-flex gap-3">
+            <%= link_to "Show this classlist", @classlist, class: "btn btn-outline-primary" %>
+            <%= form.submit(classlist.new_record? ? "Create Classlist" : "Update Classlist", class: "btn btn-success") %>
+          </div>
+        </div>
+      <% end %>
+  <% end %>
+</div>
