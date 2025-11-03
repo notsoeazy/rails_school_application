@@ -12,7 +12,6 @@
     <% if classlist.errors.any? %>
       <div style="color: red">
         <h2><%= pluralize(classlist.errors.count, "error") %> prohibited this classlist from being saved:</h2>
-
         <ul>
           <% classlist.errors.each do |error| %>
             <li><%= error.full_message %></li>
@@ -25,10 +24,9 @@
       <%= form.label :student_id, "Student", class: "form-label fw-bold" %>
       <%= form.collection_select :student_id, Student.all, :id, :name, {prompt: "Select a student"}, {class: "form-select"} %>
     </div>
-
     <div class="mb-3">
       <%= form.label :section_id, "Section", class: "form-label fw-bold" %>
-      <%= form.collection_select :section_id, Section.all, :id, :name, {prompt: "Select a section"}, {class: "form-select"} %>
+      <%= form.collection_select :section_id, Section.all, :id, :name, selected: @classlist.section_id, {prompt: "Select a section"}, {class: "form-select"} %>
     </div>
 
     <!-- Buttons -->

@@ -13,6 +13,8 @@ class ClasslistsController < ApplicationController
   # GET /classlists/new
   def new
     @classlist = Classlist.new
+    @classlist.section_id = params[:section_id] if params[:section_id].present?
+  
   end
 
   # GET /classlists/1/edit

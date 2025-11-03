@@ -1,27 +1,70 @@
-<%= form_with(model: department) do |form| %>
-  <% if department.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(department.errors.count, "error") %> prohibited this department from being saved:</h2>
+<div class="d-flex gap-2 align-items-center mb-3">
+  <% if @department.new_record? %>
+  <svg xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" viewBox="0 0 612 612" xml:space="preserve">
+    <g>
+      <!-- House shape -->
+      <path fill="#000000" d="M593.797,253.06L328.791,54.73c-13.576-10.171-32.237-10.171-45.825,0L15.332,255.02
+        c-13.192,9.865-18.572,27.061-13.372,42.689c5.2,15.628,19.821,26.169,36.29,26.169h25.725v202.775
+        c0,21.122,17.12,38.24,38.24,38.24h407.325c21.122,0,38.239-17.12,38.239-38.24V323.878h25.723
+        c21.122,0,38.24-17.12,38.24-38.24C611.987,271.862,604.709,259.79,593.797,253.06z"/>
 
-      <ul>
-        <% department.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
+      <!-- Plus sign -->
+      <path fill="#ffffff" d="M306,230c-13.255,0-24,10.745-24,24v56h-56c-13.255,0-24,10.745-24,24s10.745,24,24,24h56v56
+        c0,13.255,10.745,24,24,24s24-10.745,24-24v-56h56c13.255,0,24-10.745,24-24s-10.745-24-24-24h-56v-56
+        C330,240.745,319.255,230,306,230z"/>
+    </g>
+  </svg>
+
+  <% else %>
+    <svg width="50px" height="50px" viewBox="-2.1 -2.1 25.20 25.20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>edit [#1479]</title> <desc>Created with Sketch.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Dribbble-Light-Preview" transform="translate(-99.000000, -400.000000)" fill="#000000"> <g id="icons" transform="translate(56.000000, 160.000000)"> <path d="M61.9,258.010643 L45.1,258.010643 L45.1,242.095788 L53.5,242.095788 L53.5,240.106431 L43,240.106431 L43,260 L64,260 L64,250.053215 L61.9,250.053215 L61.9,258.010643 Z M49.3,249.949769 L59.63095,240 L64,244.114985 L53.3341,254.031929 L49.3,254.031929 L49.3,249.949769 Z" id="edit-[#1479]"> </path> </g> </g> </g> </g></svg>
   <% end %>
+  <h2 class="fw-bold m-0"><%= department.new_record? ? "New Department" : "Edit Department" %></h2>
+</div>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
-  </div>
+<div class="border rounded-4 p-4 shadow-sm">          
+  <%= form_with(model: department) do |form| %>
+    <% if department.errors.any? %>
+      <div style="color: red">
+        <h2><%= pluralize(department.errors.count, "error") %> prohibited this department from being saved:</h2>
 
-  <div>
-    <%= form.label :location, style: "display: block" %>
-    <%= form.text_field :location %>
-  </div>
+        <ul>
+          <% department.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
 
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
+    <div class="mb-3">
+      <%= form.label :name, class: "form-label fw-bold" %>
+      <%= form.text_field :name, class: "form-control", placeholder: "Enter department name" %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :location, class: "form-label fw-bold" %>
+      <%= form.text_field :location, class: "form-control", placeholder: "Enter location" %>
+    </div>
+      
+    <!-- Buttons -->
+    <% if @department.new_record? %>
+      <div class="d-flex justify-content-between">
+        <div>
+          <%= link_to "Back to departments", departments_path, class: "btn btn-secondary" %>
+        </div>
+        <div>
+          <%= form.submit(department.new_record? ? "Create department" : "Update department", class: "btn btn-success") %>
+        </div>
+      </div>
+    <% else %>
+      <div class="d-flex justify-content-between">
+        <div>
+          <%= link_to "Back to departments", departments_path, class: "btn btn-secondary" %>
+        </div>
+        <div class="d-flex gap-3">
+          <%= link_to "Show this department", @department, class: "btn btn-outline-primary" %>
+          <%= form.submit(department.new_record? ? "Create department" : "Update department", class: "btn btn-success") %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>

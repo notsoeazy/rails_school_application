@@ -1,27 +1,14 @@
-<div id="<%= dom_id section %>">
-  <p>
-    <strong>Name:</strong>
-    <%= section.name %>
-  </p>
+<div id="<%= dom_id section %>" class="d-flex flex-grow-1 flex-column border shadow-sm rounded-4 overflow-hidden mb-3">
 
-  <p>
-    <strong>Room:</strong>
-    <%= section.room %>
-  </p>
-
-  <p>
-    <strong>Time slot:</strong>
-    <%= section.time_slot %>
-  </p>
-
-  <p>
-    <strong>Subject:</strong>
-    <%= section.subject.name %>
-  </p>
-
-  <p>
-    <strong>Teacher:</strong>
-    <%= section.subject.teacher.name %>
-  </p>
-
+  <!-- Section Name -->
+  <div class="bg-primary text-white p-4 d-flex gap-3">
+    <div class="d-flex align-items-center">
+      <svg fill="#ffffff" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="80px" height="80px" viewBox="0 0 32.286 32.286" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="M31.747,2.301H11.412v13.617h20.335V2.301z M30.869,15.042H12.287V3.177H30.87L30.869,15.042L30.869,15.042z"></path> <rect x="26.784" y="13.167" width="3.526" height="1.264"></rect> <circle cx="5.264" cy="8.782" r="1.67"></circle> <polygon points="9.68,19.352 9.68,14.683 10.533,14.683 10.533,13.316 7.331,13.316 7.262,10.955 5.909,10.703 5.293,11.441 4.656,10.703 3.183,10.957 3.183,13.316 0,13.316 0,14.683 0.853,14.683 0.853,19.352 "></polygon> <circle cx="25.002" cy="22.162" r="1.03"></circle> <circle cx="29.729" cy="22.162" r="1.03"></circle> <circle cx="19.77" cy="22.162" r="1.03"></circle> <circle cx="14.187" cy="22.161" r="1.029"></circle> <circle cx="8.799" cy="22.064" r="1.03"></circle> <circle cx="3.438" cy="22.064" r="1.029"></circle> <circle cx="25.002" cy="25.383" r="1.482"></circle> <polygon points="25.573,27.086 25.027,27.743 24.462,27.086 23.154,27.335 23.154,29.942 26.852,29.942 26.792,27.356 "></polygon> <circle cx="19.63" cy="25.382" r="1.481"></circle> <polygon points="20.203,27.086 19.657,27.743 19.092,27.086 17.783,27.356 17.783,29.942 21.48,29.942 21.406,27.356 "></polygon> <circle cx="22.242" cy="23.315" r="1.084"></circle> <path d="M23.592,26.584c-0.193-0.365-0.326-0.762-0.326-1.203c0-0.29,0.076-0.561,0.166-0.821h-0.106h-0.265h-0.401l-0.399,0.48 l-0.412-0.48h-0.426h-0.236c0.109,0.252,0.172,0.53,0.172,0.821c0,0.477-0.168,0.913-0.443,1.27h2.678V26.584z"></path> <circle cx="14.187" cy="25.383" r="1.482"></circle> <polygon points="14.759,27.086 14.213,27.743 13.648,27.086 12.339,27.356 12.339,29.942 16.036,29.942 15.961,27.356 "></polygon> <circle cx="16.797" cy="23.315" r="1.084"></circle> <path d="M18.146,26.584c-0.191-0.365-0.328-0.762-0.328-1.203c0-0.29,0.08-0.561,0.168-0.821H17.88h-0.265h-0.401l-0.399,0.48 l-0.413-0.48h-0.425H15.74c0.11,0.252,0.172,0.53,0.172,0.821c0,0.477-0.167,0.913-0.443,1.27h2.677V26.584z"></path> <circle cx="30.438" cy="25.314" r="1.482"></circle> <polygon points="32.211,27.295 31.009,27.018 30.463,27.674 29.898,27.018 28.589,27.315 28.589,29.875 32.286,29.875 "></polygon> <circle cx="27.602" cy="23.246" r="1.085"></circle> <path d="M28.953,26.516c-0.191-0.363-0.329-0.761-0.329-1.201c0-0.291,0.079-0.561,0.167-0.822h-0.105H28.42h-0.4l-0.397,0.479 l-0.414-0.479h-0.424h-0.236c0.109,0.254,0.171,0.529,0.171,0.82c0,0.478-0.167,0.913-0.441,1.271h2.679L28.953,26.516z"></path> <circle cx="8.882" cy="25.424" r="1.482"></circle> <polygon points="9.456,27.127 8.909,27.784 8.344,27.127 7.035,27.356 7.035,29.985 10.731,29.985 10.656,27.356 "></polygon> <circle cx="11.493" cy="23.356" r="1.084"></circle> <path d="M12.843,26.626c-0.191-0.365-0.327-0.761-0.327-1.201c0-0.292,0.078-0.562,0.167-0.823h-0.106h-0.265h-0.401l-0.399,0.48 l-0.414-0.48h-0.424h-0.237c0.109,0.254,0.173,0.53,0.173,0.822c0,0.477-0.168,0.913-0.443,1.27h2.677L12.843,26.626z"></path> <circle cx="3.438" cy="25.425" r="1.481"></circle> <polygon points="4.01,27.127 3.464,27.784 2.899,27.127 1.555,27.356 1.591,29.985 5.287,29.985 5.21,27.356 "></polygon> <circle cx="6.048" cy="23.356" r="1.084"></circle> <path d="M7.399,26.626c-0.193-0.365-0.328-0.761-0.328-1.201c0-0.292,0.079-0.562,0.167-0.823H7.132H6.867H6.466l-0.398,0.48 l-0.414-0.48H5.229H4.994c0.108,0.254,0.172,0.53,0.172,0.822c0,0.477-0.168,0.913-0.444,1.27H7.4L7.399,26.626z"></path> </g> </g> </g></svg>
+    </div>
+    <div class="d-flex flex-column">
+      <h3 class="mb-0 fw-bold"><%= section.name %> - <%= section.subject.name %></h3>
+      <p class="mb-0 opacity-75 fs-5"><%= section.subject.teacher.name %></p>
+      <p class="mb-0 opacity-75"><%= section.room %> | <%= section.time_slot %></p>
+    </div>
+  </div>
 </div>
