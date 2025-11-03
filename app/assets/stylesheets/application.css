@@ -33,3 +33,11 @@ body {
 [data-bs-toggle="collapse"][aria-expanded="true"] svg {
   transform: rotate(180deg);
 }
+
+#department-entry-card {
+    transition: transform 0.2s ease;
+}
+  
+#department-entry-card:hover {
+    transform: translateY(-3px);
+}
