@@ -13,6 +13,7 @@ class StudentGuardiansController < ApplicationController
   # GET /student_guardians/new
   def new
     @student_guardian = StudentGuardian.new
+    @student_guardian.guardian_id = params[:guardian_id] if params[:guardian_id].present?
   end
 
   # GET /student_guardians/1/edit
