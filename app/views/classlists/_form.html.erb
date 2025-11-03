@@ -26,7 +26,7 @@
     </div>
     <div class="mb-3">
       <%= form.label :section_id, "Section", class: "form-label fw-bold" %>
-      <%= form.collection_select :section_id, Section.all, :id, :name, selected: @classlist.section_id, {prompt: "Select a section"}, {class: "form-select"} %>
+      <%= form.collection_select :section_id, Section.all, :id, :name, {prompt: "Select a section"}, {class: "form-select", selected: @classlist.section_id} %>
     </div>
 
     <!-- Buttons -->
