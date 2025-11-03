@@ -1,37 +1,69 @@
-<%= form_with(model: section) do |form| %>
-  <% if section.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(section.errors.count, "error") %> prohibited this section from being saved:</h2>
+<div class="d-flex gap-2 align-items-center mb-3">
+  <% if @section.new_record? %>
+    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="#000000"><g fill="none" fill-rule="evenodd"><path d="M24 0v24H0V0h24ZM12.594 23.258l-.012.002l-.071.035l-.02.004l-.014-.004l-.071-.036c-.01-.003-.019 0-.024.006l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.016-.018Zm.264-.113l-.014.002l-.184.093l-.01.01l-.003.011l.018.43l.005.012l.008.008l.201.092c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022Zm-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.003-.011l.018-.43l-.003-.012l-.01-.01l-.184-.092Z"/><path fill="#000000" d="M11 5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V5ZM5 5h4v4H5V5Zm16 0a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V5Zm-6 0h4v4h-4V5Zm-6 8a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h4Zm0 2H5v4h4v-4Zm4 2a1 1 0 0 1 1-1h2v-2a1 1 0 1 1 2 0v2h2a1 1 0 1 1 0 2h-2v2a1 1 0 1 1-2 0v-2h-2a1 1 0 0 1-1-1Z"/></g></svg>
+  <% else %>
+    <svg width="50px" height="50px" viewBox="-2.1 -2.1 25.20 25.20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>edit [#1479]</title> <desc>Created with Sketch.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Dribbble-Light-Preview" transform="translate(-99.000000, -400.000000)" fill="#000000"> <g id="icons" transform="translate(56.000000, 160.000000)"> <path d="M61.9,258.010643 L45.1,258.010643 L45.1,242.095788 L53.5,242.095788 L53.5,240.106431 L43,240.106431 L43,260 L64,260 L64,250.053215 L61.9,250.053215 L61.9,258.010643 Z M49.3,249.949769 L59.63095,240 L64,244.114985 L53.3341,254.031929 L49.3,254.031929 L49.3,249.949769 Z" id="edit-[#1479]"> </path> </g> </g> </g> </g></svg>
+  <% end %>
+  <h2 class="fw-bold m-0"><%= section.new_record? ? "New Section" : "Edit Section" %></h2>
+</div>
 
-      <ul>
-        <% section.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+<div class="border rounded-4 p-4 shadow-sm">
+
+  <%= form_with(model: section) do |form| %>
+    <% if section.errors.any? %>
+      <div style="color: red">
+        <h2><%= pluralize(section.errors.count, "error") %> prohibited this section from being saved:</h2>
+
+        <ul>
+          <% section.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="mb-3">
+      <%= form.label :name, class: "form-label fw-bold" %>
+      <%= form.text_field :name, class: "form-control", placeholder: "Enter section name" %>
     </div>
+
+    <div class="mb-3">
+      <%= form.label :room, class: "form-label fw-bold" %>
+      <%= form.text_field :room, class: "form-control", placeholder: "Enter room" %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :time_slot, class: "form-label fw-bold" %>
+      <%= form.text_field :time_slot, class: "form-control", placeholder: "Enter time-slot" %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :subject_id, "Subject", class: "form-label fw-bold" %>
+      <%= form.collection_select :subject_id, Subject.all, :id, :name, { prompt: "Select a subject" }, {class: "form-select"} %>
+    </div>
+
+    <!-- Buttons -->
+    <% if @section.new_record? %>
+      <div class="d-flex justify-content-between">
+        <div>
+          <%= link_to "Back to sections", sections_path, class: "btn btn-secondary" %>
+        </div>
+        <div>
+          <%= form.submit(section.new_record? ? "Create Section" : "Update Section", class: "btn btn-success") %>
+        </div>
+      </div>
+    <% else %>
+      <div class="d-flex justify-content-between">
+        <div>
+          <%= link_to "Back to sections", sections_path, class: "btn btn-secondary" %>
+        </div>
+        <div>
+          <%= link_to "Show this section", @section, class: "btn btn-outline-primary" %>
+          <%= form.submit(section.new_record? ? "Create Section" : "Update Section", class: "btn btn-success") %>
+        </div>
+      </div>
+    <% end %>
+
   <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div>
-    <%= form.label :room, style: "display: block" %>
-    <%= form.text_field :room %>
-  </div>
-
-  <div>
-    <%= form.label :time_slot, style: "display: block" %>
-    <%= form.text_field :time_slot %>
-  </div>
-
-  <div>
-    <%= form.label :subject_id, "Subject", style: "display: block" %>
-    <%= form.collection_select :subject_id, Subject.all, :id, :name, prompt: "Select a subject" %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
