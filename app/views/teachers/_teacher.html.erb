@@ -23,7 +23,7 @@
       </div>
       <div class="col-12 col-md-4">
         <p class="text-secondary small mb-1">Monthly Salary</p>
-        <h5>₱<%= number_with_delimiter(teacher.monthly_salary) %></h5>
+        <h5><%= number_to_currency(teacher.monthly_salary, precision: 2, unit: '₱', delimiter: ',') %></h5>
       </div>
     </div>
   </div>

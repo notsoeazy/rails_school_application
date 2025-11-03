@@ -38,7 +38,7 @@
             <td class="text-start"><%= teacher.specialization %></td>
             <td class="text-start"><%= teacher.status %></td>
             <td class="text-start"><%= teacher.number_of_units %></td>
-            <td class="text-start">₱<%= number_with_delimiter(teacher.monthly_salary) %></td>
+            <td class="text-start"><%= number_to_currency(teacher.monthly_salary, precision: 2, unit: '₱', delimiter: ',') %></td>
             <td class="d-flex gap-2">
               <%= link_to "Show", teacher, class: "btn btn-sm btn-outline-primary" %>
               <%= link_to "Edit", edit_teacher_path(teacher), class: "btn btn-sm btn-outline-secondary" %>
