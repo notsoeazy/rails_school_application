@@ -23,7 +23,7 @@
 
   <div>
     <%= form.label :guardian_id, "Guardian", style: "display: block" %>
-    <%= form.collection_select :guardian_id, Guardian.all, :id, :name, prompt: "Select a guardian" %>
+    <%= form.collection_select :guardian_id, Guardian.all, :id, :name, selected: @student_guardian.guardian_id, prompt: "Select a guardian" %>
   </div>
 
   <div>
