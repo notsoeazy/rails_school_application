@@ -13,17 +13,25 @@ body {
     background-color: #6252AC;
 }
 
+/* For thin scrollbars used in responsive tables */
 .scrollbar-thin::-webkit-scrollbar {
     width: 6px;
 }
-
 .scrollbar-thin::-webkit-scrollbar-thumb {
     background-color: rgba(0, 0, 0, 0.2);
     border-radius: 4px;
 }
-
 .nav-link:not(.active):hover {
     background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* For Departments show accordion tables */
+[data-bs-toggle="collapse"] svg {
+  transition: transform 0.3s ease;
+}
+/* Rotate the arrow when the section is expanded */
+[data-bs-toggle="collapse"][aria-expanded="true"] svg {
+  transform: rotate(180deg);
 }
 
 #department-entry-card {
