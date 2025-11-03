@@ -6,22 +6,26 @@
     </div>
     <div class="d-flex flex-column">
       <h3 class="mb-0 fw-bold"><%= teacher.name %></h3>
-      <p class="mb-0 opacity-75"><%= teacher.department.name %> - <%= teacher.specialization %> - <%= teacher.email %></p>
+      <p class="mb-0 opacity-75"><%= teacher.email %> - <%= teacher.department.name %></p>
     </div>
   </div>
 
   <!-- Teacher Information -->
   <div class="flex-grow-1 d-flex align-items-center p-4">
     <div class="row w-100 text-center g-3">
-      <div class="col-12 col-md-4">
+      <div class="col-9 col-md-3">
+        <p class="text-secondary small mb-1">Specialization</p>
+        <h5><%= teacher.specialization %></h5>
+      </div>
+      <div class="col-9 col-md-3">
         <p class="text-secondary small mb-1">Status</p>
         <h5><%= teacher.status %></h5>
       </div>
-      <div class="col-12 col-md-4">
+      <div class="col-9 col-md-3">
         <p class="text-secondary small mb-1">Total Units</p>
         <h5><%= teacher.number_of_units %></h5>
       </div>
-      <div class="col-12 col-md-4">
+      <div class="col-9 col-md-3">
         <p class="text-secondary small mb-1">Monthly Salary</p>
         <h5><%= number_to_currency(teacher.monthly_salary, precision: 2, unit: '₱', delimiter: ',') %></h5>
       </div>
