@@ -13,6 +13,7 @@ class SectionsController < ApplicationController
   # GET /sections/new
   def new
     @section = Section.new
+    @section.subject_id = params[:subject_id] if params[:subject_id].present?
   end
 
   # GET /sections/1/edit

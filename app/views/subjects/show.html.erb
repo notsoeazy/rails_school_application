@@ -1,32 +1,121 @@
- 
-
-<%= render @subject %>
-
-<% @subject.sections.each do |section| %>
-  <h3> Section: <%= section.name %> | Room: <%= section.room %> | Time Slot: <%= section.time_slot %> | Number of Students: <%= section.number_of_students %></h3>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Program</th>
-        <th>Year Level</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% section.classlists.each do |classlist| %>
-        <tr>
-          <td><%= classlist.student.name %></td>
-          <td><%= classlist.student.program %></td>
-          <td><%= classlist.student.year_level %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  <table>
-<% end %>
-
+<!-- Header -->
 <div>
-  <%= link_to "Edit this subject", edit_subject_path(@subject) %> |
-  <%= link_to "Back to subjects", subjects_path %>
+  <header class="d-flex align-items-center gap-2 mb-3">
+    <svg fill="#000000" width="50px" height="50px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M9,10h1a1,1,0,0,0,0-2H9a1,1,0,0,0,0,2Zm0,2a1,1,0,0,0,0,2h6a1,1,0,0,0,0-2ZM20,8.94a1.31,1.31,0,0,0-.06-.27l0-.09a1.07,1.07,0,0,0-.19-.28h0l-6-6h0a1.07,1.07,0,0,0-.28-.19.32.32,0,0,0-.09,0A.88.88,0,0,0,13.05,2H7A3,3,0,0,0,4,5V19a3,3,0,0,0,3,3H17a3,3,0,0,0,3-3V9S20,9,20,8.94ZM14,5.41,16.59,8H15a1,1,0,0,1-1-1ZM18,19a1,1,0,0,1-1,1H7a1,1,0,0,1-1-1V5A1,1,0,0,1,7,4h5V7a3,3,0,0,0,3,3h3Zm-3-3H9a1,1,0,0,0,0,2h6a1,1,0,0,0,0-2Z"></path></g></svg>
+    <h2 class="fw-bold m-0">Subject Information</h2>
+  </header>
 
-  <%= button_to "Destroy this subject", @subject, method: :delete %>
+  <div class="d-flex">
+    <%= render @subject %>
+  </div>
+</div>
+
+<!-- Content -->
+<div class="border shadow-sm p-4 rounded-4 flex-grow-1 overflow-auto scrollbar-thin mb-3">
+  <div class="d-flex align-items-center justify-content-between mb-3">
+    <div class="d-flex gap-2 align-items-center">
+      <h3 class="m-0 fw-semibold">Section List</h3>
+      <span class="badge bg-primary rounded-pill fs-6">
+        <%= @subject.sections.count %>
+      </span>
+    </div>
+    <%= link_to new_section_path(subject_id: @subject.id), class: "btn btn-success rounded-pill" do %>
+      <svg width="26px" height="26px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#000000">
+        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+        <line fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="12" x2="12" y1="19" y2="5"></line> <line fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="5" x2="19" y1="12" y2="12"></line>
+      </svg>
+      <span>New Section</span>
+    <% end %>
+  </div>
+  <% if @subject.sections.any? %>
+    <% @subject.sections.each do |section| %>
+      <div class="card border-0 shadow-sm rounded-4 mb-3 overflow-hidden transition-all">
+
+        <!-- Section Header -->
+        <div class="bg-primary text-white d-flex align-items-center justify-content-between p-3"
+             role="button"
+             data-bs-toggle="collapse"
+             data-bs-target="#section-<%= section.id %>"
+             aria-expanded="false"
+             aria-controls="section-<%= section.id %>">
+          <div class="d-flex align-items-center gap-3">
+            <div>
+              <h4 class="m-0 fw-semibold"><%= section.name %></h4>
+              <small class="opacity-75">
+                Room: <%= section.room %> | Time Slot: <%= section.time_slot %>
+              </small>
+            </div>
+          </div>
+          <div class="d-flex align-items-center gap-2">
+            <span class="badge bg-white text-dark rounded-pill fs-6 px-3">
+              <%= pluralize(section.number_of_students, "Student") %>
+            </span>
+            <svg fill="#ffffff" width="28px" height="28px" class="collapse-icon opacity-50"
+                 viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11.125 16.313l7.688-7.688 3.594 3.719-11.094 11.063
+                -11.313-11.313 3.5-3.531z"></path>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Section Body -->
+        <div id="section-<%= section.id %>" class="collapse table-responsive p-4 overflow-auto scrollbar-thin">
+          <% if section.classlists.any? %>
+            <table class="table table-striped table-hover align-middle m-0">
+              <thead class="sticky-top">
+                <tr>
+                  <th class="text-secondary fw-normal">Name</th>
+                  <th class="text-secondary fw-normal">Year Level</th>
+                  <th class="text-secondary fw-normal">Program</th>
+                  <th class="text-secondary fw-normal">Department</th>
+                  <th class="text-secondary fw-normal">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% section.classlists.each do |classlist| %>
+                  <tr class="fw-medium">
+                    <td><%= classlist.student.name %></td>
+                    <td><%= classlist.student.year_level %></td>
+                    <td><%= classlist.student.program %></td>
+                    <td><%= classlist.student.department&.name || "N/A" %></td>
+                    <td class="d-flex gap-2">
+                      <%= link_to "Show", classlist.student, class: "btn btn-sm btn-outline-primary" %>
+                      <%= link_to "Edit", edit_student_path(classlist.student), class: "btn btn-sm btn-outline-secondary" %>
+                    </td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+
+          <% else %>
+            <div class="text-center text-secondary py-4">
+              <em>No students enrolled in this section yet.</em>
+            </div>
+          <% end %>
+
+          <div class="d-flex gap-2 mt-3 align-items-center">
+            <%= link_to "Show Section", section, class: "btn btn-outline-primary rounded-pill px-3" %>
+            <%= link_to "Edit Section", edit_section_path(section), class: "btn btn-outline-success rounded-pill px-3" %>
+          </div> 
+
+        </div>
+      </div>
+    <% end %>
+  <% else %>
+    <div class="text-center text-secondary">
+      <em>No sections available for this subject.</em>
+    </div>
+  <% end %>
+</div>
+
+<!-- Buttons -->
+<div class="d-flex justify-content-between">
+  <div>
+    <%= link_to "Back to subjects", subjects_path, class: "btn btn-secondary" %>
+  </div>
+  <div class="d-flex gap-3">
+    <%= button_to "Destroy this subject", @subject, method: :delete, data: { turbo_confirm: "Are you sure?" }, class: "btn btn-outline-danger" %>
+    <%= link_to "Edit this subject", edit_subject_path(@subject), class: "btn btn-success" %>
+  </div>
 </div>
