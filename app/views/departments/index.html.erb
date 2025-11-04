@@ -18,16 +18,20 @@
 </div>
 
 <!-- Content -->
-<div class="border shadow-sm p-4 rounded-4 flex-grow-1 overflow-hidden">
-  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 overflow-auto h-100">
+<div class="border shadow-sm p-4 rounded-4 flex-grow-1 overflow-auto scrollbar-thin">
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
     <% @departments.each do |department| %>
       <div class="col">
-        <div id="department-entry-card" class="card border-0 shadow-sm rounded-4 overflow-hidden">
-          <!-- Header -->
+        <div id="department-entry-card" 
+             class="card border shadow-sm rounded-4 overflow-hidden h-100 transition">
+          
+          <!-- Department Upper Section -->
           <div class="bg-primary text-white d-flex gap-3 align-items-center p-3">
             <div class="bg-white bg-opacity-25 p-2 rounded-circle d-flex align-items-center justify-content-center">
               <svg width="40px" height="40px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M20.6092 8.34165L12.0001 3.64575L3.39093 8.34165L3.75007 9.75007H5.25007V15.7501H4.50007V17.2501H19.5001V15.7501H18.7501V9.75007H20.2501L20.6092 8.34165ZM6.75007 15.7501V9.75007H9.00007V15.7501H6.75007ZM10.5001 15.7501V9.75007H13.5001V15.7501H10.5001ZM15.0001 15.7501V9.75007H17.2501V15.7501H15.0001ZM12.0001 5.35438L17.3088 8.25007H6.69131L12.0001 5.35438ZM3 19.5001H21V18.0001H3V19.5001Z" fill="#ffffff"></path>
+                <path fill-rule="evenodd" clip-rule="evenodd" 
+                      d="M20.6092 8.34165L12.0001 3.64575L3.39093 8.34165L3.75007 9.75007H5.25007V15.7501H4.50007V17.2501H19.5001V15.7501H18.7501V9.75007H20.2501L20.6092 8.34165ZM6.75007 15.7501V9.75007H9.00007V15.7501H6.75007ZM10.5001 15.7501V9.75007H13.5001V15.7501H10.5001ZM15.0001 15.7501V9.75007H17.2501V15.7501H15.0001ZM12.0001 5.35438L17.3088 8.25007H6.69131L12.0001 5.35438ZM3 19.5001H21V18.0001H3V19.5001Z" 
+                      fill="#ffffff"></path>
               </svg>
             </div>
             <div>
@@ -36,28 +40,25 @@
             </div>
           </div>
 
-          <!-- Body -->
-          <div class="card-body">
-            <div class="d-flex flex-column gap-2">
-              <div class="d-flex justify-content-between">
-                <span class="fw-semibold text-secondary">Employees:</span>
-                <span class="fw-bold"><%= department.employee_count %></span>
-              </div>
-              <div class="d-flex justify-content-between">
-                <span class="fw-semibold text-secondary">Students:</span>
-                <span class="fw-bold"><%= department.student_count %></span>
-              </div>
+          <!-- Department Body -->
+          <div class="card-body d-flex flex-column gap-2">
+            <div class="d-flex justify-content-between">
+              <span class="fw-semibold text-secondary">Employees:</span>
+              <span class="fw-bold"><%= department.employee_count %></span>
+            </div>
+            <div class="d-flex justify-content-between">
+              <span class="fw-semibold text-secondary">Students:</span>
+              <span class="fw-bold"><%= department.student_count %></span>
             </div>
           </div>
 
-          <!-- Footer -->
+          <!-- Department Lower Section -->
           <div class="card-footer bg-light border-0 d-flex gap-2 justify-content-end">
-            <%= link_to "Edit", edit_department_path(department), class: "btn btn-outline-secondary btn rounded-pill px-3" %>
-            <%= link_to "Show", department, class: "btn btn-outline-primary btn rounded-pill px-3" %>
+            <%= link_to "Edit", edit_department_path(department), class: "btn btn-outline-secondary rounded-pill px-3" %>
+            <%= link_to "Show", department, class: "btn btn-outline-primary rounded-pill px-3" %>
           </div>
         </div>
       </div>
     <% end %>
   </div>
 </div>
-
