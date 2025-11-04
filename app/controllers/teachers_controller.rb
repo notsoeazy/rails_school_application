@@ -4,6 +4,7 @@ class TeachersController < ApplicationController
   # GET /teachers or /teachers.json
   def index
     @teachers = Teacher.all
+    @departments = Department.all
   end
 
   # GET /teachers/1 or /teachers/1.json
