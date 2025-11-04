@@ -1,3 +1,18 @@
+<div class="d-flex gap-2 align-items-center mb-3">
+  <% if @subject.new_record? %>
+    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-journal-plus" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M8 5.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V10a.5.5 0 0 1-1 0V8.5H6a.5.5 0 0 1 0-1h1.5V6a.5.5 0 0 1 .5-.5"/>
+      <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2"/>
+      <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1z"/>
+    </svg>
+  <% else %>
+    <svg width="50px" height="50px" viewBox="-2.1 -2.1 25.20 25.20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>edit [#1479]</title> <desc>Created with Sketch.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Dribbble-Light-Preview" transform="translate(-99.000000, -400.000000)" fill="#000000"> <g id="icons" transform="translate(56.000000, 160.000000)"> <path d="M61.9,258.010643 L45.1,258.010643 L45.1,242.095788 L53.5,242.095788 L53.5,240.106431 L43,240.106431 L43,260 L64,260 L64,250.053215 L61.9,250.053215 L61.9,258.010643 Z M49.3,249.949769 L59.63095,240 L64,244.114985 L53.3341,254.031929 L49.3,254.031929 L49.3,249.949769 Z" id="edit-[#1479]"> </path> </g> </g> </g> </g></svg>
+  <% end %>
+  <h2 class="fw-bold m-0"><%= subject.new_record? ? "New Subject" : "Edit Subject" %></h2>
+</div>
+
+<div class="border rounded-4 p-4 shadow-sm">
+
 <%= form_with(model: subject) do |form| %>
   <% if subject.errors.any? %>
     <div style="color: red">
@@ -11,22 +26,40 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+  <div class="mb-3">
+    <%= form.label :name, class: "form-label fw-bold" %>
+    <%= form.text_field :name, class: "form-control", placeholder: "Enter subject name" %>
   </div>
   
-  <div>
-    <%= form.label :teacher_id, "Teacher", style: "display: block" %>
-    <%= form.collection_select :teacher_id, Teacher.all, :id, :name, prompt: "Select a teacher" %>
+  <div class="mb-3">
+    <%= form.label :teacher_id, "Teacher", class: "form-label fw-bold" %>
+    <%= form.collection_select :teacher_id, Teacher.all, :id, :name, {prompt: "Select a teacher"}, {class: "form-select"} %>
   </div>
 
-  <div>
-    <%= form.label :number_of_units, style: "display: block" %>
-    <%= form.number_field :number_of_units %>
+  <div class="mb-3">
+    <%= form.label :number_of_units, class: "form-label fw-bold" %>
+    <%= form.number_field :number_of_units, class: "form-control", placeholder: "Enter number of units" %>
   </div>
   
-  <div>
-    <%= form.submit %>
-  </div>
+  <!-- Buttons -->
+  <% if @subject.new_record? %>
+    <div class="d-flex justify-content-between">
+      <div>
+        <%= link_to "Back to subjects", subjects_path, class: "btn btn-secondary" %>
+      </div>
+      <div>
+        <%= form.submit(subject.new_record? ? "Create Subject" : "Update Subject", class: "btn btn-success") %>
+      </div>
+    </div>
+  <% else %>
+    <div class="d-flex justify-content-between">
+      <div>
+        <%= link_to "Back to subjects", subjects_path, class: "btn btn-secondary" %>
+      </div>
+      <div class="d-flex gap-3">
+        <%= link_to "Show this subject", @subject, class: "btn btn-outline-primary" %>
+        <%= form.submit(subject.new_record? ? "Create Subject" : "Update Subject", class: "btn btn-success") %>
+      </div>
+    </div>
+  <% end %>
 <% end %>
