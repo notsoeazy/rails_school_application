@@ -16,7 +16,7 @@
     <div class="d-flex gap-2 align-items-center">
       <h3 class="m-0 fw-semibold">Student List</h3>
       <span class="badge bg-primary rounded-pill fs-6">
-        <%= @section.classlists.count %>
+        <%= @section.number_of_students %>
       </span>
     </div>
     <%= link_to new_classlist_path(section_id: @section.id), class: "btn btn-success rounded-pill" do %>

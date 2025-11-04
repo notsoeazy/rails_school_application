@@ -60,45 +60,47 @@
         </div>
 
         <!-- Section Body -->
-        <div id="section-<%= section.id %>" class="collapse table-responsive p-4 overflow-auto scrollbar-thin">
-          <% if section.classlists.any? %>
-            <table class="table table-striped table-hover align-middle m-0">
-              <thead class="sticky-top">
-                <tr>
-                  <th class="text-secondary fw-normal">Name</th>
-                  <th class="text-secondary fw-normal">Year Level</th>
-                  <th class="text-secondary fw-normal">Program</th>
-                  <th class="text-secondary fw-normal">Department</th>
-                  <th class="text-secondary fw-normal">Actions</th>
-                </tr>
-              </thead>
-              <tbody>
-                <% section.classlists.each do |classlist| %>
-                  <tr class="fw-medium">
-                    <td><%= classlist.student.name %></td>
-                    <td><%= classlist.student.year_level %></td>
-                    <td><%= classlist.student.program %></td>
-                    <td><%= classlist.student.department&.name || "N/A" %></td>
-                    <td class="d-flex gap-2">
-                      <%= link_to "Show", classlist.student, class: "btn btn-sm btn-outline-primary" %>
-                      <%= link_to "Edit", edit_student_path(classlist.student), class: "btn btn-sm btn-outline-secondary" %>
-                    </td>
+        <div id="section-<%= section.id %>" class="collapse">
+          <div class="table-responsive p-4 overflow-auto scrollbar-thin">
+            <% if section.classlists.any? %>
+              <table class="table table-striped table-hover m-0">
+                <thead class="sticky-top">
+                  <tr>
+                    <th class="text-secondary fw-normal">Name</th>
+                    <th class="text-secondary fw-normal">Year Level</th>
+                    <th class="text-secondary fw-normal">Program</th>
+                    <th class="text-secondary fw-normal">Department</th>
+                    <th class="text-secondary fw-normal">Actions</th>
                   </tr>
-                <% end %>
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  <% section.classlists.each do |classlist| %>
+                    <tr class="fw-medium">
+                      <td><%= classlist.student.name %></td>
+                      <td><%= classlist.student.year_level %></td>
+                      <td><%= classlist.student.program %></td>
+                      <td><%= classlist.student.department.name %></td>
+                      <td class="d-flex gap-2">
+                        <%= link_to "Show", classlist.student, class: "btn btn-sm btn-outline-primary" %>
+                        <%= link_to "Edit", edit_student_path(classlist.student), class: "btn btn-sm btn-outline-secondary" %>
+                      </td>
+                    </tr>
+                  <% end %>
+                </tbody>
+              </table>
 
-          <% else %>
-            <div class="text-center text-secondary py-4">
-              <em>No students enrolled in this section yet.</em>
-            </div>
-          <% end %>
+            <% else %>
+              <div class="text-center text-secondary py-4">
+                <em>No students enrolled in this section yet.</em>
+              </div>
+            <% end %>
 
-          <div class="d-flex gap-2 mt-3 align-items-center">
-            <%= link_to "Show Section", section, class: "btn btn-outline-primary rounded-pill px-3" %>
-            <%= link_to "Edit Section", edit_section_path(section), class: "btn btn-outline-success rounded-pill px-3" %>
-          </div> 
+            <div class="d-flex gap-2 mt-3 align-items-center">
+              <%= link_to "Show Section", section, class: "btn btn-outline-primary rounded-pill px-3" %>
+              <%= link_to "Edit Section", edit_section_path(section), class: "btn btn-outline-success rounded-pill px-3" %>
+            </div> 
 
+          </div>
         </div>
       </div>
     <% end %>
