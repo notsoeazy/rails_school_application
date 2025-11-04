@@ -88,16 +88,17 @@
               </tbody>
             </table>
 
-            <div class="d-flex gap-2 mt-3 align-items-center">
-              <%= link_to "Show Section", section, class: "btn btn-outline-primary rounded-pill px-3" %>
-              <%= link_to "Edit Section", edit_section_path(section), class: "btn btn-outline-success rounded-pill px-3" %>
-            </div> 
-
           <% else %>
             <div class="text-center text-secondary py-4">
               <em>No students enrolled in this section yet.</em>
             </div>
           <% end %>
+
+          <div class="d-flex gap-2 mt-3 align-items-center">
+            <%= link_to "Show Section", section, class: "btn btn-outline-primary rounded-pill px-3" %>
+            <%= link_to "Edit Section", edit_section_path(section), class: "btn btn-outline-success rounded-pill px-3" %>
+          </div> 
+
         </div>
       </div>
     <% end %>
