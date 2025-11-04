@@ -12,13 +12,15 @@
   
   <!-- Student -->
   <div class="border rounded-4 p-4 shadow-sm mb-3 d-flex flex-column overflow-hidden">
-    <div class="d-flex gap-2 align-items-center mb-3" role="button" data-bs-toggle="collapse" data-bs-target="#student-table" aria-controls="student-table"
+    <div class="d-flex align-items-center mb-3 justify-content-between" role="button" data-bs-toggle="collapse" data-bs-target="#student-table" aria-controls="student-table"
     aria-expanded="true">
-      <h3 class="m-0 fw-semibold">Students List</h3>
-      <span class="badge bg-primary rounded-pill fs-6">
-        <%= @department.students.count %>
-      </span>
-      <svg fill="#000000" width="30px" height="30px" class="opacity-25"
+      <div class="d-flex gap-2 align-items-center">
+        <h3 class="m-0 fw-semibold">Students List</h3>
+        <span class="badge bg-primary rounded-pill fs-6">
+          <%= @department.students.count %>
+        </span>
+      </div>
+      <svg fill="#000000" width="30px" height="30px" class="collapse-icon opacity-25"
            viewBox="0 0 32 32" version="1.1"
            xmlns="http://www.w3.org/2000/svg">
         <title>down</title>
@@ -58,13 +60,15 @@
 
   <!-- Teachers -->
   <div class="border rounded-4 p-4 shadow-sm mb-3 d-flex flex-column overflow-hidden">
-    <div class="d-flex gap-2 align-items-center mb-3" role="button" data-bs-toggle="collapse" data-bs-target="#teacher-table" aria-controls="student-table"
-    aria-expanded="false">
-      <h3 class="m-0 fw-semibold">Teachers List</h3>
-      <span class="badge bg-primary rounded-pill fs-6">
-        <%= @department.teachers.count %>
-      </span>
-      <svg fill="#000000" width="30px" height="30px" class="opacity-25"
+    <div class="d-flex align-items-center mb-3 justify-content-between" role="button" data-bs-toggle="collapse" data-bs-target="#teacher-table" aria-controls="teacher-table"
+    aria-expanded="true">
+      <div class="d-flex gap-2 align-items-center">
+        <h3 class="m-0 fw-semibold">Teachers List</h3>
+        <span class="badge bg-primary rounded-pill fs-6">
+          <%= @department.teachers.count %>
+        </span>
+      </div>
+      <svg fill="#000000" width="30px" height="30px" class="collapse-icon opacity-25"
            viewBox="0 0 32 32" version="1.1"
            xmlns="http://www.w3.org/2000/svg">
         <title>down</title>
@@ -106,13 +110,15 @@
 
   <!-- Staff -->
   <div class="border rounded-4 p-4 shadow-sm mb-3 d-flex flex-column overflow-hidden">
-    <div class="d-flex gap-2 align-items-center mb-3" role="button" data-bs-toggle="collapse" data-bs-target="#staff-table" aria-controls="student-table"
-    aria-expanded="false">
-      <h3 class="m-0 fw-semibold">Staffs List</h3>
-      <span class="badge bg-primary rounded-pill fs-6">
-        <%= @department.staffs.count %>
-      </span>
-      <svg fill="#000000" width="30px" height="30px" class="opacity-25"
+    <div class="d-flex align-items-center mb-3 justify-content-between" role="button" data-bs-toggle="collapse" data-bs-target="#staff-table" aria-controls="staff-table"
+    aria-expanded="true">
+      <div class="d-flex gap-2 align-items-center">
+        <h3 class="m-0 fw-semibold">Staffs List</h3>
+        <span class="badge bg-primary rounded-pill fs-6">
+          <%= @department.staffs.count %>
+        </span>
+      </div>
+      <svg fill="#000000" width="30px" height="30px" class="collapse-icon opacity-25"
            viewBox="0 0 32 32" version="1.1"
            xmlns="http://www.w3.org/2000/svg">
         <title>down</title>
