@@ -21,25 +21,25 @@
     <table class="table table-striped table-hover">
       <thead class="sticky-top">
         <tr>
-          <th class="text-secondary fw-normal text-center">Name</th>
-          <th class="text-secondary fw-normal text-center">Year Level</th>
-          <th class="text-secondary fw-normal text-center">Program</th>
-          <th class="text-secondary fw-normal text-center">Units</th>
-          <th class="text-secondary fw-normal text-center">Total Assessment</th>
-          <th class="text-secondary fw-normal text-center">Department</th>
-          <th class="text-secondary fw-normal text-center">Actions</th>
+          <th class="text-secondary fw-normal">Name</th>
+          <th class="text-secondary fw-normal">Year Level</th>
+          <th class="text-secondary fw-normal">Program</th>
+          <th class="text-secondary fw-normal">Units</th>
+          <th class="text-secondary fw-normal">Total Assessment</th>
+          <th class="text-secondary fw-normal">Department</th>
+          <th class="text-secondary fw-normal">Actions</th>
         </tr>
       </thead>
       <tbody>
         <% @students.each do |student| %>
           <tr class="fw-medium">
-            <td class="text-center"><%= student.name %></td>
-            <td class="text-center"><%= student.year_level %></td>
-            <td class="text-center"><%= student.program %></td>
-            <td class="text-center"><%= student.number_of_units %></td>
-            <td class="text-center"><%= number_to_currency(student.total_assessment, precision: 2, unit: '₱', delimiter: ',') %></td>
-            <td class="text-center"><%= student.department.name %></td>
-            <td class="d-flex gap-2 justify-content-center">
+            <td><%= student.name %></td>
+            <td><%= student.year_level %></td>
+            <td><%= student.program %></td>
+            <td><%= student.number_of_units %></td>
+            <td><%= number_to_currency(student.total_assessment, precision: 2, unit: '₱', delimiter: ',') %></td>
+            <td><%= student.department.name %></td>
+            <td class="d-flex gap-2">
               <%= link_to "Show", student, class: "btn btn-sm btn-outline-primary" %>
               <%= link_to "Edit", edit_student_path(student), class: "btn btn-sm btn-outline-secondary" %>
               <%= button_to "Delete", student, method: :delete, data: { turbo_confirm: "Are you sure?" }, class: "btn btn-sm btn-outline-danger" %>

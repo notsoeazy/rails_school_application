@@ -21,28 +21,28 @@
     <table class="table table-striped table-hover">
       <thead class="sticky-top">
         <tr>
-          <th class="text-secondary fw-normal text-center">Name</th>
-          <th class="text-secondary fw-normal text-center">Subject</th>
-          <th class="text-secondary fw-normal text-center">Teacher</th>
-          <th class="text-secondary fw-normal text-center">Room</th>
-          <th class="text-secondary fw-normal text-center">Time Slot</th>
-          <th class="text-secondary fw-normal text-center">Actions</th>
+          <th class="text-secondary fw-normal">Name</th>
+          <th class="text-secondary fw-normal">Subject</th>
+          <th class="text-secondary fw-normal">Teacher</th>
+          <th class="text-secondary fw-normal">Room</th>
+          <th class="text-secondary fw-normal">Time Slot</th>
+          <th class="text-secondary fw-normal">Actions</th>
         </tr>
       </thead>
   <tbody>
     <% @sections.each do |section| %>
       <tr class="fw-medium">
-        <td class="text-center"><%= section.name %></td>
-            <td class="text-center"><%= section.subject.name %></td>
-            <td class="text-center"><%= section.subject.teacher.name %></td>
-            <td class="text-center"><%= section.room %></td>
-            <td class="text-center"><%= section.time_slot %></td>
-            <td class="d-flex gap-2 justify-content-center">
-              <%= link_to "Show", section, class: "btn btn-sm btn-outline-primary" %>
-              <%= link_to "Edit", edit_section_path(section), class: "btn btn-sm btn-outline-secondary" %>
-              <%= button_to "Delete", section, method: :delete, data: { turbo_confirm: "Are you sure?" }, class: "btn btn-sm btn-outline-danger" %>
-            </td>
-          </tr>
+        <td><%= section.name %></td>
+        <td><%= section.subject.name %></td>
+        <td><%= section.subject.teacher.name %></td>
+        <td><%= section.room %></td>
+        <td><%= section.time_slot %></td>
+        <td class="d-flex gap-2">
+          <%= link_to "Show", section, class: "btn btn-sm btn-outline-primary" %>
+          <%= link_to "Edit", edit_section_path(section), class: "btn btn-sm btn-outline-secondary" %>
+          <%= button_to "Delete", section, method: :delete, data: { turbo_confirm: "Are you sure?" }, class: "btn btn-sm btn-outline-danger" %>
+        </td>
+      </tr>
         <% end %>
       </tbody>
     </table>
