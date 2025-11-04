@@ -34,18 +34,10 @@ body {
   transform: rotate(180deg);
 }
 
-#department-entry-card {
+#department-entry-card, #teacher-entry-card, #staff-entry-card {
     transition: transform 0.2s ease;
 }
   
-#department-entry-card:hover {
-    transform: translateY(-3px);
-}
-
-#teacher-entry-card {
-    transition: transform 0.2s ease;
-}
-  
-#teacher-entry-card:hover {
+#department-entry-card:hover, #teacher-entry-card:hover, #staff-entry-card:hover {
     transform: translateY(-3px);
 }
