@@ -37,11 +37,13 @@
           </small>
         </div>
       </div>
-      <svg fill="#ffffff" width="28px" height="28px" class="collapse-icon opacity-50"
-            viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-        <path d="M11.125 16.313l7.688-7.688 3.594 3.719-11.094 11.063
-          -11.313-11.313 3.5-3.531z"></path>
-      </svg>
+      <div class="d-flex align-items-center gap-2">
+        <svg fill="#ffffff" width="28px" height="28px" class="collapse-icon opacity-50"
+              viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+          <path d="M11.125 16.313l7.688-7.688 3.594 3.719-11.094 11.063
+            -11.313-11.313 3.5-3.531z"></path>
+        </svg>
+      </div>
     </div>
 
     <!-- Student Body -->
@@ -61,6 +63,10 @@
             <h5><%= number_to_currency(@classlist.student.total_assessment, precision: 2, unit: '₱', delimiter:',') %></h5>
           </div>
         </div>
+      </div>
+      <div class="bg-light d-flex justify-content-end align-items-center gap-2 pt-3 pb-3 pe-4">
+        <%= link_to "Edit", edit_student_path(@classlist.student), class: "btn btn-outline-secondary rounded-pill px-3" %>
+        <%= link_to "Show", @classlist.student, class: "btn btn-outline-primary rounded-pill px-3" %>
       </div>
     </div>
   </div>
