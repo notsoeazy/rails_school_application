@@ -3,6 +3,7 @@
 A **Ruby on Rails** application designed to manage basic school operations.
 
 This project aims to showcase basic CRUD operations and simple design for learning Ruby on Rails.
+
 ---
 
 ![Stars](https://img.shields.io/github/stars/notsoeazy/rails_school_application?style=for-the-badge)
@@ -72,7 +73,4 @@ Thanks to the wonderful people who help build this project:
 
 ---
 
-## ⭐ Support the Project
-
-If you found this project helpful, consider giving it a **star** ⭐ on GitHub!
-It helps others discover it and keeps development going.
+## ⭐ Thank you 
