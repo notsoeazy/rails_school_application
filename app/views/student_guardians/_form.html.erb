@@ -1,81 +1,32 @@
-<div class="d-flex gap-2 align-items-center mb-3">
-  <% if @student_guardian.new_record? %>
-    <!-- New record icon -->
-    <svg width="50px" height="50px" viewBox="-1.1 -1.1 24.20 24.20" xmlns="http://www.w3.org/2000/svg" fill="#000000">
-      <g fill="#000000">
-        <path d="M306,2057.9552 C306,2058.5059 305.552,2058.95284 305,2058.95284 L304,2058.95284 L304,2060.00236 C304,2060.55306 303.552,2061 303,2061 C302.448,2061 302,2060.55306 302,2060.00236 L302,2058.95284 L301,2058.95284 C300.448,2058.95284 300,2058.5059 300,2057.9552 C300,2057.4045 300.448,2056.95755 301,2056.95755 L302,2056.95755 L302,2056.01179 C302,2055.46109 302.448,2055.01415 303,2055.01415 C303.552,2055.01415 304,2055.46109 304,2056.01179 L304,2056.95755 L305,2056.95755 C305.552,2056.95755 306,2057.4045 306,2057.9552 Z"></path>
-      </g>
-    </svg>
-  <% else %>
-    <!-- Edit record icon -->
-    <svg width="50px" height="50px" viewBox="-2.1 -2.1 25.20 25.20" xmlns="http://www.w3.org/2000/svg" fill="#000000">
-      <g fill="#000000">
-        <path d="M61.9,258.010643 L45.1,258.010643 L45.1,242.095788 L53.5,242.095788 L53.5,240.106431 L43,240.106431 L43,260 L64,260 L64,250.053215 L61.9,250.053215 L61.9,258.010643 Z M49.3,249.949769 L59.63095,240 L64,244.114985 L53.3341,254.031929 L49.3,254.031929 L49.3,249.949769 Z"></path>
-      </g>
-    </svg>
+<%= form_with(model: student_guardian) do |form| %>
+  <% if student_guardian.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(student_guardian.errors.count, "error") %> prohibited this student_guardian from being saved:</h2>
+
+      <ul>
+        <% student_guardian.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
   <% end %>
 
-  <h2 class="fw-bold m-0">
-    <%= @student_guardian.new_record? ? "New Student Guardian" : "Edit Student Guardian" %>
-  </h2>
-</div>
+  <div>
+    <%= form.label :relationship, style: "display: block" %>
+    <%= form.text_field :relationship %>
+  </div>
 
-<div class="border rounded-4 p-4 shadow-sm">
-  <%= form_with(model: @student_guardian) do |form| %>
-    <% if @student_guardian.errors.any? %>
-      <div style="color: red">
-        <h2><%= pluralize(@student_guardian.errors.count, "error") %> prohibited this student_guardian from being saved:</h2>
-        <ul>
-          <% @student_guardian.errors.each do |error| %>
-            <li><%= error.full_message %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
+  <div>
+    <%= form.label :student_id, "Student", style: "display: block" %>
+    <%= form.collection_select :student_id, Student.all, :id, :name, prompt: "Select a student" %>
+  </div>
 
-    <!-- Relationship -->
-    <div class="mb-3">
-      <%= form.label :relationship, class: "form-label fw-bold" %>
-      <%= form.text_field :relationship, class: "form-control", placeholder: "Enter relationship (e.g., Father, Mother)" %>
-    </div>
+  <div>
+    <%= form.label :guardian_id, "Guardian", style: "display: block" %>
+    <%= form.collection_select :guardian_id, Guardian.all, :id, :name, selected: @student_guardian.guardian_id, prompt: "Select a guardian" %>
+  </div>
 
-    <!-- Student -->
-    <div class="mb-3">
-      <%= form.label :student_id, "Student", class: "form-label fw-bold" %>
-      <%= form.collection_select :student_id, Student.all, :id, :name, 
-          { prompt: "Select a student" }, 
-          { class: "form-select" } %>
-    </div>
-
-    <!-- Guardian -->
-    <div class="mb-3">
-      <%= form.label :guardian_id, "Guardian", class: "form-label fw-bold" %>
-      <%= form.collection_select :guardian_id, Guardian.all, :id, :name, 
-          { selected: @student_guardian.guardian_id, prompt: "Select a guardian" }, 
-          { class: "form-select" } %>
-    </div>
-
-    <!-- Buttons -->
-    <% if @student_guardian.new_record? %>
-      <div class="d-flex justify-content-between">
-        <div>
-          <%= link_to "Back to Student Guardians", student_guardians_path, class: "btn btn-secondary" %>
-        </div>
-        <div>
-          <%= form.submit "Create Student Guardian", class: "btn btn-success" %>
-        </div>
-      </div>
-    <% else %>
-      <div class="d-flex justify-content-between">
-        <div>
-          <%= link_to "Back to Student Guardians", student_guardians_path, class: "btn btn-secondary" %>
-        </div>
-        <div class="d-flex gap-3">
-          <%= link_to "Show this Student Guardian", @student_guardian, class: "btn btn-outline-primary" %>
-          <%= form.submit "Update Student Guardian", class: "btn btn-success" %>
-        </div>
-      </div>
-    <% end %>
-
-  <% end %>
-</div>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
