@@ -1,9 +1,8 @@
 # 🎓 Rails School Application
 
-A **Ruby on Rails** application designed to manage core school operations such as **student enrollment**, **class scheduling**, **course assignments**, and **teacher administration**.
+A **Ruby on Rails** application designed to manage basic school operations.
 
-This project aims to simplify academic management by providing a scalable and modular platform for small to large educational institutions.
-
+This project aims to showcase basic CRUD operations and simple design for learning Ruby on Rails.
 ---
 
 ![Stars](https://img.shields.io/github/stars/notsoeazy/rails_school_application?style=for-the-badge)
