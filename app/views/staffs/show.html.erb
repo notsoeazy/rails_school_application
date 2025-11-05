@@ -1,42 +1,10 @@
-<!-- Header -->
+ 
+
+<%= render @staff %>
+
 <div>
-  <header class="d-flex align-items-center gap-2 mb-3">
-    <svg fill="#000000" width="50px" height="50px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-      <path d="M9,10h1a1,1,0,0,0,0-2H9a1,1,0,0,0,0,2Zm0,2a1,1,0,0,0,0,2h6a1,1,0,0,0,0-2ZM20,8.94a1.31,1.31,0,0,0-.06-.27l0-.09a1.07,1.07,0,0,0-.19-.28h0l-6-6h0a1.07,1.07,0,0,0-.28-.19.32.32,0,0,0-.09,0A.88.88,0,0,0,13.05,2H7A3,3,0,0,0,4,5V19a3,3,0,0,0,3,3H17a3,3,0,0,0,3-3V9S20,9,20,8.94ZM14,5.41,16.59,8H15a1,1,0,0,1-1-1ZM18,19a1,1,0,0,1-1,1H7a1,1,0,0,1-1-1V5A1,1,0,0,1,7,4h5V7a3,3,0,0,0,3,3h3Zm-3-3H9a1,1,0,0,0,0,2h6a1,1,0,0,0,0-2Z"></path>
-    </svg>
-    <h2 class="fw-bold m-0">Staff Information</h2>
-  </header>
+  <%= link_to "Edit this staff", edit_staff_path(@staff) %> |
+  <%= link_to "Back to staffs", staffs_path %>
 
-  <!-- Blue Information Card -->
-  <div class="border rounded-4 shadow-sm overflow-hidden mb-3">
-    <!-- Full-width blue header -->
-    <div class="bg-primary text-white p-4 d-flex align-items-center gap-3 w-100">
-      <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="white" class="bi bi-person-circle flex-shrink-0" viewBox="0 0 16 16">
-        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
-        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
-      </svg>
-      <div>
-        <h3 class="fw-bold mb-1"><%= @staff.name %></h3>
-        <p class="mb-1"><%= @staff.email %></p>
-        <p class="mb-0"><%= @staff.department&.name %></p>
-      </div>
-    </div>
-
-    <!-- White content area below -->
-    <div class="p-4 bg-white">
-      <p><strong>Status:</strong> <%= @staff.status %></p>
-      <p><strong>Monthly Salary:</strong> ₱<%= number_with_precision(@staff.monthly_salary, precision: 2, delimiter: ",") %></p>
-    </div>
-  </div>
-</div>
-
-<!-- Buttons -->
-<div class="d-flex justify-content-between">
-  <div>
-    <%= link_to "Back to staffs", staffs_path, class: "btn btn-secondary" %>
-  </div>
-  <div class="d-flex gap-3">
-    <%= button_to "Destroy this staff", @staff, method: :delete, data: { turbo_confirm: "Are you sure?" }, class: "btn btn-outline-danger" %>
-    <%= link_to "Edit this staff", edit_staff_path(@staff), class: "btn btn-success" %>
-  </div>
+  <%= button_to "Destroy this staff", @staff, method: :delete %>
 </div>
