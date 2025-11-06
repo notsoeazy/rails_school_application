@@ -1,4 +1,4 @@
-<div data-bs-spy="scroll" data-bs-target="#topNav" data-bs-smooth-scroll="true" tabindex="0">
+<div id="homepage-body" data-bs-spy="scroll" data-bs-target="#topNav" data-bs-smooth-scroll="true" tabindex="0">
 
   <!-- NAVBAR -->
   <header class="site-header fixed-top">
@@ -17,16 +17,12 @@
         </button>
 
         <div class="collapse navbar-collapse navbar-dark" id="nav-collapse">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center gap-2">
             <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#programs">Programs</a></li>
             <li class="nav-item"><a class="nav-link" href="#news">News</a></li>
-            <li class="nav-item"><a class="nav-link" href="#courses">Courses</a></li>
-            <li class="nav-item">
-              <%= link_to 'Sections' , sections_path, class: "nav-link" %>
-            </li>
-            <li class="nav-item ms-3">
-              <%= link_to 'Get Started' , students_path, class: "btn btn-outline-light rounded-pill px-4 py-2" %>
-            </li>
+            <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+            <li class="nav-item"><a class="btn btn-outline-light rounded-pill px-3 py-1" href="#call-to-action">Get Started</a></li>
           </ul>
         </div>
       </div>
@@ -35,12 +31,12 @@
   <!-- NAVBAR END -->
 
   <!--  HERO SECTION -->
-  <section id="hero" class="hero-section overflow-hidden">
+  <section id="hero" class="scroll-point hero-section overflow-hidden">
     <div id="schoolCarousel" class="carousel slide carousel-fade h-100" data-bs-ride="carousel" data-bs-interval="4000">
       <div class="carousel-inner h-100">
 
         <!-- Slide 1 -->
-        <div class="carousel-item active h-100">
+        <div class="carousel-item active d-flex h-100">
           <%= image_tag "adnu1.jpeg" , class: "d-block w-100 h-100 hero-img" , alt: "campus" %>
             <div class="hero-overlay d-flex flex-column justify-content-center align-items-start px-4 px-md-5">
               <h1 class="display-5 fw-bold headline">Welcome to <span class="text-accent">School Manager</span></h1>
@@ -54,7 +50,7 @@
         </div>
 
         <!-- Slide 2 -->
-        <div class="carousel-item h-100">
+        <div class="carousel-item d-flex h-100">
           <%= image_tag "adnu2.jpg" , class: "d-block w-100 h-100 hero-img" , alt: "students" %>
             <div class="hero-overlay d-flex flex-column justify-content-center align-items-start px-4 px-md-5">
               <h2 class="fw-bold headline">Engaged Students, Better Outcomes</h2>
@@ -64,7 +60,7 @@
         </div>
 
         <!-- Slide 3 -->
-        <div class="carousel-item h-100">
+        <div class="carousel-item d-flex h-100">
           <%= image_tag "adnu3.jpg" , class: "d-block w-100 h-100 hero-img" , alt: "facilities" %>
             <div class="hero-overlay d-flex flex-column justify-content-center align-items-start px-4 px-md-5">
               <h2 class="fw-bold headline">Modern Campus Facilities</h2>
@@ -87,9 +83,9 @@
   <!-- HERO SECTION END -->
 
   <!-- HIGHLIGHTS SECTION -->
-  <section id="highlights" class="py-5 bg-white">
+  <section id="highlights" class="scroll-point py-5 bg-white">
     <div class="container">
-      <h2 class="text-center section-title text-accent mb-5">Campus Highlights</h2>
+      <h2 class="text-center text-accent mb-5">Campus Highlights</h2>
       <div class="row align-items-center g-5">
         <div class="col-md-6">
           <%= image_tag 'adnu2.jpg' , class: "img-fluid rounded-4 shadow-sm" , alt: "campus life" %>
@@ -107,13 +103,15 @@
   <!-- HIGHLIGHTS SECTION END -->
 
   <!-- ACCREDITATIONS -->
-
+  <section id="accreditations" class="scroll-point py-5">
+    Here
+  </section>
   <!-- ACCREDITATIONS END -->
 
   <!-- PROGRAMS SECTION -->
-  <section id="courses" class="py-5 bg-light">
+  <section id="programs" class="scroll-point py-5 bg-light">
     <div class="container">
-      <h2 class="text-center section-title text-primary mb-4">Courses Offered</h2>
+      <h2 class="text-center text-primary mb-4">Courses Offered</h2>
       <div class="row g-4">
         <% [ ["BS Computer Engineering", "Hardware, software, and embedded systems." ], ["BS Information
           Technology", "Networking, databases, and software development." ], ["BS
@@ -140,9 +138,9 @@
   <!-- PROGRAMS SECTION -->
 
   <!-- NEWS SECTION -->
-  <section id="news" class="py-5 bg-white">
+  <section id="news" class="scroll-point py-5 bg-white">
     <div class="container">
-      <h2 class="text-center section-title text-accent mb-4">Latest News</h2>
+      <h2 class="text-center text-accent mb-4">Latest News</h2>
       <div class="row g-4">
         <% [ ["New Academic Year Begins", "The new semester starts next week. Students should check schedules early." ],
           ["Library Renovation", "Our library now features collaborative learning spaces and new technology." ],
@@ -160,7 +158,7 @@
               </div>
             </article>
           </div>
-          <% end %>
+        <% end %>
       </div>
     </div>
   </section>
@@ -168,7 +166,7 @@
 
 
   <!-- CALL TO ACTION -->
-  <section class="py-5 bg-gradient-cta">
+  <section id="call-to-action" class="scroll-point py-5 bg-gradient-cta">
     <div class="container text-center">
       <h3 class="text-white fw-bold mb-3">Ready to explore?</h3>
       <p class="text-white-75 mb-4">Discover courses, view sections, and manage your school with ease.</p>
@@ -179,13 +177,13 @@
 
 
   <!-- FOOTER -->
-  <footer class="bg-dark text-white py-4 mt-5">
+  <section id="about" class="scroll-point bg-dark text-white py-4 mt-5">
     <div class="container text-center small">
       © <%= Time.current.year %> School Manager — All Rights Reserved
         <br />
         <span class="text-muted">Built with Ruby on Rails & Bootstrap</span>
     </div>
-  </footer>
+  </section>
   <!-- FOOTER END -->
 
 
