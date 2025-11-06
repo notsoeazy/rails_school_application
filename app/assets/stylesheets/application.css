@@ -41,3 +41,119 @@ body {
 #department-entry-card:hover, #teacher-entry-card:hover, #staff-entry-card:hover {
     transform: translateY(-3px);
 }
+
+/* application.scss (append) */
+:root {
+  --accent: #6252AC;
+  --accent-700: #4f4190;
+  --surface: #ffffff;
+  --muted: #6c757d;
+}
+
+/* reset & body */
+body {
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* NAV */
+.site-header {
+  z-index: 1050;
+  background: #6252AC;
+  transition: background 220ms ease, backdrop-filter 220ms ease;
+}
+.site-header.scrolled {
+  background: rgba(5,10,20,0.6);
+  backdrop-filter: blur(6px);
+}
+
+/* brand */
+.brand-name {
+  color: #fff;
+  font-weight: 600;
+}
+
+/* Hero */
+.hero-section {
+  min-height: 50vh;
+  position: relative;
+  margin-top: 56px; /* account for fixed navbar height */
+}
+.hero-img {
+  object-fit: cover;
+  height: 50vh;
+  filter: brightness(0.6);
+}
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 68vh;
+  width: 100%;
+  padding-top: 6rem;
+  padding-left: 4rem;
+  padding-right: 2rem;
+  max-width: 900px;
+}
+.headline {
+  color: #fff;
+  text-shadow: 0 6px 20px rgba(0,0,0,0.35);
+}
+
+/* accent buttons */
+.btn-accent {
+  background-color: var(--accent);
+  border: none;
+  color: #fff;
+}
+.btn-accent:hover {
+  background-color: var(--accent-700);
+}
+
+/* white button on hero */
+.btn-white {
+  background: rgba(255,255,255,0.95);
+  color: #111;
+  border: none;
+}
+.btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
+
+/* CTA gradient section */
+.bg-gradient-cta{
+  background: linear-gradient(90deg, var(--accent) 0%, rgba(30,58,138,0.9) 100%);
+  color: white;
+  border-radius: 12px;
+}
+
+/* feature cards */
+.feature-card {
+  border-radius: 12px;
+  transition: transform .22s ease, box-shadow .22s ease;
+}
+.feature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 48px rgba(0,0,0,0.12);
+}
+
+/* rounded cards */
+.card.rounded-4 {
+  border-radius: 1rem;
+}
+
+/* section titles */
+.section-title {
+  font-weight: 700;
+  letter-spacing: -.4px;
+  font-size: 1.6rem;
+}
+
+/* sticky navbar on scroll */
+@media (min-width: 992px) {
+  .hero-overlay { padding-left: 6rem; }
+}
+
+/* small screens */
+@media (max-width: 768px) {
+  .hero-overlay { padding-left: 1.25rem; padding-right: 1.25rem; padding-top: 3rem; }
+  .hero-img { height: 56vh; }
+}
+  
