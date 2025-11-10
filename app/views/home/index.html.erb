@@ -1,8 +1,8 @@
 <div id="homepage-body" data-bs-spy="scroll" data-bs-target="#topNav" data-bs-smooth-scroll="true" tabindex="0">
 
   <!-- NAVBAR -->
-  <header class="site-header fixed-top">
-    <nav class="navbar navbar-expand-lg" id="topNav">
+  <header class="site-header fixed-top shadow-sm">
+    <nav class="navbar navbar-expand-lg navbar-dark mt-1" id="topNav">
       <div class="container-fluid px-5">
         <a class="navbar-brand d-flex align-items-center gap-2" href="#hero">
           <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="me-2">
@@ -16,13 +16,15 @@
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse navbar-dark" id="nav-collapse">
+        <div class="collapse navbar-collapse" id="nav-collapse">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center gap-2">
             <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="#programs">Programs</a></li>
-            <li class="nav-item"><a class="nav-link" href="#news">News</a></li>
-            <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
-            <li class="nav-item"><a class="btn btn-outline-light rounded-pill px-3 py-1" href="#call-to-action">Get Started</a></li>
+            <li class="nav-item"><a class="nav-link" href="#highlights">Highlights</a></li>
+            <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+            <li class="nav-item"><a class="nav-link" href="#benefits">Benefits</a></li>
+            <li class="nav-item"><a class="nav-link" href="#social-proof">Trusted By</a></li>
+            <li class="nav-item"><a class="btn btn-outline-light rounded-pill px-3 py-1" href="#call-to-action">Get
+                Started</a></li>
           </ul>
         </div>
       </div>
@@ -30,8 +32,8 @@
   </header>
   <!-- NAVBAR END -->
 
-  <!--  HERO SECTION -->
-  <section id="hero" class="scroll-point hero-section overflow-hidden">
+  <!-- HERO SECTION -->
+  <section id="hero" class="scroll-point hero-section d-flex align-items-center overflow-hidden">
     <div id="schoolCarousel" class="carousel slide carousel-fade h-100" data-bs-ride="carousel" data-bs-interval="4000">
       <div class="carousel-inner h-100">
 
@@ -43,7 +45,7 @@
               <p class="lead text-light mb-4">Empowering your school community with modern tools for administration,
                 learning, and collaboration.</p>
               <div class="d-flex gap-3">
-                <%= link_to 'Explore Courses' , '#courses' , class: "btn btn-white rounded-pill px-4 py-2" %>
+                <%= link_to 'Explore Courses' , '#programs' , class: "btn btn-white rounded-pill px-4 py-2" %>
                   <%= link_to 'View Dashboard' , subjects_path, class: "btn btn-outline-light rounded-pill px-4 py-2" %>
               </div>
             </div>
@@ -67,23 +69,15 @@
               <p class="lead text-light">Spaces and systems built for learning and growth.</p>
             </div>
         </div>
+
       </div>
 
-      <!-- Carousel Controls -->
-      <button class="carousel-control-prev" type="button" data-bs-target="#schoolCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#schoolCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
     </div>
   </section>
   <!-- HERO SECTION END -->
 
-  <!-- HIGHLIGHTS SECTION -->
-  <section id="highlights" class="scroll-point py-5 bg-white">
+  <!-- HIGHLIGHTS / STATS SECTION -->
+  <section id="highlights" class="scroll-point d-flex align-items-center bg-light">
     <div class="container">
       <h2 class="text-center text-accent mb-5">Campus Highlights</h2>
       <div class="row align-items-center g-5">
@@ -96,95 +90,153 @@
             development.</p>
           <h4 class="fw-bold">Modern Facilities</h4>
           <p class="text-muted">Equipped with technology-driven spaces supporting academic success.</p>
+          <div class="d-flex gap-4 mt-4">
+            <div class="text-center">
+              <h3 class="fw-bold text-primary">20+</h3>
+              <p class="text-muted">Schools Using Platform</p>
+            </div>
+            <div class="text-center">
+              <h3 class="fw-bold text-primary">10,000+</h3>
+              <p class="text-muted">Students Managed</p>
+            </div>
+            <div class="text-center">
+              <h3 class="fw-bold text-primary">99.9%</h3>
+              <p class="text-muted">Uptime</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
-  <!-- HIGHLIGHTS SECTION END -->
+  <!-- HIGHLIGHTS / STATS SECTION END -->
 
-  <!-- ACCREDITATIONS -->
-  <section id="accreditations" class="scroll-point py-5">
-    Here
-  </section>
-  <!-- ACCREDITATIONS END -->
-
-  <!-- PROGRAMS SECTION -->
-  <section id="programs" class="scroll-point py-5 bg-light">
+  <!-- FEATURES SECTION -->
+  <section id="features" class="scroll-point d-flex align-items-center">
     <div class="container">
-      <h2 class="text-center text-primary mb-4">Courses Offered</h2>
+      <h2 class="text-center text-primary mb-5">Features</h2>
       <div class="row g-4">
-        <% [ ["BS Computer Engineering", "Hardware, software, and embedded systems." ], ["BS Information
-          Technology", "Networking, databases, and software development." ], ["BS
-          Education", "Become an educator for the digital age." ] ].each do |course, desc| %>
+        <% [ ["Student Management", "Enrollments, attendance, grades." , "👩‍🏫" ], ["Teacher
+          Tools", "Class schedules, grading, announcements." , "🧑‍🏫" ], ["Department
+          Control", "Roles, permissions, and performance." , "🏢" ], ["School
+          Administration", "Finances, HR, and staff management." , "🏫" ], ["Analytics
+          Dashboard", "Visual insights and reports." , "📊" ], ["Mobile Ready", "Manage on the go." , "📱" ] ].each do
+          |title, desc, icon| %>
           <div class="col-md-4">
-            <div class="card shadow-sm rounded-4 h-100 border-0">
-              <div class="card-body d-flex flex-column">
-                <h5 class="fw-semibold">
-                  <%= course %>
-                </h5>
-                <p class="text-muted flex-grow-1">
-                  <%= desc %>
-                </p>
-                <div class="mt-3">
-                  <%= link_to 'Learn More' , '#' , class: 'btn btn-outline-primary btn-sm rounded-pill' %>
-                </div>
+            <div class="card shadow-sm rounded-4 h-100 border-0 text-center p-4">
+              <div class="display-4 mb-3">
+                <%= icon %>
               </div>
+              <h5 class="fw-semibold">
+                <%= title %>
+              </h5>
+              <p class="text-muted">
+                <%= desc %>
+              </p>
             </div>
           </div>
           <% end %>
       </div>
     </div>
   </section>
-  <!-- PROGRAMS SECTION -->
+  <!-- FEATURES SECTION END -->
 
-  <!-- NEWS SECTION -->
-  <section id="news" class="scroll-point py-5 bg-white">
+  <!-- BENEFITS SECTION -->
+  <section id="benefits" class="scroll-point d-flex align-items-center bg-light">
     <div class="container">
-      <h2 class="text-center text-accent mb-4">Latest News</h2>
-      <div class="row g-4">
-        <% [ ["New Academic Year Begins", "The new semester starts next week. Students should check schedules early." ],
-          ["Library Renovation", "Our library now features collaborative learning spaces and new technology." ],
-          ["Teacher Orientation", "We welcome new faculty joining our academic community this year." ] ].each do |title,
-          desc| %>
-          <div class="col-md-4">
-            <article class="card feature-card h-100 border-0">
-              <div class="card-body">
-                <h5 class="fw-semibold">
-                  <%= title %>
-                </h5>
-                <p class="text-muted">
-                  <%= desc %>
-                </p>
-              </div>
-            </article>
-          </div>
-        <% end %>
+      <h2 class="text-center text-accent mb-5">Benefits</h2>
+      <div class="row g-5 align-items-center">
+        <div class="col-md-6 order-md-2">
+          <%= image_tag 'adnu3.jpg' , class: "img-fluid rounded-4 shadow-sm" , alt: "benefits" %>
+        </div>
+        <div class="col-md-6 order-md-1">
+          <ul class="list-unstyled fs-5 text-muted">
+            <li class="mb-3">✅ Reduce paperwork by 70%</li>
+            <li class="mb-3">✅ Real-time tracking of student performance</li>
+            <li class="mb-3">✅ Empower collaboration between staff and parents</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
-  <!-- NEWS SECTION END -->
+  <!-- BENEFITS SECTION END -->
 
+  <!-- SOCIAL PROOF SECTION -->
+  <section id="social-proof" class="scroll-point d-flex flex-column justify-content-center bg-light py-5">
+    <div class="container">
+  
+      <!-- PARTNERS CAROUSEL -->
+      <h2 class="text-primary text-center mb-4">Our Partners & Integrations</h2>
+      <div id="partnersCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+        <div class="carousel-inner">
+          <% logos=[ ['partner1.png', 'Partner 1' ], ['partner2.png', 'Partner 2' ], ['partner3.png', 'Partner 3' ],
+            ['partner4.png', 'Partner 4' ], ['partner5.png', 'Partner 5' ], ['partner6.png', 'Partner 6' ] ] %>
+  
+            <% logos.each_slice(3).with_index do |slice, idx| %>
+              <div class="carousel-item <%= 'active' if idx == 0 %>">
+                <div class="d-flex justify-content-center align-items-center gap-5">
+                  <% slice.each do |img, alt| %>
+                    <%= image_tag img, class: "partner-logo" , alt: alt, style: "max-height:80px;" %>
+                      <% end %>
+                </div>
+              </div>
+              <% end %>
+        </div>
+      </div>
+      <!-- PARTNERS CAROUSEL END -->
+  
+      <!-- TESTIMONIALS CAROUSEL -->
+      <h2 class="text-accent text-center mt-5 mb-4">What Our Users Say</h2>
+      <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <% [ ["Maria Cruz, Principal", "This system streamlined our enrollment process!" ], ["John Santos,
+            Teacher", "Attendance and grading have never been easier." ], ["Anna Lopez,
+            Admin", "Our school operations are now more efficient than ever." ] ].each_with_index do |(name, quote), idx|
+            %>
+            <div class="carousel-item <%= 'active' if idx == 0 %>">
+              <div class="card border-0 shadow-sm mx-auto" style="max-width:500px;">
+                <div class="card-body text-center">
+                  <p class="card-text fst-italic">“<%= quote %>”</p>
+                  <h6 class="fw-semibold mt-3">
+                    <%= name %>
+                  </h6>
+                </div>
+              </div>
+            </div>
+            <% end %>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <!-- TESTIMONIALS CAROUSEL END -->
+  
+    </div>
+  </section>  
+  <!-- SOCIAL PROOF SECTION END-->
 
   <!-- CALL TO ACTION -->
-  <section id="call-to-action" class="scroll-point py-5 bg-gradient-cta">
+  <section id="call-to-action" class="scroll-point d-flex align-items-center bg-gradient-cta">
     <div class="container text-center">
-      <h3 class="text-white fw-bold mb-3">Ready to explore?</h3>
+      <h3 class="text-white fw-bold mb-3">Ready to transform your school?</h3>
       <p class="text-white-75 mb-4">Discover courses, view sections, and manage your school with ease.</p>
       <%= link_to 'Get Started' , subjects_path, class: "btn btn-white btn-lg rounded-pill px-4" %>
     </div>
   </section>
   <!-- CALL TO ACTION END -->
 
-
   <!-- FOOTER -->
-  <section id="about" class="scroll-point bg-dark text-white py-4 mt-5">
+  <footer id="footer" class="scroll-point bg-dark text-white py-4">
     <div class="container text-center small">
       © <%= Time.current.year %> School Manager — All Rights Reserved
         <br />
         <span class="text-muted">Built with Ruby on Rails & Bootstrap</span>
     </div>
-  </section>
+  </footer>
   <!-- FOOTER END -->
-
 
 </div>
