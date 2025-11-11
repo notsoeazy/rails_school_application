@@ -82,6 +82,27 @@ footer {
   color: #fff;
   font-weight: 600;
 }
+.nav-custom .nav-link {
+  position: relative;
+}
+.nav-custom .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: currentColor;
+}
+.nav-custom .nav-link.active {
+  font-weight: bold;
+}
+.nav-custom .nav-link.active::after {
+  width: 100%;
+}
+.nav-custom .nav-link:hover::after {
+  width: 100%;
+}
 
 /* HERO SECTION */
 .hero-section {
