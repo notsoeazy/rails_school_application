@@ -48,7 +48,7 @@ body {
   --surface: #ffffff;
   --muted: #6c757d;
 
-  --navbar-height: 70px;
+  --navbar-height: 72px;
 }
 
 /* For page scrolling */
@@ -75,12 +75,8 @@ footer {
 /* NAVBAR */
 .site-header {
   z-index: 100;
-  min-height: 70px;
+  min-height: var(--navbar-height);
   background: #6252AC;
-}
-.brand-name {
-  color: #fff;
-  font-weight: 600;
 }
 .nav-custom .nav-link {
   position: relative;
