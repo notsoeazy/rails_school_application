@@ -66,6 +66,10 @@ section.scroll-point {
   scroll-behavior: smooth;
   position: relative;        
 }
+footer {
+  height: auto;
+  scroll-snap-align: start;
+}
 
 
 /* NAVBAR */
