@@ -48,7 +48,7 @@ body {
   --surface: #ffffff;
   --muted: #6c757d;
 
-  --navbar-height: 70px;
+  --navbar-height: 72px;
 }
 
 /* For page scrolling */
@@ -66,17 +66,38 @@ section.scroll-point {
   scroll-behavior: smooth;
   position: relative;        
 }
+footer {
+  height: auto;
+  scroll-snap-align: start;
+}
 
 
 /* NAVBAR */
 .site-header {
   z-index: 100;
-  min-height: 70px;
+  min-height: var(--navbar-height);
   background: #6252AC;
 }
-.brand-name {
-  color: #fff;
-  font-weight: 600;
+.nav-custom .nav-link {
+  position: relative;
+}
+.nav-custom .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: currentColor;
+}
+.nav-custom .nav-link.active {
+  font-weight: bold;
+}
+.nav-custom .nav-link.active::after {
+  width: 100%;
+}
+.nav-custom .nav-link:hover::after {
+  width: 100%;
 }
 
 /* HERO SECTION */
