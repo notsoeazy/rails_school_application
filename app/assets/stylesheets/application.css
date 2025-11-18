@@ -105,9 +105,19 @@ section.scroll-point {
 
 /* CALL TO ACTION */
 .bg-gradient-cta{
-  background: linear-gradient(90deg, var(--accent) 0%, rgba(30,58,138,0.9) 100%);
+  background: linear-gradient(90deg, var(--surface) 0%, var(--accent) 80%);
   color: white;
-  border-radius: 12px;
+}
+.cta-container{
+  background-color: #fafafa;
+  color: black;
+  padding-left: 200px;
+  padding-right: 200px;
+  padding-top: 150px;
+  padding-bottom: 150px;
+}
+.cta-left-content{
+  width: 650px;
 }
 
 /* NEWS SECTION */
