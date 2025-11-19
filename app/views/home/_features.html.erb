@@ -1,0 +1,29 @@
+<!-- FEATURES SECTION -->
+<section id="features" class="scroll-point d-flex align-items-center">
+  <div class="container">
+    <h2 class="text-center text-primary mb-5">Features</h2>
+    <div class="row g-4">
+      <% [ ["Student Management", "Enrollments, attendance, grades." , "👩‍🏫" ], ["Teacher
+        Tools", "Class schedules, grading, announcements." , "🧑‍🏫" ], ["Department
+        Control", "Roles, permissions, and performance." , "🏢" ], ["School
+        Administration", "Finances, HR, and staff management." , "🏫" ], ["Analytics
+        Dashboard", "Visual insights and reports." , "📊" ], ["Mobile Ready", "Manage on the go." , "📱" ] ].each do
+        |title, desc, icon| %>
+        <div class="col-md-4">
+          <div class="card shadow-sm rounded-4 h-100 border-0 text-center p-4">
+            <div class="display-4 mb-3">
+              <%= icon %>
+            </div>
+            <h5 class="fw-semibold">
+              <%= title %>
+            </h5>
+            <p class="text-muted">
+              <%= desc %>
+            </p>
+          </div>
+        </div>
+        <% end %>
+    </div>
+  </div>
+</section>
+<!-- FEATURES SECTION END -->

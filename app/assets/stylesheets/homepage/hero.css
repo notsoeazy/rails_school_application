@@ -1,0 +1,23 @@
+/* HERO SECTION */
+.hero-section {
+  height: calc(100vh - var(--navbar-height));
+  position: relative;
+  margin-top: var(--navbar-height);
+  overflow: hidden;
+}
+.hero-img {
+  object-fit: cover;
+  filter: brightness(0.6);
+}
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding-top: var(--navbar-height);
+}
+.headline {
+  color: #fff;
+  text-shadow: 0 6px 20px rgba(0,0,0,0.35);
+}
