@@ -126,19 +126,19 @@ footer {
 
 /* CALL TO ACTION */
 .bg-gradient-cta{
-  background: linear-gradient(90deg, var(--surface) 0%, var(--accent) 80%);
+  background: linear-gradient(180deg, var(--surface) 0%, var(--accent) 80%);
   color: white;
 }
 .cta-container{
   background-color: #fafafa;
   color: black;
-  padding-left: 200px;
-  padding-right: 200px;
-  padding-top: 150px;
-  padding-bottom: 150px;
+  width: 1500px;
+  height: 500px;
+  padding-top: 166px;
 }
 .cta-left-content{
   width: 650px;
+  margin-right: 150px;
 }
 
 /* NEWS SECTION */
