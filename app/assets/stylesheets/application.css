@@ -25,11 +25,6 @@ body {
 /* For thin scrollbars used in responsive tables */
 .scrollbar-thin::-webkit-scrollbar {
     width: 6px;
-    
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-  </head>
-
-
 }
 .scrollbar-thin::-webkit-scrollbar-thumb {
     background-color: rgba(0, 0, 0, 0.2);
@@ -40,4 +35,3 @@ body {
 .nav-link:not(.active):hover {
     background-color: rgba(0, 0, 0, 0.1);
 }
-
