@@ -1,0 +1,104 @@
+<!-- SOCIAL PROOF SECTION -->
+<section id="social-proof" class="scroll-point d-flex flex-column  bg-light py-5">
+  <!-- PARTNERS CAROUSEL -->
+    <h2 class="text-center mb-0 fw-semibold fs-4 text-muted" style="letter-spacing: 1em;">PARTNERS</h2>
+
+    <div class="infinite-carousel">
+      <% partners=[ 
+        ['partner1.png', 'Ateneo de Naga University' ], 
+        ['partner2.png', 'University of Nueva Caceres' ],
+        ['partner3.png', 'Naga College Foundation' ],
+        ['partner4.png', 'Bicol State College of Applied Sciences and Technology' ]
+      ] %>
+    
+        <div class="infinite-carousel-group">
+          <% partners.each do |img, alt| %>
+            <div class="infinite-carousel-card">
+              <%= image_tag img, alt: alt %>
+                <p>
+                  <%= alt %>
+                </p>
+            </div>
+          <% end %>
+        </div>
+        
+        <div class="infinite-carousel-group" aria-hidden="true">
+          <% partners.each do |img, alt| %>
+            <div class="infinite-carousel-card">
+              <%= image_tag img, alt: alt %>
+                <p>
+                  <%= alt %>
+                </p>
+            </div>
+          <% end %>
+        </div>
+    </div>
+  <!-- PARTNERS CAROUSEL END -->
+
+  <div class="container px-0 my-3">
+    <hr class="my-0 w-100 mx-0 border-3">
+  </div>
+
+  <!-- TESTIMONIALS CAROUSEL -->
+  <div class="container bg-gradient-blue flex-grow-1 mt-3 d-flex flex-column justify-content-center">
+    <h2 class="text-center mb-2 fw-bold">What Our Users Say</h2>
+    
+    <div id="testimonial-carousel" class="carousel slide" data-bs-ride="carousel">
+    
+      <% testimonials=[ ["Maria Cruz, Principal, Greenview
+        School", "This system not only streamlined our enrollment process but also reduced manual errors by 40%. It's a game-changer for administrative efficiency."
+        ], ["John Santos, Teacher, Northwood
+        High", "Attendance tracking and grading have never been easier or faster. The integrated features save me hours every week, letting me focus more on teaching."
+        ], ["Anna Lopez, Admin, Central
+        Academy", "Our school operations are now more transparent and efficient than ever. The user interface is intuitive, and the support team is outstanding."
+        ] ] %>
+
+      <div class="carousel-indicators mb-0">
+          <% testimonials.each_with_index do |(name, quote), idx| %>
+            <button type="button" data-bs-target="#testimonial-carousel" data-bs-slide-to="<%= idx %>"
+              class="<%= 'active' if idx == 0 %> bg-dark" aria-current="<%= 'true' if idx == 0 %>"
+              aria-label="Slide <%= idx + 1 %>">
+            </button>
+            <% end %>
+      </div>
+    
+      <div class="carousel-inner pt-4 pb-5">
+    
+        <% testimonials.each_with_index do |(name, quote), idx| %>
+          <div class="carousel-item <%= 'active' if idx == 0 %>">
+            <div class="card border-0 rounded-4 shadow mx-auto p-4">
+              <div class="card-body text-center">
+    
+                <p class="card-text fst-italic fs-5 text-secondary px-md-5 mx-md-5">
+                  “<%= quote %>”
+                </p>
+    
+                <hr class="my-4 w-25 mx-auto border-3">
+    
+                <h5 class="fw-bold mt-3 text-dark">
+                  <%= name.split(',').first %>
+                </h5>
+                <p class="text-muted mb-0 small">
+                  <%= name.split(',').last(2).join(', ').strip %>
+                </p>
+      
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#testimonial-carousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      
+      <button class="carousel-control-next" type="button" data-bs-target="#testimonial-carousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+  <!-- TESTIMONIALS CAROUSEL END -->
+</section>  
+<!-- SOCIAL PROOF SECTION END-->

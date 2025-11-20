@@ -1,0 +1,43 @@
+<!-- HERO SECTION -->
+<section id="hero" class="scroll-point hero-section d-flex align-items-center overflow-hidden">
+  <div id="schoolCarousel" class="carousel slide carousel-fade h-100" data-bs-ride="carousel" data-bs-interval="4000">
+    <div class="carousel-inner h-100">
+
+      <!-- Slide 1 -->
+      <div class="carousel-item active d-flex h-100">
+        <%= image_tag "adnu1.jpeg" , class: "d-block w-100 h-100 hero-img" , alt: "campus" %>
+          <div class="hero-overlay d-flex flex-column justify-content-center align-items-start px-4 px-md-5">
+            <h1 class="display-5 fw-bold headline">Welcome to <span class="text-accent">School Manager</span></h1>
+            <p class="lead text-light mb-4">Empowering your school community with modern tools for administration,
+              learning, and collaboration.</p>
+            <div class="d-flex gap-3">
+              <%= link_to 'Explore Courses' , '#programs' , class: "btn btn-white rounded-pill px-4 py-2" %>
+                <%= link_to 'View Dashboard' , subjects_path, class: "btn btn-outline-light rounded-pill px-4 py-2" %>
+            </div>
+          </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="carousel-item d-flex h-100">
+        <%= image_tag "adnu2.jpg" , class: "d-block w-100 h-100 hero-img" , alt: "students" %>
+          <div class="hero-overlay d-flex flex-column justify-content-center align-items-start px-4 px-md-5">
+            <h2 class="fw-bold headline">Engaged Students, Better Outcomes</h2>
+            <p class="lead text-light">Collaboration, assessment, and attendance—centralized for educators and
+              students.</p>
+          </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="carousel-item d-flex h-100">
+        <%= image_tag "adnu3.jpg" , class: "d-block w-100 h-100 hero-img" , alt: "facilities" %>
+          <div class="hero-overlay d-flex flex-column justify-content-center align-items-start px-4 px-md-5">
+            <h2 class="fw-bold headline">Modern Campus Facilities</h2>
+            <p class="lead text-light">Spaces and systems built for learning and growth.</p>
+          </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<!-- HERO SECTION END -->

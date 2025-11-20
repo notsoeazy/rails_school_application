@@ -1,0 +1,22 @@
+/* For page scrolling */
+section.scroll-point {
+  min-height: calc(100vh - var(--navbar-height));
+  scroll-snap-align: start;
+  scroll-margin-top: var(--navbar-height);
+  display: flex;
+  align-items: center;
+}
+#homepage-body {
+  height: 100vh;             
+  overflow-y: scroll;        
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  position: relative;        
+}
+#homepage-body::-webkit-scrollbar {
+  display: none;
+}
+footer {
+  height: auto;
+  scroll-snap-align: start;
+}

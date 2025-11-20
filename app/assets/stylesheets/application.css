@@ -9,40 +9,7 @@
  * Consider organizing styles into separate files for maintainability.
  */
 
-body {
-    background-color: #6252AC;
-}
-
-/* For thin scrollbars used in responsive tables */
-.scrollbar-thin::-webkit-scrollbar {
-    width: 6px;
-}
-.scrollbar-thin::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
-}
-.nav-link:not(.active):hover {
-    background-color: rgba(0, 0, 0, 0.1);
-}
-
-/* For Departments show accordion tables */
-[data-bs-toggle="collapse"] .collapse-icon {
-  transition: transform 0.3s ease;
-}
-/* Rotate the arrow when the section is expanded */
-[data-bs-toggle="collapse"][aria-expanded="true"] .collapse-icon {
-  transform: rotate(180deg);
-}
-
-#department-entry-card, #teacher-entry-card, #staff-entry-card {
-    transition: transform 0.2s ease;
-}
-  
-#department-entry-card:hover, #teacher-entry-card:hover, #staff-entry-card:hover {
-    transform: translateY(-3px);
-}
-
-:root {
+ :root {
   --accent: #6252AC;
   --accent-700: #4f4190;
   --surface: #ffffff;
@@ -51,106 +18,26 @@ body {
   --navbar-height: 72px;
 }
 
-/* For page scrolling */
-section.scroll-point {
-  min-height: calc(100vh - var(--navbar-height));
-  scroll-snap-align: start;
-  scroll-margin-top: var(--navbar-height);
-  display: flex;
-  align-items: center;
-}
-#homepage-body {
-  height: 100vh;             
-  overflow-y: scroll;        
-  scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;
-  position: relative;        
-}
-footer {
-  height: auto;
-  scroll-snap-align: start;
+body {
+    background-color: #6252AC;
 }
 
-
-/* NAVBAR */
-.site-header {
-  z-index: 100;
-  min-height: var(--navbar-height);
-  background: #6252AC;
-}
-.nav-custom .nav-link {
-  position: relative;
-}
-.nav-custom .nav-link::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0;
-  height: 2px;
-  background-color: currentColor;
-}
-.nav-custom .nav-link.active {
-  font-weight: bold;
-}
-.nav-custom .nav-link.active::after {
-  width: 100%;
-}
-.nav-custom .nav-link:hover::after {
-  width: 100%;
-}
-
-/* HERO SECTION */
-.hero-section {
-  height: calc(100vh - var(--navbar-height));
-  position: relative;
-  margin-top: var(--navbar-height);
-  overflow: hidden;
-}
-.hero-img {
-  object-fit: cover;
-  filter: brightness(0.6);
-}
-.hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  padding-top: var(--navbar-height);
-}
-.headline {
-  color: #fff;
-  text-shadow: 0 6px 20px rgba(0,0,0,0.35);
-}
-/* HIGHLIGHT SECTION */
-.highlights-col {
-  transition: transform 0.3s ease;
-}
-.highlights-col:hover {
-  transform: scale(1.1);
-  z-index: 10;
-}
-.highlights-col:hover .highlights-card {
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
-}
+/* For thin scrollbars used in responsive tables */
+.scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  </head>
 
 
-/* CALL TO ACTION */
-.bg-gradient-cta{
-  background: linear-gradient(90deg, var(--accent) 0%, rgba(30,58,138,0.9) 100%);
-  color: white;
-  border-radius: 12px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
 }
 
-/* NEWS SECTION */
-.feature-card {
-  border-radius: 12px;
-  transition: transform .22s ease, box-shadow .22s ease;
+/* This is for all navbars */
+.nav-link:not(.active):hover {
+    background-color: rgba(0, 0, 0, 0.1);
 }
-.feature-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 18px 48px rgba(0,0,0,0.12);
-}
-
 

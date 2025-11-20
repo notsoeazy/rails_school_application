@@ -1,0 +1,14 @@
+/* For Departments show accordion tables */
+[data-bs-toggle="collapse"] .collapse-icon {
+  transition: transform 0.3s ease;
+}
+/* Rotate the arrow when the section is expanded */
+[data-bs-toggle="collapse"][aria-expanded="true"] .collapse-icon {
+  transform: rotate(180deg);
+}
+#department-entry-card, #teacher-entry-card, #staff-entry-card {
+    transition: transform 0.2s ease;
+} 
+#department-entry-card:hover, #teacher-entry-card:hover, #staff-entry-card:hover {
+    transform: translateY(-3px);
+}

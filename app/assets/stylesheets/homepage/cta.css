@@ -1,0 +1,5 @@
+/* CALL TO ACTION */
+.bg-gradient-cta{
+  background: linear-gradient(90deg, var(--accent) 0%, rgba(30,58,138,0.9) 100%);
+  color: white;
+}
