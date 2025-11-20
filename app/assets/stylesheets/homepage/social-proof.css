@@ -1,0 +1,79 @@
+/* SOCIAL PROOF */
+.infinite-carousel {
+  overflow: hidden;
+  display: flex;
+  width: 100%;
+  margin-top: 1em;
+}
+.infinite-carousel::-webkit-scrollbar {
+  display: none;
+}
+.infinite-carousel-group {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  gap: 1em;
+  padding-right: 1em;
+  flex-shrink: 0;
+  animation: infinite-scroll 20s linear infinite;
+}
+@keyframes infinite-scroll {
+  from { translate: 0;}
+  to { translate: -100%;}
+}
+.infinite-carousel-card {
+  width: fit-content;
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  filter: grayscale(100%) opacity(70%);
+  transition: all 0.2s ease;
+}
+.infinite-carousel-card:hover {
+  border-radius: 1em;
+  translate: 0 -5px;
+  filter: grayscale(0%) opacity(100%);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+}
+.infinite-carousel-card img {
+  height: 70px;
+  width: 70px;
+  object-fit: contain;
+}
+.infinite-carousel-card p {
+  margin: 0;
+  font-weight: 500;
+  font-size: 1.5em;
+  color: #555;
+}
+.carousel-control-next-icon, .carousel-control-prev-icon {
+  filter: invert(100%) grayscale(100%) contrast(150%);
+  opacity: 75%;
+}
+#testimonial-carousel .carousel-indicators button {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%; 
+  opacity: 0.5;
+  transition: opacity 0.3s, background-color 0.3s;
+  background-clip: unset; 
+  border: none;
+  margin: 0 8px;
+}
+#testimonial-carousel .carousel-indicators button.active {
+  opacity: 1;
+}
+#testimonial-carousel .carousel-indicators button:hover {
+  opacity: 0.8;
+}
+.carousel-inner .card {
+  max-width: 90%;
+  background-color: white;
+}
+.bg-gradient-blue{
+  background: linear-gradient(90deg, rgba(98,82,172,0.7) 0%, rgba(30,58,138,0.7) 100%);
+  color: white;
+  border-radius: 12px;
+}
