@@ -123,6 +123,18 @@ footer {
   color: #fff;
   text-shadow: 0 6px 20px rgba(0,0,0,0.35);
 }
+/* HIGHLIGHT SECTION */
+.highlights-col {
+  transition: transform 0.3s ease;
+}
+.highlights-col:hover {
+  transform: scale(1.1);
+  z-index: 10;
+}
+.highlights-col:hover .highlights-card {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
 
 /* CALL TO ACTION */
 .bg-gradient-cta{
