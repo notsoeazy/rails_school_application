@@ -1,43 +1,40 @@
 <!-- HERO SECTION -->
-<section id="hero" class="scroll-point hero-section d-flex align-items-center overflow-hidden">
+<section id="hero" class="scroll-point hero-section d-flex align-items-center overflow-hidden bg-white">
   <div id="schoolCarousel" class="carousel slide carousel-fade h-100" data-bs-ride="carousel" data-bs-interval="4000">
     <div class="carousel-inner h-100">
-
-      <!-- Slide 1 -->
+      <!-- Main -->
       <div class="carousel-item active d-flex h-100">
-        <%= image_tag "adnu1.jpeg" , class: "d-block w-100 h-100 hero-img" , alt: "campus" %>
-          <div class="hero-overlay d-flex flex-column justify-content-center align-items-start px-4 px-md-5">
-            <h1 class="display-5 fw-bold headline">Welcome to <span class="text-accent">School Manager</span></h1>
-            <p class="lead text-light mb-4">Empowering your school community with modern tools for administration,
-              learning, and collaboration.</p>
-            <div class="d-flex gap-3">
-              <%= link_to 'Explore Courses' , '#programs' , class: "btn btn-white rounded-pill px-4 py-2" %>
-                <%= link_to 'View Dashboard' , subjects_path, class: "btn btn-outline-light rounded-pill px-4 py-2" %>
-            </div>
-          </div>
+        <%= image_tag "adnu1.jpeg" , class: "d-block w-100 h-100 hero-img" , alt: "campus1" %>
       </div>
-
-      <!-- Slide 2 -->
       <div class="carousel-item d-flex h-100">
-        <%= image_tag "adnu2.jpg" , class: "d-block w-100 h-100 hero-img" , alt: "students" %>
-          <div class="hero-overlay d-flex flex-column justify-content-center align-items-start px-4 px-md-5">
-            <h2 class="fw-bold headline">Engaged Students, Better Outcomes</h2>
-            <p class="lead text-light">Collaboration, assessment, and attendance—centralized for educators and
-              students.</p>
-          </div>
+        <%= image_tag "adnu2.jpg" , class: "d-block w-100 h-100 hero-img" , alt: "campus2" %>
       </div>
-
-      <!-- Slide 3 -->
       <div class="carousel-item d-flex h-100">
-        <%= image_tag "adnu3.jpg" , class: "d-block w-100 h-100 hero-img" , alt: "facilities" %>
-          <div class="hero-overlay d-flex flex-column justify-content-center align-items-start px-4 px-md-5">
-            <h2 class="fw-bold headline">Modern Campus Facilities</h2>
-            <p class="lead text-light">Spaces and systems built for learning and growth.</p>
-          </div>
+        <%= image_tag "adnu3.jpg" , class: "d-block w-100 h-100 hero-img" , alt: "campus3" %>
       </div>
-
     </div>
-
   </div>
+
+  <!-- Overlay Content -->
+  <div class="hero-overlay">
+    <div class="container d-flex flex-column align-items-center justify-content-start">
+      <p class="hero-label text-center">SCHOOL MANAGER</p>
+      <h1 class="hero-headline">
+        The Future of School Managing
+      </h1>
+      <p class="hero-subtext">
+        Handle students, teachers, staff, departments, sections, and subjects — all in one platform.
+      </p>
+      <a class="hero-buttons" href="#call-to-action">
+        <span>Get Started</span>
+        <svg width="28px" height="28px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g> 
+          <path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+
 </section>
 <!-- HERO SECTION END -->
