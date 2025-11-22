@@ -1,5 +1,41 @@
 /* CALL TO ACTION */
-.bg-gradient-cta{
-  background: linear-gradient(90deg, var(--accent) 0%, rgba(30,58,138,0.9) 100%);
+.cta-bg{
+  background: linear-gradient(180deg, #f8f9fa 0%, var(--accent) 80%);
   color: white;
+}
+
+.cta-container{
+  position: absolute;
+  background-color: #fafafa;
+  color: black;
+  width: 1500px;
+  height: 400px;
+  padding-top: 116px;
+}
+
+.cta-left-content{
+  width: 650px;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 3px;
+  background: #3B82F6;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem;
+  color: #fff;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  width: 150px;
+}
+
+.cta-buttons:hover {
+  background: white;
+  color: #3B82F6;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 }
