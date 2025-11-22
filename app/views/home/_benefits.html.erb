@@ -1,19 +1,96 @@
 <!-- BENEFITS SECTION -->
-<section id="benefits" class="scroll-point d-flex align-items-center bg-light">
-  <div class="container">
-    <h2 class="text-center text-accent mb-5">Benefits</h2>
+<section id="benefits" class="scroll-point py-5 position-relative overflow-hidden">
+
+  <!-- Background container -->
+  <div class="section-bg"></div>
+
+  <div class="container py-5 px-4 rounded-4 shadow-lg"
+       style="background: rgba(255,255,255,0.9); max-width: 1200px; z-index: 1; position: relative;">
+
+    <!-- Title -->
+    <h2 class="text-center fw-bold mb-5"
+        style="font-size: 2.5rem; color:#4B2E83;" data-delay="0">
+      Key Benefits of Our System
+    </h2>
+
     <div class="row g-5 align-items-center">
-      <div class="col-md-6 order-md-2">
-        <%= image_tag 'adnu3.jpg' , class: "img-fluid rounded-4 shadow-sm" , alt: "benefits" %>
+
+      <!-- IMAGE + ANALYTICS -->
+      <div class="col-md-6 order-md-2" data-delay="0.2">
+        <div class="position-relative">
+
+          <!-- Main analytics card -->
+          <div class="bg-white rounded-4 shadow-lg p-4 border-0 glass-card hover-lift"
+               style="border-left: 5px solid #4B2E83;">
+            <h6 class="text-muted mb-2">Total Projects</h6>
+            <h3 class="fw-bold mb-4">1475 
+              <span class="text-success fs-6">↑ 54%</span>
+            </h3>
+
+            <div class="mb-2 small text-muted">Finished</div>
+            <div class="progress mb-3" style="height: 6px;">
+              <div class="progress-bar bg-success" style="width: 100%"></div>
+            </div>
+
+            <div class="mb-2 small text-muted">In-Progress</div>
+            <div class="progress mb-3" style="height: 6px;">
+              <div class="progress-bar" style="width: 73%; background:#4B2E83;"></div>
+            </div>
+
+            <div class="mb-2 small text-muted">Rejected</div>
+            <div class="progress" style="height: 6px;">
+              <div class="progress-bar bg-danger" style="width: 11%"></div>
+            </div>
+          </div>
+
+          <!-- Floating mini card -->
+          <div class="floating-mini-card
+                      bg-white shadow rounded-4 px-3 py-3 text-center glass-card hover-lift floating"
+               data-delay="0.3" style="width:170px; border-top:4px solid #4B2E83;">
+            <h6 class="text-muted small mb-1">Total Projects</h6>
+            <h4 class="fw-bold mb-0">1951+</h4>
+            <div class="text-success small">+126 this month</div>
+          </div>
+
+        </div>
       </div>
-      <div class="col-md-6 order-md-1">
-        <ul class="list-unstyled fs-5 text-muted">
-          <li class="mb-3">✅ Reduce paperwork by 70%</li>
-          <li class="mb-3">✅ Real-time tracking of student performance</li>
-          <li class="mb-3">✅ Empower collaboration between staff and parents</li>
+
+      <!-- TEXT CONTENT -->
+      <div class="col-md-6 order-md-1" data-delay="0.4">
+
+        <p class="text-muted mb-4 fs-5 px-3">
+          Our system enhances productivity, reduces manual work, 
+          and elevates your school’s performance using modern automation and smart tools.
+        </p>
+
+        <ul class="list-unstyled fs-5">
+          <li class="mb-4 d-flex list-hover" data-delay="0.5">
+            <i class="bi bi-speedometer2 fs-2 me-3 list-icon"></i>
+            <div>
+              <strong>Boosting Quality with Tech</strong><br>
+              Tools that enhance accuracy, reduce errors, and improve workflow.
+            </div>
+          </li>
+
+          <li class="mb-4 d-flex list-hover" data-delay="0.6">
+            <i class="bi bi-bar-chart-line-fill fs-2 me-3 list-icon"></i>
+            <div>
+              <strong>Optimized Tracking & Output</strong><br>
+              Real-time analytics and monitoring for cleaner decision-making.
+            </div>
+          </li>
+
+          <li class="mb-4 d-flex list-hover" data-delay="0.7">
+            <i class="bi bi-cpu-fill fs-2 me-3 list-icon"></i>
+            <div>
+              <strong>AI-Assisted Monitoring</strong><br>
+              Automated insights that reduce paperwork and minimize human error.
+            </div>
+          </li>
         </ul>
+
       </div>
+
     </div>
   </div>
 </section>
-<!-- BENEFITS SECTION END -->

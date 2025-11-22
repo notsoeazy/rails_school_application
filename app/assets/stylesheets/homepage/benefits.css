@@ -1,0 +1,88 @@
+.section-bg {
+  position: absolute; top:0; left:0;
+  width: 100%; height: 100%;
+  z-index: 0;
+  background: linear-gradient(135deg, #f3efff, #e8e3ff, #d9caff, #f3efff);
+  background-size: 400% 400%;
+  animation: gradientShift 25s ease infinite;
+  overflow: hidden;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Blurred circles */
+.section-bg::before,
+.section-bg::after {
+  content:"";
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(75,46,131,0.08);
+  filter: blur(120px);
+}
+
+.section-bg::before {
+  width: 500px; height: 500px;
+  top: -100px; left: -150px;
+}
+
+.section-bg::after {
+  width: 400px; height: 400px;
+  top: 200px; right: -100px;
+}
+
+/* Subtle dot pattern overlay */
+.section-bg::after {
+  background-image: radial-gradient(rgba(75,46,131,0.04) 1px, transparent 1px);
+  background-size: 20px 20px;
+  mix-blend-mode: overlay;
+}
+
+/* -------------------------- */
+/* Glass cards & hover effect */
+/* -------------------------- */
+.glass-card {
+  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,0.85);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.list-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+  padding: 8px;
+}
+
+.list-hover:hover {
+  border-radius: 15px;
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+.list-hover:hover strong {
+  color: #6f4fff;
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+/* Floating mini-card */
+.floating { animation: float 3s ease-in-out infinite; }
+@keyframes float { 0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
+
+.floating-mini-card {
+  position: absolute;
+  right: 10px;
+  top: 15px;
+}
+
+/* Hover icon */
+.list-hover:hover .list-icon {
+  color: #6f4fff;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+
