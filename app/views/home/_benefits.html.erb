@@ -8,7 +8,7 @@
        style="background: rgba(255,255,255,0.9); max-width: 1200px; z-index: 1; position: relative;">
 
     <!-- Title -->
-    <h2 class="text-center fw-bold mb-5 fade-up"
+    <h2 class="text-center fw-bold mb-5"
         style="font-size: 2.5rem; color:#4B2E83;" data-delay="0">
       Key Benefits of Our System
     </h2>
@@ -16,7 +16,7 @@
     <div class="row g-5 align-items-center">
 
       <!-- IMAGE + ANALYTICS -->
-      <div class="col-md-6 order-md-2 fade-up" data-delay="0.2">
+      <div class="col-md-6 order-md-2" data-delay="0.2">
         <div class="position-relative">
 
           <!-- Main analytics card -->
@@ -44,8 +44,8 @@
           </div>
 
           <!-- Floating mini card -->
-          <div class="position-absolute top-0 start-100 translate-middle
-                      bg-white shadow rounded-4 px-3 py-3 text-center glass-card fade-up hover-lift floating"
+          <div class="floating-mini-card
+                      bg-white shadow rounded-4 px-3 py-3 text-center glass-card hover-lift floating"
                data-delay="0.3" style="width:170px; border-top:4px solid #4B2E83;">
             <h6 class="text-muted small mb-1">Total Projects</h6>
             <h4 class="fw-bold mb-0">1951+</h4>
@@ -56,15 +56,15 @@
       </div>
 
       <!-- TEXT CONTENT -->
-      <div class="col-md-6 order-md-1 fade-up" data-delay="0.4">
+      <div class="col-md-6 order-md-1" data-delay="0.4">
 
-        <p class="text-muted mb-4 fs-5">
+        <p class="text-muted mb-4 fs-5 px-3">
           Our system enhances productivity, reduces manual work, 
           and elevates your school’s performance using modern automation and smart tools.
         </p>
 
         <ul class="list-unstyled fs-5">
-          <li class="mb-4 d-flex fade-up list-hover" data-delay="0.5">
+          <li class="mb-4 d-flex list-hover" data-delay="0.5">
             <i class="bi bi-speedometer2 fs-2 me-3 list-icon"></i>
             <div>
               <strong>Boosting Quality with Tech</strong><br>
@@ -72,7 +72,7 @@
             </div>
           </li>
 
-          <li class="mb-4 d-flex fade-up list-hover" data-delay="0.6">
+          <li class="mb-4 d-flex list-hover" data-delay="0.6">
             <i class="bi bi-bar-chart-line-fill fs-2 me-3 list-icon"></i>
             <div>
               <strong>Optimized Tracking & Output</strong><br>
@@ -80,7 +80,7 @@
             </div>
           </li>
 
-          <li class="mb-4 d-flex fade-up list-hover" data-delay="0.7">
+          <li class="mb-4 d-flex list-hover" data-delay="0.7">
             <i class="bi bi-cpu-fill fs-2 me-3 list-icon"></i>
             <div>
               <strong>AI-Assisted Monitoring</strong><br>
@@ -94,106 +94,3 @@
     </div>
   </div>
 </section>
-
-<!-- STYLES -->
-<style>
-/* -------------------------- */
-/* Background container */
-/* -------------------------- */
-.section-bg {
-  position: absolute; top:0; left:0;
-  width: 100%; height: 100%;
-  z-index: 0;
-  background: linear-gradient(135deg, #f3efff, #e8e3ff, #d9caff, #f3efff);
-  background-size: 400% 400%;
-  animation: gradientShift 25s ease infinite;
-  overflow: hidden;
-}
-
-/* Gradient animation */
-@keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* Blurred circles */
-.section-bg::before,
-.section-bg::after {
-  content:"";
-  position: absolute;
-  border-radius: 50%;
-  background: rgba(75,46,131,0.08);
-  filter: blur(120px);
-}
-
-.section-bg::before {
-  width: 500px; height: 500px;
-  top: -100px; left: -150px;
-}
-
-.section-bg::after {
-  width: 400px; height: 400px;
-  top: 200px; right: -100px;
-}
-
-/* Subtle dot pattern overlay */
-.section-bg::after {
-  background-image: radial-gradient(rgba(75,46,131,0.04) 1px, transparent 1px);
-  background-size: 20px 20px;
-  mix-blend-mode: overlay;
-}
-
-/* -------------------------- */
-/* Glass cards & hover effect */
-/* -------------------------- */
-.glass-card {
-  backdrop-filter: blur(10px);
-  background: rgba(255,255,255,0.85);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.hover-lift:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-}
-
-/* Floating mini-card */
-.floating { animation: float 3s ease-in-out infinite; }
-@keyframes float { 0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
-
-/* Fade-up animation */
-.fade-up { opacity:0; transform:translateY(20px); transition: all 0.8s ease;}
-.fade-up.show { opacity:1; transform:translateY(0); }
-
-/* Hover icon */
-.list-hover:hover .list-icon {
-  transform: scale(1.2);
-  color: #6f4fff;
-  transition: transform 0.3s ease, color 0.3s ease;
-}
-</style>
-
-<!-- JS for fade-up -->
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const faders = document.querySelectorAll('.fade-up');
-
-  const appearOptions = {
-    threshold: 0.2,
-    rootMargin: "0px 0px -50px 0px"
-  };
-
-  const appearOnScroll = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const delay = entry.target.dataset.delay || 0;
-        setTimeout(() => entry.target.classList.add('show'), delay*1000);
-        observer.unobserve(entry.target);
-      }
-    });
-  }, appearOptions);
-
-  faders.forEach(fader => appearOnScroll.observe(fader));
-});
-</script>
