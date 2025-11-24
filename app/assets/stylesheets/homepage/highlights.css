@@ -27,3 +27,6 @@
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
 
+#highlights {
+  background: linear-gradient(180deg, var(--accent) 0%, #f8f9fa 80%);
+}
