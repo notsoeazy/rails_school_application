@@ -1,0 +1,29 @@
+/* HIGHLIGHT SECTION */
+.highlights-col {
+  transition: transform 0.3s ease;
+}
+
+.highlights-col:hover {
+  transform: scale(1.1);
+  z-index: 10;
+}
+
+.highlights-col:hover .highlights-card {
+  background: white;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.highlights-col:hover .highlights-icon{
+  color: #6f4fff;
+}
+
+.highlights-col:hover strong {
+  color: #6f4fff;
+}
+
+.highlights-card{
+  height: 500px;
+  border: 0 !important;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
