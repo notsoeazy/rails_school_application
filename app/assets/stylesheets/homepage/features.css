@@ -1,0 +1,166 @@
+/* ==========================================
+   CLASSY FEATURES SECTION (PREMIUM UI)
+========================================== */
+
+.features-section {
+  position: relative;
+  padding: 120px 0;
+  background: linear-gradient(135deg, #3f2b96, #4f46e5);
+  overflow: hidden;
+  color: white;
+}
+
+/* -------------------------
+   SECTION TITLE
+-------------------------- */
+.section-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  opacity: 0;
+  animation: fadeDown 1.2s forwards;
+}
+
+.section-subtitle {
+  font-size: 1.2rem;
+  opacity: 0.8;
+  max-width: 650px;
+  margin: auto;
+  margin-top: 12px;
+  animation: fadeUp 1.3s forwards;
+}
+
+/* -------------------------
+   FEATURE CARDS
+-------------------------- */
+.feature-card {
+  perspective: 1000px;
+}
+
+.flip-inner {
+  width: 100%;
+  height: 260px;
+  transition: transform 0.8s ease;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-inner {
+  transform: rotateY(180deg);
+}
+
+/* FRONT CARD */
+.flip-front, .flip-back {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(14px);
+  border-radius: 18px;
+  padding: 30px;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.flip-front:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+/* BACK CARD */
+.flip-back {
+  transform: rotateY(180deg);
+}
+
+.card-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.card-text {
+  opacity: 0.9;
+}
+
+.card-back-text {
+  font-size: 1.05rem;
+  opacity: 0.9;
+}
+
+/* -------------------------
+   ICONS
+-------------------------- */
+.feature-icon {
+  font-size: 3rem;
+  animation: iconFloat 3s infinite ease-in-out;
+}
+
+.feature-icon.small {
+  font-size: 2.4rem;
+}
+
+/* -------------------------
+   LEARN MORE BUTTON
+-------------------------- */
+.learn-more-btn {
+  margin-top: 12px;
+  padding: 8px 18px;
+  background: #ffffff20;
+  border: 1px solid #ffffff50;
+  color: white;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: 0.3s ease;
+}
+
+.learn-more-btn:hover {
+  background: white;
+  color: #3f2b96;
+}
+
+/* -------------------------
+   PARALLAX SHAPES
+-------------------------- */
+.parallax-shape {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  filter: blur(10px);
+  animation: floatParallax 10s infinite ease-in-out;
+}
+
+.shape-a { width: 160px; height: 160px; top: 8%; left: 6%; }
+.shape-b { width: 230px; height: 230px; bottom: 5%; right: 10%; animation-duration: 14s; }
+.shape-c { width: 120px; height: 120px; bottom: 30%; left: 14%; animation-duration: 12s; }
+
+/* -------------------------
+   SCROLL ANIMATIONS
+-------------------------- */
+.fade-in { opacity: 0; animation: fadeUp 1.2s forwards; }
+
+/* -------------------------
+   KEYFRAMES
+-------------------------- */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes iconFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes floatParallax {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  50% { transform: translateY(-25px) translateX(15px); }
+}
+
+/* Hide shapes on small screens */
+@media screen and (max-width: 768px) {
+  .parallax-shape { display: none; }
+  .flip-inner { height: 240px; }
+}
