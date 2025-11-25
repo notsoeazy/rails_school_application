@@ -1,59 +1,57 @@
 <!-- FEATURES SECTION -->
 <section id="features" class="scroll-point features-section d-flex align-items-center">
 
-  <!-- PARALLAX FLOATING SHAPES -->
   <div class="parallax-shape shape-a"></div>
   <div class="parallax-shape shape-b"></div>
   <div class="parallax-shape shape-c"></div>
+  <div class="parallax-shape shape-d"></div>
+  <div class="parallax-shape shape-e"></div>
 
   <div class="container position-relative">
 
-    <!-- SECTION HEADER -->
-    <div class="text-center mb-5 fade-in">
-      <h2 class="section-title">Powerful & Integrated School Management Features</h2>
-      <p class="section-subtitle">
+    <div class="text-center mb-5">
+      <h2 class="section-title" data-animate="fade-up">Powerful & Integrated School Management Features</h2>
+      <p class="section-subtitle" data-animate="fade-up">
         Manage your entire school effortlessly with our modern, all-in-one platform designed for
         students, teachers, and administrators.
       </p>
     </div>
 
-    <!-- FEATURE CARDS -->
     <div class="row g-4">
 
-      <% [
-        ["Student Management", "Enrollments, attendance, and grade tracking.", "📘"],
-        ["Teacher Tools", "Schedules, grading, announcements, and performance tools.", "🧑‍🏫"],
-        ["Department Control", "Roles, permissions, and department-level oversight.", "🏢"],
-        ["School Administration", "Finances, HR, payroll, and resource management.", "🏫"],
-        ["Analytics Dashboard", "Real-time insights, charts, and reporting tools.", "📊"],
-        ["Mobile Ready", "Manage your school on the go anytime, anywhere.", "📱"]
-      ].each do |title, desc, icon| %>
-
+    <% features = [
+      ["Student Management", "Enrollments, attendance, and grade tracking.", "bi-people-fill"],
+      ["Teacher Tools", "Schedules, grading, announcements, and performance tools.", "bi-person-workspace"],
+      ["Department Control", "Roles, permissions, and department-level oversight.", "bi-building"],
+      ["School Administration", "Finances, HR, payroll, and resource management.", "bi-bank"],
+      ["Analytics Dashboard", "Real-time insights, charts, and reporting tools.", "bi-bar-chart-line-fill"],
+      ["Mobile Ready", "Manage your school on the go anytime, anywhere.", "bi-phone-fill"]
+    ] %>
+    
+    <% features.each do |title, desc, icon| %>
       <div class="col-md-4">
-        <div class="feature-card flip-card">
+        <div class="feature-card flip-card" data-animate="fade-up">
           <div class="flip-inner">
-            
-            <!-- FRONT CARD -->
+    
             <div class="flip-front d-flex flex-column justify-content-center text-center p-4">
-              <div class="feature-icon"><%= icon %></div>
+              <i class="feature-icon bi <%= icon %>"></i>
               <h5 class="card-title mt-3"><%= title %></h5>
               <p class="card-text"><%= desc %></p>
             </div>
-
-            <!-- BACK CARD -->
+    
             <div class="flip-back d-flex flex-column justify-content-center text-center p-4">
-              <div class="feature-icon small">✨</div>
+              <i class="feature-icon small bi bi-stars"></i>
               <p class="card-back-text">
                 Discover how <strong><%= title %></strong> upgrades your school operations.
               </p>
               <button class="learn-more-btn">Learn More →</button>
             </div>
-
+    
           </div>
         </div>
       </div>
-
-      <% end %>
+    <% end %>
+    
     </div>
   </div>
 </section>
