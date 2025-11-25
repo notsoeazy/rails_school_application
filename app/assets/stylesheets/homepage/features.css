@@ -1,6 +1,4 @@
-/* ==========================================
-   CLASSY FEATURES SECTION (PREMIUM UI)
-========================================== */
+/* FEATURES SECTION */
 
 .features-section {
   position: relative;
@@ -11,14 +9,57 @@
   max-height: calc(100vh - var(--navbar-height));
 }
 
-/* -------------------------
-   SECTION TITLE
--------------------------- */
+#features .parallax-shape {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  filter: blur(10px);
+  animation: floatParallax 10s infinite ease-in-out;
+}
+
+#features .shape-a {
+  width: 160px;
+  height: 160px;
+  top: 8%;
+  left: 6%;
+  animation-duration: 15s;
+}
+
+#features .shape-b {
+  width: 230px;
+  height: 230px;
+  bottom: 5%;
+  right: 10%;
+  animation-duration: 14s;
+}
+
+#features .shape-c {
+  width: 120px;
+  height: 120px;
+  bottom: 30%;
+  left: 14%;
+  animation-duration: 12s;
+}
+
+#features .shape-d {
+  width: 180px;
+  height: 180px;
+  top: 25%;
+  right: 18%;
+  animation-duration: 16s;
+}
+
+#features .shape-e {
+  width: 200px;
+  height: 200px;
+  top: 50%;
+  right: 40%;
+  animation-duration: 16s;
+}
+
 .section-title {
   font-size: 2.8rem;
   font-weight: 700;
-  opacity: 0;
-  animation: fadeDown 1.2s forwards;
 }
 
 .section-subtitle {
@@ -27,12 +68,8 @@
   max-width: 650px;
   margin: auto;
   margin-top: 12px;
-  animation: fadeUp 1.3s forwards;
 }
 
-/* -------------------------
-   FEATURE CARDS
--------------------------- */
 .feature-card {
   perspective: 1000px;
 }
@@ -48,7 +85,6 @@
   transform: rotateY(180deg);
 }
 
-/* FRONT CARD */
 .flip-front, .flip-back {
   background: rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(14px);
@@ -66,7 +102,6 @@
   background: rgba(255, 255, 255, 0.16);
 }
 
-/* BACK CARD */
 .flip-back {
   transform: rotateY(180deg);
   background: #5C52C7;
@@ -86,9 +121,6 @@
   opacity: 0.9;
 }
 
-/* -------------------------
-   ICONS
--------------------------- */
 .feature-icon {
   font-size: 3rem;
   animation: iconFloat 3s infinite ease-in-out;
@@ -98,9 +130,6 @@
   font-size: 2.4rem;
 }
 
-/* -------------------------
-   LEARN MORE BUTTON
--------------------------- */
 .learn-more-btn {
   margin-top: 12px;
   padding: 8px 18px;
@@ -116,49 +145,6 @@
 .learn-more-btn:hover {
   background: white;
   color: #3f2b96;
-}
-
-/* -------------------------
-   PARALLAX SHAPES
--------------------------- */
-.parallax-shape {
-  position: absolute;
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 50%;
-  filter: blur(10px);
-  animation: floatParallax 10s infinite ease-in-out;
-}
-
-#features .shape-a { width: 160px; height: 160px; top: 8%; left: 6%; }
-#features .shape-b { width: 230px; height: 230px; bottom: 5%; right: 10%; animation-duration: 14s; }
-#features .shape-c { width: 120px; height: 120px; bottom: 30%; left: 14%; animation-duration: 12s; }
-
-/* -------------------------
-   SCROLL ANIMATIONS
--------------------------- */
-.fade-in { opacity: 0; animation: fadeUp 1.2s forwards; }
-
-/* -------------------------
-   KEYFRAMES
--------------------------- */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(25px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeDown {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes iconFloat {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-@keyframes floatParallax {
-  0%, 100% { transform: translateY(0px) translateX(0px); }
-  50% { transform: translateY(-25px) translateX(15px); }
 }
 
 /* Hide shapes on small screens */

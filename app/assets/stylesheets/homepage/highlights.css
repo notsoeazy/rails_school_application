@@ -1,8 +1,5 @@
-/* ==========================================
-   MATCH FEATURES-SECTION CARD STYLE
-========================================== */
+/* HIGHLIGHST SECTION */
 
-/* Parallax backgrounds */
 #highlights {
   position: relative;
   padding: 120px 0;
@@ -12,7 +9,6 @@
   max-height: calc(100vh - var(--navbar-height));
 }
 
-/* Parallax shapes (same as features section) */
 #highlights .parallax-shape {
   position: absolute;
   background: rgba(255, 255, 255, 0.08);
@@ -21,11 +17,39 @@
   animation: floatParallax 10s infinite ease-in-out;
 }
 
-#highlights .shape-a { width: 160px; height: 160px; top: 10%; right: 8%; }
-#highlights .shape-b { width: 230px; height: 230px; bottom: 7%; left: 10%; animation-duration: 14s; }
-#highlights .shape-c { width: 120px; height: 120px; bottom: 25%; right: 15%; animation-duration: 12s; }
+#highlights .shape-a {
+  width: 160px;
+  height: 160px;
+  top: 10%;
+  right: 8%;
+  animation-duration: 15s;
+}
 
-/* Frosted glass card (same as flip-front styles) */
+#highlights .shape-b {
+  width: 230px;
+  height: 230px;
+  bottom: 7%;
+  left: 10%;
+  animation-duration: 14s;
+}
+
+#highlights .shape-c {
+  width: 120px;
+  height: 120px;
+  bottom: 25%;
+  right: 15%;
+  animation-duration: 12s;
+}
+
+#highlights .shape-d {
+  width: 180px;
+  height: 180px;
+  top: 30%;
+  left: 20%;
+  animation-duration: 16s;
+}
+
+
 .frost-card,
 .highlights-card {
   background: rgba(255, 255, 255, 0.12);
@@ -36,14 +60,12 @@
   height: 480px;
 }
 
-/* Hover Elevation */
 .highlights-col:hover .highlights-card {
   transform: translateY(-10px) scale(1.04);
   background: rgba(255, 255, 255, 0.18);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.28);
 }
 
-/* Icon style (match feature section) */
 .highlights-icon {
   font-size: 4rem;
   color: white;
@@ -55,7 +77,6 @@
   color: #ffffff;
 }
 
-/* Text styling */
 .highlights-card h4 strong {
   color: white;
 }
@@ -67,8 +88,6 @@
   color: white;
   margin-bottom: 0.8rem;
   text-transform: uppercase;
-  opacity: 0;
-  animation: fadeDown 1.2s forwards;
 }
 
 .highlights-subtitle {
@@ -76,13 +95,8 @@
   color: rgba(255, 255, 255, 0.85);
   max-width: 650px;
   margin: 0 auto;
-  opacity: 0;
-  animation: fadeUp 1.3s forwards;
 }
 
-
-/* Hide parallax shapes on small screens */
 @media (max-width: 768px) {
-  #highlights .parallax-shape { display: none; }
   .highlights-card { height: auto; padding: 30px; }
 }

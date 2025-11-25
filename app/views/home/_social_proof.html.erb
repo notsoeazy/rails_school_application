@@ -4,11 +4,13 @@
   <div class="parallax-shape shape-a"></div>
   <div class="parallax-shape shape-b"></div>
   <div class="parallax-shape shape-c"></div>
+  <div class="parallax-shape shape-d"></div>
+  <div class="parallax-shape shape-e"></div>
 
   <!-- PARTNERS CAROUSEL -->
-    <h2 class="text-center mb-1 fw-semibold fs-4 text-muted" style="letter-spacing: 1em;">PARTNERS</h2>
+    <h2 class="text-center mb-1 fw-semibold fs-4 text-muted" style="letter-spacing: 1em;" data-animate="fade-up">PARTNERS</h2>
 
-    <div class="infinite-carousel">
+    <div class="infinite-carousel" data-animate="fade-up">
       <% partners=[ 
         ['partner1.png', 'Ateneo de Naga University' ], 
         ['partner2.png', 'University of Nueva Caceres' ],
@@ -40,15 +42,15 @@
     </div>
   <!-- PARTNERS CAROUSEL END -->
 
-  <div class="container px-0 my-3">
+  <div class="container px-0 my-3" data-animate="fade-up">
     <hr class="my-0 w-100 mx-0 border-3">
   </div>
 
   <!-- TESTIMONIALS CAROUSEL -->
-  <div class="container bg-gradient-blue flex-grow-1 mt-3 d-flex flex-column justify-content-center p-4">
-    <h2 class="text-center mb-2 fw-bold">What Our Users Say</h2>
+  <div class="container bg-gradient-blue flex-grow-1 mt-3 d-flex flex-column justify-content-center p-4" data-animate="fade-up">
+    <h2 class="text-center mb-2 fw-bold" data-animate="fade-up">What Our Users Say</h2>
     
-    <div id="testimonial-carousel" class="carousel slide" data-bs-ride="carousel">
+    <div id="testimonial-carousel" class="carousel slide" data-bs-ride="carousel" data-animate="fade-up">
     
       <% testimonials=[ ["Maria Cruz, Principal, Greenview
         School", "This system not only streamlined our enrollment process but also reduced manual errors by 40%. It's a game-changer for administrative efficiency."

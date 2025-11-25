@@ -1,6 +1,4 @@
-/* ==========================================
-   CTA SECTION – MATCH HIGHLIGHTS STYLE
-========================================== */
+/* CTA SECTION  */
 
 #call-to-action {
   background: linear-gradient(135deg, #3f2b96, #4f46e5);
@@ -10,7 +8,6 @@
   padding-bottom: 120px;
 }
 
-/* Glass card container (matches highlights-card) */
 .cta-glass-card {
   background: rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(14px);
@@ -19,7 +16,6 @@
   transition: all 0.35s ease;
 }
 
-/* CTA BUTTON — upgraded */
 .cta-button {
   display: inline-flex;
   gap: 6px;
@@ -41,10 +37,6 @@
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
 }
 
-/* ==========================================
-   PARALLAX SHAPES — SAME AS HIGHLIGHTS
-========================================== */
-
 #call-to-action .parallax-shape {
   position: absolute;
   background: rgba(255, 255, 255, 0.08);
@@ -53,17 +45,59 @@
   animation: floatParallax 10s infinite ease-in-out;
 }
 
-#call-to-action .shape-a { width: 160px; height: 160px; top: 20%; left: 22%; }
-#call-to-action .shape-b { width: 230px; height: 230px; bottom: 10%; left: 10%; animation-duration: 14s; }
-#call-to-action .shape-c { width: 120px; height: 120px; top: 40%; right: 20%; animation-duration: 12s; }
+#call-to-action .shape-a {
+  width: 160px;
+  height: 160px;
+  top: 20%;
+  left: 22%;
+  animation-duration: 15s;
+}
 
-/* Mobile */
+#call-to-action .shape-b {
+  width: 230px;
+  height: 230px;
+  bottom: 10%;
+  left: 10%;
+  animation-duration: 14s;
+}
+
+#call-to-action .shape-c {
+  width: 120px;
+  height: 120px;
+  top: 40%;
+  right: 20%;
+  animation-duration: 12s;
+}
+
+#call-to-action .shape-d {
+  width: 180px;
+  height: 180px;
+  top: 10%;
+  right: 15%;
+  animation-duration: 16s;
+}
+
+#call-to-action .shape-e {
+  width: 200px;
+  height: 200px;
+  bottom: 10%;
+  right: 25%;
+  animation-duration: 13s;
+}
+
+#call-to-action .shape-f {
+  width: 200px;
+  height: 200px;
+  top: 35%;
+  left: 40%;
+  animation-duration: 17s;
+}
+
 @media (max-width: 768px) {
   #call-to-action .parallax-shape { display: none; }
   .cta-glass-card { padding: 2rem; }
 }
 
-/* CTA Badge - Social Proof */
 .cta-badge {
   display: inline-flex;
   align-items: center;

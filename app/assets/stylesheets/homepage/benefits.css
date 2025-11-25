@@ -1,6 +1,4 @@
-/* ==========================================
-   BENEFITS SECTION (MATCHING PREMIUM STYLE)
-========================================== */
+/* BENEFITS SECTION */
 
 #benefits {
   padding: 120px 0;
@@ -11,7 +9,6 @@
   max-height: calc(100vh - var(--navbar-height));
 }
 
-/* Parallax floating shapes */
 #benefits .parallax-shape {
   position: absolute;
   background: rgba(255, 255, 255, 0.08);
@@ -20,9 +17,46 @@
   animation: floatParallax 10s infinite ease-in-out;
 }
 
-#benefits .shape-a { width: 180px; height: 180px; top: 30%; right: 8%; }
-#benefits .shape-b { width: 250px; height: 250px; bottom: 70%; left: 10%; animation-duration: 14s; }
-#benefits .shape-c { width: 130px; height: 130px; bottom: 30%; right: 70%; animation-duration: 12s; }
+#benefits .shape-a {
+  width: 180px;
+  height: 180px;
+  top: 30%;
+  right: 8%;
+  animation-duration: 15s;
+}
+
+#benefits .shape-b {
+  width: 250px;
+  height: 250px;
+  bottom: 70%;
+  left: 10%;
+  animation-duration: 14s;
+}
+
+#benefits .shape-c {
+  width: 130px;
+  height: 130px;
+  bottom: 30%;
+  right: 70%;
+  animation-duration: 12s;
+}
+
+#benefits .shape-d {
+  width: 160px;
+  height: 160px;
+  top: 10%;
+  left: 40%;
+  animation-duration: 16s;
+}
+
+#benefits .shape-e {
+  width: 200px;
+  height: 200px;
+  bottom: 15%;
+  right: 20%;
+  animation-duration: 13s;
+}
+
 
 #benefits .container {
   background: rgba(255, 255, 255, 0.12);
@@ -33,7 +67,6 @@
   transition: 0.4s ease;
 }
 
-/* Title styling */
 .benefits-title {
   font-size: 2.8rem;
   font-weight: 700;
@@ -50,7 +83,6 @@
   margin: 0 auto;
 }
 
-/* Frosted analytics card */
 .benefits-card {
   background: rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(14px);
@@ -66,7 +98,6 @@
   box-shadow: 0 18px 35px rgba(0,0,0,0.28);
 }
 
-/* Floating mini card */
 .benefits-mini-card {
   position: absolute;
   top: -25px;
@@ -84,13 +115,11 @@
   transform: translateY(-6px);
 }
 
-/* Icons */
 .benefits-icon {
   font-size: 2.4rem;
   color: white;
 }
 
-/* List hover */
 .list-hover {
   padding: 10px;
   border-radius: 10px;
@@ -104,13 +133,11 @@
   transform: translateY(-8px) scale(1.02);
 }
 
-/* Intro text */
 .benefits-intro {
   font-size: 1.2rem;
   opacity: 0.85;
 }
 
-/* Hide shapes on mobile */
 @media (max-width: 768px) {
   #benefits .parallax-shape {
     display: none;

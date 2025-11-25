@@ -15,10 +15,7 @@
   flex-shrink: 0;
   animation: infinite-scroll 20s linear infinite;
 }
-@keyframes infinite-scroll {
-  from { translate: 0;}
-  to { translate: -100%;}
-}
+
 .infinite-carousel-card {
   width: fit-content;
   padding: 1em;
@@ -48,10 +45,6 @@
   color: white;
 }
 
-/* ==========================================
-   SOCIAL PROOF – MATCH FEATURES & HIGHLIGHTS
-========================================== */
-
 #social-proof {
   position: relative;
   padding: 120px 0;
@@ -60,14 +53,10 @@
   overflow: hidden;
 }
 
-/* SECTION TITLE */
 #social-proof h2 {
   color: white !important;
-  opacity: 0;
-  animation: fadeDown 1.1s forwards;
 }
 
-/* PARALLAX SHAPES (optional, identical to highlights) */
 #social-proof .parallax-shape {
   position: absolute;
   background: rgba(255, 255, 255, 0.08);
@@ -76,10 +65,45 @@
   animation: floatParallax 10s infinite ease-in-out;
 }
 
-#social-proof .shape-a { width: 160px; height: 160px; top: 12%; left: 8%; }
-#social-proof .shape-b { width: 220px; height: 220px; bottom: 10%; right: 12%; animation-duration: 14s; }
-#social-proof .shape-c { width: 120px; height: 120px; top: 45%; right: 20%; animation-duration: 12s; }
+#social-proof .shape-a {
+  width: 160px;
+  height: 160px;
+  top: 12%;
+  left: 8%;
+  animation-duration: 15s;
+}
 
+#social-proof .shape-b {
+  width: 220px;
+  height: 220px;
+  bottom: 10%;
+  right: 12%;
+  animation-duration: 14s;
+}
+
+#social-proof .shape-c {
+  width: 120px;
+  height: 120px;
+  top: 45%;
+  right: 20%;
+  animation-duration: 12s;
+}
+
+#social-proof .shape-d {
+  width: 180px;
+  height: 180px;
+  top: 25%;
+  left: 30%;
+  animation-duration: 16s;
+}
+
+#social-proof .shape-e {
+  width: 140px;
+  height: 140px;
+  bottom: 35%;
+  left: 20%;
+  animation-duration: 13s;
+}
 
 #testimonial-carousel .card {
   background: rgba(255, 255, 255, 0.14) !important;
@@ -90,7 +114,6 @@
   transition: 0.3s ease;
 }
 
-/* Text in testimonial */
 #testimonial-carousel .card-text {
   color: white !important;
 }
@@ -103,7 +126,6 @@
   color: rgba(255,255,255,0.7) !important;
 }
 
-/* Indicators */
 #testimonial-carousel .carousel-indicators button {
   background-color: white !important;
   opacity: 0.4;
@@ -112,13 +134,11 @@
   opacity: 1;
 }
 
-/* Carousel arrow icons */
 .carousel-control-next-icon,
 .carousel-control-prev-icon {
   filter: invert(100%) brightness(160%);
 }
 
-/* Blue gradient container becomes glass */
 .bg-gradient-blue {
   background: rgba(255, 255, 255, 0.12) !important;
   border-radius: 18px;
@@ -126,7 +146,6 @@
   border: 1px solid rgba(255,255,255,0.1);
 }
 
-/* Hide shapes on mobile */
 @media (max-width: 768px) {
   #social-proof .parallax-shape { display: none; }
 }

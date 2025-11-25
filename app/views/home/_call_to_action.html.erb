@@ -1,24 +1,25 @@
 <!-- CALL TO ACTION -->
 <section id="call-to-action" class="scroll-point py-5 position-relative">
 
-  <!-- Parallax Shapes -->
   <div class="parallax-shape shape-a"></div>
   <div class="parallax-shape shape-b"></div>
   <div class="parallax-shape shape-c"></div>
+  <div class="parallax-shape shape-d"></div>
+  <div class="parallax-shape shape-e"></div>
+  <div class="parallax-shape shape-f"></div>
 
   <div class="container">
-    <div class="cta-glass-card p-5 rounded-4 shadow-lg">
+    <div class="cta-glass-card p-5 rounded-4 shadow-lg" data-animate="fade-up">
 
       <div class="row align-items-center g-3">
 
-        <!-- LEFT -->
         <div class="col-md-7 mb-4 mb-md-0">
-          <h1 class="fw-bold mb-4 text-white">
+          <h1 class="fw-bold mb-4 text-white" data-animate="fade-up">
             Manage your school with ease, <br>
             using an all-in-one system.
           </h1>
 
-          <div class="d-flex flex-wrap gap-4 text-white">
+          <div class="d-flex flex-wrap gap-4 text-white" data-animate="fade-up">
             <p class="mb-0">
               <i class="bi bi-check-circle-fill me-1"></i>
               Built for all types of schools
@@ -29,8 +30,7 @@
             </p>
           </div>
 
-          <!-- Social Proof Badge -->
-          <div class="mt-3 d-flex flex-wrap gap-3 justify-content-start">
+          <div class="mt-3 d-flex flex-wrap gap-3 justify-content-start" data-animate="fade-up">
             <div class="cta-badge">
               <i class="bi bi-shield-check me-2"></i>
               Trusted by <strong>40+ schools</strong> nationwide
@@ -43,18 +43,17 @@
 
         </div>
 
-        <!-- RIGHT -->
         <div class="col-md-5 text-md-start text-center text-white">
         
-          <p class="mb-3">
+          <p class="mb-3" data-animate="fade-up">
             By simplifying <span class="fw-bold">enrollment</span>, <span class="fw-bold">scheduling</span>, and <span class="fw-bold">record-keeping</span>, our platform makes <span class="fw-bold">school management smoother than ever</span>.
           </p>
-          <p class="mb-4">
+          <p class="mb-4" data-animate="fade-up">
             Join <span class="fw-bold">hundreds of schools</span> already transforming their workflow—<span class="fw-bold">streamline your processes</span>, <span class="fw-bold">save time</span>, and focus on what truly matters: <span class="fw-bold">educating your students</span>.
           </p>
       
 
-          <%= link_to students_path, class: "cta-button" do %>
+          <%= link_to students_path, class: "cta-button", data: { animate: "fade-up" } do %>
             <span>Get Started Today!</span>
             <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
