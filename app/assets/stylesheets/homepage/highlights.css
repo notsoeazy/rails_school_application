@@ -1,32 +1,88 @@
-/* HIGHLIGHT SECTION */
-.highlights-col {
-  transition: transform 0.3s ease;
-}
+/* ==========================================
+   MATCH FEATURES-SECTION CARD STYLE
+========================================== */
 
-.highlights-col:hover {
-  transform: scale(1.1);
-  z-index: 10;
-}
-
-.highlights-col:hover .highlights-card {
-  background: white;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-}
-
-.highlights-col:hover .highlights-icon{
-  color: #6f4fff;
-}
-
-.highlights-col:hover strong {
-  color: #6f4fff;
-}
-
-.highlights-card{
-  height: 500px;
-  border: 0 !important;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-}
-
+/* Parallax backgrounds */
 #highlights {
-  background: linear-gradient(180deg, var(--accent) 0%, #f8f9fa 80%);
+  position: relative;
+  padding: 120px 0;
+  background: linear-gradient(135deg, #3f2b96, #4f46e5);
+  color: white;
+  overflow: hidden;
+  max-height: calc(100vh - var(--navbar-height));
+}
+
+/* Parallax shapes (same as features section) */
+#highlights .parallax-shape {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  filter: blur(10px);
+  animation: floatParallax 10s infinite ease-in-out;
+}
+
+#highlights .shape-a { width: 160px; height: 160px; top: 10%; right: 8%; }
+#highlights .shape-b { width: 230px; height: 230px; bottom: 7%; left: 10%; animation-duration: 14s; }
+#highlights .shape-c { width: 120px; height: 120px; bottom: 25%; right: 15%; animation-duration: 12s; }
+
+/* Frosted glass card (same as flip-front styles) */
+.frost-card,
+.highlights-card {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(14px);
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.35s ease;
+  height: 480px;
+}
+
+/* Hover Elevation */
+.highlights-col:hover .highlights-card {
+  transform: translateY(-10px) scale(1.04);
+  background: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.28);
+}
+
+/* Icon style (match feature section) */
+.highlights-icon {
+  font-size: 4rem;
+  color: white;
+  transition: 0.3s ease;
+  animation: iconFloat 3s infinite ease-in-out;
+}
+
+.highlights-col:hover .highlights-icon {
+  color: #ffffff;
+}
+
+/* Text styling */
+.highlights-card h4 strong {
+  color: white;
+}
+
+.highlights-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  letter-spacing: 0.7rem;
+  color: white;
+  margin-bottom: 0.8rem;
+  text-transform: uppercase;
+  opacity: 0;
+  animation: fadeDown 1.2s forwards;
+}
+
+.highlights-subtitle {
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 650px;
+  margin: 0 auto;
+  opacity: 0;
+  animation: fadeUp 1.3s forwards;
+}
+
+
+/* Hide parallax shapes on small screens */
+@media (max-width: 768px) {
+  #highlights .parallax-shape { display: none; }
+  .highlights-card { height: auto; padding: 30px; }
 }

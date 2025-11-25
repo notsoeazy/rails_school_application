@@ -8,6 +8,7 @@
   background: linear-gradient(135deg, #3f2b96, #4f46e5);
   overflow: hidden;
   color: white;
+  max-height: calc(100vh - var(--navbar-height));
 }
 
 /* -------------------------
@@ -68,6 +69,7 @@
 /* BACK CARD */
 .flip-back {
   transform: rotateY(180deg);
+  background: #5C52C7;
 }
 
 .card-title {
@@ -127,9 +129,9 @@
   animation: floatParallax 10s infinite ease-in-out;
 }
 
-.shape-a { width: 160px; height: 160px; top: 8%; left: 6%; }
-.shape-b { width: 230px; height: 230px; bottom: 5%; right: 10%; animation-duration: 14s; }
-.shape-c { width: 120px; height: 120px; bottom: 30%; left: 14%; animation-duration: 12s; }
+#features .shape-a { width: 160px; height: 160px; top: 8%; left: 6%; }
+#features .shape-b { width: 230px; height: 230px; bottom: 5%; right: 10%; animation-duration: 14s; }
+#features .shape-c { width: 120px; height: 120px; bottom: 30%; left: 14%; animation-duration: 12s; }
 
 /* -------------------------
    SCROLL ANIMATIONS
