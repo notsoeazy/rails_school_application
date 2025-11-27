@@ -1,14 +1,14 @@
 /* HERO SECTION ======================================================================*/
 .about-hero {
-  background: radial-gradient(circle,rgba(13, 110, 253, 1) 0%, rgba(98, 82, 172, 1) 69%);
+  background: radial-gradient(circle, rgba(13, 110, 253, 0.9) 0%, rgba(98, 82, 172, 0) 60%);
   color: white;
-  padding-top: 100px;
+  padding-top: 20px;
   padding-bottom: 20px;
   opacity: 0;
   animation: fadeIn 1.5s ease-out forwards;
 }
 
-/* TEAM CARDS + WRAPPER ======================================================================*/
+/* TEAM CARDS + WRAPPER */
 .team-card-wrapper {
   position: relative;
   height: 360px; /* uniform card height */

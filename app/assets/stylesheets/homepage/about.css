@@ -1,3 +1,61 @@
+.about-bg {
+  position: relative;
+  padding: 120px 0;
+  background: linear-gradient(135deg, #3f2b96, #4f46e5);
+  overflow: hidden;
+  color: white;
+}
+
+#about-background .parallax-shape {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  filter: blur(10px);
+  animation: floatParallax 10s infinite ease-in-out;
+}
+
+.shape-a {
+  width: 180px; height: 180px;
+  top: 5%; left: 8%;
+  animation-duration: 14s;
+}
+
+.shape-b {
+  width: 260px; height: 260px;
+  top: 25%; right: 10%;
+  animation-duration: 18s;
+}
+
+.shape-c {
+  width: 150px; height: 150px;
+  bottom: 12%; left: 15%;
+  animation-duration: 16s;
+}
+
+.shape-d {
+  width: 230px; height: 230px;
+  bottom: 30%; right: 18%;
+  animation-duration: 20s;
+}
+
+.shape-e {
+  width: 120px; height: 120px;
+  top: 60%; left: 40%;
+  animation-duration: 13s;
+}
+
+.shape-f {
+  width: 200px; height: 200px;
+  bottom: 5%; right: 40%;
+  animation-duration: 22s;
+}
+
+.shape-g {
+  width: 300px; height: 300px;
+  top: 80%; left: 60%;
+  animation-duration: 25s;
+}
+
 /* ============================
   FADE ANIMATIONS
 =============================== */
