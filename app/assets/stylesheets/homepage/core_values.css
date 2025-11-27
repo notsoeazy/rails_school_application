@@ -1,0 +1,15 @@
+.value-card {
+  border-radius: 12px;
+  background: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+}
+
+.value-icon {
+  font-size: 2.8rem;
+  color: #6f42c1;
+}

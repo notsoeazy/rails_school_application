@@ -1,0 +1,96 @@
+/* HERO SECTION ======================================================================*/
+.about-hero {
+  background: radial-gradient(circle,rgba(13, 110, 253, 1) 0%, rgba(98, 82, 172, 1) 69%);
+  color: white;
+  padding-top: 100px;
+  padding-bottom: 20px;
+  opacity: 0;
+  animation: fadeIn 1.5s ease-out forwards;
+}
+
+/* TEAM CARDS + WRAPPER ======================================================================*/
+.team-card-wrapper {
+  position: relative;
+  height: 360px; /* uniform card height */
+}
+
+.team-card {
+  height: 100%;
+  border-radius: 15px;
+  background: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+  border: 2px solid transparent;
+  background: linear-gradient(white, white) padding-box,
+              linear-gradient(45deg, #6f42c1, #0d6efd) border-box;
+}
+
+/* IMAGE PLACEHOLDER ======================================================================*/
+.team-img-placeholder {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: #f0f0f0;
+  border: 2px dashed #999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 15px;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.team-img-placeholder span {
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.team-img-placeholder:hover {
+  box-shadow: 0 0 20px rgba(13,110,253,0.4);
+}
+
+.team-card:hover .team-img-placeholder {
+  border-color: #0d6efd;
+  transform: scale(1.05);
+}
+
+/* POPUP PANEL ======================================================================*/
+.team-popup {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  width: 90%;
+  transform: translate(-50%, -10px);
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  z-index: 10;
+}
+
+.team-card-wrapper:hover .team-popup,
+.team-popup:hover {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -20px);
+}
+
+/* Links inside popup */
+.popup-link {
+  color: #0d6efd;
+  text-decoration: none;
+}
+
+.popup-link:hover {
+  text-decoration: underline;
+}
+
+/* Prevent flicker by lifting main card */
+.team-card-wrapper:hover .team-card {
+  transform: translateY(-10px);
+}
