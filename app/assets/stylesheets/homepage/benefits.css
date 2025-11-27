@@ -128,7 +128,6 @@
 
 .list-hover:hover {
   background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(14px);
   box-shadow: 0 9px 35px rgba(0,0,0,0.28);
   transform: translateY(-8px) scale(1.02);
 }
