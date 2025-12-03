@@ -1,0 +1,139 @@
+/* FOOTER BASE */
+.footer-section {
+  position: relative;
+  background: #0d0d0f;
+  color: white;
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 35px !important;
+  padding-bottom: 35px !important;
+  transition: 0.4s ease;
+}
+
+/* Hover animation: glow intensifies */
+.footer-section:hover .footer-glow {
+  filter: blur(90px);
+  opacity: 0.55;
+}
+
+/* 🌫 Top Fade-to-Black Gradient */
+.footer-top-fade {
+  position: absolute;
+  top: -60px;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: linear-gradient(to bottom, rgba(13,13,15,0), #0d0d0f);
+  z-index: 1;
+}
+
+/* 🌌 Floating Particles */
+.footer-particles {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.footer-particles .particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(162, 89, 255, 0.8);
+  border-radius: 50%;
+  filter: blur(1px);
+  animation: floatParticle 7s infinite ease-in-out;
+  opacity: 0.5;
+}
+
+/* Random positions */
+.footer-particles .particle:nth-child(1) { top: 10%; left: 15%; animation-duration: 9s; }
+.footer-particles .particle:nth-child(2) { top: 25%; left: 70%; animation-duration: 6s; }
+.footer-particles .particle:nth-child(3) { top: 40%; left: 30%; animation-duration: 10s; }
+.footer-particles .particle:nth-child(4) { top: 65%; left: 80%; animation-duration: 7s; }
+.footer-particles .particle:nth-child(5) { top: 55%; left: 10%; animation-duration: 8s; }
+.footer-particles .particle:nth-child(6) { top: 35%; left: 50%; animation-duration: 6s; }
+.footer-particles .particle:nth-child(7) { top: 75%; left: 40%; animation-duration: 11s; }
+.footer-particles .particle:nth-child(8) { top: 15%; left: 85%; animation-duration: 9s; }
+.footer-particles .particle:nth-child(9) { top: 85%; left: 20%; animation-duration: 7s; }
+.footer-particles .particle:nth-child(10) { top: 45%; left: 90%; animation-duration: 10s; }
+.footer-particles .particle:nth-child(11) { top: 60%; left: 60%; animation-duration: 6s; }
+.footer-particles .particle:nth-child(12) { top: 30%; left: 5%; animation-duration: 8s; }
+
+@keyframes floatParticle {
+  0%   { transform: translateY(0); opacity: 0.5; }
+  50%  { transform: translateY(-20px); opacity: 1; }
+  100% { transform: translateY(0); opacity: 0.5; }
+}
+
+/* Purple Glow (Adjusted for hover effect) */
+.footer-glow {
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 450px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(138, 43, 255, 0.30), transparent 70%);
+  filter: blur(65px);
+  opacity: 0.42;
+  transition: 0.6s ease;
+  z-index: 0;
+}
+
+/* CONTENT LAYER */
+#footer .container {
+  position: relative;
+  z-index: 3;
+}
+
+/* SOCIAL ICONS */
+.footer-social {
+  display: flex;
+  gap: 28px;
+}
+
+.social-icon i {
+  font-size: 20px;
+  color: white;
+  transition: 0.3s ease;
+}
+
+.social-icon:hover i {
+  color: #a259ff;
+  transform: translateY(-4px) scale(1.1);
+}
+
+/* ABOUT US */
+.about-link {
+  margin-top: 5px;
+  display: inline-block;
+  font-size: 14px;
+  color: #ffffffd1;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 2px;
+  transition: 0.3s ease;
+}
+
+.about-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: #a259ff;
+  transition: width 0.3s ease;
+}
+
+.about-link:hover {
+  color: #a259ff;
+}
+
+.about-link:hover::after {
+  width: 100%;
+}
+
+
+
