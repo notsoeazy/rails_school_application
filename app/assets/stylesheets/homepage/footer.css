@@ -16,18 +16,6 @@
   opacity: 0.55;
 }
 
-/* 🌟 Neon Line Above Footer */
-.footer-neon-line {
-  width: 100%;
-  height: 3px;
-  background: linear-gradient(90deg, #b26bff, #ad4fff, #7f2bff);
-  box-shadow: 0 0 12px 3px rgba(162, 89, 255, 0.7);
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 5;
-}
-
 /* 🌫 Top Fade-to-Black Gradient */
 .footer-top-fade {
   position: absolute;
@@ -145,19 +133,6 @@
 
 .about-link:hover::after {
   width: 100%;
-}
-
-/* Scroll Reveal */
-.footer-reveal {
-  opacity: 0;
-  transform: translateY(25px);
-  animation: footerFadeUp 0.8s ease-out forwards;
-  animation-delay: 0.15s;
-}
-
-@keyframes footerFadeUp {
-  from { opacity: 0; transform: translateY(35px); }
-  to   { opacity: 1; transform: translateY(0); }
 }
 
 
