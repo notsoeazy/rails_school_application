@@ -1,8 +1,8 @@
 /* NAVBAR */
 .site-header {
+  background: #5f54cf;
   z-index: 100;
   min-height: var(--navbar-height);
-  background: #6252AC;
 }
 .nav-custom .nav-link {
   position: relative;

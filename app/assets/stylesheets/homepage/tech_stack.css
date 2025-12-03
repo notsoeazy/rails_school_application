@@ -1,0 +1,16 @@
+.tech-card {
+  padding: 25px;
+  border-radius: 12px;
+  background: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tech-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+}
+
+.tech-icon {
+  font-size: 2.5rem;
+  color: #0d6efd;
+}
