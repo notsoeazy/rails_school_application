@@ -38,7 +38,16 @@
 
   <body>
     <!-- HOMEPAGE -->
-    <% if current_page?(root_path) || current_page?(about_path) %>
+
+    <% special_pages = [
+      root_path,
+      about_path,
+      cv_gonzales_path,
+      cv_santiago_path,
+      cv_tipay_path
+    ] %>
+
+    <% if special_pages.any? { |p| current_page?(p) } %>
       <div>
         <%= yield %>
       </div>
