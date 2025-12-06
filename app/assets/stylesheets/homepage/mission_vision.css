@@ -1,0 +1,16 @@
+.strategy-card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid transparent; 
+    transition: all 0.3s ease;
+
+}
+
+.strategy-card:hover {
+    border-color: var(--primary-color);
+}
+
+.strategy-card:hover h4 {
+    color: var(--secondary-color) !important;
+}

@@ -8,18 +8,6 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
-.strategy-card {
-  background: #ffffff;
-  border-radius: 12px;
-  border-left: 5px solid var(--primary-color);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-
-.strategy-card:hover {
-  transform: translateX(8px);
-}
-
 .value-card {
   background: #ffffff;
   border-radius: 12px;
@@ -28,13 +16,17 @@
   height: 100%; 
   position: relative;
   overflow: hidden;
-  border-bottom: 3px solid transparent; 
+  border-bottom: 5px solid transparent; 
 }
 
 .value-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
   border-bottom-color: var(--primary-color); 
+}
+
+.value-card:hover h5 {
+  color: var(--secondary-color) !important;
 }
 
 .value-icon-circle {

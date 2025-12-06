@@ -18,6 +18,10 @@
   border-bottom-color: var(--primary-color); 
 }
 
+.tech-card:hover h6 {
+  color: var(--secondary-color) !important;
+}
+
 .tech-icon-circle {
   width: 70px; 
   height: 70px;
