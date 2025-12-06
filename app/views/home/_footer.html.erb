@@ -1,9 +1,42 @@
 <!-- FOOTER -->
-<footer id="footer" class="bg-dark text-white py-4">
-  <div class="container text-center small d-flex flex-column">
-      <span>© <%= Time.current.year %> School Manager — All Rights Reserved</span>
-      <span>Built by Gonzales, Santiago, Tipay</span>
-      <a href="about">Check us out!</a>
+<footer id="footer" class="footer-section py-4">
+
+  <!-- Floating Particles -->
+  <div class="footer-particles">
+    <% 12.times do %>
+      <span class="particle"></span>
+    <% end %>
+  </div>
+
+  <div class="container d-flex flex-column align-items-center text-center">
+
+    <!-- TITLE & CREDITS -->
+    <div class="footer-left text-white mb-3" data-animate="fade-up">
+      <h6 class="fw-bold m-0">School Manager</h6>
+      <p class="m-0 small">Built by Gonzales, Santiago, Tipay</p>
+      <p class="m-0 small">© <%= Time.current.year %> All Rights Reserved</p>
+    </div>
+
+    <!-- SOCIAL ICONS -->
+    <div class="footer-social mb-3" data-animate="fade-up">
+      <a href="https://www.facebook.com/jhirick.rijhi.milano.flores" target="_blank" class="social-icon">
+        <i class="bi bi-facebook"></i>
+      </a>
+      <a href="https://www.youtube.com/@johnezekiell.gonzales4675" target="_blank" class="social-icon">
+        <i class="bi bi-youtube"></i>
+      </a>
+      <a href="https://www.tiktok.com/@ivanobias0" target="_blank" class="social-icon">
+        <i class="bi bi-tiktok"></i>
+      </a>
+      <a href="https://www.instagram.com/chrizrainee/" target="_blank" class="social-icon">
+        <i class="bi bi-instagram"></i>
+      </a>
+    </div>
+
+    <!-- ABOUT US -->
+    <div class="footer-about" data-animate="fade-up">
+      <a href="/about" class="footer-link about-link">About Us</a>
+    </div>
+
   </div>
 </footer>
-<!-- FOOTER END -->
