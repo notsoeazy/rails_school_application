@@ -1,15 +1,49 @@
+.slide-up {
+  opacity: 0;
+  animation: slideUpFade 0.8s cubic-bezier(0.2, 1, 0.3, 1) forwards;
+  transform: translateY(30px);
+}
+
+@keyframes slideUpFade {
+  to { opacity: 1; transform: translateY(0); }
+}
+
 .value-card {
+  background: #ffffff;
   border-radius: 12px;
-  background: #fff;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  height: 100%; 
+  position: relative;
+  overflow: hidden;
+  border-bottom: 5px solid transparent; 
 }
 
 .value-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  border-bottom-color: var(--primary-color); 
 }
 
-.value-icon {
-  font-size: 2.8rem;
-  color: #6f42c1;
+.value-card:hover h5 {
+  color: var(--secondary-color) !important;
+}
+
+.value-icon-circle {
+  width: 60px;
+  height: 60px;
+  background-color: rgba(111, 66, 193, 0.1); 
+  color: var(--primary-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.value-card:hover .value-icon-circle {
+  background-color: var(--primary-color);
+  color: #fff;
 }
