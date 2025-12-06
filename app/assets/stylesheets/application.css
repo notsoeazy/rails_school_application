@@ -14,8 +14,11 @@
   --accent-700: #4f4190;
   --surface: #ffffff;
   --muted: #6c757d;
-
+  
   --navbar-height: 72px;
+  
+    --primary-color: #0d6efd;
+    --secondary-color: #6f42c1;
 }
 
 body {

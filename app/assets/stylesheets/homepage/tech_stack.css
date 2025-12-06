@@ -1,16 +1,37 @@
+/* -----------------------------------------------------------
+   TECH STACK SECTION
+----------------------------------------------------------- */
 .tech-card {
-  padding: 25px;
+  background: #ffffff;
   border-radius: 12px;
-  background: #fff;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 3px solid transparent;
 }
 
 .tech-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  border-bottom-color: var(--primary-color); 
 }
 
-.tech-icon {
-  font-size: 2.5rem;
-  color: #0d6efd;
+.tech-icon-circle {
+  width: 70px; 
+  height: 70px;
+  background-color: rgba(111, 66, 193, 0.08);
+  color: var(--primary-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem; 
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.tech-card:hover .tech-icon-circle {
+  background-color: var(--primary-color);
+  color: #fff;
 }
