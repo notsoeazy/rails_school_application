@@ -11,7 +11,7 @@
 /* TEAM CARDS + WRAPPER */
 .team-card-wrapper {
   position: relative;
-  height: 360px; /* uniform card height */
+  /* height: 360px; */
 }
 
 .team-card {
@@ -24,15 +24,15 @@
 .team-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 12px 30px rgba(0,0,0,0.15);
-  border: 2px solid transparent;
+  /* border: 2px solid transparent; */
   background: linear-gradient(white, white) padding-box,
               linear-gradient(45deg, #6f42c1, #0d6efd) border-box;
 }
 
 /* IMAGE PLACEHOLDER ======================================================================*/
 .team-img-placeholder {
-  width: 200px;
-  height: 200px;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
   background: #f0f0f0;
   border: 2px solid #999;
@@ -50,19 +50,19 @@
   border-radius: 50%;
 }
 
-.team-img-placeholder:hover {
+.team-card-wrapper:hover .team-img-placeholder,
+.team-card-wrapper .team-popup:hover .team-img-placeholder {
   box-shadow: 0 0 20px rgba(13,110,253,0.4);
+  border-color: #0d6efd;
+  transform: scale(1.06);
 }
 
-.team-card:hover .team-img-placeholder {
-  border-color: #0d6efd;
-  transform: scale(1.05);
-}
 
 /* POPUP PANEL ======================================================================*/
 .team-popup {
   position: absolute;
-  top: 83%;
+  /* top: 83%; */
+  top: 70%;
   left: 50%;
   width: 90%;
   transform: translate(-50%, -10px);
@@ -106,4 +106,15 @@
 /* Prevent flicker by lifting main card */
 .team-card-wrapper:hover .team-card {
   transform: translateY(-10px);
+}
+
+.skill-badge {
+  padding: 6px 14px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #0d6efd;
+  background: rgba(13, 110, 253, 0.12);
+  border-radius: 20px;
+  border: 1px solid rgba(13, 110, 253, 0.25);
+  transition: all 0.25s ease;
 }
