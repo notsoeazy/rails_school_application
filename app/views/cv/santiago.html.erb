@@ -13,22 +13,29 @@
   <div class="container cv-container">
     <div class="row justify-content-center w-100">
       <div class="col-lg-10 col-xl-8">
-        <div class="card cv-card shadow-lg p-4 p-md-5 rounded-4 cv-animated-content">
+        <div class="card cv-card shadow-lg cv-animated-content">
 
           <header class="mb-5">
             <div class="row align-items-center">
               
               <div class="col-md-3 text-center text-md-start mb-3 mb-md-0">
-                <img src="/assets/profile-placeholder.jpg" class="profile-picture rounded-circle border border-4 border-light shadow-sm" alt="Profile Picture">
+                <%= image_tag "santiago-portrait.JPG", class: "profile-picture shadow-sm", alt: "Matt Santiago Picture" %>
               </div>
               
               <div class="col-md-9 text-center text-md-start">
-                <h1 class="display-4 fw-bold text-primary mb-0">*Name*</h1>
-                <p class="lead text-muted mb-2">*Expertise*</p>
-                <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-md-start">
-                  <a href="#" class="text-decoration-none text-dark"><i class="bi bi-envelope-fill"></i> email@example.com</a>
-                  <a href="#" class="text-decoration-none text-dark"><i class="bi bi-github"></i> GitHub</a>
-                  <a href="#" class="text-decoration-none text-dark"><i class="bi bi-linkedin"></i> LinkedIn</a>
+                <h1 class="display-5 fw-bold mb-0">Matt Rayner P. Santiago</h1>
+                <p class="lead text-muted mb-3">Backend Developer</p>
+                
+                <div class="d-flex flex-column gap-1 justify-content-md-start">
+                  <a href="mailto:mrsantiago@gbox.adnu.edu.ph" target="_blank" rel="noopener" class="cv-link">
+                    <i class="bi bi-envelope-fill me-2"></i>mrsantiago@gbox.adnu.edu.ph
+                  </a>
+                  <a href="https://github.com/MaTT-R4Yn0" target="_blank" rel="noopener" class="cv-link">
+                    <i class="bi bi-github me-2"></i>GitHub
+                  </a>
+                  <a href="https://linkedin.com/in/matt-rayner-p-santiago-1b8596296" target="_blank" rel="noopener" class="cv-link">
+                    <i class="bi bi-linkedin me-2"></i>LinkedIn
+                  </a>
                 </div>
               </div>
             </div>
@@ -36,54 +43,41 @@
 
           <section class="mb-5">
             <h2 class="h4 mb-3 text-secondary border-bottom pb-2">Summary</h2>
-            <p>*summary*</p>
+            <p>
+              Dedicated Backend Developer and Computer Engineering student with a focus on building robust, 
+              scalable web applications using Ruby on Rails. Passionate about bridging 
+              hardware-software interfaces and optimizing logic-heavy backend architectures. Currently 
+              applying engineering principles to web development to create clean, maintainable code 
+              and efficient database structures.
+            </p>
           </section>
 
           <section class="mb-5">
-            <h2 class="h4 mb-3 text-secondary border-bottom pb-2">Skills & Technologies</h2>
-            <div class="d-flex flex-wrap gap-3">
-              <span class="badge text-bg-primary skill-badge-lg">Ruby on Rails</span>
-              <span class="badge text-bg-primary skill-badge-lg">PostgreSQL</span>
-              <span class="badge text-bg-info skill-badge-lg">Bootstrap 5</span>
-              <span class="badge text-bg-warning skill-badge-lg">JavaScript (ES6+)</span>
-              <span class="badge text-bg-success skill-badge-lg">RSpec</span>
-              <span class="badge text-bg-dark skill-badge-lg">Git</span>
-              <span class="badge text-bg-secondary skill-badge-lg">HTML5 / CSS3</span>
+            <h2 class="h4 mb-3 text-secondary border-bottom pb-2">Skills</h2>
+            <div class="d-flex flex-wrap gap-4"> 
+              <span class="badge skill-badge-hero">Ruby on Rails</span>
+              <span class="badge skill-badge-hero">SQL</span>
+              <span class="badge skill-badge-hero">Bootstrap 5</span>
+              <span class="badge skill-badge-hero">Git</span>
             </div>
           </section>
 
           <section class="mb-5">
             <h2 class="h4 mb-3 text-secondary border-bottom pb-2">Experience</h2>
-            <div class="accordion" id="experienceAccordion">
+            <div class="accordion custom-accordion" id="experienceAccordion">
 
               <div class="accordion-item cv-accordion-item">
                 <h3 class="accordion-header" id="expHeadingOne">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#expCollapseOne" aria-expanded="false" aria-controls="expCollapseOne">
-                    <strong>Experience1</strong>
+                    <strong>Developer - School Manager</strong>
                   </button>
                 </h3>
                 <div id="expCollapseOne" class="accordion-collapse collapse" aria-labelledby="expHeadingOne" data-bs-parent="#experienceAccordion">
                   <div class="accordion-body">
                     <p class="text-muted"><em>Details:</em></p>
                     <ul class="list-unstyled">
-                      <li><i class="bi bi-check-circle-fill text-success me-2"></i>*Details klasjdhfklasdhf*</li>
-                    </ul>.
-                  </div>
-                </div>
-              </div>
-              
-              <div class="accordion-item cv-accordion-item">
-                <h3 class="accordion-header" id="expHeadingTwo">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#expCollapseTwo" aria-expanded="false" aria-controls="expCollapseTwo">
-                    <strong>Experience2</strong>
-                  </button>
-                </h3>
-                <div id="expCollapseTwo" class="accordion-collapse collapse" aria-labelledby="expHeadingTwo" data-bs-parent="#experienceAccordion">
-                  <div class="accordion-body">
-                    <p class="text-muted"><em>Details:</em></p>
-                    <ul class="list-unstyled">
-                      <li>line1</li>
-                      <li>line2</li>
+                      <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Implemented a database schema to handle students, faculty, and course enrollments.</li>
+                      <li><i class="bi bi-check-circle-fill text-success me-2"></i> Integrated a responsive user interface using Bootstrap 5 to facilitate ease of use.</li>
                     </ul>
                   </div>
                 </div>
@@ -94,18 +88,18 @@
 
           <section>
             <h2 class="h4 mb-3 text-secondary border-bottom pb-2">Education</h2>
-            <div class="accordion" id="educationAccordion">
+            <div class="accordion custom-accordion" id="educationAccordion">
 
               <div class="accordion-item cv-accordion-item">
                 <h3 class="accordion-header" id="eduHeadingOne">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#eduCollapseOne" aria-expanded="false" aria-controls="eduCollapseOne">
-                    <strong>B.S. Computer Engineering</strong>
+                    <strong>Bachelor of Science in Computer Engineering</strong>
                   </button>
                 </h3>
                 <div id="eduCollapseOne" class="accordion-collapse collapse" aria-labelledby="eduHeadingOne" data-bs-parent="#educationAccordion">
                   <div class="accordion-body">
-                    <p class="mb-1">year</p>
-                    <p class="small text-muted">location</p>
+                    <p class="mb-1">Ateneo de Naga University</p>
+                    <p class="small text-muted mb-0">(2023 - Present)</p>
                   </div>
                 </div>
               </div>
@@ -113,12 +107,13 @@
               <div class="accordion-item cv-accordion-item">
                 <h3 class="accordion-header" id="eduHeadingTwo">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#eduCollapseTwo" aria-expanded="false" aria-controls="eduCollapseTwo">
-                    <strong>Online Certification</strong>, Full-Stack Bootcamp (2017)
+                    <strong>Senior High School - STEM</strong>
                   </button>
                 </h3>
                 <div id="eduCollapseTwo" class="accordion-collapse collapse" aria-labelledby="eduHeadingTwo" data-bs-parent="#educationAccordion">
                   <div class="accordion-body">
-                    <p class="small text-muted">Intensive 6-month course covering modern JavaScript frameworks (React) and microservices architecture.</p>
+                    <p class="mb-1">Ateneo de Naga University</p>
+                    <p class="small text-muted mb-0">(2021 - 2023)</p>
                   </div>
                 </div>
               </div>
@@ -130,4 +125,4 @@
       </div>
     </div>
   </div>
-  </div>
+</div>
