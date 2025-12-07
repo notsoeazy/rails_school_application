@@ -1,1 +1,215 @@
-Hi from Gian
+<div id="cv-page" class="cv-bg">
+
+  <div class="parallax-shape shape-a"></div>
+  <div class="parallax-shape shape-b"></div>
+  <div class="parallax-shape shape-c"></div>
+  <div class="parallax-shape shape-d"></div>
+  <div class="parallax-shape shape-e"></div>
+  <div class="parallax-shape shape-f"></div>
+  <div class="parallax-shape shape-g"></div>
+
+  <%= render "home/navbar" %>
+  
+  <div class="container cv-container mt-4">
+    <div class="row justify-content-center w-100">
+      <div class="col-lg-10 col-xl-9">
+        
+        <div class="card cv-card shadow-lg overflow-hidden border-0 cv-animated-content rounded-4">
+          
+          <div class="cv-header p-4 p-md-5 bg-white border-bottom">
+            <div class="row align-items-center">
+              <div class="col-md-3 text-center mb-3 mb-md-0">
+                <div class="profile-img-container mx-auto">
+                  <%= image_tag "gonzales-portrait.JPG" , alt: "Ezekiel Gonzales", class:"profile-picture" %>
+                </div>
+              </div>
+              <div class="col-md-9 text-center text-md-start">
+                <h1 class="display-5 fw-bold mb-1 text-primary">John Ezekiel Gonzales</h1>
+                <p class="lead text-muted mb-3 fw-medium">Full-stack Developer | Computer Engineering Student</p>
+                
+                <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-md-start text-muted">
+                  <a href="mailto:ezekielgonzales.dev.gmail.com" class="text-muted text-decoration-none hover-primary">
+                    <i class="bi bi-envelope-fill me-1 text-secondary"></i> ezekielgonzales.dev@gmail.com
+                  </a>
+                  <a href="https://github.com/notsoeazy/" class="text-muted text-decoration-none hover-primary">
+                    <i class="bi bi-github me-1 text-secondary"></i> GitHub
+                  </a>
+                  <a href="https://linkedin.com/in/john-ezekiel-gonzales-4691b53a0" class="text-muted text-decoration-none hover-primary">
+                    <i class="bi bi-linkedin me-1 text-secondary"></i> LinkedIn
+                  </a>
+                  <span class="text-muted">
+                    <i class="bi bi-geo-alt-fill me-1 text-secondary"></i> Naga City, Philippines
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-body p-4 p-md-5 bg-white">
+            
+            <section class="mb-5">
+              <div class="d-flex align-items-center mb-3 border-bottom pb-2">
+                <i class="bi bi-person-lines-fill fs-3 text-primary me-2"></i>
+                <h2 class="h4 text-secondary mb-0 fw-bold">Professional Summary</h2>
+              </div>
+              <p class="text-muted">
+                A passionate and motivated <strong>Full-stack Developer</strong> with a focus on building robust, scalable web applications using <strong>Ruby on Rails</strong> and <strong>PostgreSQL</strong>. Currently pursuing a degree in Computer Engineering, I possess strong foundational knowledge in data structures and algorithm design, paired with practical experience in modern front-end development using <strong>Bootstrap 5</strong> and <strong>JavaScript (ES6+)</strong>. Eager to leverage strong problem-solving skills and a commitment to clean code in a challenging development role.
+              </p>
+            </section>
+
+            <section class="mb-5">
+              <div class="d-flex align-items-center mb-3 border-bottom pb-2">
+                <i class="bi bi-cpu-fill fs-3 text-primary me-2"></i>
+                <h2 class="h4 text-secondary mb-0 fw-bold">Technical Skills</h2>
+              </div>
+              
+              <div class="mb-3">
+                <small class="text-uppercase text-muted fw-bold ls-1">Core Stack</small>
+                <div class="d-flex flex-wrap gap-2 mt-2">
+                  <span class="badge rounded-pill text-bg-primary py-2 px-3"><i class="bi bi-gem me-1"></i> Ruby on Rails</span>
+                  <span class="badge rounded-pill text-bg-primary py-2 px-3"><i class="bi bi-database-fill me-1"></i> PostgreSQL</span>
+                  <span class="badge rounded-pill text-bg-info py-2 px-3 text-white"><i class="bi bi-bootstrap-fill me-1"></i> Bootstrap 5</span>
+                  <span class="badge rounded-pill text-bg-warning py-2 px-3 text-dark"><i class="bi bi-filetype-js me-1"></i> JavaScript (ES6+)</span>
+                  <span class="badge rounded-pill text-bg-danger py-2 px-3"><i class="bi bi-git me-1"></i> Git & GitHub</span>
+                </div>
+              </div>
+
+              <div>
+                <small class="text-uppercase text-muted fw-bold ls-1">Programming Languages</small>
+                <div class="d-flex flex-wrap gap-2 mt-2">
+                  <span class="badge rounded-pill border border-secondary text-secondary py-2 px-3"><i class="bi bi-filetype-java me-1"></i> Java</span>
+                  <span class="badge rounded-pill border border-secondary text-secondary py-2 px-3"><i class="bi bi-filetype-py me-1"></i> Python</span>
+                  <span class="badge rounded-pill border border-secondary text-secondary py-2 px-3"><i class="bi bi-filetype-cpp me-1"></i> C++</span>
+                  <span class="badge rounded-pill border border-secondary text-secondary py-2 px-3"><i class="bi bi-code-slash me-1"></i> HTML5 / CSS3</span>
+                </div>
+              </div>
+            </section>
+
+            <section class="mb-5">
+              <div class="d-flex align-items-center mb-3 border-bottom pb-2">
+                <i class="bi bi-briefcase-fill fs-3 text-primary me-2"></i>
+                <h2 class="h4 text-secondary mb-0 fw-bold">Experience</h2>
+              </div>
+              
+              <div class="accordion" id="experienceAccordion">
+
+                <div class="accordion-item cv-accordion-item mb-3">
+                  <h3 class="accordion-header" id="expHeadingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#expCollapseOne" aria-expanded="true" aria-controls="expCollapseOne">
+                      <div class="d-flex flex-column flex-md-row justify-content-between w-100 pe-3">
+                        <span class="fw-bold">Developer, School Manager Platform</span>
+                        <span class="small text-muted fw-normal">Self-Directed | Present</span>
+                      </div>
+                    </button>
+                  </h3>
+                  <div id="expCollapseOne" class="accordion-collapse collapse show" aria-labelledby="expHeadingOne" data-bs-parent="#experienceAccordion">
+                    <div class="accordion-body">
+                      <p class="mb-2"><em>Architected a comprehensive, full-stack application for managing school resources and data.</em></p>
+                      <ul class="list-unstyled mt-3">
+                        <li class="mb-2 d-flex"><i class="bi bi-check2-square text-primary me-2 mt-1"></i> <span><strong>Full-Stack Architecture:</strong> Built a complete Rails application from scratch, focusing on MVC best practices and RESTful design patterns.</span></li>
+                        <li class="mb-2 d-flex"><i class="bi bi-check2-square text-primary me-2 mt-1"></i> <span><strong>Security:</strong> Developed Role-Based Access Control (RBAC) to securely manage students, teachers, and staff data.</span></li>
+                        <li class="mb-2 d-flex"><i class="bi bi-check2-square text-primary me-2 mt-1"></i> <span><strong>UI/UX:</strong> Integrated Bootstrap 5 for a responsive design, featuring a custom non-resizing sidebar and mobile-friendly layouts.</span></li>
+                        <li class="mb-2 d-flex"><i class="bi bi-check2-square text-primary me-2 mt-1"></i> <span><strong>Performance:</strong> Utilized Hotwire (Turbo & Stimulus) for SPA-like interactivity without complex React/Vue overhead.</span></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="accordion-item cv-accordion-item mb-3">
+                  <h3 class="accordion-header" id="expHeadingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#expCollapseTwo" aria-expanded="false" aria-controls="expCollapseTwo">
+                       <div class="d-flex flex-column flex-md-row justify-content-between w-100 pe-3">
+                        <span class="fw-bold">Freelance Web Developer</span>
+                        <span class="small text-muted fw-normal">Remote | 2022 - Present</span>
+                      </div>
+                    </button>
+                  </h3>
+                  <div id="expCollapseTwo" class="accordion-collapse collapse" aria-labelledby="expHeadingTwo" data-bs-parent="#experienceAccordion">
+                    <div class="accordion-body">
+                      <ul class="list-unstyled">
+                        <li class="mb-2 d-flex"><i class="bi bi-check2-circle text-secondary me-2 mt-1"></i> <span>Designed and deployed responsive static websites for local businesses using HTML5, CSS3, and Bootstrap.</span></li>
+                        <li class="mb-2 d-flex"><i class="bi bi-check2-circle text-secondary me-2 mt-1"></i> <span>Managed domain registration, DNS configuration, and basic SEO implementation to improve client visibility.</span></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </section>
+
+             <section class="mb-5">
+              <div class="d-flex align-items-center mb-3 border-bottom pb-2">
+                <i class="bi bi-code-square fs-3 text-primary me-2"></i>
+                <h2 class="h4 text-secondary mb-0 fw-bold">Notable Projects</h2>
+              </div>
+              
+              <div class="row g-4">
+                <div class="col-md-6">
+                  <div class="p-3 border rounded-3 h-100 bg-light">
+                    <h5 class="fw-bold text-dark"><i class="bi bi-controller me-2 text-primary"></i>C++ Game Engine</h5>
+                    <p class="small text-muted mb-2">Academic Prototype</p>
+                    <p class="small">Implemented a lightweight 2D graphics engine using <strong>C++</strong> and SDL. Features include a custom rendering loop, object-oriented entity management, and basic collision detection algorithms.</p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="p-3 border rounded-3 h-100 bg-light">
+                    <h5 class="fw-bold text-dark"><i class="bi bi-graph-up-arrow me-2 text-primary"></i>Enrollment Analytics</h5>
+                    <p class="small text-muted mb-2">Python & Pandas</p>
+                    <p class="small">Developed a <strong>Python</strong> script to parse CSV datasets of local school enrollment. Used <strong>Pandas</strong> for data cleaning and <strong>Matplotlib</strong> to generate visual trend reports.</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="mb-4">
+              <div class="d-flex align-items-center mb-3 border-bottom pb-2">
+                <i class="bi bi-mortarboard-fill fs-3 text-primary me-2"></i>
+                <h2 class="h4 text-secondary mb-0 fw-bold">Education</h2>
+              </div>
+              
+              <div class="list-group list-group-flush">
+                <div class="list-group-item px-0 border-0">
+                  <div class="d-flex justify-content-between align-items-start">
+                    <div>
+                      <h5 class="mb-1 fw-bold">B.S. Computer Engineering</h5>
+                      <p class="mb-0 text-muted">Ateneo de Naga University</p>
+                      <small class="text-primary">Dean's Lister • Expected Graduation 2026</small>
+                    </div>
+                    <span class="badge bg-light text-dark border">Current</span>
+                  </div>
+                </div>
+                <div class="list-group-item px-0 border-0 mt-3">
+                  <div class="d-flex justify-content-between align-items-start">
+                    <div>
+                      <h5 class="mb-1 fw-bold">Senior High School (STEM)</h5>
+                      <p class="mb-0 text-muted">Ateneo de Naga University</p>
+                    </div>
+                    <span class="badge bg-light text-dark border">2020 - 2022</span>
+                  </div>
+                </div>
+              </div>
+            </section>
+            
+            <section>
+               <div class="d-flex align-items-center mb-3 border-bottom pb-2">
+                <i class="bi bi-award-fill fs-3 text-primary me-2"></i>
+                <h2 class="h4 text-secondary mb-0 fw-bold">Certifications</h2>
+              </div>
+              <ul class="list-inline">
+                 <li class="list-inline-item"><span class="badge border border-primary text-primary bg-white p-2"><i class="bi bi-patch-check-fill me-1"></i> FreeCodeCamp Full Stack</span></li>
+                 <li class="list-inline-item"><span class="badge border border-primary text-primary bg-white p-2"><i class="bi bi-patch-check-fill me-1"></i> Data Structures (Coursera)</span></li>
+                 <li class="list-inline-item"><span class="badge border border-primary text-primary bg-white p-2"><i class="bi bi-patch-check-fill me-1"></i> CS50 Introduction to Computer Science</span></li>
+              </ul>
+            </section>
+
+          </div>
+        </div>
+        
+        <div class="text-center text-white-50 mt-4 pb-5">
+           <small>&copy; <%= Time.current.year %> John Ezekiel Gonzales. Built with Rails 7 & Bootstrap 5.</small>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
