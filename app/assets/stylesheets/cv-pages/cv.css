@@ -1,0 +1,129 @@
+/* --- CV BACKGROUND, SCROLL, AND SHAPE VISIBILITY FIXES --- */
+
+.cv-bg {
+  position: relative;
+  /* Reduced padding to bring content up */
+  padding: 40px 0; 
+  background: linear-gradient(135deg, #3f2b96, #4f46e5);
+  /* FIX: Prevents background from scrolling/jumping when dropdowns open */
+  background-attachment: fixed; 
+  overflow: hidden;
+  min-height: 100vh; 
+  /* FIX: Use flexbox for vertical alignment and prevent forced scrolling */
+  display: flex; 
+  flex-direction: column;
+}
+
+/* Base style for floating shapes */
+#cv-background .parallax-shape {
+  position: absolute;
+  /* FIX: Increased opacity for better visibility */
+  background: rgba(255, 255, 255, 0.15); 
+  border-radius: 50%;
+  filter: blur(12px); 
+  animation: floatParallax 10s infinite ease-in-out alternate;
+  z-index: 1;
+}
+
+/* Randomizing Shape Positions and Sizes */
+.shape-a { width: 150px; height: 150px; top: 10%; left: 5%; animation-duration: 15s; }
+.shape-b { width: 220px; height: 220px; top: 35%; right: 12%; animation-duration: 20s; }
+.shape-c { width: 100px; height: 100px; bottom: 8%; left: 20%; animation-duration: 12s; }
+.shape-d { width: 280px; height: 280px; bottom: 50%; right: 5%; animation-duration: 24s; }
+.shape-e { width: 180px; height: 180px; top: 70%; left: 30%; animation-duration: 18s; }
+.shape-f { width: 250px; height: 250px; bottom: 15%; right: 35%; animation-duration: 16s; }
+.shape-g { width: 300px; height: 300px; top: 5%; right: 50%; animation-duration: 22s; }
+
+/* Keyframe for the floating effect */
+@keyframes floatParallax {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  50% { transform: translate(20px, 30px) rotate(5deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+/* --- CV CONTENT CONTAINER & ANIMATION --- */
+
+.cv-container {
+  position: relative;
+  z-index: 10; 
+  flex-grow: 1; 
+  display: flex; 
+  align-items: center; 
+  /* Adjusted padding-top to separate from navbar */
+  padding-top: 80px; 
+  padding-bottom: 40px; 
+}
+
+/* The main CV container card */
+.cv-card {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 1.5rem;
+  backdrop-filter: blur(5px);
+  border: none;
+  width: 100%; /* Ensure it fills the grid column */
+}
+
+/* Fade-In Animation */
+.cv-animated-content {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideUpFadeIn 1s ease-out forwards;
+}
+
+@keyframes slideUpFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- PICTURE AND SKILLS STYLES --- */
+
+/* Profile Picture Styling */
+.profile-picture {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  display: block; 
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Larger Skill Badge Styling */
+.skill-badge-lg {
+  padding: 0.8em 1.2em;
+  font-size: 0.95em;
+  font-weight: 700;
+  border-radius: 0.75rem;
+}
+
+/* --- ACCORDION STYLES (Applies to both Experience and Education) --- */
+
+.cv-accordion-item {
+  border: 1px solid #dee2e6;
+  margin-bottom: 10px;
+  border-radius: 0.5rem !important;
+  overflow: hidden;
+}
+
+.cv-accordion-item .accordion-button {
+  background-color: #f8f9fa;
+  color: #212529;
+  font-size: 1.1rem;
+  padding: 1rem 1.25rem;
+}
+
+.cv-accordion-item .accordion-button:not(.collapsed) {
+  color: #4f46e5;
+  background-color: #e9ecef;
+  box-shadow: none;
+}
+
+.cv-accordion-item .accordion-body {
+  padding: 1.5rem;
+  background-color: #ffffff;
+}
