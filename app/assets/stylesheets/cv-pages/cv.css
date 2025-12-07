@@ -1,122 +1,126 @@
-/* 1. LAYOUT & BACKGROUND */
 .cv-bg {
   position: relative;
-  min-height: 100vh;
-  padding: 40px 0;
-  background: linear-gradient(135deg, #3f2b96, #4f46e5);
+  background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
   background-attachment: fixed;
-  overflow: hidden;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
 }
 
-/* 2. PARALLAX SYSTEM */
-.parallax-shape {
-  position: absolute;
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 50%;
-  filter: blur(12px);
-  animation: floatParallax 10s infinite ease-in-out alternate;
-  z-index: 1;
-}
-
-@keyframes floatParallax {
-  from { transform: translate(0, 0); }
-  to { transform: translate(20px, 30px); }
-}
-
-.shape-a { width: 150px; height: 150px; top: 10%; left: 5%; }
-.shape-b { width: 220px; height: 220px; top: 35%; right: 10%; }
-.shape-c { width: 100px; height: 100px; bottom: 10%; left: 20%; }
-/* Define shapes d-g similarly... */
-
-/* 3. CV COMPONENTS */
 .cv-container {
   position: relative;
   z-index: 10;
   flex-grow: 1;
-  display: flex;
-  align-items: center;
-  padding: 80px 0 40px;
+  padding-top: 60px;
+  padding-bottom: 40px;
 }
 
+/* --- ANIMATED SHAPES --- */
+
+#cv-page .parallax-shape {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  filter: blur(8px);
+  animation: floatParallax 10s infinite ease-in-out alternate;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.shape-a { width: 150px; height: 150px; top: 10%; left: 5%; animation-duration: 15s; }
+.shape-b { width: 220px; height: 220px; top: 35%; right: 12%; animation-duration: 20s; }
+.shape-c { width: 100px; height: 100px; bottom: 8%; left: 20%; animation-duration: 12s; }
+.shape-d { width: 280px; height: 280px; bottom: 50%; right: 5%; animation-duration: 24s; }
+.shape-e { width: 180px; height: 180px; top: 70%; left: 30%; animation-duration: 18s; }
+.shape-f { width: 250px; height: 250px; bottom: 15%; right: 35%; animation-duration: 16s; }
+.shape-g { width: 300px; height: 300px; top: 5%; right: 50%; animation-duration: 22s; }
+
+/* --- CARD STYLING --- */
+
 .cv-card {
-  background: rgba(255, 255, 255, 0.96);
-  backdrop-filter: blur(10px);
-  border: none;
-  border-radius: 1.5rem;
-  padding: 3rem;
+  border-radius: 1rem;
+  /* Entrance animation */
+  animation: slideUpFadeIn 0.8s ease-out forwards;
+}
+
+.cv-header {
+  background: #ffffff;
+}
+
+.profile-img-container {
+  width: 160px;
+  height: 160px;
+  /* Removed white transparent background since header is now white */
+  background: transparent;
+  border-radius: 50%;
 }
 
 .profile-picture {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  border: 4px solid #fff;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  border-radius: 50%;
+  /* Changed border from white to primary color for visibility */
+  border: 4px solid var(--primary-color);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
-.cv-section { padding: 0 1rem; }
-.section-title {
-  border-bottom: 2px solid #eee;
-  padding-bottom: 0.5rem;
-  color: #4f46e5;
+.hover-underline:hover {
+  text-decoration: underline !important;
 }
 
-/* 4. INTERACTIVE ELEMENTS */
-.cv-link {
-  text-decoration: none;
-  color: #6c757d;
-  font-size: 0.95rem;
-  transition: 0.3s;
-  display: inline-flex;
-  align-items: center;
+/* New helper for hover effects on links in the header */
+.hover-primary {
+  transition: color 0.2s ease;
 }
 
-.cv-link:hover { 
-  color: #4f46e5; 
+.hover-primary:hover {
+  color: var(--primary-color) !important;
+  text-decoration: none !important;
 }
 
-.skill-badge-hero {
-  background: #4f46e5;
-  color: white;
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  border-radius: 2rem;
-  transition: 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+/* --- TYPOGRAPHY HELPERS --- */
+
+#cv-page .text-primary {
+  color: var(--primary-color) !important;
 }
 
-.skill-badge-hero:hover {
-  background: #3f2b96;
-  transform: translateY(-3px);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+#cv-page .text-secondary {
+  color: var(--secondary-color) !important;
 }
 
-/* 5. ACCORDION OVERRIDES */
-.custom-accordion .accordion-item {
-  border: 1px solid #f0f0f0;
-  margin-bottom: 0.75rem;
-  border-radius: 0.75rem !important;
+#cv-page .ls-1 {
+  letter-spacing: 1px;
+}
+
+/* --- ACCORDION CUSTOMIZATION --- */
+
+.cv-accordion-item {
+  border: 1px solid #e9ecef;
+  border-radius: 0.5rem !important;
   overflow: hidden;
 }
 
-.custom-accordion .accordion-button {
-  background: #fafafa;
+.cv-accordion-item .accordion-button {
+  font-size: 1.05rem;
+  padding: 1rem 1.25rem;
+  background-color: #fff;
+  color: #212529;
+  box-shadow: none;
+}
+
+.cv-accordion-item .accordion-button:not(.collapsed) {
+  background-color: rgba(13, 110, 253, 0.05); 
+  color: var(--primary-color);
   font-weight: 600;
 }
 
-.custom-accordion .accordion-button:not(.collapsed) {
-  background: #e9ecef;
-  color: #4f46e5;
+.cv-accordion-item .accordion-button:not(.collapsed)::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%230d6efd'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
 }
 
-/* 6. ANIMATION */
-.cv-animated-content {
-  animation: slideIn 0.8s forwards;
-}
-
-@keyframes slideIn {
-  0% { opacity: 0; transform: translateY(30px); }
-  100% { opacity: 1; transform: translateY(0); }
+.cv-accordion-item .accordion-body {
+  background-color: #f8f9fa;
+  font-size: 0.95rem;
 }
