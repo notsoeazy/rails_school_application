@@ -1,1 +1,198 @@
-Hi from Matt
+<div id="cv-page" class="cv-bg">
+
+  <div class="parallax-shape shape-a"></div>
+  <div class="parallax-shape shape-b"></div>
+  <div class="parallax-shape shape-c"></div>
+  <div class="parallax-shape shape-d"></div>
+  <div class="parallax-shape shape-e"></div>
+  <div class="parallax-shape shape-f"></div>
+  <div class="parallax-shape shape-g"></div>
+
+  <%= render "home/navbar" %>
+  
+  <div class="container cv-container mt-4">
+    <div class="row justify-content-center w-100">
+      <div class="col-lg-10 col-xl-9 position-relative">
+
+      <%= link_to about_path, class: "back-btn-floating" do %>
+        <i class="bi bi-arrow-left"></i> 
+        <span>Back to About</span>
+      <% end %>
+        
+        <div class="card cv-card shadow-lg overflow-hidden border-0 cv-animated-content rounded-4">
+          
+          <div class="cv-header p-4 p-md-5 bg-white border-bottom">
+            <div class="row align-items-center">
+              <div class="col-md-3 text-center mb-3 mb-md-0">
+                <div class="profile-img-container mx-auto">
+                  <%= image_tag "santiago-portrait.JPG", alt: "Matt Santiago", class: "profile-picture" %>
+                </div>
+              </div>
+              <div class="col-md-9 text-center text-md-start">
+                <h1 class="display-5 fw-bold mb-1 text-primary">Matt Rayner P. Santiago</h1>
+                <p class="lead text-muted mb-3 fw-medium">Backend Developer | Computer Engineering Student</p>
+                
+                <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-md-start text-muted">
+                  <a href="mailto:mrsantiago@gbox.adnu.edu.ph" class="text-muted text-decoration-none hover-primary">
+                    <i class="bi bi-envelope-fill me-1 text-secondary"></i> mrsantiago@gbox.adnu.edu.ph
+                  </a>
+                  <a href="https://github.com/MaTT-R4Yn0" target="_blank" class="text-muted text-decoration-none hover-primary">
+                    <i class="bi bi-github me-1 text-secondary"></i> MaTT-R4Yn0
+                  </a>
+                  <a href="https://linkedin.com/in/matt-rayner-p-santiago-1b8596296" target="_blank" class="text-muted text-decoration-none hover-primary">
+                    <i class="bi bi-linkedin me-1 text-secondary"></i> LinkedIn
+                  </a>
+                  <span class="text-muted">
+                    <i class="bi bi-geo-alt-fill me-1 text-secondary"></i> Naga City, Philippines
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-body p-4 p-md-5 bg-white">
+            
+            <section class="mb-5">
+              <div class="d-flex align-items-center mb-3 border-bottom pb-2">
+                <i class="bi bi-person-lines-fill fs-3 text-primary me-2"></i>
+                <h2 class="h4 text-secondary mb-0 fw-bold">Professional Summary</h2>
+              </div>
+              <p class="text-muted">
+                Dedicated <strong>Backend Developer</strong> and Computer Engineering student specializing in building robust, scalable web applications using <strong>Ruby on Rails</strong> and <strong>PostgreSQL</strong>. Passionate about bridging hardware-software interfaces and optimizing logic-heavy backend architectures. Currently applying engineering principles to web development to create clean, maintainable code and efficient database structures.
+              </p>
+            </section>
+
+            <section class="mb-5">
+              <div class="d-flex align-items-center mb-3 border-bottom pb-2">
+                <i class="bi bi-cpu-fill fs-3 text-primary me-2"></i>
+                <h2 class="h4 text-secondary mb-0 fw-bold">Technical Skills</h2>
+              </div>
+              
+              <div class="mb-3">
+                <small class="text-uppercase text-muted fw-bold ls-1">Core Stack</small>
+                <div class="d-flex flex-wrap gap-2 mt-2">
+                  <span class="badge rounded-pill text-bg-primary py-2 px-3"><i class="bi bi-gem me-1"></i> Ruby on Rails</span>
+                  <span class="badge rounded-pill text-bg-primary py-2 px-3"><i class="bi bi-database-fill me-1"></i> SQL / PostgreSQL</span>
+                  <span class="badge rounded-pill text-bg-info py-2 px-3 text-white"><i class="bi bi-bootstrap-fill me-1"></i> Bootstrap 5</span>
+                  <span class="badge rounded-pill text-bg-danger py-2 px-3"><i class="bi bi-git me-1"></i> Git & GitHub</span>
+                </div>
+              </div>
+
+              <div>
+                <small class="text-uppercase text-muted fw-bold ls-1">Programming & Hardware</small>
+                <div class="d-flex flex-wrap gap-2 mt-2">
+                  <span class="badge rounded-pill border border-secondary text-secondary py-2 px-3"><i class="bi bi-braces me-1"></i> C / C++</span>
+                  <span class="badge rounded-pill border border-secondary text-secondary py-2 px-3"><i class="bi bi-cpu me-1"></i> Microcontrollers</span>
+                  <span class="badge rounded-pill border border-secondary text-secondary py-2 px-3"><i class="bi bi-code-slash me-1"></i> HTML5 / CSS3</span>
+                </div>
+              </div>
+            </section>
+
+            <section class="mb-5">
+              <div class="d-flex align-items-center mb-3 border-bottom pb-2">
+                <i class="bi bi-briefcase-fill fs-3 text-primary me-2"></i>
+                <h2 class="h4 text-secondary mb-0 fw-bold">Experience</h2>
+              </div>
+              
+              <div class="accordion" id="experienceAccordion">
+                <div class="accordion-item cv-accordion-item mb-3">
+                  <h3 class="accordion-header" id="expHeadingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#expCollapseOne" aria-expanded="true" aria-controls="expCollapseOne">
+                      <div class="d-flex flex-column flex-md-row justify-content-between w-100 pe-3">
+                        <span class="fw-bold">Developer, School Manager Platform</span>
+                        <span class="small text-muted fw-normal">Academic Project | 2023</span>
+                      </div>
+                    </button>
+                  </h3>
+                  <div id="expCollapseOne" class="accordion-collapse collapse show" aria-labelledby="expHeadingOne" data-bs-parent="#experienceAccordion">
+                    <div class="accordion-body">
+                      <p class="mb-2"><em>Implemented a centralized system for managing academic records and faculty assignments.</em></p>
+                      <ul class="list-unstyled mt-3">
+                        <li class="mb-2 d-flex"><i class="bi bi-check2-square text-primary me-2 mt-1"></i> <span><strong>Database Design:</strong> Implemented a schema to handle complex relationships between students, faculty, and courses.</span></li>
+                        <li class="mb-2 d-flex"><i class="bi bi-check2-square text-primary me-2 mt-1"></i> <span><strong>Logic Layer:</strong> Integrated business logic for automated enrollment verification processes.</span></li>
+                        <li class="mb-2 d-flex"><i class="bi bi-check2-square text-primary me-2 mt-1"></i> <span><strong>Interface:</strong> Built a responsive UI using Bootstrap 5 for ease of data entry and monitoring.</span></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="mb-5">
+              <div class="d-flex align-items-center mb-3 border-bottom pb-2">
+                <i class="bi bi-code-square fs-3 text-primary me-2"></i>
+                <h2 class="h4 text-secondary mb-0 fw-bold">Notable Projects</h2>
+              </div>
+              
+              <div class="row g-4">
+                <div class="col-md-6">
+                  <div class="p-3 border rounded-3 h-100 bg-light">
+                    <h5 class="fw-bold text-dark"><i class="bi bi-joystick me-2 text-primary"></i>Embedded Logic Controller</h5>
+                    <p class="small text-muted mb-2">C++ & Arduino</p>
+                    <p class="small">Developed a logic-based control system for automation prototypes, focusing on memory efficiency and low-latency response times within hardware constraints.</p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="p-3 border rounded-3 h-100 bg-light">
+                    <h5 class="fw-bold text-dark"><i class="bi bi-server me-2 text-primary"></i>REST API Service</h5>
+                    <p class="small text-muted mb-2">Ruby on Rails</p>
+                    <p class="small">Created a lightweight API for resource management, featuring JWT authentication and structured JSON responses for mobile application integration.</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="mb-4">
+              <div class="d-flex align-items-center mb-3 border-bottom pb-2">
+                <i class="bi bi-mortarboard-fill fs-3 text-primary me-2"></i>
+                <h2 class="h4 text-secondary mb-0 fw-bold">Education</h2>
+              </div>
+              
+              <div class="list-group list-group-flush">
+                <div class="list-group-item px-0 border-0">
+                  <div class="d-flex justify-content-between align-items-start">
+                    <div>
+                      <h5 class="mb-1 fw-bold">B.S. Computer Engineering</h5>
+                      <p class="mb-0 text-muted">Ateneo de Naga University</p>
+                      <small class="text-primary">3rd Honors • Expected Graduation 2027</small>
+                    </div>
+                    <span class="badge bg-light text-dark border">2023 - Present</span>
+                  </div>
+                </div>
+                <div class="list-group-item px-0 border-0 mt-3">
+                  <div class="d-flex justify-content-between align-items-start">
+                    <div>
+                      <h5 class="mb-1 fw-bold">Senior High School - STEM</h5>
+                      <p class="mb-0 text-muted">Ateneo de Naga University</p>
+                    </div>
+                    <span class="badge bg-light text-dark border">2021 - 2023</span>
+                  </div>
+                </div>
+              </div>
+            </section>
+            
+            <section>
+              <div class="d-flex align-items-center mb-3 border-bottom pb-2">
+                <i class="bi bi-award-fill fs-3 text-primary me-2"></i>
+                <h2 class="h4 text-secondary mb-0 fw-bold">Certifications</h2>
+              </div>
+              <ul class="list-inline">
+                <li class="list-inline-item"><span class="badge border border-primary text-primary bg-white p-2"><i class="bi bi-patch-check-fill me-1"></i> Ruby on Rails Specialization</span></li>
+                <li class="list-inline-item"><span class="badge border border-primary text-primary bg-white p-2"><i class="bi bi-patch-check-fill me-1"></i> Responsive Web Design</span></li>
+                <li class="list-inline-item"><span class="badge border border-primary text-primary bg-white p-2"><i class="bi bi-patch-check-fill me-1"></i> Git Version Control</span></li>
+              </ul>
+            </section>
+
+          </div>
+        </div>
+        
+        <div class="text-center text-white-50 mt-4 pb-5">
+          <small>&copy; <%= Time.current.year %> Matt Rayner P. Santiago. Built with Rails & Bootstrap 5.</small>
+          <br>
+          <small>NOT REAL INFORMATION</small>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
